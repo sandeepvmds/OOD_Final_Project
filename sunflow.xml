@@ -1,0 +1,526 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<system>
+	<pattern name="Factory Method">
+		<instance>
+			<role name="Creator" element="org.sunflow.core.PrimitiveList" />
+			<role name="FactoryMethod()" element="org.sunflow.core.PrimitiveList::getBakingPrimitives():org.sunflow.core.PrimitiveList" />
+		</instance>
+		<instance>
+			<role name="Creator" element="org.sunflow.core.Tesselatable" />
+			<role name="FactoryMethod()" element="org.sunflow.core.Tesselatable::tesselate():org.sunflow.core.PrimitiveList" />
+		</instance>
+	</pattern>
+	<pattern name="Prototype" />
+	<pattern name="Singleton" />
+	<pattern name="(Object)Adapter">
+		<instance>
+			<role name="Adaptee" element="org.sunflow.image.Color" />
+			<role name="Adapter" element="org.sunflow.core.light.SunSkyLight" />
+			<role name="adaptee" element="org.sunflow.core.light.SunSkyLight::sunColor:org.sunflow.image.Color" />
+			<role name="Request()" element="org.sunflow.core.light.SunSkyLight::getSamples(org.sunflow.core.ShadingState):void" />
+		</instance>
+		<instance>
+			<role name="Adaptee" element="org.sunflow.math.Vector3" />
+			<role name="Adapter" element="org.sunflow.core.light.SunSkyLight" />
+			<role name="adaptee" element="org.sunflow.core.light.SunSkyLight::sunDirWorld:org.sunflow.math.Vector3" />
+			<role name="Request()" element="org.sunflow.core.light.SunSkyLight::getSamples(org.sunflow.core.ShadingState):void" />
+		</instance>
+		<instance>
+			<role name="Adaptee" element="org.sunflow.math.OrthoNormalBasis" />
+			<role name="Adapter" element="org.sunflow.core.light.SunSkyLight" />
+			<role name="adaptee" element="org.sunflow.core.light.SunSkyLight::basis:org.sunflow.math.OrthoNormalBasis" />
+			<role name="Request()" element="org.sunflow.core.light.SunSkyLight::getSamples(org.sunflow.core.ShadingState):void" />
+			<role name="Request()" element="org.sunflow.core.light.SunSkyLight::getRadiance(org.sunflow.core.ShadingState):org.sunflow.image.Color" />
+		</instance>
+		<instance>
+			<role name="Adaptee" element="org.sunflow.math.OrthoNormalBasis" />
+			<role name="Adapter" element="org.sunflow.core.light.ImageBasedLight" />
+			<role name="adaptee" element="org.sunflow.core.light.ImageBasedLight::basis:org.sunflow.math.OrthoNormalBasis" />
+			<role name="Request()" element="org.sunflow.core.light.ImageBasedLight::getSamples(org.sunflow.core.ShadingState):void" />
+			<role name="Request()" element="org.sunflow.core.light.ImageBasedLight::getRadiance(org.sunflow.core.ShadingState):org.sunflow.image.Color" />
+		</instance>
+		<instance>
+			<role name="Adaptee" element="org.sunflow.image.Color" />
+			<role name="Adapter" element="org.sunflow.core.light.SphereLight" />
+			<role name="adaptee" element="org.sunflow.core.light.SphereLight::radiance:org.sunflow.image.Color" />
+			<role name="Request()" element="org.sunflow.core.light.SphereLight::getSamples(org.sunflow.core.ShadingState):void" />
+			<role name="Request()" element="org.sunflow.core.light.SphereLight::getPhoton(double, double, double, double, org.sunflow.math.Point3, org.sunflow.math.Vector3, org.sunflow.image.Color):void" />
+			<role name="Request()" element="org.sunflow.core.light.SphereLight::getPower():float" />
+		</instance>
+		<instance>
+			<role name="Adaptee" element="org.sunflow.image.Color" />
+			<role name="Adapter" element="org.sunflow.core.primitive.CornellBox" />
+			<role name="adaptee" element="org.sunflow.core.primitive.CornellBox::left:org.sunflow.image.Color" />
+			<role name="adaptee" element="org.sunflow.core.primitive.CornellBox::right:org.sunflow.image.Color" />
+			<role name="adaptee" element="org.sunflow.core.primitive.CornellBox::back:org.sunflow.image.Color" />
+			<role name="adaptee" element="org.sunflow.core.primitive.CornellBox::bottom:org.sunflow.image.Color" />
+			<role name="adaptee" element="org.sunflow.core.primitive.CornellBox::top:org.sunflow.image.Color" />
+			<role name="adaptee" element="org.sunflow.core.primitive.CornellBox::radiance:org.sunflow.image.Color" />
+			<role name="Request()" element="org.sunflow.core.primitive.CornellBox::scatterPhoton(org.sunflow.core.ShadingState, org.sunflow.image.Color):void" />
+			<role name="Request()" element="org.sunflow.core.primitive.CornellBox::getSamples(org.sunflow.core.ShadingState):void" />
+			<role name="Request()" element="org.sunflow.core.primitive.CornellBox::getPhoton(double, double, double, double, org.sunflow.math.Point3, org.sunflow.math.Vector3, org.sunflow.image.Color):void" />
+			<role name="Request()" element="org.sunflow.core.primitive.CornellBox::getPower():float" />
+		</instance>
+		<instance>
+			<role name="Adaptee" element="org.sunflow.image.Color" />
+			<role name="Adapter" element="org.sunflow.core.shader.UberShader" />
+			<role name="adaptee" element="org.sunflow.core.shader.UberShader::spec:org.sunflow.image.Color" />
+			<role name="Request()" element="org.sunflow.core.shader.UberShader::getRadiance(org.sunflow.core.ShadingState):org.sunflow.image.Color" />
+			<role name="Request()" element="org.sunflow.core.shader.UberShader::scatterPhoton(org.sunflow.core.ShadingState, org.sunflow.image.Color):void" />
+		</instance>
+		<instance>
+			<role name="Adaptee" element="org.sunflow.image.Color" />
+			<role name="Adapter" element="org.sunflow.core.shader.AnisotropicWardShader" />
+			<role name="adaptee" element="org.sunflow.core.shader.AnisotropicWardShader::rhoS:org.sunflow.image.Color" />
+			<role name="Request()" element="org.sunflow.core.shader.AnisotropicWardShader::getRadiance(org.sunflow.core.ShadingState):org.sunflow.image.Color" />
+			<role name="Request()" element="org.sunflow.core.shader.AnisotropicWardShader::scatterPhoton(org.sunflow.core.ShadingState, org.sunflow.image.Color):void" />
+		</instance>
+		<instance>
+			<role name="Adaptee" element="org.sunflow.image.Color" />
+			<role name="Adapter" element="org.sunflow.core.shader.GlassShader" />
+			<role name="adaptee" element="org.sunflow.core.shader.GlassShader::absorbtionColor:org.sunflow.image.Color" />
+			<role name="adaptee" element="org.sunflow.core.shader.GlassShader::color:org.sunflow.image.Color" />
+			<role name="Request()" element="org.sunflow.core.shader.GlassShader::getRadiance(org.sunflow.core.ShadingState):org.sunflow.image.Color" />
+			<role name="Request()" element="org.sunflow.core.shader.GlassShader::scatterPhoton(org.sunflow.core.ShadingState, org.sunflow.image.Color):void" />
+		</instance>
+		<instance>
+			<role name="Adaptee" element="org.sunflow.image.Color" />
+			<role name="Adapter" element="org.sunflow.core.shader.MirrorShader" />
+			<role name="adaptee" element="org.sunflow.core.shader.MirrorShader::color:org.sunflow.image.Color" />
+			<role name="Request()" element="org.sunflow.core.shader.MirrorShader::getRadiance(org.sunflow.core.ShadingState):org.sunflow.image.Color" />
+			<role name="Request()" element="org.sunflow.core.shader.MirrorShader::scatterPhoton(org.sunflow.core.ShadingState, org.sunflow.image.Color):void" />
+		</instance>
+		<instance>
+			<role name="Adaptee" element="org.sunflow.image.Color" />
+			<role name="Adapter" element="org.sunflow.core.shader.PhongShader" />
+			<role name="adaptee" element="org.sunflow.core.shader.PhongShader::spec:org.sunflow.image.Color" />
+			<role name="Request()" element="org.sunflow.core.shader.PhongShader::getRadiance(org.sunflow.core.ShadingState):org.sunflow.image.Color" />
+			<role name="Request()" element="org.sunflow.core.shader.PhongShader::scatterPhoton(org.sunflow.core.ShadingState, org.sunflow.image.Color):void" />
+		</instance>
+		<instance>
+			<role name="Adaptee" element="org.sunflow.image.Color" />
+			<role name="Adapter" element="org.sunflow.core.light.DirectionalSpotlight" />
+			<role name="adaptee" element="org.sunflow.core.light.DirectionalSpotlight::radiance:org.sunflow.image.Color" />
+			<role name="Request()" element="org.sunflow.core.light.DirectionalSpotlight::getPhoton(double, double, double, double, org.sunflow.math.Point3, org.sunflow.math.Vector3, org.sunflow.image.Color):void" />
+			<role name="Request()" element="org.sunflow.core.light.DirectionalSpotlight::getPower():float" />
+		</instance>
+		<instance>
+			<role name="Adaptee" element="org.sunflow.image.Color" />
+			<role name="Adapter" element="org.sunflow.core.light.PointLight" />
+			<role name="adaptee" element="org.sunflow.core.light.PointLight::power:org.sunflow.image.Color" />
+			<role name="Request()" element="org.sunflow.core.light.PointLight::getSamples(org.sunflow.core.ShadingState):void" />
+			<role name="Request()" element="org.sunflow.core.light.PointLight::getPhoton(double, double, double, double, org.sunflow.math.Point3, org.sunflow.math.Vector3, org.sunflow.image.Color):void" />
+			<role name="Request()" element="org.sunflow.core.light.PointLight::getPower():float" />
+		</instance>
+		<instance>
+			<role name="Adaptee" element="org.sunflow.math.Vector3" />
+			<role name="Adapter" element="org.sunflow.core.light.DirectionalSpotlight" />
+			<role name="adaptee" element="org.sunflow.core.light.DirectionalSpotlight::dir:org.sunflow.math.Vector3" />
+			<role name="Request()" element="org.sunflow.core.light.DirectionalSpotlight::getSamples(org.sunflow.core.ShadingState):void" />
+			<role name="Request()" element="org.sunflow.core.light.DirectionalSpotlight::getPhoton(double, double, double, double, org.sunflow.math.Point3, org.sunflow.math.Vector3, org.sunflow.image.Color):void" />
+		</instance>
+		<instance>
+			<role name="Adaptee" element="org.sunflow.math.Point3" />
+			<role name="Adapter" element="org.sunflow.core.light.DirectionalSpotlight" />
+			<role name="adaptee" element="org.sunflow.core.light.DirectionalSpotlight::src:org.sunflow.math.Point3" />
+			<role name="Request()" element="org.sunflow.core.light.DirectionalSpotlight::getPhoton(double, double, double, double, org.sunflow.math.Point3, org.sunflow.math.Vector3, org.sunflow.image.Color):void" />
+		</instance>
+		<instance>
+			<role name="Adaptee" element="org.sunflow.math.Point3" />
+			<role name="Adapter" element="org.sunflow.core.light.PointLight" />
+			<role name="adaptee" element="org.sunflow.core.light.PointLight::lightPoint:org.sunflow.math.Point3" />
+			<role name="Request()" element="org.sunflow.core.light.PointLight::getSamples(org.sunflow.core.ShadingState):void" />
+			<role name="Request()" element="org.sunflow.core.light.PointLight::getPhoton(double, double, double, double, org.sunflow.math.Point3, org.sunflow.math.Vector3, org.sunflow.image.Color):void" />
+		</instance>
+		<instance>
+			<role name="Adaptee" element="org.sunflow.math.Point3" />
+			<role name="Adapter" element="org.sunflow.core.light.SphereLight" />
+			<role name="adaptee" element="org.sunflow.core.light.SphereLight::center:org.sunflow.math.Point3" />
+			<role name="Request()" element="org.sunflow.core.light.SphereLight::getSamples(org.sunflow.core.ShadingState):void" />
+		</instance>
+		<instance>
+			<role name="Adaptee" element="org.sunflow.math.BoundingBox" />
+			<role name="Adapter" element="org.sunflow.core.photonmap.GridPhotonMap" />
+			<role name="adaptee" element="org.sunflow.core.photonmap.GridPhotonMap::bounds:org.sunflow.math.BoundingBox" />
+			<role name="Request()" element="org.sunflow.core.photonmap.GridPhotonMap::getRadiance(org.sunflow.math.Point3, org.sunflow.math.Vector3):org.sunflow.image.Color" />
+		</instance>
+		<instance>
+			<role name="Adaptee" element="org.sunflow.image.Color" />
+			<role name="Adapter" element="org.sunflow.core.gi.FakeGIEngine" />
+			<role name="adaptee" element="org.sunflow.core.gi.FakeGIEngine::sky:org.sunflow.image.Color" />
+			<role name="adaptee" element="org.sunflow.core.gi.FakeGIEngine::ground:org.sunflow.image.Color" />
+			<role name="Request()" element="org.sunflow.core.gi.FakeGIEngine::getIrradiance(org.sunflow.core.ShadingState, org.sunflow.image.Color):org.sunflow.image.Color" />
+		</instance>
+		<instance>
+			<role name="Adaptee" element="org.sunflow.math.Vector3" />
+			<role name="Adapter" element="org.sunflow.core.gi.FakeGIEngine" />
+			<role name="adaptee" element="org.sunflow.core.gi.FakeGIEngine::up:org.sunflow.math.Vector3" />
+			<role name="Request()" element="org.sunflow.core.gi.FakeGIEngine::getIrradiance(org.sunflow.core.ShadingState, org.sunflow.image.Color):org.sunflow.image.Color" />
+		</instance>
+		<instance>
+			<role name="Adaptee" element="org.sunflow.core.Scene" />
+			<role name="Adapter" element="org.sunflow.core.renderer.BucketRenderer" />
+			<role name="adaptee" element="org.sunflow.core.renderer.BucketRenderer::scene:org.sunflow.core.Scene" />
+			<role name="Request()" element="org.sunflow.core.renderer.BucketRenderer::render(org.sunflow.core.Display):void" />
+		</instance>
+		<instance>
+			<role name="Adaptee" element="org.sunflow.core.Scene" />
+			<role name="Adapter" element="org.sunflow.core.renderer.ProgressiveRenderer" />
+			<role name="adaptee" element="org.sunflow.core.renderer.ProgressiveRenderer::scene:org.sunflow.core.Scene" />
+			<role name="Request()" element="org.sunflow.core.renderer.ProgressiveRenderer::render(org.sunflow.core.Display):void" />
+		</instance>
+		<instance>
+			<role name="Adaptee" element="org.sunflow.core.Scene" />
+			<role name="Adapter" element="org.sunflow.core.renderer.SimpleRenderer" />
+			<role name="adaptee" element="org.sunflow.core.renderer.SimpleRenderer::scene:org.sunflow.core.Scene" />
+			<role name="Request()" element="org.sunflow.core.renderer.SimpleRenderer::render(org.sunflow.core.Display):void" />
+		</instance>
+		<instance>
+			<role name="Adaptee" element="org.sunflow.core.Texture" />
+			<role name="Adapter" element="org.sunflow.core.modifiers.BumpMappingModifier" />
+			<role name="adaptee" element="org.sunflow.core.modifiers.BumpMappingModifier::bumpTexture:org.sunflow.core.Texture" />
+			<role name="Request()" element="org.sunflow.core.modifiers.BumpMappingModifier::modify(org.sunflow.core.ShadingState):void" />
+		</instance>
+		<instance>
+			<role name="Adaptee" element="org.sunflow.core.Texture" />
+			<role name="Adapter" element="org.sunflow.core.modifiers.NormalMapModifier" />
+			<role name="adaptee" element="org.sunflow.core.modifiers.NormalMapModifier::normalMap:org.sunflow.core.Texture" />
+			<role name="Request()" element="org.sunflow.core.modifiers.NormalMapModifier::modify(org.sunflow.core.ShadingState):void" />
+		</instance>
+		<instance>
+			<role name="Adaptee" element="org.sunflow.math.BoundingBox" />
+			<role name="Adapter" element="org.sunflow.core.accel.BoundingIntervalHierarchy" />
+			<role name="adaptee" element="org.sunflow.core.accel.BoundingIntervalHierarchy::bounds:org.sunflow.math.BoundingBox" />
+			<role name="Request()" element="org.sunflow.core.accel.BoundingIntervalHierarchy::intersect(org.sunflow.core.Ray, org.sunflow.core.IntersectionState):void" />
+		</instance>
+		<instance>
+			<role name="Adaptee" element="org.sunflow.math.BoundingBox" />
+			<role name="Adapter" element="org.sunflow.core.accel.KDTree" />
+			<role name="adaptee" element="org.sunflow.core.accel.KDTree::bounds:org.sunflow.math.BoundingBox" />
+			<role name="Request()" element="org.sunflow.core.accel.KDTree::build(org.sunflow.core.PrimitiveList):void" />
+			<role name="Request()" element="org.sunflow.core.accel.KDTree::intersect(org.sunflow.core.Ray, org.sunflow.core.IntersectionState):void" />
+		</instance>
+		<instance>
+			<role name="Adaptee" element="org.sunflow.math.BoundingBox" />
+			<role name="Adapter" element="org.sunflow.core.accel.UniformGrid" />
+			<role name="adaptee" element="org.sunflow.core.accel.UniformGrid::bounds:org.sunflow.math.BoundingBox" />
+			<role name="Request()" element="org.sunflow.core.accel.UniformGrid::build(org.sunflow.core.PrimitiveList):void" />
+			<role name="Request()" element="org.sunflow.core.accel.UniformGrid::intersect(org.sunflow.core.Ray, org.sunflow.core.IntersectionState):void" />
+		</instance>
+		<instance>
+			<role name="Adaptee" element="org.sunflow.system.Parser" />
+			<role name="Adapter" element="org.sunflow.core.parser.SCParser" />
+			<role name="adaptee" element="org.sunflow.core.parser.SCParser::p:org.sunflow.system.Parser" />
+			<role name="Request()" element="org.sunflow.core.parser.SCParser::parse(java.lang.String, org.sunflow.SunflowAPI):boolean" />
+		</instance>
+		<instance>
+			<role name="Adaptee" element="org.sunflow.core.PrimitiveList" />
+			<role name="Adapter" element="org.sunflow.core.Geometry" />
+			<role name="adaptee" element="org.sunflow.core.Geometry::primitives:org.sunflow.core.PrimitiveList" />
+			<role name="Request()" element="org.sunflow.core.Geometry::update(org.sunflow.core.ParameterList, org.sunflow.SunflowAPI):boolean" />
+		</instance>
+		<instance>
+			<role name="Adaptee" element="org.sunflow.core.display.FrameDisplay$RenderFrame" />
+			<role name="Adapter" element="org.sunflow.core.display.FrameDisplay" />
+			<role name="adaptee" element="org.sunflow.core.display.FrameDisplay::frame:org.sunflow.core.display.FrameDisplay$RenderFrame" />
+			<role name="Request()" element="org.sunflow.core.display.FrameDisplay::imageBegin(int, int, int):void" />
+		</instance>
+		<instance>
+			<role name="Adaptee" element="org.sunflow.image.Bitmap" />
+			<role name="Adapter" element="org.sunflow.core.display.FileDisplay" />
+			<role name="adaptee" element="org.sunflow.core.display.FileDisplay::bitmap:org.sunflow.image.Bitmap" />
+			<role name="Request()" element="org.sunflow.core.display.FileDisplay::imageBegin(int, int, int):void" />
+			<role name="Request()" element="org.sunflow.core.display.FileDisplay::imageUpdate(int, int, int, int, org.sunflow.image.Color[]):void" />
+			<role name="Request()" element="org.sunflow.core.display.FileDisplay::imageFill(int, int, int, int, org.sunflow.image.Color):void" />
+			<role name="Request()" element="org.sunflow.core.display.FileDisplay::imageEnd():void" />
+		</instance>
+		<instance>
+			<role name="Adaptee" element="org.sunflow.system.Timer" />
+			<role name="Adapter" element="org.sunflow.core.display.FastDisplay" />
+			<role name="adaptee" element="org.sunflow.core.display.FastDisplay::t:org.sunflow.system.Timer" />
+			<role name="Request()" element="org.sunflow.core.display.FastDisplay::imageBegin(int, int, int):void" />
+			<role name="Request()" element="org.sunflow.core.display.FastDisplay::imageEnd():void" />
+		</instance>
+		<instance>
+			<role name="Adaptee" element="org.sunflow.core.PrimitiveList" />
+			<role name="Adapter" element="org.sunflow.core.accel.BoundingIntervalHierarchy" />
+			<role name="adaptee" element="org.sunflow.core.accel.BoundingIntervalHierarchy::primitives:org.sunflow.core.PrimitiveList" />
+			<role name="Request()" element="org.sunflow.core.accel.BoundingIntervalHierarchy::build(org.sunflow.core.PrimitiveList):void" />
+			<role name="Request()" element="org.sunflow.core.accel.BoundingIntervalHierarchy::intersect(org.sunflow.core.Ray, org.sunflow.core.IntersectionState):void" />
+		</instance>
+		<instance>
+			<role name="Adaptee" element="org.sunflow.core.PrimitiveList" />
+			<role name="Adapter" element="org.sunflow.core.accel.KDTree" />
+			<role name="adaptee" element="org.sunflow.core.accel.KDTree::primitiveList:org.sunflow.core.PrimitiveList" />
+			<role name="Request()" element="org.sunflow.core.accel.KDTree::build(org.sunflow.core.PrimitiveList):void" />
+			<role name="Request()" element="org.sunflow.core.accel.KDTree::intersect(org.sunflow.core.Ray, org.sunflow.core.IntersectionState):void" />
+		</instance>
+		<instance>
+			<role name="Adaptee" element="org.sunflow.core.PrimitiveList" />
+			<role name="Adapter" element="org.sunflow.core.accel.NullAccelerator" />
+			<role name="adaptee" element="org.sunflow.core.accel.NullAccelerator::primitives:org.sunflow.core.PrimitiveList" />
+			<role name="Request()" element="org.sunflow.core.accel.NullAccelerator::build(org.sunflow.core.PrimitiveList):void" />
+			<role name="Request()" element="org.sunflow.core.accel.NullAccelerator::intersect(org.sunflow.core.Ray, org.sunflow.core.IntersectionState):void" />
+		</instance>
+		<instance>
+			<role name="Adaptee" element="org.sunflow.core.PrimitiveList" />
+			<role name="Adapter" element="org.sunflow.core.accel.UniformGrid" />
+			<role name="adaptee" element="org.sunflow.core.accel.UniformGrid::primitives:org.sunflow.core.PrimitiveList" />
+			<role name="Request()" element="org.sunflow.core.accel.UniformGrid::build(org.sunflow.core.PrimitiveList):void" />
+			<role name="Request()" element="org.sunflow.core.accel.UniformGrid::intersect(org.sunflow.core.Ray, org.sunflow.core.IntersectionState):void" />
+		</instance>
+		<instance>
+			<role name="Adaptee" element="org.sunflow.core.Display" />
+			<role name="Adapter" element="org.sunflow.core.renderer.BucketRenderer" />
+			<role name="adaptee" element="org.sunflow.core.renderer.BucketRenderer::display:org.sunflow.core.Display" />
+			<role name="Request()" element="org.sunflow.core.renderer.BucketRenderer::render(org.sunflow.core.Display):void" />
+		</instance>
+		<instance>
+			<role name="Adaptee" element="org.sunflow.core.Display" />
+			<role name="Adapter" element="org.sunflow.core.renderer.ProgressiveRenderer" />
+			<role name="adaptee" element="org.sunflow.core.renderer.ProgressiveRenderer::display:org.sunflow.core.Display" />
+			<role name="Request()" element="org.sunflow.core.renderer.ProgressiveRenderer::render(org.sunflow.core.Display):void" />
+		</instance>
+		<instance>
+			<role name="Adaptee" element="org.sunflow.core.Display" />
+			<role name="Adapter" element="org.sunflow.core.renderer.SimpleRenderer" />
+			<role name="adaptee" element="org.sunflow.core.renderer.SimpleRenderer::display:org.sunflow.core.Display" />
+			<role name="Request()" element="org.sunflow.core.renderer.SimpleRenderer::render(org.sunflow.core.Display):void" />
+		</instance>
+		<instance>
+			<role name="Adaptee" element="org.sunflow.core.Tesselatable" />
+			<role name="Adapter" element="org.sunflow.core.Geometry" />
+			<role name="adaptee" element="org.sunflow.core.Geometry::tesselatable:org.sunflow.core.Tesselatable" />
+			<role name="Request()" element="org.sunflow.core.Geometry::update(org.sunflow.core.ParameterList, org.sunflow.SunflowAPI):boolean" />
+		</instance>
+		<instance>
+			<role name="Adaptee" element="org.sunflow.core.GlobalPhotonMapInterface" />
+			<role name="Adapter" element="org.sunflow.core.gi.IrradianceCacheGIEngine" />
+			<role name="adaptee" element="org.sunflow.core.gi.IrradianceCacheGIEngine::globalPhotonMap:org.sunflow.core.GlobalPhotonMapInterface" />
+			<role name="Request()" element="org.sunflow.core.gi.IrradianceCacheGIEngine::getGlobalRadiance(org.sunflow.core.ShadingState):org.sunflow.image.Color" />
+		</instance>
+		<instance>
+			<role name="Adaptee" element="org.sunflow.core.Filter" />
+			<role name="Adapter" element="org.sunflow.core.renderer.BucketRenderer" />
+			<role name="adaptee" element="org.sunflow.core.renderer.BucketRenderer::filter:org.sunflow.core.Filter" />
+			<role name="Request()" element="org.sunflow.core.renderer.BucketRenderer::prepare(org.sunflow.core.Options, org.sunflow.core.Scene, int, int):boolean" />
+		</instance>
+		<instance>
+			<role name="Adaptee" element="org.sunflow.core.CameraLens" />
+			<role name="Adapter" element="org.sunflow.core.Camera" />
+			<role name="adaptee" element="org.sunflow.core.Camera::lens:org.sunflow.core.CameraLens" />
+			<role name="Request()" element="org.sunflow.core.Camera::update(org.sunflow.core.ParameterList, org.sunflow.SunflowAPI):boolean" />
+		</instance>
+		<instance>
+			<role name="Adaptee" element="org.sunflow.core.BucketOrder" />
+			<role name="Adapter" element="org.sunflow.core.renderer.BucketRenderer" />
+			<role name="adaptee" element="org.sunflow.core.renderer.BucketRenderer::bucketOrder:org.sunflow.core.BucketOrder" />
+			<role name="Request()" element="org.sunflow.core.renderer.BucketRenderer::prepare(org.sunflow.core.Options, org.sunflow.core.Scene, int, int):boolean" />
+		</instance>
+	</pattern>
+	<pattern name="Command" />
+	<pattern name="Composite" />
+	<pattern name="Decorator">
+		<instance>
+			<role name="Component" element="org.sunflow.core.BucketOrder" />
+			<role name="Decorator" element="org.sunflow.core.bucket.InvertedBucketOrder" />
+			<role name="component" element="org.sunflow.core.bucket.InvertedBucketOrder::order:org.sunflow.core.BucketOrder" />
+			<role name="Operation()" element="org.sunflow.core.bucket.InvertedBucketOrder::getBucketSequence(int, int):int[]" />
+		</instance>
+	</pattern>
+	<pattern name="Observer" />
+	<pattern name="State">
+		<instance>
+			<role name="State" element="org.sunflow.core.PrimitiveList" />
+			<role name="Context" element="org.sunflow.core.Scene" />
+			<role name="state" element="org.sunflow.core.Scene::bakingPrimitives:org.sunflow.core.PrimitiveList" />
+			<role name="Request()" element="org.sunflow.core.Scene::getRadiance(org.sunflow.core.IntersectionState, float, float, double, double, double, int):org.sunflow.core.ShadingState" />
+			<role name="Request()" element="org.sunflow.core.Scene::render(org.sunflow.core.Options, org.sunflow.core.ImageSampler, org.sunflow.core.Display):void" />
+		</instance>
+		<instance>
+			<role name="Context" element="org.sunflow.core.LightServer" />
+			<role name="State" element="org.sunflow.core.LightSource" />
+			<role name="state" element="org.sunflow.core.LightServer::lights:org.sunflow.core.LightSource[]" />
+			<role name="Request()" element="org.sunflow.core.LightServer::build(org.sunflow.core.Options):boolean" />
+			<role name="Request()" element="org.sunflow.core.LightServer::calculatePhotons(org.sunflow.core.PhotonStore, java.lang.String, int):boolean" />
+			<role name="Request()" element="org.sunflow.core.LightServer::initLightSamples(org.sunflow.core.ShadingState):void" />
+		</instance>
+		<instance>
+			<role name="Context" element="org.sunflow.system.UI" />
+			<role name="State" element="org.sunflow.system.UserInterface" />
+			<role name="state" element="org.sunflow.system.UI::ui:org.sunflow.system.UserInterface" />
+			<role name="Request()" element="org.sunflow.system.UI::printDetailed(org.sunflow.system.UI$Module, java.lang.String, java.lang.Object[]):void" />
+			<role name="Request()" element="org.sunflow.system.UI::printInfo(org.sunflow.system.UI$Module, java.lang.String, java.lang.Object[]):void" />
+			<role name="Request()" element="org.sunflow.system.UI::printWarning(org.sunflow.system.UI$Module, java.lang.String, java.lang.Object[]):void" />
+			<role name="Request()" element="org.sunflow.system.UI::printError(org.sunflow.system.UI$Module, java.lang.String, java.lang.Object[]):void" />
+			<role name="Request()" element="org.sunflow.system.UI::taskStart(java.lang.String, int, int):void" />
+			<role name="Request()" element="org.sunflow.system.UI::taskUpdate(int):void" />
+			<role name="Request()" element="org.sunflow.system.UI::taskStop():void" />
+		</instance>
+		<instance>
+			<role name="Context" element="org.sunflow.core.LightServer" />
+			<role name="State" element="org.sunflow.core.CausticPhotonMapInterface" />
+			<role name="state" element="org.sunflow.core.LightServer::causticPhotonMap:org.sunflow.core.CausticPhotonMapInterface" />
+			<role name="Request()" element="org.sunflow.core.LightServer::initCausticSamples(org.sunflow.core.ShadingState):void" />
+		</instance>
+		<instance>
+			<role name="Context" element="org.sunflow.core.ShadingState" />
+			<role name="State" element="org.sunflow.core.PhotonStore" />
+			<role name="state" element="org.sunflow.core.ShadingState::map:org.sunflow.core.PhotonStore" />
+			<role name="Request()" element="org.sunflow.core.ShadingState::storePhoton(org.sunflow.math.Vector3, org.sunflow.image.Color, org.sunflow.image.Color):void" />
+			<role name="Request()" element="org.sunflow.core.ShadingState::traceReflectionPhoton(org.sunflow.core.Ray, org.sunflow.image.Color):void" />
+			<role name="Request()" element="org.sunflow.core.ShadingState::traceRefractionPhoton(org.sunflow.core.Ray, org.sunflow.image.Color):void" />
+			<role name="Request()" element="org.sunflow.core.ShadingState::traceDiffusePhoton(org.sunflow.core.Ray, org.sunflow.image.Color):void" />
+		</instance>
+		<instance>
+			<role name="Context" element="org.sunflow.core.LightServer" />
+			<role name="State" element="org.sunflow.core.GIEngine" />
+			<role name="state" element="org.sunflow.core.LightServer::giEngine:org.sunflow.core.GIEngine" />
+			<role name="Request()" element="org.sunflow.core.LightServer::build(org.sunflow.core.Options):boolean" />
+			<role name="Request()" element="org.sunflow.core.LightServer::getGlobalRadiance(org.sunflow.core.ShadingState):org.sunflow.image.Color" />
+			<role name="Request()" element="org.sunflow.core.LightServer::getIrradiance(org.sunflow.core.ShadingState, org.sunflow.image.Color):org.sunflow.image.Color" />
+		</instance>
+		<instance>
+			<role name="Context" element="org.sunflow.RenderObjectMap$RenderObjectHandle" />
+			<role name="State" element="org.sunflow.core.RenderObject" />
+			<role name="state" element="org.sunflow.RenderObjectMap$RenderObjectHandle::obj:org.sunflow.core.RenderObject" />
+			<role name="Request()" element="org.sunflow.RenderObjectMap$RenderObjectHandle::update(org.sunflow.core.ParameterList, org.sunflow.SunflowAPI):boolean" />
+		</instance>
+		<instance>
+			<role name="State" element="org.sunflow.core.AccelerationStructure" />
+			<role name="Context" element="org.sunflow.core.Scene" />
+			<role name="state" element="org.sunflow.core.Scene::intAccel:org.sunflow.core.AccelerationStructure" />
+			<role name="state" element="org.sunflow.core.Scene::bakingAccel:org.sunflow.core.AccelerationStructure" />
+			<role name="Request()" element="org.sunflow.core.Scene::trace(org.sunflow.core.Ray, org.sunflow.core.IntersectionState):void" />
+			<role name="Request()" element="org.sunflow.core.Scene::traceBake(org.sunflow.core.Ray, org.sunflow.core.IntersectionState):void" />
+			<role name="Request()" element="org.sunflow.core.Scene::render(org.sunflow.core.Options, org.sunflow.core.ImageSampler, org.sunflow.core.Display):void" />
+		</instance>
+		<instance>
+			<role name="Context" element="org.sunflow.core.Geometry" />
+			<role name="State" element="org.sunflow.core.PrimitiveList" />
+			<role name="state" element="org.sunflow.core.Geometry::primitives:org.sunflow.core.PrimitiveList" />
+			<role name="Request()" element="org.sunflow.core.Geometry::getNumPrimitives():int" />
+			<role name="Request()" element="org.sunflow.core.Geometry::getWorldBounds(org.sunflow.math.Matrix4):org.sunflow.math.BoundingBox" />
+			<role name="Request()" element="org.sunflow.core.Geometry::tesselate():void" />
+			<role name="Request()" element="org.sunflow.core.Geometry::build():void" />
+			<role name="Request()" element="org.sunflow.core.Geometry::prepareShadingState(org.sunflow.core.ShadingState):void" />
+			<role name="Request()" element="org.sunflow.core.Geometry::getBakingPrimitives():org.sunflow.core.PrimitiveList" />
+		</instance>
+		<instance>
+			<role name="Context" element="org.sunflow.core.accel.BoundingIntervalHierarchy" />
+			<role name="State" element="org.sunflow.core.PrimitiveList" />
+			<role name="state" element="org.sunflow.core.accel.BoundingIntervalHierarchy::primitives:org.sunflow.core.PrimitiveList" />
+			<role name="Request()" element="org.sunflow.core.accel.BoundingIntervalHierarchy::build(org.sunflow.core.PrimitiveList):void" />
+			<role name="Request()" element="org.sunflow.core.accel.BoundingIntervalHierarchy::subdivide(int, int, org.sunflow.util.IntArray, int[], float[], float[], int, int, org.sunflow.core.accel.BoundingIntervalHierarchy$BuildStats):void" />
+			<role name="Request()" element="org.sunflow.core.accel.BoundingIntervalHierarchy::intersect(org.sunflow.core.Ray, org.sunflow.core.IntersectionState):void" />
+		</instance>
+		<instance>
+			<role name="Context" element="org.sunflow.core.accel.KDTree" />
+			<role name="State" element="org.sunflow.core.PrimitiveList" />
+			<role name="state" element="org.sunflow.core.accel.KDTree::primitiveList:org.sunflow.core.PrimitiveList" />
+			<role name="Request()" element="org.sunflow.core.accel.KDTree::build(org.sunflow.core.PrimitiveList):void" />
+			<role name="Request()" element="org.sunflow.core.accel.KDTree::intersect(org.sunflow.core.Ray, org.sunflow.core.IntersectionState):void" />
+		</instance>
+		<instance>
+			<role name="Context" element="org.sunflow.core.accel.NullAccelerator" />
+			<role name="State" element="org.sunflow.core.PrimitiveList" />
+			<role name="state" element="org.sunflow.core.accel.NullAccelerator::primitives:org.sunflow.core.PrimitiveList" />
+			<role name="Request()" element="org.sunflow.core.accel.NullAccelerator::build(org.sunflow.core.PrimitiveList):void" />
+			<role name="Request()" element="org.sunflow.core.accel.NullAccelerator::intersect(org.sunflow.core.Ray, org.sunflow.core.IntersectionState):void" />
+		</instance>
+		<instance>
+			<role name="Context" element="org.sunflow.core.accel.UniformGrid" />
+			<role name="State" element="org.sunflow.core.PrimitiveList" />
+			<role name="state" element="org.sunflow.core.accel.UniformGrid::primitives:org.sunflow.core.PrimitiveList" />
+			<role name="Request()" element="org.sunflow.core.accel.UniformGrid::build(org.sunflow.core.PrimitiveList):void" />
+			<role name="Request()" element="org.sunflow.core.accel.UniformGrid::intersect(org.sunflow.core.Ray, org.sunflow.core.IntersectionState):void" />
+		</instance>
+		<instance>
+			<role name="Context" element="org.sunflow.core.renderer.BucketRenderer" />
+			<role name="State" element="org.sunflow.core.Display" />
+			<role name="state" element="org.sunflow.core.renderer.BucketRenderer::display:org.sunflow.core.Display" />
+			<role name="Request()" element="org.sunflow.core.renderer.BucketRenderer::render(org.sunflow.core.Display):void" />
+		</instance>
+		<instance>
+			<role name="Context" element="org.sunflow.core.renderer.ProgressiveRenderer" />
+			<role name="State" element="org.sunflow.core.Display" />
+			<role name="state" element="org.sunflow.core.renderer.ProgressiveRenderer::display:org.sunflow.core.Display" />
+			<role name="Request()" element="org.sunflow.core.renderer.ProgressiveRenderer::render(org.sunflow.core.Display):void" />
+			<role name="Request()" element="org.sunflow.core.renderer.ProgressiveRenderer::progressiveRenderNext(org.sunflow.core.IntersectionState):int" />
+		</instance>
+		<instance>
+			<role name="Context" element="org.sunflow.core.renderer.SimpleRenderer" />
+			<role name="State" element="org.sunflow.core.Display" />
+			<role name="state" element="org.sunflow.core.renderer.SimpleRenderer::display:org.sunflow.core.Display" />
+			<role name="Request()" element="org.sunflow.core.renderer.SimpleRenderer::render(org.sunflow.core.Display):void" />
+			<role name="Request()" element="org.sunflow.core.renderer.SimpleRenderer::renderBucket(int, int, org.sunflow.core.IntersectionState):void" />
+		</instance>
+		<instance>
+			<role name="Context" element="org.sunflow.core.Geometry" />
+			<role name="State" element="org.sunflow.core.Tesselatable" />
+			<role name="state" element="org.sunflow.core.Geometry::tesselatable:org.sunflow.core.Tesselatable" />
+			<role name="Request()" element="org.sunflow.core.Geometry::getWorldBounds(org.sunflow.math.Matrix4):org.sunflow.math.BoundingBox" />
+			<role name="Request()" element="org.sunflow.core.Geometry::tesselate():void" />
+		</instance>
+		<instance>
+			<role name="Context" element="org.sunflow.core.gi.IrradianceCacheGIEngine" />
+			<role name="State" element="org.sunflow.core.GlobalPhotonMapInterface" />
+			<role name="state" element="org.sunflow.core.gi.IrradianceCacheGIEngine::globalPhotonMap:org.sunflow.core.GlobalPhotonMapInterface" />
+			<role name="Request()" element="org.sunflow.core.gi.IrradianceCacheGIEngine::getGlobalRadiance(org.sunflow.core.ShadingState):org.sunflow.image.Color" />
+		</instance>
+		<instance>
+			<role name="Context" element="org.sunflow.core.renderer.BucketRenderer" />
+			<role name="State" element="org.sunflow.core.Filter" />
+			<role name="state" element="org.sunflow.core.renderer.BucketRenderer::filter:org.sunflow.core.Filter" />
+			<role name="Request()" element="org.sunflow.core.renderer.BucketRenderer::prepare(org.sunflow.core.Options, org.sunflow.core.Scene, int, int):boolean" />
+			<role name="Request()" element="org.sunflow.core.renderer.BucketRenderer::renderBucket(org.sunflow.core.Display, int, int, int, org.sunflow.core.IntersectionState):void" />
+		</instance>
+		<instance>
+			<role name="Context" element="org.sunflow.core.Geometry" />
+			<role name="State" element="org.sunflow.core.AccelerationStructure" />
+			<role name="state" element="org.sunflow.core.Geometry::accel:org.sunflow.core.AccelerationStructure" />
+			<role name="Request()" element="org.sunflow.core.Geometry::intersect(org.sunflow.core.Ray, org.sunflow.core.IntersectionState):void" />
+			<role name="Request()" element="org.sunflow.core.Geometry::build():void" />
+		</instance>
+		<instance>
+			<role name="Context" element="org.sunflow.core.Camera" />
+			<role name="State" element="org.sunflow.core.CameraLens" />
+			<role name="state" element="org.sunflow.core.Camera::lens:org.sunflow.core.CameraLens" />
+			<role name="Request()" element="org.sunflow.core.Camera::getRay(float, float, int, int, double, double, double):org.sunflow.core.Ray" />
+		</instance>
+		<instance>
+			<role name="Context" element="org.sunflow.core.renderer.BucketRenderer" />
+			<role name="State" element="org.sunflow.core.BucketOrder" />
+			<role name="state" element="org.sunflow.core.renderer.BucketRenderer::bucketOrder:org.sunflow.core.BucketOrder" />
+			<role name="Request()" element="org.sunflow.core.renderer.BucketRenderer::prepare(org.sunflow.core.Options, org.sunflow.core.Scene, int, int):boolean" />
+		</instance>
+	</pattern>
+	<pattern name="Strategy" />
+	<pattern name="Bridge" />
+	<pattern name="Template Method">
+		<instance>
+			<role name="AbstractClass" element="org.sunflow.core.primitive.CubeGrid" />
+			<role name="TemplateMethod()" element="org.sunflow.core.primitive.CubeGrid::intersectPrimitive(org.sunflow.core.Ray, int, org.sunflow.core.IntersectionState):void" />
+		</instance>
+		<instance>
+			<role name="AbstractClass" element="org.sunflow.image.SpectralCurve" />
+			<role name="TemplateMethod()" element="org.sunflow.image.SpectralCurve::toXYZ():org.sunflow.image.XYZColor" />
+		</instance>
+	</pattern>
+	<pattern name="Visitor" />
+	<pattern name="Proxy">
+		<instance>
+			<role name="Proxy" element="org.sunflow.image.ChromaticitySpectrum" />
+			<role name="RealSubject" element="org.sunflow.image.RegularSpectralCurve" />
+			<role name="Request()" element="org.sunflow.image.ChromaticitySpectrum::sample(float):float" />
+		</instance>
+		<instance>
+			<role name="Proxy" element="org.sunflow.core.primitive.TriangleMesh$BakingSurface" />
+			<role name="RealSubject" element="org.sunflow.core.primitive.TriangleMesh" />
+			<role name="Request()" element="org.sunflow.core.primitive.TriangleMesh$BakingSurface::getNumPrimitives():int" />
+		</instance>
+	</pattern>
+	<pattern name="Proxy2" />
+	<pattern name="Chain of Responsibility" />
+</system>
+

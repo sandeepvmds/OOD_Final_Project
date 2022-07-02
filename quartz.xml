@@ -1,0 +1,585 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<system>
+	<pattern name="Factory Method">
+		<instance>
+			<role name="Creator" element="org.quartz.core.JobRunShellFactory" />
+			<role name="FactoryMethod()" element="org.quartz.core.JobRunShellFactory::borrowJobRunShell():org.quartz.core.JobRunShell" />
+		</instance>
+		<instance>
+			<role name="Creator" element="org.quartz.impl.jdbcjobstore.DriverDelegate" />
+			<role name="FactoryMethod()" element="org.quartz.impl.jdbcjobstore.DriverDelegate::selectTrigger(java.sql.Connection, java.lang.String, java.lang.String):org.quartz.Trigger" />
+			<role name="FactoryMethod()" element="org.quartz.impl.jdbcjobstore.DriverDelegate::selectTriggerJobDataMap(java.sql.Connection, java.lang.String, java.lang.String):org.quartz.JobDataMap" />
+			<role name="FactoryMethod()" element="org.quartz.impl.jdbcjobstore.DriverDelegate::selectTriggerStatus(java.sql.Connection, java.lang.String, java.lang.String):org.quartz.utils.TriggerStatus" />
+			<role name="FactoryMethod()" element="org.quartz.impl.jdbcjobstore.DriverDelegate::selectTriggerForFireTime(java.sql.Connection, long):org.quartz.utils.Key" />
+		</instance>
+	</pattern>
+	<pattern name="Prototype">
+		<instance>
+			<role name="Client" element="org.quartz.impl.calendar.BaseCalendar" />
+			<role name="Prototype" element="org.quartz.Calendar" />
+			<role name="prototype" element="org.quartz.impl.calendar.BaseCalendar::baseCalendar:org.quartz.Calendar" />
+			<role name="Operation()" element="org.quartz.impl.calendar.BaseCalendar::clone():java.lang.Object" />
+		</instance>
+	</pattern>
+	<pattern name="Singleton">
+		<instance>
+			<role name="Singleton" element="org.quartz.impl.DirectSchedulerFactory" />
+			<role name="uniqueInstance" element="org.quartz.impl.DirectSchedulerFactory::instance:org.quartz.impl.DirectSchedulerFactory" />
+		</instance>
+		<instance>
+			<role name="Singleton" element="org.quartz.impl.jdbcjobstore.JobStoreSupport$RecoverMisfiredJobsResult" />
+			<role name="uniqueInstance" element="org.quartz.impl.jdbcjobstore.JobStoreSupport$RecoverMisfiredJobsResult::NO_OP:org.quartz.impl.jdbcjobstore.JobStoreSupport$RecoverMisfiredJobsResult" />
+		</instance>
+		<instance>
+			<role name="Singleton" element="org.quartz.impl.SchedulerRepository" />
+			<role name="uniqueInstance" element="org.quartz.impl.SchedulerRepository::inst:org.quartz.impl.SchedulerRepository" />
+		</instance>
+		<instance>
+			<role name="Singleton" element="org.quartz.utils.DBConnectionManager" />
+			<role name="uniqueInstance" element="org.quartz.utils.DBConnectionManager::instance:org.quartz.utils.DBConnectionManager" />
+		</instance>
+	</pattern>
+	<pattern name="(Object)Adapter">
+		<instance>
+			<role name="Adaptee" element="org.quartz.core.QuartzScheduler" />
+			<role name="Adapter" element="org.quartz.impl.StdScheduler" />
+			<role name="adaptee" element="org.quartz.impl.StdScheduler::sched:org.quartz.core.QuartzScheduler" />
+			<role name="Request()" element="org.quartz.impl.StdScheduler::getSchedulerName():java.lang.String" />
+			<role name="Request()" element="org.quartz.impl.StdScheduler::getSchedulerInstanceId():java.lang.String" />
+			<role name="Request()" element="org.quartz.impl.StdScheduler::getMetaData():org.quartz.SchedulerMetaData" />
+			<role name="Request()" element="org.quartz.impl.StdScheduler::getContext():org.quartz.SchedulerContext" />
+			<role name="Request()" element="org.quartz.impl.StdScheduler::start():void" />
+			<role name="Request()" element="org.quartz.impl.StdScheduler::startDelayed(int):void" />
+			<role name="Request()" element="org.quartz.impl.StdScheduler::standby():void" />
+			<role name="Request()" element="org.quartz.impl.StdScheduler::isStarted():boolean" />
+			<role name="Request()" element="org.quartz.impl.StdScheduler::isInStandbyMode():boolean" />
+			<role name="Request()" element="org.quartz.impl.StdScheduler::shutdown():void" />
+			<role name="Request()" element="org.quartz.impl.StdScheduler::shutdown(boolean):void" />
+			<role name="Request()" element="org.quartz.impl.StdScheduler::isShutdown():boolean" />
+			<role name="Request()" element="org.quartz.impl.StdScheduler::getCurrentlyExecutingJobs():java.util.List" />
+			<role name="Request()" element="org.quartz.impl.StdScheduler::scheduleJob(org.quartz.JobDetail, org.quartz.Trigger):java.util.Date" />
+			<role name="Request()" element="org.quartz.impl.StdScheduler::scheduleJob(org.quartz.Trigger):java.util.Date" />
+			<role name="Request()" element="org.quartz.impl.StdScheduler::addJob(org.quartz.JobDetail, boolean):void" />
+			<role name="Request()" element="org.quartz.impl.StdScheduler::deleteJob(java.lang.String, java.lang.String):boolean" />
+			<role name="Request()" element="org.quartz.impl.StdScheduler::unscheduleJob(java.lang.String, java.lang.String):boolean" />
+			<role name="Request()" element="org.quartz.impl.StdScheduler::rescheduleJob(java.lang.String, java.lang.String, org.quartz.Trigger):java.util.Date" />
+			<role name="Request()" element="org.quartz.impl.StdScheduler::triggerJob(java.lang.String, java.lang.String, org.quartz.JobDataMap):void" />
+			<role name="Request()" element="org.quartz.impl.StdScheduler::triggerJobWithVolatileTrigger(java.lang.String, java.lang.String, org.quartz.JobDataMap):void" />
+			<role name="Request()" element="org.quartz.impl.StdScheduler::pauseTrigger(java.lang.String, java.lang.String):void" />
+			<role name="Request()" element="org.quartz.impl.StdScheduler::pauseTriggerGroup(java.lang.String):void" />
+			<role name="Request()" element="org.quartz.impl.StdScheduler::pauseJob(java.lang.String, java.lang.String):void" />
+			<role name="Request()" element="org.quartz.impl.StdScheduler::getPausedTriggerGroups():java.util.Set" />
+			<role name="Request()" element="org.quartz.impl.StdScheduler::pauseJobGroup(java.lang.String):void" />
+			<role name="Request()" element="org.quartz.impl.StdScheduler::resumeTrigger(java.lang.String, java.lang.String):void" />
+			<role name="Request()" element="org.quartz.impl.StdScheduler::resumeTriggerGroup(java.lang.String):void" />
+			<role name="Request()" element="org.quartz.impl.StdScheduler::resumeJob(java.lang.String, java.lang.String):void" />
+			<role name="Request()" element="org.quartz.impl.StdScheduler::resumeJobGroup(java.lang.String):void" />
+			<role name="Request()" element="org.quartz.impl.StdScheduler::pauseAll():void" />
+			<role name="Request()" element="org.quartz.impl.StdScheduler::resumeAll():void" />
+			<role name="Request()" element="org.quartz.impl.StdScheduler::getJobGroupNames():java.lang.String[]" />
+			<role name="Request()" element="org.quartz.impl.StdScheduler::getTriggersOfJob(java.lang.String, java.lang.String):org.quartz.Trigger[]" />
+			<role name="Request()" element="org.quartz.impl.StdScheduler::getJobNames(java.lang.String):java.lang.String[]" />
+			<role name="Request()" element="org.quartz.impl.StdScheduler::getTriggerGroupNames():java.lang.String[]" />
+			<role name="Request()" element="org.quartz.impl.StdScheduler::getTriggerNames(java.lang.String):java.lang.String[]" />
+			<role name="Request()" element="org.quartz.impl.StdScheduler::getJobDetail(java.lang.String, java.lang.String):org.quartz.JobDetail" />
+			<role name="Request()" element="org.quartz.impl.StdScheduler::getTrigger(java.lang.String, java.lang.String):org.quartz.Trigger" />
+			<role name="Request()" element="org.quartz.impl.StdScheduler::getTriggerState(java.lang.String, java.lang.String):int" />
+			<role name="Request()" element="org.quartz.impl.StdScheduler::addCalendar(java.lang.String, org.quartz.Calendar, boolean, boolean):void" />
+			<role name="Request()" element="org.quartz.impl.StdScheduler::deleteCalendar(java.lang.String):boolean" />
+			<role name="Request()" element="org.quartz.impl.StdScheduler::getCalendar(java.lang.String):org.quartz.Calendar" />
+			<role name="Request()" element="org.quartz.impl.StdScheduler::getCalendarNames():java.lang.String[]" />
+			<role name="Request()" element="org.quartz.impl.StdScheduler::addGlobalJobListener(org.quartz.JobListener):void" />
+			<role name="Request()" element="org.quartz.impl.StdScheduler::addJobListener(org.quartz.JobListener):void" />
+			<role name="Request()" element="org.quartz.impl.StdScheduler::removeGlobalJobListener(java.lang.String):boolean" />
+			<role name="Request()" element="org.quartz.impl.StdScheduler::removeJobListener(java.lang.String):boolean" />
+			<role name="Request()" element="org.quartz.impl.StdScheduler::getGlobalJobListeners():java.util.List" />
+			<role name="Request()" element="org.quartz.impl.StdScheduler::getJobListenerNames():java.util.Set" />
+			<role name="Request()" element="org.quartz.impl.StdScheduler::getGlobalJobListener(java.lang.String):org.quartz.JobListener" />
+			<role name="Request()" element="org.quartz.impl.StdScheduler::getJobListener(java.lang.String):org.quartz.JobListener" />
+			<role name="Request()" element="org.quartz.impl.StdScheduler::addGlobalTriggerListener(org.quartz.TriggerListener):void" />
+			<role name="Request()" element="org.quartz.impl.StdScheduler::addTriggerListener(org.quartz.TriggerListener):void" />
+			<role name="Request()" element="org.quartz.impl.StdScheduler::removeGlobalTriggerListener(java.lang.String):boolean" />
+			<role name="Request()" element="org.quartz.impl.StdScheduler::removeTriggerListener(java.lang.String):boolean" />
+			<role name="Request()" element="org.quartz.impl.StdScheduler::getGlobalTriggerListeners():java.util.List" />
+			<role name="Request()" element="org.quartz.impl.StdScheduler::getTriggerListenerNames():java.util.Set" />
+			<role name="Request()" element="org.quartz.impl.StdScheduler::getGlobalTriggerListener(java.lang.String):org.quartz.TriggerListener" />
+			<role name="Request()" element="org.quartz.impl.StdScheduler::getTriggerListener(java.lang.String):org.quartz.TriggerListener" />
+			<role name="Request()" element="org.quartz.impl.StdScheduler::addSchedulerListener(org.quartz.SchedulerListener):void" />
+			<role name="Request()" element="org.quartz.impl.StdScheduler::removeSchedulerListener(org.quartz.SchedulerListener):boolean" />
+			<role name="Request()" element="org.quartz.impl.StdScheduler::getSchedulerListeners():java.util.List" />
+			<role name="Request()" element="org.quartz.impl.StdScheduler::interrupt(java.lang.String, java.lang.String):boolean" />
+			<role name="Request()" element="org.quartz.impl.StdScheduler::setJobFactory(org.quartz.spi.JobFactory):void" />
+		</instance>
+		<instance>
+			<role name="Adaptee" element="org.quartz.impl.jdbcjobstore.JobStoreSupport$ClusterManager" />
+			<role name="Adapter" element="org.quartz.impl.jdbcjobstore.JobStoreSupport" />
+			<role name="adaptee" element="org.quartz.impl.jdbcjobstore.JobStoreSupport::clusterManagementThread:org.quartz.impl.jdbcjobstore.JobStoreSupport$ClusterManager" />
+			<role name="Request()" element="org.quartz.impl.jdbcjobstore.JobStoreSupport::schedulerStarted():void" />
+			<role name="Request()" element="org.quartz.impl.jdbcjobstore.JobStoreSupport::shutdown():void" />
+		</instance>
+		<instance>
+			<role name="Adaptee" element="org.quartz.impl.jdbcjobstore.JobStoreSupport$MisfireHandler" />
+			<role name="Adapter" element="org.quartz.impl.jdbcjobstore.JobStoreSupport" />
+			<role name="adaptee" element="org.quartz.impl.jdbcjobstore.JobStoreSupport::misfireHandler:org.quartz.impl.jdbcjobstore.JobStoreSupport$MisfireHandler" />
+			<role name="Request()" element="org.quartz.impl.jdbcjobstore.JobStoreSupport::schedulerStarted():void" />
+			<role name="Request()" element="org.quartz.impl.jdbcjobstore.JobStoreSupport::shutdown():void" />
+		</instance>
+		<instance>
+			<role name="Adaptee" element="org.quartz.core.QuartzScheduler" />
+			<role name="Adapter" element="org.quartz.core.QuartzSchedulerMBeanImpl" />
+			<role name="adaptee" element="org.quartz.core.QuartzSchedulerMBeanImpl::scheduler:org.quartz.core.QuartzScheduler" />
+			<role name="Request()" element="org.quartz.core.QuartzSchedulerMBeanImpl::getCurrentlyExecutingJobs():javax.management.openmbean.TabularData" />
+			<role name="Request()" element="org.quartz.core.QuartzSchedulerMBeanImpl::getAllJobDetails(java.lang.String):javax.management.openmbean.TabularData" />
+			<role name="Request()" element="org.quartz.core.QuartzSchedulerMBeanImpl::getAllTriggers(java.lang.String):javax.management.openmbean.TabularData" />
+			<role name="Request()" element="org.quartz.core.QuartzSchedulerMBeanImpl::addJob(java.lang.String, javax.management.openmbean.CompositeData, boolean):void" />
+			<role name="Request()" element="org.quartz.core.QuartzSchedulerMBeanImpl::deleteCalendar(java.lang.String, java.lang.String):void" />
+			<role name="Request()" element="org.quartz.core.QuartzSchedulerMBeanImpl::deleteJob(java.lang.String, java.lang.String, java.lang.String):boolean" />
+			<role name="Request()" element="org.quartz.core.QuartzSchedulerMBeanImpl::getCalendarNames(java.lang.String):java.lang.String[]" />
+			<role name="Request()" element="org.quartz.core.QuartzSchedulerMBeanImpl::getJobDetail(java.lang.String, java.lang.String, java.lang.String):javax.management.openmbean.CompositeData" />
+			<role name="Request()" element="org.quartz.core.QuartzSchedulerMBeanImpl::getJobGroupNames(java.lang.String):java.lang.String[]" />
+			<role name="Request()" element="org.quartz.core.QuartzSchedulerMBeanImpl::getJobNames(java.lang.String, java.lang.String):java.lang.String[]" />
+			<role name="Request()" element="org.quartz.core.QuartzSchedulerMBeanImpl::getJobStoreClassName():java.lang.String" />
+			<role name="Request()" element="org.quartz.core.QuartzSchedulerMBeanImpl::getPausedTriggerGroups(java.lang.String):java.util.Set" />
+			<role name="Request()" element="org.quartz.core.QuartzSchedulerMBeanImpl::getTrigger(java.lang.String, java.lang.String, java.lang.String):javax.management.openmbean.CompositeData" />
+			<role name="Request()" element="org.quartz.core.QuartzSchedulerMBeanImpl::getTriggerGroupNames(java.lang.String):java.lang.String[]" />
+			<role name="Request()" element="org.quartz.core.QuartzSchedulerMBeanImpl::getTriggerNames(java.lang.String, java.lang.String):java.lang.String[]" />
+			<role name="Request()" element="org.quartz.core.QuartzSchedulerMBeanImpl::getTriggerState(java.lang.String, java.lang.String, java.lang.String):int" />
+			<role name="Request()" element="org.quartz.core.QuartzSchedulerMBeanImpl::getTriggersOfJob(java.lang.String, java.lang.String, java.lang.String):javax.management.openmbean.TabularData" />
+			<role name="Request()" element="org.quartz.core.QuartzSchedulerMBeanImpl::interruptJob(java.lang.String, java.lang.String, java.lang.String):boolean" />
+			<role name="Request()" element="org.quartz.core.QuartzSchedulerMBeanImpl::scheduleJob(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String):java.util.Date" />
+			<role name="Request()" element="org.quartz.core.QuartzSchedulerMBeanImpl::unscheduleJob(java.lang.String, java.lang.String, java.lang.String):boolean" />
+			<role name="Request()" element="org.quartz.core.QuartzSchedulerMBeanImpl::getVersion():java.lang.String" />
+			<role name="Request()" element="org.quartz.core.QuartzSchedulerMBeanImpl::isShutdown():boolean" />
+			<role name="Request()" element="org.quartz.core.QuartzSchedulerMBeanImpl::isStarted():boolean" />
+			<role name="Request()" element="org.quartz.core.QuartzSchedulerMBeanImpl::start():void" />
+			<role name="Request()" element="org.quartz.core.QuartzSchedulerMBeanImpl::shutdown():void" />
+			<role name="Request()" element="org.quartz.core.QuartzSchedulerMBeanImpl::standby():void" />
+			<role name="Request()" element="org.quartz.core.QuartzSchedulerMBeanImpl::isStandbyMode():boolean" />
+			<role name="Request()" element="org.quartz.core.QuartzSchedulerMBeanImpl::getSchedulerName():java.lang.String" />
+			<role name="Request()" element="org.quartz.core.QuartzSchedulerMBeanImpl::getSchedulerInstanceId():java.lang.String" />
+			<role name="Request()" element="org.quartz.core.QuartzSchedulerMBeanImpl::getThreadPoolClassName():java.lang.String" />
+			<role name="Request()" element="org.quartz.core.QuartzSchedulerMBeanImpl::getThreadPoolSize():int" />
+			<role name="Request()" element="org.quartz.core.QuartzSchedulerMBeanImpl::pauseJob(java.lang.String, java.lang.String, java.lang.String):void" />
+			<role name="Request()" element="org.quartz.core.QuartzSchedulerMBeanImpl::pauseJobGroup(java.lang.String, java.lang.String):void" />
+			<role name="Request()" element="org.quartz.core.QuartzSchedulerMBeanImpl::pauseAllTriggers(java.lang.String):void" />
+			<role name="Request()" element="org.quartz.core.QuartzSchedulerMBeanImpl::pauseTriggerGroup(java.lang.String, java.lang.String):void" />
+			<role name="Request()" element="org.quartz.core.QuartzSchedulerMBeanImpl::pauseTrigger(java.lang.String, java.lang.String, java.lang.String):void" />
+			<role name="Request()" element="org.quartz.core.QuartzSchedulerMBeanImpl::resumeAllTriggers(java.lang.String):void" />
+			<role name="Request()" element="org.quartz.core.QuartzSchedulerMBeanImpl::resumeJob(java.lang.String, java.lang.String, java.lang.String):void" />
+			<role name="Request()" element="org.quartz.core.QuartzSchedulerMBeanImpl::resumeJobGroup(java.lang.String, java.lang.String):void" />
+			<role name="Request()" element="org.quartz.core.QuartzSchedulerMBeanImpl::resumeTrigger(java.lang.String, java.lang.String, java.lang.String):void" />
+			<role name="Request()" element="org.quartz.core.QuartzSchedulerMBeanImpl::resumeTriggerGroup(java.lang.String, java.lang.String):void" />
+			<role name="Request()" element="org.quartz.core.QuartzSchedulerMBeanImpl::triggerJobWithVolatileTrigger(java.lang.String, java.lang.String, java.lang.String, java.util.Map):void" />
+			<role name="Request()" element="org.quartz.core.QuartzSchedulerMBeanImpl::triggerJob(java.lang.String, java.lang.String, java.lang.String, java.util.Map):void" />
+			<role name="Request()" element="org.quartz.core.QuartzSchedulerMBeanImpl::schedulerShutdown():void" />
+		</instance>
+		<instance>
+			<role name="Adaptee" element="org.quartz.core.ExecutingJobsManager" />
+			<role name="Adapter" element="org.quartz.core.QuartzScheduler" />
+			<role name="adaptee" element="org.quartz.core.QuartzScheduler::jobMgr:org.quartz.core.ExecutingJobsManager" />
+			<role name="Request()" element="org.quartz.core.QuartzScheduler::numJobsExecuted():int" />
+			<role name="Request()" element="org.quartz.core.QuartzScheduler::shutdown(boolean):void" />
+			<role name="Request()" element="org.quartz.core.QuartzScheduler::getCurrentlyExecutingJobs():java.util.List" />
+		</instance>
+		<instance>
+			<role name="Adaptee" element="org.quartz.core.QuartzSchedulerResources" />
+			<role name="Adapter" element="org.quartz.core.QuartzScheduler" />
+			<role name="adaptee" element="org.quartz.core.QuartzScheduler::resources:org.quartz.core.QuartzSchedulerResources" />
+			<role name="Request()" element="org.quartz.core.QuartzScheduler::getSchedulerName():java.lang.String" />
+			<role name="Request()" element="org.quartz.core.QuartzScheduler::getSchedulerInstanceId():java.lang.String" />
+			<role name="Request()" element="org.quartz.core.QuartzScheduler::start():void" />
+			<role name="Request()" element="org.quartz.core.QuartzScheduler::standby():void" />
+			<role name="Request()" element="org.quartz.core.QuartzScheduler::getJobStoreClass():java.lang.Class" />
+			<role name="Request()" element="org.quartz.core.QuartzScheduler::supportsPersistence():boolean" />
+			<role name="Request()" element="org.quartz.core.QuartzScheduler::isClustered():boolean" />
+			<role name="Request()" element="org.quartz.core.QuartzScheduler::getThreadPoolClass():java.lang.Class" />
+			<role name="Request()" element="org.quartz.core.QuartzScheduler::getThreadPoolSize():int" />
+			<role name="Request()" element="org.quartz.core.QuartzScheduler::shutdown(boolean):void" />
+			<role name="Request()" element="org.quartz.core.QuartzScheduler::scheduleJob(org.quartz.core.SchedulingContext, org.quartz.JobDetail, org.quartz.Trigger):java.util.Date" />
+			<role name="Request()" element="org.quartz.core.QuartzScheduler::scheduleJob(org.quartz.core.SchedulingContext, org.quartz.Trigger):java.util.Date" />
+			<role name="Request()" element="org.quartz.core.QuartzScheduler::addJob(org.quartz.core.SchedulingContext, org.quartz.JobDetail, boolean):void" />
+			<role name="Request()" element="org.quartz.core.QuartzScheduler::deleteJob(org.quartz.core.SchedulingContext, java.lang.String, java.lang.String):boolean" />
+			<role name="Request()" element="org.quartz.core.QuartzScheduler::unscheduleJob(org.quartz.core.SchedulingContext, java.lang.String, java.lang.String):boolean" />
+			<role name="Request()" element="org.quartz.core.QuartzScheduler::rescheduleJob(org.quartz.core.SchedulingContext, java.lang.String, java.lang.String, org.quartz.Trigger):java.util.Date" />
+			<role name="Request()" element="org.quartz.core.QuartzScheduler::triggerJob(org.quartz.core.SchedulingContext, java.lang.String, java.lang.String, org.quartz.JobDataMap):void" />
+			<role name="Request()" element="org.quartz.core.QuartzScheduler::triggerJobWithVolatileTrigger(org.quartz.core.SchedulingContext, java.lang.String, java.lang.String, org.quartz.JobDataMap):void" />
+			<role name="Request()" element="org.quartz.core.QuartzScheduler::pauseTrigger(org.quartz.core.SchedulingContext, java.lang.String, java.lang.String):void" />
+			<role name="Request()" element="org.quartz.core.QuartzScheduler::pauseTriggerGroup(org.quartz.core.SchedulingContext, java.lang.String):void" />
+			<role name="Request()" element="org.quartz.core.QuartzScheduler::pauseJob(org.quartz.core.SchedulingContext, java.lang.String, java.lang.String):void" />
+			<role name="Request()" element="org.quartz.core.QuartzScheduler::pauseJobGroup(org.quartz.core.SchedulingContext, java.lang.String):void" />
+			<role name="Request()" element="org.quartz.core.QuartzScheduler::resumeTrigger(org.quartz.core.SchedulingContext, java.lang.String, java.lang.String):void" />
+			<role name="Request()" element="org.quartz.core.QuartzScheduler::resumeTriggerGroup(org.quartz.core.SchedulingContext, java.lang.String):void" />
+			<role name="Request()" element="org.quartz.core.QuartzScheduler::getPausedTriggerGroups(org.quartz.core.SchedulingContext):java.util.Set" />
+			<role name="Request()" element="org.quartz.core.QuartzScheduler::resumeJob(org.quartz.core.SchedulingContext, java.lang.String, java.lang.String):void" />
+			<role name="Request()" element="org.quartz.core.QuartzScheduler::resumeJobGroup(org.quartz.core.SchedulingContext, java.lang.String):void" />
+			<role name="Request()" element="org.quartz.core.QuartzScheduler::pauseAll(org.quartz.core.SchedulingContext):void" />
+			<role name="Request()" element="org.quartz.core.QuartzScheduler::resumeAll(org.quartz.core.SchedulingContext):void" />
+			<role name="Request()" element="org.quartz.core.QuartzScheduler::getJobGroupNames(org.quartz.core.SchedulingContext):java.lang.String[]" />
+			<role name="Request()" element="org.quartz.core.QuartzScheduler::getJobNames(org.quartz.core.SchedulingContext, java.lang.String):java.lang.String[]" />
+			<role name="Request()" element="org.quartz.core.QuartzScheduler::getTriggersOfJob(org.quartz.core.SchedulingContext, java.lang.String, java.lang.String):org.quartz.Trigger[]" />
+			<role name="Request()" element="org.quartz.core.QuartzScheduler::getTriggerGroupNames(org.quartz.core.SchedulingContext):java.lang.String[]" />
+			<role name="Request()" element="org.quartz.core.QuartzScheduler::getTriggerNames(org.quartz.core.SchedulingContext, java.lang.String):java.lang.String[]" />
+			<role name="Request()" element="org.quartz.core.QuartzScheduler::getJobDetail(org.quartz.core.SchedulingContext, java.lang.String, java.lang.String):org.quartz.JobDetail" />
+			<role name="Request()" element="org.quartz.core.QuartzScheduler::getTrigger(org.quartz.core.SchedulingContext, java.lang.String, java.lang.String):org.quartz.Trigger" />
+			<role name="Request()" element="org.quartz.core.QuartzScheduler::getTriggerState(org.quartz.core.SchedulingContext, java.lang.String, java.lang.String):int" />
+			<role name="Request()" element="org.quartz.core.QuartzScheduler::addCalendar(org.quartz.core.SchedulingContext, java.lang.String, org.quartz.Calendar, boolean, boolean):void" />
+			<role name="Request()" element="org.quartz.core.QuartzScheduler::deleteCalendar(org.quartz.core.SchedulingContext, java.lang.String):boolean" />
+			<role name="Request()" element="org.quartz.core.QuartzScheduler::getCalendar(org.quartz.core.SchedulingContext, java.lang.String):org.quartz.Calendar" />
+			<role name="Request()" element="org.quartz.core.QuartzScheduler::getCalendarNames(org.quartz.core.SchedulingContext):java.lang.String[]" />
+		</instance>
+		<instance>
+			<role name="Adaptee" element="org.quartz.core.QuartzSchedulerThread" />
+			<role name="Adapter" element="org.quartz.core.QuartzScheduler" />
+			<role name="adaptee" element="org.quartz.core.QuartzScheduler::schedThread:org.quartz.core.QuartzSchedulerThread" />
+			<role name="Request()" element="org.quartz.core.QuartzScheduler::start():void" />
+			<role name="Request()" element="org.quartz.core.QuartzScheduler::standby():void" />
+			<role name="Request()" element="org.quartz.core.QuartzScheduler::isInStandbyMode():boolean" />
+			<role name="Request()" element="org.quartz.core.QuartzScheduler::shutdown(boolean):void" />
+		</instance>
+		<instance>
+			<role name="Adaptee" element="org.quartz.CronExpression" />
+			<role name="Adapter" element="org.quartz.CronTrigger" />
+			<role name="adaptee" element="org.quartz.CronTrigger::cronEx:org.quartz.CronExpression" />
+			<role name="Request()" element="org.quartz.CronTrigger::getFinalFireTime():java.util.Date" />
+		</instance>
+		<instance>
+			<role name="Adaptee" element="org.quartz.utils.CircularLossyQueue" />
+			<role name="Adapter" element="org.quartz.utils.counter.sampled.SampledCounterImpl" />
+			<role name="adaptee" element="org.quartz.utils.counter.sampled.SampledCounterImpl::history:org.quartz.utils.CircularLossyQueue" />
+			<role name="Request()" element="org.quartz.utils.counter.sampled.SampledCounterImpl::getMostRecentSample():org.quartz.utils.counter.sampled.TimeStampedCounterValue" />
+			<role name="Request()" element="org.quartz.utils.counter.sampled.SampledCounterImpl::getAllSampleValues():org.quartz.utils.counter.sampled.TimeStampedCounterValue[]" />
+		</instance>
+		<instance>
+			<role name="Adaptee" element="org.quartz.core.SampledStatistics" />
+			<role name="Adapter" element="org.quartz.core.QuartzSchedulerMBeanImpl" />
+			<role name="adaptee" element="org.quartz.core.QuartzSchedulerMBeanImpl::sampledStatistics:org.quartz.core.SampledStatistics" />
+			<role name="adaptee" element="org.quartz.core.QuartzSchedulerMBeanImpl::NULL_SAMPLED_STATISTICS:org.quartz.core.SampledStatistics" />
+			<role name="Request()" element="org.quartz.core.QuartzSchedulerMBeanImpl::setSampledStatisticsEnabled(boolean):void" />
+			<role name="Request()" element="org.quartz.core.QuartzSchedulerMBeanImpl::getJobsCompletedMostRecentSample():long" />
+			<role name="Request()" element="org.quartz.core.QuartzSchedulerMBeanImpl::getJobsExecutedMostRecentSample():long" />
+			<role name="Request()" element="org.quartz.core.QuartzSchedulerMBeanImpl::getJobsScheduledMostRecentSample():long" />
+		</instance>
+		<instance>
+			<role name="Adaptee" element="org.quartz.Scheduler" />
+			<role name="Adapter" element="org.quartz.plugins.management.ShutdownHookPlugin" />
+			<role name="adaptee" element="org.quartz.plugins.management.ShutdownHookPlugin::scheduler:org.quartz.Scheduler" />
+			<role name="Request()" element="org.quartz.plugins.management.ShutdownHookPlugin::initialize(java.lang.String, org.quartz.Scheduler):void" />
+		</instance>
+		<instance>
+			<role name="Adaptee" element="org.quartz.core.QuartzScheduler" />
+			<role name="Adapter" element="org.quartz.core.SchedulerSignalerImpl" />
+			<role name="adaptee" element="org.quartz.core.SchedulerSignalerImpl::sched:org.quartz.core.QuartzScheduler" />
+			<role name="Request()" element="org.quartz.core.SchedulerSignalerImpl::notifyTriggerListenersMisfired(org.quartz.Trigger):void" />
+			<role name="Request()" element="org.quartz.core.SchedulerSignalerImpl::notifySchedulerListenersFinalized(org.quartz.Trigger):void" />
+		</instance>
+		<instance>
+			<role name="Adaptee" element="org.quartz.spi.SchedulerSignaler" />
+			<role name="Adapter" element="org.quartz.simpl.RAMJobStore" />
+			<role name="adaptee" element="org.quartz.simpl.RAMJobStore::signaler:org.quartz.spi.SchedulerSignaler" />
+			<role name="Request()" element="org.quartz.simpl.RAMJobStore::triggeredJobComplete(org.quartz.core.SchedulingContext, org.quartz.Trigger, org.quartz.JobDetail, int):void" />
+		</instance>
+		<instance>
+			<role name="Adaptee" element="org.quartz.utils.counter.CounterManager" />
+			<role name="Adapter" element="org.quartz.core.SampledStatisticsImpl" />
+			<role name="adaptee" element="org.quartz.core.SampledStatisticsImpl::counterManager:org.quartz.utils.counter.CounterManager" />
+			<role name="Request()" element="org.quartz.core.SampledStatisticsImpl::shutdown():void" />
+		</instance>
+		<instance>
+			<role name="Adaptee" element="org.quartz.utils.counter.sampled.SampledCounter" />
+			<role name="Adapter" element="org.quartz.core.SampledStatisticsImpl" />
+			<role name="adaptee" element="org.quartz.core.SampledStatisticsImpl::jobsCompletedCount:org.quartz.utils.counter.sampled.SampledCounter" />
+			<role name="adaptee" element="org.quartz.core.SampledStatisticsImpl::jobsExecutingCount:org.quartz.utils.counter.sampled.SampledCounter" />
+			<role name="adaptee" element="org.quartz.core.SampledStatisticsImpl::jobsScheduledCount:org.quartz.utils.counter.sampled.SampledCounter" />
+			<role name="Request()" element="org.quartz.core.SampledStatisticsImpl::getJobsCompletedMostRecentSample():long" />
+			<role name="Request()" element="org.quartz.core.SampledStatisticsImpl::getJobsExecutingMostRecentSample():long" />
+			<role name="Request()" element="org.quartz.core.SampledStatisticsImpl::getJobsScheduledMostRecentSample():long" />
+			<role name="Request()" element="org.quartz.core.SampledStatisticsImpl::jobToBeExecuted(org.quartz.JobExecutionContext):void" />
+			<role name="Request()" element="org.quartz.core.SampledStatisticsImpl::jobWasExecuted(org.quartz.JobExecutionContext, org.quartz.JobExecutionException):void" />
+			<role name="Request()" element="org.quartz.core.SampledStatisticsImpl::jobScheduled(org.quartz.Trigger):void" />
+		</instance>
+		<instance>
+			<role name="Adaptee" element="org.quartz.core.QuartzSchedulerThread" />
+			<role name="Adapter" element="org.quartz.core.SchedulerSignalerImpl" />
+			<role name="adaptee" element="org.quartz.core.SchedulerSignalerImpl::schedThread:org.quartz.core.QuartzSchedulerThread" />
+			<role name="Request()" element="org.quartz.core.SchedulerSignalerImpl::signalSchedulingChange(long):void" />
+		</instance>
+	</pattern>
+	<pattern name="Command" />
+	<pattern name="Composite">
+		<instance>
+			<role name="Component" element="org.quartz.SchedulerListener" />
+			<role name="Composite" element="org.quartz.listeners.BroadcastSchedulerListener" />
+			<role name="Operation()" element="org.quartz.listeners.BroadcastSchedulerListener::jobAdded(org.quartz.JobDetail):void" />
+			<role name="Operation()" element="org.quartz.listeners.BroadcastSchedulerListener::jobDeleted(java.lang.String, java.lang.String):void" />
+			<role name="Operation()" element="org.quartz.listeners.BroadcastSchedulerListener::jobScheduled(org.quartz.Trigger):void" />
+			<role name="Operation()" element="org.quartz.listeners.BroadcastSchedulerListener::jobUnscheduled(java.lang.String, java.lang.String):void" />
+			<role name="Operation()" element="org.quartz.listeners.BroadcastSchedulerListener::triggerFinalized(org.quartz.Trigger):void" />
+			<role name="Operation()" element="org.quartz.listeners.BroadcastSchedulerListener::triggersPaused(java.lang.String, java.lang.String):void" />
+			<role name="Operation()" element="org.quartz.listeners.BroadcastSchedulerListener::triggersResumed(java.lang.String, java.lang.String):void" />
+			<role name="Operation()" element="org.quartz.listeners.BroadcastSchedulerListener::jobsPaused(java.lang.String, java.lang.String):void" />
+			<role name="Operation()" element="org.quartz.listeners.BroadcastSchedulerListener::jobsResumed(java.lang.String, java.lang.String):void" />
+			<role name="Operation()" element="org.quartz.listeners.BroadcastSchedulerListener::schedulerError(java.lang.String, org.quartz.SchedulerException):void" />
+			<role name="Operation()" element="org.quartz.listeners.BroadcastSchedulerListener::schedulerStarted():void" />
+			<role name="Operation()" element="org.quartz.listeners.BroadcastSchedulerListener::schedulerInStandbyMode():void" />
+			<role name="Operation()" element="org.quartz.listeners.BroadcastSchedulerListener::schedulerShutdown():void" />
+			<role name="Operation()" element="org.quartz.listeners.BroadcastSchedulerListener::schedulerShuttingdown():void" />
+		</instance>
+		<instance>
+			<role name="Component" element="org.quartz.JobListener" />
+			<role name="Composite" element="org.quartz.listeners.FilterAndBroadcastJobListener" />
+			<role name="Operation()" element="org.quartz.listeners.FilterAndBroadcastJobListener::jobToBeExecuted(org.quartz.JobExecutionContext):void" />
+			<role name="Operation()" element="org.quartz.listeners.FilterAndBroadcastJobListener::jobExecutionVetoed(org.quartz.JobExecutionContext):void" />
+			<role name="Operation()" element="org.quartz.listeners.FilterAndBroadcastJobListener::jobWasExecuted(org.quartz.JobExecutionContext, org.quartz.JobExecutionException):void" />
+		</instance>
+		<instance>
+			<role name="Component" element="org.quartz.TriggerListener" />
+			<role name="Composite" element="org.quartz.listeners.FilterAndBroadcastTriggerListener" />
+			<role name="Operation()" element="org.quartz.listeners.FilterAndBroadcastTriggerListener::triggerFired(org.quartz.Trigger, org.quartz.JobExecutionContext):void" />
+			<role name="Operation()" element="org.quartz.listeners.FilterAndBroadcastTriggerListener::vetoJobExecution(org.quartz.Trigger, org.quartz.JobExecutionContext):boolean" />
+			<role name="Operation()" element="org.quartz.listeners.FilterAndBroadcastTriggerListener::triggerMisfired(org.quartz.Trigger):void" />
+			<role name="Operation()" element="org.quartz.listeners.FilterAndBroadcastTriggerListener::triggerComplete(org.quartz.Trigger, org.quartz.JobExecutionContext, int):void" />
+		</instance>
+	</pattern>
+	<pattern name="Decorator">
+		<instance>
+			<role name="Component" element="org.quartz.Calendar" />
+			<role name="Decorator" element="org.quartz.impl.calendar.BaseCalendar" />
+			<role name="component" element="org.quartz.impl.calendar.BaseCalendar::baseCalendar:org.quartz.Calendar" />
+			<role name="Operation()" element="org.quartz.impl.calendar.BaseCalendar::clone():java.lang.Object" />
+			<role name="Operation()" element="org.quartz.impl.calendar.BaseCalendar::isTimeIncluded(long):boolean" />
+			<role name="Operation()" element="org.quartz.impl.calendar.BaseCalendar::getNextIncludedTime(long):long" />
+		</instance>
+		<instance>
+			<role name="Component" element="org.quartz.spi.ClassLoadHelper" />
+			<role name="Decorator" element="org.quartz.simpl.CascadingClassLoadHelper" />
+			<role name="component" element="org.quartz.simpl.CascadingClassLoadHelper::bestCandidate:org.quartz.spi.ClassLoadHelper" />
+			<role name="Operation()" element="org.quartz.simpl.CascadingClassLoadHelper::loadClass(java.lang.String):java.lang.Class" />
+			<role name="Operation()" element="org.quartz.simpl.CascadingClassLoadHelper::getResource(java.lang.String):java.net.URL" />
+			<role name="Operation()" element="org.quartz.simpl.CascadingClassLoadHelper::getResourceAsStream(java.lang.String):java.io.InputStream" />
+			<role name="Operation()" element="org.quartz.simpl.CascadingClassLoadHelper::getClassLoader():java.lang.ClassLoader" />
+		</instance>
+	</pattern>
+	<pattern name="Observer">
+		<instance>
+			<role name="Observer" element="org.quartz.Trigger" />
+			<role name="Subject" element="org.quartz.xml.XMLSchedulingDataProcessor" />
+			<role name="Notify()" element="org.quartz.xml.XMLSchedulingDataProcessor::scheduleJobs(org.quartz.Scheduler):void" />
+		</instance>
+		<instance>
+			<role name="Observer" element="org.quartz.SchedulerListener" />
+			<role name="Subject" element="org.quartz.core.QuartzScheduler" />
+			<role name="Notify()" element="org.quartz.core.QuartzScheduler::notifySchedulerListenersError(java.lang.String, org.quartz.SchedulerException):void" />
+			<role name="Notify()" element="org.quartz.core.QuartzScheduler::notifySchedulerListenersSchduled(org.quartz.Trigger):void" />
+			<role name="Notify()" element="org.quartz.core.QuartzScheduler::notifySchedulerListenersUnscheduled(java.lang.String, java.lang.String):void" />
+			<role name="Notify()" element="org.quartz.core.QuartzScheduler::notifySchedulerListenersFinalized(org.quartz.Trigger):void" />
+			<role name="Notify()" element="org.quartz.core.QuartzScheduler::notifySchedulerListenersPausedTrigger(java.lang.String, java.lang.String):void" />
+			<role name="Notify()" element="org.quartz.core.QuartzScheduler::notifySchedulerListenersResumedTrigger(java.lang.String, java.lang.String):void" />
+			<role name="Notify()" element="org.quartz.core.QuartzScheduler::notifySchedulerListenersPausedJob(java.lang.String, java.lang.String):void" />
+			<role name="Notify()" element="org.quartz.core.QuartzScheduler::notifySchedulerListenersResumedJob(java.lang.String, java.lang.String):void" />
+			<role name="Notify()" element="org.quartz.core.QuartzScheduler::notifySchedulerListenersInStandbyMode():void" />
+			<role name="Notify()" element="org.quartz.core.QuartzScheduler::notifySchedulerListenersStarted():void" />
+			<role name="Notify()" element="org.quartz.core.QuartzScheduler::notifySchedulerListenersShutdown():void" />
+			<role name="Notify()" element="org.quartz.core.QuartzScheduler::notifySchedulerListenersShuttingdown():void" />
+			<role name="Notify()" element="org.quartz.core.QuartzScheduler::notifySchedulerListenersJobAdded(org.quartz.JobDetail):void" />
+			<role name="Notify()" element="org.quartz.core.QuartzScheduler::notifySchedulerListenersJobDeleted(java.lang.String, java.lang.String):void" />
+		</instance>
+	</pattern>
+	<pattern name="State">
+		<instance>
+			<role name="State" element="org.quartz.Scheduler" />
+			<role name="Context" element="org.quartz.ee.servlet.QuartzInitializerListener" />
+			<role name="state" element="org.quartz.ee.servlet.QuartzInitializerListener::scheduler:org.quartz.Scheduler" />
+			<role name="Request()" element="org.quartz.ee.servlet.QuartzInitializerListener::contextInitialized(javax.servlet.ServletContextEvent):void" />
+			<role name="Request()" element="org.quartz.ee.servlet.QuartzInitializerListener::contextDestroyed(javax.servlet.ServletContextEvent):void" />
+		</instance>
+		<instance>
+			<role name="State" element="org.quartz.Scheduler" />
+			<role name="Context" element="org.quartz.ee.servlet.QuartzInitializerServlet" />
+			<role name="state" element="org.quartz.ee.servlet.QuartzInitializerServlet::scheduler:org.quartz.Scheduler" />
+			<role name="Request()" element="org.quartz.ee.servlet.QuartzInitializerServlet::init(javax.servlet.ServletConfig):void" />
+			<role name="Request()" element="org.quartz.ee.servlet.QuartzInitializerServlet::destroy():void" />
+		</instance>
+		<instance>
+			<role name="State" element="org.quartz.core.jmx.QuartzSchedulerMBean" />
+			<role name="Context" element="org.quartz.core.QuartzScheduler" />
+			<role name="state" element="org.quartz.core.QuartzScheduler::jmxBean:org.quartz.core.jmx.QuartzSchedulerMBean" />
+			<role name="Request()" element="org.quartz.core.QuartzScheduler::unregisterJMX():void" />
+		</instance>
+		<instance>
+			<role name="Context" element="org.quartz.core.QuartzSchedulerMBeanImpl" />
+			<role name="State" element="org.quartz.core.SampledStatistics" />
+			<role name="state" element="org.quartz.core.QuartzSchedulerMBeanImpl::sampledStatistics:org.quartz.core.SampledStatistics" />
+			<role name="state" element="org.quartz.core.QuartzSchedulerMBeanImpl::NULL_SAMPLED_STATISTICS:org.quartz.core.SampledStatistics" />
+			<role name="Request()" element="org.quartz.core.QuartzSchedulerMBeanImpl::setSampledStatisticsEnabled(boolean):void" />
+			<role name="Request()" element="org.quartz.core.QuartzSchedulerMBeanImpl::getJobsCompletedMostRecentSample():long" />
+			<role name="Request()" element="org.quartz.core.QuartzSchedulerMBeanImpl::getJobsExecutedMostRecentSample():long" />
+			<role name="Request()" element="org.quartz.core.QuartzSchedulerMBeanImpl::getJobsScheduledMostRecentSample():long" />
+		</instance>
+		<instance>
+			<role name="Context" element="org.quartz.plugins.management.ShutdownHookPlugin" />
+			<role name="State" element="org.quartz.Scheduler" />
+			<role name="state" element="org.quartz.plugins.management.ShutdownHookPlugin::scheduler:org.quartz.Scheduler" />
+			<role name="Request()" element="org.quartz.plugins.management.ShutdownHookPlugin::initialize(java.lang.String, org.quartz.Scheduler):void" />
+		</instance>
+		<instance>
+			<role name="State" element="org.quartz.spi.SchedulerSignaler" />
+			<role name="Context" element="org.quartz.core.QuartzScheduler" />
+			<role name="state" element="org.quartz.core.QuartzScheduler::signaler:org.quartz.spi.SchedulerSignaler" />
+			<role name="Request()" element="org.quartz.core.QuartzScheduler::notifySchedulerThread(long):void" />
+		</instance>
+		<instance>
+			<role name="Context" element="org.quartz.simpl.RAMJobStore" />
+			<role name="State" element="org.quartz.spi.SchedulerSignaler" />
+			<role name="state" element="org.quartz.simpl.RAMJobStore::signaler:org.quartz.spi.SchedulerSignaler" />
+			<role name="Request()" element="org.quartz.simpl.RAMJobStore::applyMisfire(org.quartz.simpl.TriggerWrapper):boolean" />
+			<role name="Request()" element="org.quartz.simpl.RAMJobStore::triggeredJobComplete(org.quartz.core.SchedulingContext, org.quartz.Trigger, org.quartz.JobDetail, int):void" />
+		</instance>
+		<instance>
+			<role name="Context" element="org.quartz.core.JobRunShell" />
+			<role name="State" element="org.quartz.core.JobRunShellFactory" />
+			<role name="state" element="org.quartz.core.JobRunShell::jobRunShellFactory:org.quartz.core.JobRunShellFactory" />
+			<role name="Request()" element="org.quartz.core.JobRunShell::run():void" />
+		</instance>
+		<instance>
+			<role name="Context" element="org.quartz.core.JobRunShell" />
+			<role name="State" element="org.quartz.Scheduler" />
+			<role name="state" element="org.quartz.core.JobRunShell::scheduler:org.quartz.Scheduler" />
+			<role name="Request()" element="org.quartz.core.JobRunShell::run():void" />
+		</instance>
+		<instance>
+			<role name="Context" element="org.quartz.impl.QuartzServer" />
+			<role name="State" element="org.quartz.Scheduler" />
+			<role name="state" element="org.quartz.impl.QuartzServer::sched:org.quartz.Scheduler" />
+			<role name="Request()" element="org.quartz.impl.QuartzServer::serve(org.quartz.SchedulerFactory, boolean):void" />
+		</instance>
+		<instance>
+			<role name="Context" element="org.quartz.NthIncludedDayTrigger" />
+			<role name="State" element="org.quartz.Calendar" />
+			<role name="state" element="org.quartz.NthIncludedDayTrigger::calendar:org.quartz.Calendar" />
+			<role name="Request()" element="org.quartz.NthIncludedDayTrigger::getWeeklyFireTimeAfter(java.util.Date):java.util.Date" />
+			<role name="Request()" element="org.quartz.NthIncludedDayTrigger::getMonthlyFireTimeAfter(java.util.Date):java.util.Date" />
+			<role name="Request()" element="org.quartz.NthIncludedDayTrigger::getYearlyFireTimeAfter(java.util.Date):java.util.Date" />
+		</instance>
+		<instance>
+			<role name="Context" element="org.quartz.xml.XMLSchedulingDataProcessor" />
+			<role name="State" element="org.quartz.spi.ClassLoadHelper" />
+			<role name="state" element="org.quartz.xml.XMLSchedulingDataProcessor::classLoadHelper:org.quartz.spi.ClassLoadHelper" />
+			<role name="Request()" element="org.quartz.xml.XMLSchedulingDataProcessor::resolveSchemaSource():java.lang.Object" />
+			<role name="Request()" element="org.quartz.xml.XMLSchedulingDataProcessor::getURL(java.lang.String):java.net.URL" />
+			<role name="Request()" element="org.quartz.xml.XMLSchedulingDataProcessor::process(org.xml.sax.InputSource):void" />
+			<role name="Request()" element="org.quartz.xml.XMLSchedulingDataProcessor::getInputStream(java.lang.String):java.io.InputStream" />
+		</instance>
+		<instance>
+			<role name="Context" element="org.quartz.core.SampledStatisticsImpl" />
+			<role name="State" element="org.quartz.utils.counter.CounterManager" />
+			<role name="state" element="org.quartz.core.SampledStatisticsImpl::counterManager:org.quartz.utils.counter.CounterManager" />
+			<role name="Request()" element="org.quartz.core.SampledStatisticsImpl::shutdown():void" />
+			<role name="Request()" element="org.quartz.core.SampledStatisticsImpl::createSampledCounter(org.quartz.utils.counter.CounterConfig):org.quartz.utils.counter.sampled.SampledCounter" />
+		</instance>
+		<instance>
+			<role name="Context" element="org.quartz.core.SampledStatisticsImpl" />
+			<role name="State" element="org.quartz.utils.counter.sampled.SampledCounter" />
+			<role name="state" element="org.quartz.core.SampledStatisticsImpl::jobsScheduledCount:org.quartz.utils.counter.sampled.SampledCounter" />
+			<role name="state" element="org.quartz.core.SampledStatisticsImpl::jobsExecutingCount:org.quartz.utils.counter.sampled.SampledCounter" />
+			<role name="state" element="org.quartz.core.SampledStatisticsImpl::jobsCompletedCount:org.quartz.utils.counter.sampled.SampledCounter" />
+			<role name="Request()" element="org.quartz.core.SampledStatisticsImpl::clearStatistics():void" />
+			<role name="Request()" element="org.quartz.core.SampledStatisticsImpl::getJobsCompletedMostRecentSample():long" />
+			<role name="Request()" element="org.quartz.core.SampledStatisticsImpl::getJobsExecutingMostRecentSample():long" />
+			<role name="Request()" element="org.quartz.core.SampledStatisticsImpl::getJobsScheduledMostRecentSample():long" />
+		</instance>
+		<instance>
+			<role name="Context" element="org.quartz.plugins.xml.XMLSchedulingDataProcessorPlugin" />
+			<role name="State" element="org.quartz.spi.ClassLoadHelper" />
+			<role name="state" element="org.quartz.plugins.xml.XMLSchedulingDataProcessorPlugin::classLoadHelper:org.quartz.spi.ClassLoadHelper" />
+			<role name="Request()" element="org.quartz.plugins.xml.XMLSchedulingDataProcessorPlugin::initialize(java.lang.String, org.quartz.Scheduler):void" />
+		</instance>
+	</pattern>
+	<pattern name="Strategy" />
+	<pattern name="Bridge">
+		<instance>
+			<role name="Abstraction" element="org.quartz.impl.jdbcjobstore.JobStoreSupport" />
+			<role name="Implementor" element="org.quartz.spi.SchedulerSignaler" />
+			<role name="implementor" element="org.quartz.impl.jdbcjobstore.JobStoreSupport::schedSignaler:org.quartz.spi.SchedulerSignaler" />
+			<role name="Operation()" element="org.quartz.impl.jdbcjobstore.JobStoreSupport::updateMisfiredTrigger(java.sql.Connection, org.quartz.core.SchedulingContext, java.lang.String, java.lang.String, java.lang.String, boolean):boolean" />
+			<role name="Operation()" element="org.quartz.impl.jdbcjobstore.JobStoreSupport::doUpdateOfMisfiredTrigger(java.sql.Connection, org.quartz.core.SchedulingContext, org.quartz.Trigger, boolean, java.lang.String, boolean):void" />
+			<role name="Operation()" element="org.quartz.impl.jdbcjobstore.JobStoreSupport::signalSchedulingChangeImmediately(long):void" />
+		</instance>
+	</pattern>
+	<pattern name="Template Method">
+		<instance>
+			<role name="AbstractClass" element="org.quartz.impl.jdbcjobstore.DBSemaphore" />
+			<role name="TemplateMethod()" element="org.quartz.impl.jdbcjobstore.DBSemaphore::obtainLock(java.sql.Connection, java.lang.String):boolean" />
+		</instance>
+		<instance>
+			<role name="AbstractClass" element="org.quartz.impl.jdbcjobstore.JobStoreSupport" />
+			<role name="TemplateMethod()" element="org.quartz.impl.jdbcjobstore.JobStoreSupport::removeJob(org.quartz.core.SchedulingContext, java.lang.String, java.lang.String):boolean" />
+			<role name="TemplateMethod()" element="org.quartz.impl.jdbcjobstore.JobStoreSupport::removeTrigger(org.quartz.core.SchedulingContext, java.lang.String, java.lang.String):boolean" />
+			<role name="TemplateMethod()" element="org.quartz.impl.jdbcjobstore.JobStoreSupport::replaceTrigger(org.quartz.core.SchedulingContext, java.lang.String, java.lang.String, org.quartz.Trigger):boolean" />
+			<role name="TemplateMethod()" element="org.quartz.impl.jdbcjobstore.JobStoreSupport::removeCalendar(org.quartz.core.SchedulingContext, java.lang.String):boolean" />
+			<role name="TemplateMethod()" element="org.quartz.impl.jdbcjobstore.JobStoreSupport::doRecoverMisfires():org.quartz.impl.jdbcjobstore.JobStoreSupport$RecoverMisfiredJobsResult" />
+			<role name="TemplateMethod()" element="org.quartz.impl.jdbcjobstore.JobStoreSupport::doCheckin():boolean" />
+			<role name="TemplateMethod()" element="org.quartz.impl.jdbcjobstore.JobStoreSupport::executeWithoutLock(org.quartz.impl.jdbcjobstore.JobStoreSupport$TransactionCallback):java.lang.Object" />
+			<role name="TemplateMethod()" element="org.quartz.impl.jdbcjobstore.JobStoreSupport::executeInLock(java.lang.String, org.quartz.impl.jdbcjobstore.JobStoreSupport$VoidTransactionCallback):void" />
+			<role name="TemplateMethod()" element="org.quartz.impl.jdbcjobstore.JobStoreSupport::executeInNonManagedTXLock(java.lang.String, org.quartz.impl.jdbcjobstore.JobStoreSupport$TransactionCallback):java.lang.Object" />
+		</instance>
+		<instance>
+			<role name="AbstractClass" element="org.quartz.impl.RemoteMBeanScheduler" />
+			<role name="TemplateMethod()" element="org.quartz.impl.RemoteMBeanScheduler::getSchedulerName():java.lang.String" />
+			<role name="TemplateMethod()" element="org.quartz.impl.RemoteMBeanScheduler::getSchedulerInstanceId():java.lang.String" />
+			<role name="TemplateMethod()" element="org.quartz.impl.RemoteMBeanScheduler::getMetaData():org.quartz.SchedulerMetaData" />
+			<role name="TemplateMethod()" element="org.quartz.impl.RemoteMBeanScheduler::getContext():org.quartz.SchedulerContext" />
+			<role name="TemplateMethod()" element="org.quartz.impl.RemoteMBeanScheduler::start():void" />
+			<role name="TemplateMethod()" element="org.quartz.impl.RemoteMBeanScheduler::startDelayed(int):void" />
+			<role name="TemplateMethod()" element="org.quartz.impl.RemoteMBeanScheduler::standby():void" />
+			<role name="TemplateMethod()" element="org.quartz.impl.RemoteMBeanScheduler::isStarted():boolean" />
+			<role name="TemplateMethod()" element="org.quartz.impl.RemoteMBeanScheduler::isInStandbyMode():boolean" />
+			<role name="TemplateMethod()" element="org.quartz.impl.RemoteMBeanScheduler::shutdown():void" />
+			<role name="TemplateMethod()" element="org.quartz.impl.RemoteMBeanScheduler::shutdown(boolean):void" />
+			<role name="TemplateMethod()" element="org.quartz.impl.RemoteMBeanScheduler::isShutdown():boolean" />
+			<role name="TemplateMethod()" element="org.quartz.impl.RemoteMBeanScheduler::getCurrentlyExecutingJobs():java.util.List" />
+			<role name="TemplateMethod()" element="org.quartz.impl.RemoteMBeanScheduler::scheduleJob(org.quartz.JobDetail, org.quartz.Trigger):java.util.Date" />
+			<role name="TemplateMethod()" element="org.quartz.impl.RemoteMBeanScheduler::scheduleJob(org.quartz.Trigger):java.util.Date" />
+			<role name="TemplateMethod()" element="org.quartz.impl.RemoteMBeanScheduler::addJob(org.quartz.JobDetail, boolean):void" />
+			<role name="TemplateMethod()" element="org.quartz.impl.RemoteMBeanScheduler::deleteJob(java.lang.String, java.lang.String):boolean" />
+			<role name="TemplateMethod()" element="org.quartz.impl.RemoteMBeanScheduler::unscheduleJob(java.lang.String, java.lang.String):boolean" />
+			<role name="TemplateMethod()" element="org.quartz.impl.RemoteMBeanScheduler::rescheduleJob(java.lang.String, java.lang.String, org.quartz.Trigger):java.util.Date" />
+			<role name="TemplateMethod()" element="org.quartz.impl.RemoteMBeanScheduler::triggerJob(java.lang.String, java.lang.String, org.quartz.JobDataMap):void" />
+			<role name="TemplateMethod()" element="org.quartz.impl.RemoteMBeanScheduler::triggerJobWithVolatileTrigger(java.lang.String, java.lang.String, org.quartz.JobDataMap):void" />
+			<role name="TemplateMethod()" element="org.quartz.impl.RemoteMBeanScheduler::pauseTrigger(java.lang.String, java.lang.String):void" />
+			<role name="TemplateMethod()" element="org.quartz.impl.RemoteMBeanScheduler::pauseTriggerGroup(java.lang.String):void" />
+			<role name="TemplateMethod()" element="org.quartz.impl.RemoteMBeanScheduler::pauseJob(java.lang.String, java.lang.String):void" />
+			<role name="TemplateMethod()" element="org.quartz.impl.RemoteMBeanScheduler::pauseJobGroup(java.lang.String):void" />
+			<role name="TemplateMethod()" element="org.quartz.impl.RemoteMBeanScheduler::resumeTrigger(java.lang.String, java.lang.String):void" />
+			<role name="TemplateMethod()" element="org.quartz.impl.RemoteMBeanScheduler::resumeTriggerGroup(java.lang.String):void" />
+			<role name="TemplateMethod()" element="org.quartz.impl.RemoteMBeanScheduler::resumeJob(java.lang.String, java.lang.String):void" />
+			<role name="TemplateMethod()" element="org.quartz.impl.RemoteMBeanScheduler::resumeJobGroup(java.lang.String):void" />
+			<role name="TemplateMethod()" element="org.quartz.impl.RemoteMBeanScheduler::pauseAll():void" />
+			<role name="TemplateMethod()" element="org.quartz.impl.RemoteMBeanScheduler::resumeAll():void" />
+			<role name="TemplateMethod()" element="org.quartz.impl.RemoteMBeanScheduler::getJobGroupNames():java.lang.String[]" />
+			<role name="TemplateMethod()" element="org.quartz.impl.RemoteMBeanScheduler::getJobNames(java.lang.String):java.lang.String[]" />
+			<role name="TemplateMethod()" element="org.quartz.impl.RemoteMBeanScheduler::getTriggersOfJob(java.lang.String, java.lang.String):org.quartz.Trigger[]" />
+			<role name="TemplateMethod()" element="org.quartz.impl.RemoteMBeanScheduler::getTriggerGroupNames():java.lang.String[]" />
+			<role name="TemplateMethod()" element="org.quartz.impl.RemoteMBeanScheduler::getTriggerNames(java.lang.String):java.lang.String[]" />
+			<role name="TemplateMethod()" element="org.quartz.impl.RemoteMBeanScheduler::getJobDetail(java.lang.String, java.lang.String):org.quartz.JobDetail" />
+			<role name="TemplateMethod()" element="org.quartz.impl.RemoteMBeanScheduler::getTrigger(java.lang.String, java.lang.String):org.quartz.Trigger" />
+			<role name="TemplateMethod()" element="org.quartz.impl.RemoteMBeanScheduler::getTriggerState(java.lang.String, java.lang.String):int" />
+			<role name="TemplateMethod()" element="org.quartz.impl.RemoteMBeanScheduler::addCalendar(java.lang.String, org.quartz.Calendar, boolean, boolean):void" />
+			<role name="TemplateMethod()" element="org.quartz.impl.RemoteMBeanScheduler::deleteCalendar(java.lang.String):boolean" />
+			<role name="TemplateMethod()" element="org.quartz.impl.RemoteMBeanScheduler::getCalendar(java.lang.String):org.quartz.Calendar" />
+			<role name="TemplateMethod()" element="org.quartz.impl.RemoteMBeanScheduler::getCalendarNames():java.lang.String[]" />
+			<role name="TemplateMethod()" element="org.quartz.impl.RemoteMBeanScheduler::getPausedTriggerGroups():java.util.Set" />
+			<role name="TemplateMethod()" element="org.quartz.impl.RemoteMBeanScheduler::interrupt(java.lang.String, java.lang.String):boolean" />
+		</instance>
+		<instance>
+			<role name="AbstractClass" element="org.quartz.Trigger" />
+			<role name="TemplateMethod()" element="org.quartz.Trigger::setMisfireInstruction(int):void" />
+			<role name="TemplateMethod()" element="org.quartz.Trigger::toString():java.lang.String" />
+			<role name="TemplateMethod()" element="org.quartz.Trigger::compareTo(java.lang.Object):int" />
+		</instance>
+	</pattern>
+	<pattern name="Visitor" />
+	<pattern name="Proxy" />
+	<pattern name="Proxy2" />
+	<pattern name="Chain of Responsibility" />
+</system>
+

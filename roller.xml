@@ -1,0 +1,1204 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<system>
+	<pattern name="Factory Method">
+		<instance>
+			<role name="Creator" element="org.apache.roller.planet.ui.rendering.RendererFactory" />
+			<role name="FactoryMethod()" element="org.apache.roller.planet.ui.rendering.RendererFactory::getRenderer(org.apache.roller.planet.pojos.Template):org.apache.roller.planet.ui.rendering.Renderer" />
+		</instance>
+		<instance>
+			<role name="Creator" element="org.apache.roller.weblogger.business.themes.ThemeManager" />
+			<role name="FactoryMethod()" element="org.apache.roller.weblogger.business.themes.ThemeManager::getTheme(org.apache.roller.weblogger.pojos.Weblog):org.apache.roller.weblogger.pojos.WeblogTheme" />
+		</instance>
+		<instance>
+			<role name="Creator" element="org.apache.roller.weblogger.util.cache.CacheFactory" />
+			<role name="FactoryMethod()" element="org.apache.roller.weblogger.util.cache.CacheFactory::constructCache(java.util.Map):org.apache.roller.weblogger.util.cache.Cache" />
+		</instance>
+		<instance>
+			<role name="Creator" element="org.apache.roller.weblogger.ui.rendering.RendererFactory" />
+			<role name="FactoryMethod()" element="org.apache.roller.weblogger.ui.rendering.RendererFactory::getRenderer(org.apache.roller.weblogger.pojos.Template):org.apache.roller.weblogger.ui.rendering.Renderer" />
+		</instance>
+		<instance>
+			<role name="Creator" element="org.apache.roller.weblogger.webservices.adminprotocol.Handler" />
+			<role name="FactoryMethod()" element="org.apache.roller.weblogger.webservices.adminprotocol.Handler::getEntrySet(org.jdom.Document):org.apache.roller.weblogger.webservices.adminprotocol.sdk.EntrySet" />
+		</instance>
+	</pattern>
+	<pattern name="Prototype" />
+	<pattern name="Singleton">
+		<instance>
+			<role name="Singleton" element="org.apache.roller.weblogger.business.HitCountQueue" />
+			<role name="uniqueInstance" element="org.apache.roller.weblogger.business.HitCountQueue::instance:org.apache.roller.weblogger.business.HitCountQueue" />
+		</instance>
+		<instance>
+			<role name="Singleton" element="org.apache.roller.weblogger.business.pings.PingQueueProcessor" />
+			<role name="uniqueInstance" element="org.apache.roller.weblogger.business.pings.PingQueueProcessor::theInstance:org.apache.roller.weblogger.business.pings.PingQueueProcessor" />
+		</instance>
+		<instance>
+			<role name="Singleton" element="org.apache.roller.weblogger.pojos.StatCountCountComparator" />
+			<role name="uniqueInstance" element="org.apache.roller.weblogger.pojos.StatCountCountComparator::instance:org.apache.roller.weblogger.pojos.StatCountCountComparator" />
+		</instance>
+		<instance>
+			<role name="Singleton" element="org.apache.roller.weblogger.pojos.TagStatCountComparator" />
+			<role name="uniqueInstance" element="org.apache.roller.weblogger.pojos.TagStatCountComparator::instance:org.apache.roller.weblogger.pojos.TagStatCountComparator" />
+		</instance>
+		<instance>
+			<role name="Singleton" element="org.apache.roller.weblogger.pojos.UserAttribute$Attributes" />
+			<role name="uniqueInstance" element="org.apache.roller.weblogger.pojos.UserAttribute$Attributes::OPENID_URL:org.apache.roller.weblogger.pojos.UserAttribute$Attributes" />
+		</instance>
+		<instance>
+			<role name="Singleton" element="org.apache.roller.weblogger.util.Blacklist" />
+			<role name="uniqueInstance" element="org.apache.roller.weblogger.util.Blacklist::blacklist:org.apache.roller.weblogger.util.Blacklist" />
+		</instance>
+		<instance>
+			<role name="Singleton" element="org.apache.roller.weblogger.util.IPBanList" />
+			<role name="uniqueInstance" element="org.apache.roller.weblogger.util.IPBanList::instance:org.apache.roller.weblogger.util.IPBanList" />
+		</instance>
+		<instance>
+			<role name="Singleton" element="org.apache.roller.weblogger.ui.core.plugins.UIPluginManagerImpl" />
+			<role name="uniqueInstance" element="org.apache.roller.weblogger.ui.core.plugins.UIPluginManagerImpl::instance:org.apache.roller.weblogger.ui.core.plugins.UIPluginManagerImpl" />
+		</instance>
+		<instance>
+			<role name="Singleton" element="org.apache.roller.weblogger.ui.rendering.util.cache.PlanetCache" />
+			<role name="uniqueInstance" element="org.apache.roller.weblogger.ui.rendering.util.cache.PlanetCache::singletonInstance:org.apache.roller.weblogger.ui.rendering.util.cache.PlanetCache" />
+		</instance>
+		<instance>
+			<role name="Singleton" element="org.apache.roller.weblogger.ui.rendering.util.cache.SaltCache" />
+			<role name="uniqueInstance" element="org.apache.roller.weblogger.ui.rendering.util.cache.SaltCache::singletonInstance:org.apache.roller.weblogger.ui.rendering.util.cache.SaltCache" />
+		</instance>
+		<instance>
+			<role name="Singleton" element="org.apache.roller.weblogger.ui.rendering.util.cache.SiteWideCache" />
+			<role name="uniqueInstance" element="org.apache.roller.weblogger.ui.rendering.util.cache.SiteWideCache::singletonInstance:org.apache.roller.weblogger.ui.rendering.util.cache.SiteWideCache" />
+		</instance>
+		<instance>
+			<role name="Singleton" element="org.apache.roller.weblogger.ui.rendering.util.cache.WeblogFeedCache" />
+			<role name="uniqueInstance" element="org.apache.roller.weblogger.ui.rendering.util.cache.WeblogFeedCache::singletonInstance:org.apache.roller.weblogger.ui.rendering.util.cache.WeblogFeedCache" />
+		</instance>
+		<instance>
+			<role name="Singleton" element="org.apache.roller.weblogger.ui.rendering.util.cache.WeblogPageCache" />
+			<role name="uniqueInstance" element="org.apache.roller.weblogger.ui.rendering.util.cache.WeblogPageCache::singletonInstance:org.apache.roller.weblogger.ui.rendering.util.cache.WeblogPageCache" />
+		</instance>
+		<instance>
+			<role name="Singleton" element="org.apache.roller.weblogger.ui.rendering.velocity.deprecated.NewsfeedCache" />
+			<role name="uniqueInstance" element="org.apache.roller.weblogger.ui.rendering.velocity.deprecated.NewsfeedCache::instance:org.apache.roller.weblogger.ui.rendering.velocity.deprecated.NewsfeedCache" />
+		</instance>
+	</pattern>
+	<pattern name="(Object)Adapter">
+		<instance>
+			<role name="Adaptee" element="org.apache.roller.weblogger.business.jpa.JPAPersistenceStrategy" />
+			<role name="Adapter" element="org.apache.roller.weblogger.business.jpa.JPAWeblogEntryManagerImpl" />
+			<role name="adaptee" element="org.apache.roller.weblogger.business.jpa.JPAWeblogEntryManagerImpl::strategy:org.apache.roller.weblogger.business.jpa.JPAPersistenceStrategy" />
+			<role name="Request()" element="org.apache.roller.weblogger.business.jpa.JPAWeblogEntryManagerImpl::saveWeblogCategory(org.apache.roller.weblogger.pojos.WeblogCategory):void" />
+			<role name="Request()" element="org.apache.roller.weblogger.business.jpa.JPAWeblogEntryManagerImpl::removeWeblogCategory(org.apache.roller.weblogger.pojos.WeblogCategory):void" />
+			<role name="Request()" element="org.apache.roller.weblogger.business.jpa.JPAWeblogEntryManagerImpl::moveWeblogCategoryContents(org.apache.roller.weblogger.pojos.WeblogCategory, org.apache.roller.weblogger.pojos.WeblogCategory):void" />
+			<role name="Request()" element="org.apache.roller.weblogger.business.jpa.JPAWeblogEntryManagerImpl::saveComment(org.apache.roller.weblogger.pojos.WeblogEntryComment):void" />
+			<role name="Request()" element="org.apache.roller.weblogger.business.jpa.JPAWeblogEntryManagerImpl::removeComment(org.apache.roller.weblogger.pojos.WeblogEntryComment):void" />
+			<role name="Request()" element="org.apache.roller.weblogger.business.jpa.JPAWeblogEntryManagerImpl::saveWeblogEntry(org.apache.roller.weblogger.pojos.WeblogEntry):void" />
+			<role name="Request()" element="org.apache.roller.weblogger.business.jpa.JPAWeblogEntryManagerImpl::removeWeblogEntry(org.apache.roller.weblogger.pojos.WeblogEntry):void" />
+			<role name="Request()" element="org.apache.roller.weblogger.business.jpa.JPAWeblogEntryManagerImpl::getRootWeblogCategory(org.apache.roller.weblogger.pojos.Weblog):org.apache.roller.weblogger.pojos.WeblogCategory" />
+			<role name="Request()" element="org.apache.roller.weblogger.business.jpa.JPAWeblogEntryManagerImpl::getWeblogCategories(org.apache.roller.weblogger.pojos.Weblog, boolean):java.util.List" />
+			<role name="Request()" element="org.apache.roller.weblogger.business.jpa.JPAWeblogEntryManagerImpl::getWeblogEntries(org.apache.roller.weblogger.pojos.Weblog, org.apache.roller.weblogger.pojos.User, java.util.Date, java.util.Date, java.lang.String, java.util.List, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, int, int):java.util.List" />
+			<role name="Request()" element="org.apache.roller.weblogger.business.jpa.JPAWeblogEntryManagerImpl::getWeblogEntriesPinnedToMain(java.lang.Integer):java.util.List" />
+			<role name="Request()" element="org.apache.roller.weblogger.business.jpa.JPAWeblogEntryManagerImpl::removeWeblogEntryAttribute(java.lang.String, org.apache.roller.weblogger.pojos.WeblogEntry):void" />
+			<role name="Request()" element="org.apache.roller.weblogger.business.jpa.JPAWeblogEntryManagerImpl::removeWeblogEntryTag(java.lang.String, org.apache.roller.weblogger.pojos.WeblogEntry):void" />
+			<role name="Request()" element="org.apache.roller.weblogger.business.jpa.JPAWeblogEntryManagerImpl::getWeblogEntryByAnchor(org.apache.roller.weblogger.pojos.Weblog, java.lang.String):org.apache.roller.weblogger.pojos.WeblogEntry" />
+			<role name="Request()" element="org.apache.roller.weblogger.business.jpa.JPAWeblogEntryManagerImpl::getWeblogEntries(org.apache.roller.weblogger.pojos.WeblogCategory, boolean):java.util.List" />
+			<role name="Request()" element="org.apache.roller.weblogger.business.jpa.JPAWeblogEntryManagerImpl::createAnchor(org.apache.roller.weblogger.pojos.WeblogEntry):java.lang.String" />
+			<role name="Request()" element="org.apache.roller.weblogger.business.jpa.JPAWeblogEntryManagerImpl::isWeblogCategoryInUse(org.apache.roller.weblogger.pojos.WeblogCategory):boolean" />
+			<role name="Request()" element="org.apache.roller.weblogger.business.jpa.JPAWeblogEntryManagerImpl::getComments(org.apache.roller.weblogger.pojos.Weblog, org.apache.roller.weblogger.pojos.WeblogEntry, java.lang.String, java.util.Date, java.util.Date, java.lang.String, boolean, int, int):java.util.List" />
+			<role name="Request()" element="org.apache.roller.weblogger.business.jpa.JPAWeblogEntryManagerImpl::getWeblogCategory(java.lang.String):org.apache.roller.weblogger.pojos.WeblogCategory" />
+			<role name="Request()" element="org.apache.roller.weblogger.business.jpa.JPAWeblogEntryManagerImpl::getComment(java.lang.String):org.apache.roller.weblogger.pojos.WeblogEntryComment" />
+			<role name="Request()" element="org.apache.roller.weblogger.business.jpa.JPAWeblogEntryManagerImpl::getWeblogEntry(java.lang.String):org.apache.roller.weblogger.pojos.WeblogEntry" />
+			<role name="Request()" element="org.apache.roller.weblogger.business.jpa.JPAWeblogEntryManagerImpl::getMostCommentedWeblogEntries(org.apache.roller.weblogger.pojos.Weblog, java.util.Date, java.util.Date, int, int):java.util.List" />
+			<role name="Request()" element="org.apache.roller.weblogger.business.jpa.JPAWeblogEntryManagerImpl::applyCommentDefaultsToEntries(org.apache.roller.weblogger.pojos.Weblog):void" />
+			<role name="Request()" element="org.apache.roller.weblogger.business.jpa.JPAWeblogEntryManagerImpl::getPopularTags(org.apache.roller.weblogger.pojos.Weblog, java.util.Date, int, int):java.util.List" />
+			<role name="Request()" element="org.apache.roller.weblogger.business.jpa.JPAWeblogEntryManagerImpl::getTags(org.apache.roller.weblogger.pojos.Weblog, java.lang.String, java.lang.String, int, int):java.util.List" />
+			<role name="Request()" element="org.apache.roller.weblogger.business.jpa.JPAWeblogEntryManagerImpl::getTagComboExists(java.util.List, org.apache.roller.weblogger.pojos.Weblog):boolean" />
+			<role name="Request()" element="org.apache.roller.weblogger.business.jpa.JPAWeblogEntryManagerImpl::updateTagCount(java.lang.String, org.apache.roller.weblogger.pojos.Weblog, int):void" />
+			<role name="Request()" element="org.apache.roller.weblogger.business.jpa.JPAWeblogEntryManagerImpl::getHitCount(java.lang.String):org.apache.roller.weblogger.pojos.WeblogHitCount" />
+			<role name="Request()" element="org.apache.roller.weblogger.business.jpa.JPAWeblogEntryManagerImpl::getHitCountByWeblog(org.apache.roller.weblogger.pojos.Weblog):org.apache.roller.weblogger.pojos.WeblogHitCount" />
+			<role name="Request()" element="org.apache.roller.weblogger.business.jpa.JPAWeblogEntryManagerImpl::getHotWeblogs(int, int, int):java.util.List" />
+			<role name="Request()" element="org.apache.roller.weblogger.business.jpa.JPAWeblogEntryManagerImpl::saveHitCount(org.apache.roller.weblogger.pojos.WeblogHitCount):void" />
+			<role name="Request()" element="org.apache.roller.weblogger.business.jpa.JPAWeblogEntryManagerImpl::removeHitCount(org.apache.roller.weblogger.pojos.WeblogHitCount):void" />
+			<role name="Request()" element="org.apache.roller.weblogger.business.jpa.JPAWeblogEntryManagerImpl::incrementHitCount(org.apache.roller.weblogger.pojos.Weblog, int):void" />
+			<role name="Request()" element="org.apache.roller.weblogger.business.jpa.JPAWeblogEntryManagerImpl::resetAllHitCounts():void" />
+			<role name="Request()" element="org.apache.roller.weblogger.business.jpa.JPAWeblogEntryManagerImpl::resetHitCount(org.apache.roller.weblogger.pojos.Weblog):void" />
+			<role name="Request()" element="org.apache.roller.weblogger.business.jpa.JPAWeblogEntryManagerImpl::getCommentCount():long" />
+			<role name="Request()" element="org.apache.roller.weblogger.business.jpa.JPAWeblogEntryManagerImpl::getCommentCount(org.apache.roller.weblogger.pojos.Weblog):long" />
+			<role name="Request()" element="org.apache.roller.weblogger.business.jpa.JPAWeblogEntryManagerImpl::getEntryCount():long" />
+			<role name="Request()" element="org.apache.roller.weblogger.business.jpa.JPAWeblogEntryManagerImpl::getEntryCount(org.apache.roller.weblogger.pojos.Weblog):long" />
+		</instance>
+		<instance>
+			<role name="Adaptee" element="org.apache.roller.weblogger.util.I18nMessages" />
+			<role name="Adapter" element="org.apache.roller.weblogger.ui.rendering.model.MessageModel" />
+			<role name="adaptee" element="org.apache.roller.weblogger.ui.rendering.model.MessageModel::messages:org.apache.roller.weblogger.util.I18nMessages" />
+			<role name="Request()" element="org.apache.roller.weblogger.ui.rendering.model.MessageModel::init(java.util.Map):void" />
+		</instance>
+		<instance>
+			<role name="Adaptee" element="org.apache.roller.weblogger.business.jpa.JPAPersistenceStrategy" />
+			<role name="Adapter" element="org.apache.roller.weblogger.business.jpa.JPAMediaFileManagerImpl" />
+			<role name="adaptee" element="org.apache.roller.weblogger.business.jpa.JPAMediaFileManagerImpl::strategy:org.apache.roller.weblogger.business.jpa.JPAPersistenceStrategy" />
+			<role name="Request()" element="org.apache.roller.weblogger.business.jpa.JPAMediaFileManagerImpl::moveMediaFileDirectories(java.util.Collection, org.apache.roller.weblogger.pojos.MediaFileDirectory):void" />
+			<role name="Request()" element="org.apache.roller.weblogger.business.jpa.JPAMediaFileManagerImpl::moveMediaFiles(java.util.Collection, org.apache.roller.weblogger.pojos.MediaFileDirectory):void" />
+			<role name="Request()" element="org.apache.roller.weblogger.business.jpa.JPAMediaFileManagerImpl::createMediaFileDirectory(org.apache.roller.weblogger.pojos.MediaFileDirectory):void" />
+			<role name="Request()" element="org.apache.roller.weblogger.business.jpa.JPAMediaFileManagerImpl::createMediaFile(org.apache.roller.weblogger.pojos.Weblog, org.apache.roller.weblogger.pojos.MediaFile, org.apache.roller.weblogger.util.RollerMessages):void" />
+			<role name="Request()" element="org.apache.roller.weblogger.business.jpa.JPAMediaFileManagerImpl::updateMediaFile(org.apache.roller.weblogger.pojos.Weblog, org.apache.roller.weblogger.pojos.MediaFile):void" />
+			<role name="Request()" element="org.apache.roller.weblogger.business.jpa.JPAMediaFileManagerImpl::updateMediaFile(org.apache.roller.weblogger.pojos.Weblog, org.apache.roller.weblogger.pojos.MediaFile, java.io.InputStream):void" />
+			<role name="Request()" element="org.apache.roller.weblogger.business.jpa.JPAMediaFileManagerImpl::getMediaFile(java.lang.String, boolean):org.apache.roller.weblogger.pojos.MediaFile" />
+			<role name="Request()" element="org.apache.roller.weblogger.business.jpa.JPAMediaFileManagerImpl::getMediaFileDirectoryByPath(org.apache.roller.weblogger.pojos.Weblog, java.lang.String):org.apache.roller.weblogger.pojos.MediaFileDirectory" />
+			<role name="Request()" element="org.apache.roller.weblogger.business.jpa.JPAMediaFileManagerImpl::getMediaFileByOriginalPath(org.apache.roller.weblogger.pojos.Weblog, java.lang.String):org.apache.roller.weblogger.pojos.MediaFile" />
+			<role name="Request()" element="org.apache.roller.weblogger.business.jpa.JPAMediaFileManagerImpl::getMediaFileDirectory(java.lang.String):org.apache.roller.weblogger.pojos.MediaFileDirectory" />
+			<role name="Request()" element="org.apache.roller.weblogger.business.jpa.JPAMediaFileManagerImpl::getMediaFileRootDirectory(org.apache.roller.weblogger.pojos.Weblog):org.apache.roller.weblogger.pojos.MediaFileDirectory" />
+			<role name="Request()" element="org.apache.roller.weblogger.business.jpa.JPAMediaFileManagerImpl::getMediaFileDirectories(org.apache.roller.weblogger.pojos.Weblog):java.util.List" />
+			<role name="Request()" element="org.apache.roller.weblogger.business.jpa.JPAMediaFileManagerImpl::removeMediaFile(org.apache.roller.weblogger.pojos.Weblog, org.apache.roller.weblogger.pojos.MediaFile):void" />
+			<role name="Request()" element="org.apache.roller.weblogger.business.jpa.JPAMediaFileManagerImpl::fetchRecentPublicMediaFiles(int):java.util.List" />
+			<role name="Request()" element="org.apache.roller.weblogger.business.jpa.JPAMediaFileManagerImpl::searchMediaFiles(org.apache.roller.weblogger.pojos.Weblog, org.apache.roller.weblogger.pojos.MediaFileFilter):java.util.List" />
+			<role name="Request()" element="org.apache.roller.weblogger.business.jpa.JPAMediaFileManagerImpl::removeMediaFileDirectory(org.apache.roller.weblogger.pojos.MediaFileDirectory):void" />
+		</instance>
+		<instance>
+			<role name="Adapter" element="org.apache.roller.weblogger.ui.rendering.model.SiteModel" />
+			<role name="Adaptee" element="org.apache.roller.weblogger.ui.rendering.util.WeblogFeedRequest" />
+			<role name="adaptee" element="org.apache.roller.weblogger.ui.rendering.model.SiteModel::feedRequest:org.apache.roller.weblogger.ui.rendering.util.WeblogFeedRequest" />
+			<role name="Request()" element="org.apache.roller.weblogger.ui.rendering.model.SiteModel::init(java.util.Map):void" />
+		</instance>
+		<instance>
+			<role name="Adapter" element="org.apache.roller.weblogger.ui.rendering.model.SiteModel" />
+			<role name="Adaptee" element="org.apache.roller.weblogger.ui.rendering.util.WeblogRequest" />
+			<role name="adaptee" element="org.apache.roller.weblogger.ui.rendering.model.SiteModel::weblogRequest:org.apache.roller.weblogger.ui.rendering.util.WeblogRequest" />
+			<role name="Request()" element="org.apache.roller.weblogger.ui.rendering.model.SiteModel::init(java.util.Map):void" />
+		</instance>
+		<instance>
+			<role name="Adapter" element="org.apache.roller.weblogger.ui.rendering.model.FeedModel" />
+			<role name="Adaptee" element="org.apache.roller.weblogger.ui.rendering.util.WeblogFeedRequest" />
+			<role name="adaptee" element="org.apache.roller.weblogger.ui.rendering.model.FeedModel::feedRequest:org.apache.roller.weblogger.ui.rendering.util.WeblogFeedRequest" />
+			<role name="Request()" element="org.apache.roller.weblogger.ui.rendering.model.FeedModel::init(java.util.Map):void" />
+		</instance>
+		<instance>
+			<role name="Adapter" element="org.apache.roller.weblogger.ui.rendering.model.SearchResultsFeedModel" />
+			<role name="Adaptee" element="org.apache.roller.weblogger.ui.rendering.util.WeblogFeedRequest" />
+			<role name="adaptee" element="org.apache.roller.weblogger.ui.rendering.model.SearchResultsFeedModel::feedRequest:org.apache.roller.weblogger.ui.rendering.util.WeblogFeedRequest" />
+			<role name="Request()" element="org.apache.roller.weblogger.ui.rendering.model.SearchResultsFeedModel::init(java.util.Map):void" />
+		</instance>
+		<instance>
+			<role name="Adapter" element="org.apache.roller.weblogger.ui.rendering.model.PageModel" />
+			<role name="Adaptee" element="org.apache.roller.weblogger.ui.rendering.util.WeblogPageRequest" />
+			<role name="adaptee" element="org.apache.roller.weblogger.ui.rendering.model.PageModel::pageRequest:org.apache.roller.weblogger.ui.rendering.util.WeblogPageRequest" />
+			<role name="Request()" element="org.apache.roller.weblogger.ui.rendering.model.PageModel::init(java.util.Map):void" />
+		</instance>
+		<instance>
+			<role name="Adaptee" element="org.apache.roller.weblogger.business.jpa.JPAPersistenceStrategy" />
+			<role name="Adapter" element="org.apache.roller.weblogger.business.jpa.JPAWeblogManagerImpl" />
+			<role name="adaptee" element="org.apache.roller.weblogger.business.jpa.JPAWeblogManagerImpl::strategy:org.apache.roller.weblogger.business.jpa.JPAPersistenceStrategy" />
+			<role name="Request()" element="org.apache.roller.weblogger.business.jpa.JPAWeblogManagerImpl::saveWeblog(org.apache.roller.weblogger.pojos.Weblog):void" />
+			<role name="Request()" element="org.apache.roller.weblogger.business.jpa.JPAWeblogManagerImpl::removeWeblog(org.apache.roller.weblogger.pojos.Weblog):void" />
+			<role name="Request()" element="org.apache.roller.weblogger.business.jpa.JPAWeblogManagerImpl::savePage(org.apache.roller.weblogger.pojos.WeblogTemplate):void" />
+			<role name="Request()" element="org.apache.roller.weblogger.business.jpa.JPAWeblogManagerImpl::removePage(org.apache.roller.weblogger.pojos.WeblogTemplate):void" />
+			<role name="Request()" element="org.apache.roller.weblogger.business.jpa.JPAWeblogManagerImpl::addWeblog(org.apache.roller.weblogger.pojos.Weblog):void" />
+			<role name="Request()" element="org.apache.roller.weblogger.business.jpa.JPAWeblogManagerImpl::getWeblog(java.lang.String):org.apache.roller.weblogger.pojos.Weblog" />
+			<role name="Request()" element="org.apache.roller.weblogger.business.jpa.JPAWeblogManagerImpl::getWeblogByHandle(java.lang.String, java.lang.Boolean):org.apache.roller.weblogger.pojos.Weblog" />
+			<role name="Request()" element="org.apache.roller.weblogger.business.jpa.JPAWeblogManagerImpl::getWeblogs(java.lang.Boolean, java.lang.Boolean, java.util.Date, java.util.Date, int, int):java.util.List" />
+			<role name="Request()" element="org.apache.roller.weblogger.business.jpa.JPAWeblogManagerImpl::getPage(java.lang.String):org.apache.roller.weblogger.pojos.WeblogTemplate" />
+			<role name="Request()" element="org.apache.roller.weblogger.business.jpa.JPAWeblogManagerImpl::getPageByLink(org.apache.roller.weblogger.pojos.Weblog, java.lang.String):org.apache.roller.weblogger.pojos.WeblogTemplate" />
+			<role name="Request()" element="org.apache.roller.weblogger.business.jpa.JPAWeblogManagerImpl::getPageByAction(org.apache.roller.weblogger.pojos.Weblog, java.lang.String):org.apache.roller.weblogger.pojos.WeblogTemplate" />
+			<role name="Request()" element="org.apache.roller.weblogger.business.jpa.JPAWeblogManagerImpl::getPageByName(org.apache.roller.weblogger.pojos.Weblog, java.lang.String):org.apache.roller.weblogger.pojos.WeblogTemplate" />
+			<role name="Request()" element="org.apache.roller.weblogger.business.jpa.JPAWeblogManagerImpl::getPages(org.apache.roller.weblogger.pojos.Weblog):java.util.List" />
+			<role name="Request()" element="org.apache.roller.weblogger.business.jpa.JPAWeblogManagerImpl::getWeblogHandleLetterMap():java.util.Map" />
+			<role name="Request()" element="org.apache.roller.weblogger.business.jpa.JPAWeblogManagerImpl::getWeblogsByLetter(char, int, int):java.util.List" />
+			<role name="Request()" element="org.apache.roller.weblogger.business.jpa.JPAWeblogManagerImpl::getMostCommentedWeblogs(java.util.Date, java.util.Date, int, int):java.util.List" />
+			<role name="Request()" element="org.apache.roller.weblogger.business.jpa.JPAWeblogManagerImpl::getWeblogCount():long" />
+		</instance>
+		<instance>
+			<role name="Adaptee" element="org.apache.roller.weblogger.business.jpa.JPAPersistenceStrategy" />
+			<role name="Adapter" element="org.apache.roller.weblogger.business.jpa.JPAUserManagerImpl" />
+			<role name="adaptee" element="org.apache.roller.weblogger.business.jpa.JPAUserManagerImpl::strategy:org.apache.roller.weblogger.business.jpa.JPAPersistenceStrategy" />
+			<role name="Request()" element="org.apache.roller.weblogger.business.jpa.JPAUserManagerImpl::saveUser(org.apache.roller.weblogger.pojos.User):void" />
+			<role name="Request()" element="org.apache.roller.weblogger.business.jpa.JPAUserManagerImpl::removeUser(org.apache.roller.weblogger.pojos.User):void" />
+			<role name="Request()" element="org.apache.roller.weblogger.business.jpa.JPAUserManagerImpl::addUser(org.apache.roller.weblogger.pojos.User):void" />
+			<role name="Request()" element="org.apache.roller.weblogger.business.jpa.JPAUserManagerImpl::getUserByUserName(java.lang.String, java.lang.Boolean):org.apache.roller.weblogger.pojos.User" />
+			<role name="Request()" element="org.apache.roller.weblogger.business.jpa.JPAUserManagerImpl::getUsers(java.lang.Boolean, java.util.Date, java.util.Date, int, int):java.util.List" />
+			<role name="Request()" element="org.apache.roller.weblogger.business.jpa.JPAUserManagerImpl::getUsersStartingWith(java.lang.String, java.lang.Boolean, int, int):java.util.List" />
+			<role name="Request()" element="org.apache.roller.weblogger.business.jpa.JPAUserManagerImpl::getUserNameLetterMap():java.util.Map" />
+			<role name="Request()" element="org.apache.roller.weblogger.business.jpa.JPAUserManagerImpl::getUsersByLetter(char, int, int):java.util.List" />
+			<role name="Request()" element="org.apache.roller.weblogger.business.jpa.JPAUserManagerImpl::getUserCount():long" />
+			<role name="Request()" element="org.apache.roller.weblogger.business.jpa.JPAUserManagerImpl::getUserByAttribute(java.lang.String, java.lang.String, java.lang.Boolean):org.apache.roller.weblogger.pojos.User" />
+			<role name="Request()" element="org.apache.roller.weblogger.business.jpa.JPAUserManagerImpl::getUserAttribute(java.lang.String, java.lang.String):org.apache.roller.weblogger.pojos.UserAttribute" />
+			<role name="Request()" element="org.apache.roller.weblogger.business.jpa.JPAUserManagerImpl::getUserAttributes(java.lang.String):java.util.List" />
+			<role name="Request()" element="org.apache.roller.weblogger.business.jpa.JPAUserManagerImpl::setUserAttribute(java.lang.String, java.lang.String, java.lang.String):void" />
+			<role name="Request()" element="org.apache.roller.weblogger.business.jpa.JPAUserManagerImpl::getUserByActivationCode(java.lang.String):org.apache.roller.weblogger.pojos.User" />
+			<role name="Request()" element="org.apache.roller.weblogger.business.jpa.JPAUserManagerImpl::getWeblogPermission(org.apache.roller.weblogger.pojos.Weblog, org.apache.roller.weblogger.pojos.User):org.apache.roller.weblogger.pojos.WeblogPermission" />
+			<role name="Request()" element="org.apache.roller.weblogger.business.jpa.JPAUserManagerImpl::grantWeblogPermission(org.apache.roller.weblogger.pojos.Weblog, org.apache.roller.weblogger.pojos.User, java.util.List):void" />
+			<role name="Request()" element="org.apache.roller.weblogger.business.jpa.JPAUserManagerImpl::grantWeblogPermissionPending(org.apache.roller.weblogger.pojos.Weblog, org.apache.roller.weblogger.pojos.User, java.util.List):void" />
+			<role name="Request()" element="org.apache.roller.weblogger.business.jpa.JPAUserManagerImpl::confirmWeblogPermission(org.apache.roller.weblogger.pojos.Weblog, org.apache.roller.weblogger.pojos.User):void" />
+			<role name="Request()" element="org.apache.roller.weblogger.business.jpa.JPAUserManagerImpl::declineWeblogPermission(org.apache.roller.weblogger.pojos.Weblog, org.apache.roller.weblogger.pojos.User):void" />
+			<role name="Request()" element="org.apache.roller.weblogger.business.jpa.JPAUserManagerImpl::revokeWeblogPermission(org.apache.roller.weblogger.pojos.Weblog, org.apache.roller.weblogger.pojos.User, java.util.List):void" />
+			<role name="Request()" element="org.apache.roller.weblogger.business.jpa.JPAUserManagerImpl::getWeblogPermissions(org.apache.roller.weblogger.pojos.User):java.util.List" />
+			<role name="Request()" element="org.apache.roller.weblogger.business.jpa.JPAUserManagerImpl::getWeblogPermissions(org.apache.roller.weblogger.pojos.Weblog):java.util.List" />
+			<role name="Request()" element="org.apache.roller.weblogger.business.jpa.JPAUserManagerImpl::getWeblogPermissionsPending(org.apache.roller.weblogger.pojos.User):java.util.List" />
+			<role name="Request()" element="org.apache.roller.weblogger.business.jpa.JPAUserManagerImpl::getWeblogPermissionsPending(org.apache.roller.weblogger.pojos.Weblog):java.util.List" />
+			<role name="Request()" element="org.apache.roller.weblogger.business.jpa.JPAUserManagerImpl::hasRole(java.lang.String, org.apache.roller.weblogger.pojos.User):boolean" />
+			<role name="Request()" element="org.apache.roller.weblogger.business.jpa.JPAUserManagerImpl::getRoles(org.apache.roller.weblogger.pojos.User):java.util.List" />
+			<role name="Request()" element="org.apache.roller.weblogger.business.jpa.JPAUserManagerImpl::grantRole(java.lang.String, org.apache.roller.weblogger.pojos.User):void" />
+			<role name="Request()" element="org.apache.roller.weblogger.business.jpa.JPAUserManagerImpl::revokeRole(java.lang.String, org.apache.roller.weblogger.pojos.User):void" />
+		</instance>
+		<instance>
+			<role name="Adapter" element="org.apache.roller.weblogger.ui.rendering.pagers.AbstractWeblogEntriesPager" />
+			<role name="Adaptee" element="org.apache.roller.weblogger.util.I18nMessages" />
+			<role name="adaptee" element="org.apache.roller.weblogger.ui.rendering.pagers.AbstractWeblogEntriesPager::messageUtils:org.apache.roller.weblogger.util.I18nMessages" />
+			<role name="Request()" element="org.apache.roller.weblogger.ui.rendering.pagers.AbstractWeblogEntriesPager::getHomeName():java.lang.String" />
+			<role name="Request()" element="org.apache.roller.weblogger.ui.rendering.pagers.AbstractWeblogEntriesPager::getNextName():java.lang.String" />
+			<role name="Request()" element="org.apache.roller.weblogger.ui.rendering.pagers.AbstractWeblogEntriesPager::getPrevName():java.lang.String" />
+		</instance>
+		<instance>
+			<role name="Adapter" element="org.apache.roller.weblogger.ui.rendering.pagers.SearchResultsPager" />
+			<role name="Adaptee" element="org.apache.roller.weblogger.util.I18nMessages" />
+			<role name="adaptee" element="org.apache.roller.weblogger.ui.rendering.pagers.SearchResultsPager::messageUtils:org.apache.roller.weblogger.util.I18nMessages" />
+			<role name="Request()" element="org.apache.roller.weblogger.ui.rendering.pagers.SearchResultsPager::getHomeName():java.lang.String" />
+			<role name="Request()" element="org.apache.roller.weblogger.ui.rendering.pagers.SearchResultsPager::getNextName():java.lang.String" />
+			<role name="Request()" element="org.apache.roller.weblogger.ui.rendering.pagers.SearchResultsPager::getPrevName():java.lang.String" />
+		</instance>
+		<instance>
+			<role name="Adaptee" element="org.apache.roller.weblogger.pojos.Weblog" />
+			<role name="Adapter" element="org.apache.roller.weblogger.pojos.WeblogTemplate" />
+			<role name="adaptee" element="org.apache.roller.weblogger.pojos.WeblogTemplate::weblog:org.apache.roller.weblogger.pojos.Weblog" />
+			<role name="Request()" element="org.apache.roller.weblogger.pojos.WeblogTemplate::getDecorator():org.apache.roller.weblogger.pojos.ThemeTemplate" />
+		</instance>
+		<instance>
+			<role name="Adaptee" element="org.apache.roller.weblogger.business.jpa.JPAPersistenceStrategy" />
+			<role name="Adapter" element="org.apache.roller.weblogger.business.jpa.JPAOAuthManagerImpl" />
+			<role name="adaptee" element="org.apache.roller.weblogger.business.jpa.JPAOAuthManagerImpl::strategy:org.apache.roller.weblogger.business.jpa.JPAPersistenceStrategy" />
+			<role name="Request()" element="org.apache.roller.weblogger.business.jpa.JPAOAuthManagerImpl::markAsAuthorized(net.oauth.OAuthAccessor, java.lang.String):void" />
+			<role name="Request()" element="org.apache.roller.weblogger.business.jpa.JPAOAuthManagerImpl::generateAccessToken(net.oauth.OAuthAccessor):void" />
+			<role name="Request()" element="org.apache.roller.weblogger.business.jpa.JPAOAuthManagerImpl::addConsumer(java.lang.String, java.lang.String):net.oauth.OAuthConsumer" />
+			<role name="Request()" element="org.apache.roller.weblogger.business.jpa.JPAOAuthManagerImpl::getConsumer():net.oauth.OAuthConsumer" />
+			<role name="Request()" element="org.apache.roller.weblogger.business.jpa.JPAOAuthManagerImpl::getConsumerByUsername(java.lang.String):net.oauth.OAuthConsumer" />
+		</instance>
+		<instance>
+			<role name="Adaptee" element="org.apache.roller.weblogger.business.jpa.JPAPersistenceStrategy" />
+			<role name="Adapter" element="org.apache.roller.weblogger.business.jpa.JPABookmarkManagerImpl" />
+			<role name="adaptee" element="org.apache.roller.weblogger.business.jpa.JPABookmarkManagerImpl::strategy:org.apache.roller.weblogger.business.jpa.JPAPersistenceStrategy" />
+			<role name="Request()" element="org.apache.roller.weblogger.business.jpa.JPABookmarkManagerImpl::saveBookmark(org.apache.roller.weblogger.pojos.WeblogBookmark):void" />
+			<role name="Request()" element="org.apache.roller.weblogger.business.jpa.JPABookmarkManagerImpl::getBookmark(java.lang.String):org.apache.roller.weblogger.pojos.WeblogBookmark" />
+			<role name="Request()" element="org.apache.roller.weblogger.business.jpa.JPABookmarkManagerImpl::removeBookmark(org.apache.roller.weblogger.pojos.WeblogBookmark):void" />
+			<role name="Request()" element="org.apache.roller.weblogger.business.jpa.JPABookmarkManagerImpl::saveFolder(org.apache.roller.weblogger.pojos.WeblogBookmarkFolder):void" />
+			<role name="Request()" element="org.apache.roller.weblogger.business.jpa.JPABookmarkManagerImpl::removeFolder(org.apache.roller.weblogger.pojos.WeblogBookmarkFolder):void" />
+			<role name="Request()" element="org.apache.roller.weblogger.business.jpa.JPABookmarkManagerImpl::getFolder(java.lang.String):org.apache.roller.weblogger.pojos.WeblogBookmarkFolder" />
+			<role name="Request()" element="org.apache.roller.weblogger.business.jpa.JPABookmarkManagerImpl::importBookmarks(org.apache.roller.weblogger.pojos.Weblog, java.lang.String, java.lang.String):void" />
+			<role name="Request()" element="org.apache.roller.weblogger.business.jpa.JPABookmarkManagerImpl::getFolder(org.apache.roller.weblogger.pojos.Weblog, java.lang.String):org.apache.roller.weblogger.pojos.WeblogBookmarkFolder" />
+			<role name="Request()" element="org.apache.roller.weblogger.business.jpa.JPABookmarkManagerImpl::getBookmarks(org.apache.roller.weblogger.pojos.WeblogBookmarkFolder, boolean):java.util.List" />
+			<role name="Request()" element="org.apache.roller.weblogger.business.jpa.JPABookmarkManagerImpl::getRootFolder(org.apache.roller.weblogger.pojos.Weblog):org.apache.roller.weblogger.pojos.WeblogBookmarkFolder" />
+			<role name="Request()" element="org.apache.roller.weblogger.business.jpa.JPABookmarkManagerImpl::getAllFolders(org.apache.roller.weblogger.pojos.Weblog):java.util.List" />
+		</instance>
+		<instance>
+			<role name="Adaptee" element="org.apache.roller.weblogger.business.jpa.JPAPersistenceStrategy" />
+			<role name="Adapter" element="org.apache.roller.weblogger.business.jpa.JPARefererManagerImpl" />
+			<role name="adaptee" element="org.apache.roller.weblogger.business.jpa.JPARefererManagerImpl::strategy:org.apache.roller.weblogger.business.jpa.JPAPersistenceStrategy" />
+			<role name="Request()" element="org.apache.roller.weblogger.business.jpa.JPARefererManagerImpl::saveReferer(org.apache.roller.weblogger.pojos.WeblogReferrer):void" />
+			<role name="Request()" element="org.apache.roller.weblogger.business.jpa.JPARefererManagerImpl::removeReferer(org.apache.roller.weblogger.pojos.WeblogReferrer):void" />
+			<role name="Request()" element="org.apache.roller.weblogger.business.jpa.JPARefererManagerImpl::clearReferrers():void" />
+			<role name="Request()" element="org.apache.roller.weblogger.business.jpa.JPARefererManagerImpl::clearReferrers(org.apache.roller.weblogger.pojos.Weblog):void" />
+			<role name="Request()" element="org.apache.roller.weblogger.business.jpa.JPARefererManagerImpl::applyRefererFilters():void" />
+			<role name="Request()" element="org.apache.roller.weblogger.business.jpa.JPARefererManagerImpl::applyRefererFilters(org.apache.roller.weblogger.pojos.Weblog):void" />
+			<role name="Request()" element="org.apache.roller.weblogger.business.jpa.JPARefererManagerImpl::getHotWeblogs(int, int, int):java.util.List" />
+			<role name="Request()" element="org.apache.roller.weblogger.business.jpa.JPARefererManagerImpl::getReferers(org.apache.roller.weblogger.pojos.Weblog):java.util.List" />
+			<role name="Request()" element="org.apache.roller.weblogger.business.jpa.JPARefererManagerImpl::getTodaysReferers(org.apache.roller.weblogger.pojos.Weblog):java.util.List" />
+			<role name="Request()" element="org.apache.roller.weblogger.business.jpa.JPARefererManagerImpl::getReferersToDate(org.apache.roller.weblogger.pojos.Weblog, java.lang.String):java.util.List" />
+			<role name="Request()" element="org.apache.roller.weblogger.business.jpa.JPARefererManagerImpl::getReferersToEntry(java.lang.String):java.util.List" />
+			<role name="Request()" element="org.apache.roller.weblogger.business.jpa.JPARefererManagerImpl::getReferer(java.lang.String):org.apache.roller.weblogger.pojos.WeblogReferrer" />
+		</instance>
+		<instance>
+			<role name="Adaptee" element="org.apache.roller.weblogger.business.referrers.IncomingReferrer" />
+			<role name="Adapter" element="org.apache.roller.weblogger.business.referrers.ReferrerProcessingJob" />
+			<role name="adaptee" element="org.apache.roller.weblogger.business.referrers.ReferrerProcessingJob::referrer:org.apache.roller.weblogger.business.referrers.IncomingReferrer" />
+			<role name="Request()" element="org.apache.roller.weblogger.business.referrers.ReferrerProcessingJob::execute():void" />
+		</instance>
+		<instance>
+			<role name="Adaptee" element="org.apache.roller.weblogger.business.URLStrategy" />
+			<role name="Adapter" element="org.apache.roller.weblogger.ui.rendering.model.SearchResultsFeedModel" />
+			<role name="adaptee" element="org.apache.roller.weblogger.ui.rendering.model.SearchResultsFeedModel::urlStrategy:org.apache.roller.weblogger.business.URLStrategy" />
+			<role name="Request()" element="org.apache.roller.weblogger.ui.rendering.model.SearchResultsFeedModel::init(java.util.Map):void" />
+		</instance>
+		<instance>
+			<role name="Adaptee" element="org.apache.roller.weblogger.business.jpa.JPAPersistenceStrategy" />
+			<role name="Adapter" element="org.apache.roller.weblogger.business.jpa.JPAPropertiesManagerImpl" />
+			<role name="adaptee" element="org.apache.roller.weblogger.business.jpa.JPAPropertiesManagerImpl::strategy:org.apache.roller.weblogger.business.jpa.JPAPersistenceStrategy" />
+			<role name="Request()" element="org.apache.roller.weblogger.business.jpa.JPAPropertiesManagerImpl::getProperty(java.lang.String):org.apache.roller.weblogger.pojos.RuntimeConfigProperty" />
+			<role name="Request()" element="org.apache.roller.weblogger.business.jpa.JPAPropertiesManagerImpl::getProperties():java.util.Map" />
+			<role name="Request()" element="org.apache.roller.weblogger.business.jpa.JPAPropertiesManagerImpl::saveProperty(org.apache.roller.weblogger.pojos.RuntimeConfigProperty):void" />
+			<role name="Request()" element="org.apache.roller.weblogger.business.jpa.JPAPropertiesManagerImpl::saveProperties(java.util.Map):void" />
+		</instance>
+		<instance>
+			<role name="Adaptee" element="org.apache.roller.weblogger.business.jpa.JPAPersistenceStrategy" />
+			<role name="Adapter" element="org.apache.roller.weblogger.business.jpa.JPAPingTargetManagerImpl" />
+			<role name="adaptee" element="org.apache.roller.weblogger.business.jpa.JPAPingTargetManagerImpl::strategy:org.apache.roller.weblogger.business.jpa.JPAPersistenceStrategy" />
+			<role name="Request()" element="org.apache.roller.weblogger.business.jpa.JPAPingTargetManagerImpl::removePingTarget(org.apache.roller.weblogger.pojos.PingTarget):void" />
+			<role name="Request()" element="org.apache.roller.weblogger.business.jpa.JPAPingTargetManagerImpl::removeAllCustomPingTargets():void" />
+			<role name="Request()" element="org.apache.roller.weblogger.business.jpa.JPAPingTargetManagerImpl::savePingTarget(org.apache.roller.weblogger.pojos.PingTarget):void" />
+			<role name="Request()" element="org.apache.roller.weblogger.business.jpa.JPAPingTargetManagerImpl::getPingTarget(java.lang.String):org.apache.roller.weblogger.pojos.PingTarget" />
+			<role name="Request()" element="org.apache.roller.weblogger.business.jpa.JPAPingTargetManagerImpl::getCommonPingTargets():java.util.List" />
+			<role name="Request()" element="org.apache.roller.weblogger.business.jpa.JPAPingTargetManagerImpl::getCustomPingTargets(org.apache.roller.weblogger.pojos.Weblog):java.util.List" />
+		</instance>
+		<instance>
+			<role name="Adaptee" element="org.apache.roller.weblogger.business.jpa.JPAPersistenceStrategy" />
+			<role name="Adapter" element="org.apache.roller.weblogger.business.jpa.JPAAutoPingManagerImpl" />
+			<role name="adaptee" element="org.apache.roller.weblogger.business.jpa.JPAAutoPingManagerImpl::strategy:org.apache.roller.weblogger.business.jpa.JPAPersistenceStrategy" />
+			<role name="Request()" element="org.apache.roller.weblogger.business.jpa.JPAAutoPingManagerImpl::getAutoPing(java.lang.String):org.apache.roller.weblogger.pojos.AutoPing" />
+			<role name="Request()" element="org.apache.roller.weblogger.business.jpa.JPAAutoPingManagerImpl::saveAutoPing(org.apache.roller.weblogger.pojos.AutoPing):void" />
+			<role name="Request()" element="org.apache.roller.weblogger.business.jpa.JPAAutoPingManagerImpl::removeAutoPing(org.apache.roller.weblogger.pojos.AutoPing):void" />
+			<role name="Request()" element="org.apache.roller.weblogger.business.jpa.JPAAutoPingManagerImpl::removeAutoPing(org.apache.roller.weblogger.pojos.PingTarget, org.apache.roller.weblogger.pojos.Weblog):void" />
+			<role name="Request()" element="org.apache.roller.weblogger.business.jpa.JPAAutoPingManagerImpl::removeAutoPings(java.util.Collection):void" />
+			<role name="Request()" element="org.apache.roller.weblogger.business.jpa.JPAAutoPingManagerImpl::removeAllAutoPings():void" />
+			<role name="Request()" element="org.apache.roller.weblogger.business.jpa.JPAAutoPingManagerImpl::getAutoPingsByWebsite(org.apache.roller.weblogger.pojos.Weblog):java.util.List" />
+			<role name="Request()" element="org.apache.roller.weblogger.business.jpa.JPAAutoPingManagerImpl::getAutoPingsByTarget(org.apache.roller.weblogger.pojos.PingTarget):java.util.List" />
+		</instance>
+		<instance>
+			<role name="Adaptee" element="org.apache.roller.planet.business.jpa.JPAPersistenceStrategy" />
+			<role name="Adapter" element="org.apache.roller.planet.business.jpa.JPAPlanetImpl" />
+			<role name="adaptee" element="org.apache.roller.planet.business.jpa.JPAPlanetImpl::strategy:org.apache.roller.planet.business.jpa.JPAPersistenceStrategy" />
+			<role name="Request()" element="org.apache.roller.planet.business.jpa.JPAPlanetImpl::flush():void" />
+			<role name="Request()" element="org.apache.roller.planet.business.jpa.JPAPlanetImpl::release():void" />
+		</instance>
+		<instance>
+			<role name="Adaptee" element="org.apache.roller.planet.business.jpa.JPAPersistenceStrategy" />
+			<role name="Adapter" element="org.apache.roller.planet.business.jpa.JPAPlanetManagerImpl" />
+			<role name="adaptee" element="org.apache.roller.planet.business.jpa.JPAPlanetManagerImpl::strategy:org.apache.roller.planet.business.jpa.JPAPersistenceStrategy" />
+			<role name="Request()" element="org.apache.roller.planet.business.jpa.JPAPlanetManagerImpl::saveGroup(org.apache.roller.planet.pojos.PlanetGroup):void" />
+			<role name="Request()" element="org.apache.roller.planet.business.jpa.JPAPlanetManagerImpl::saveEntry(org.apache.roller.planet.pojos.SubscriptionEntry):void" />
+			<role name="Request()" element="org.apache.roller.planet.business.jpa.JPAPlanetManagerImpl::saveSubscription(org.apache.roller.planet.pojos.Subscription):void" />
+			<role name="Request()" element="org.apache.roller.planet.business.jpa.JPAPlanetManagerImpl::deleteEntry(org.apache.roller.planet.pojos.SubscriptionEntry):void" />
+			<role name="Request()" element="org.apache.roller.planet.business.jpa.JPAPlanetManagerImpl::deleteGroup(org.apache.roller.planet.pojos.PlanetGroup):void" />
+			<role name="Request()" element="org.apache.roller.planet.business.jpa.JPAPlanetManagerImpl::deleteSubscription(org.apache.roller.planet.pojos.Subscription):void" />
+			<role name="Request()" element="org.apache.roller.planet.business.jpa.JPAPlanetManagerImpl::getSubscription(java.lang.String):org.apache.roller.planet.pojos.Subscription" />
+			<role name="Request()" element="org.apache.roller.planet.business.jpa.JPAPlanetManagerImpl::getSubscriptionById(java.lang.String):org.apache.roller.planet.pojos.Subscription" />
+			<role name="Request()" element="org.apache.roller.planet.business.jpa.JPAPlanetManagerImpl::getSubscriptionCount():int" />
+			<role name="Request()" element="org.apache.roller.planet.business.jpa.JPAPlanetManagerImpl::getTopSubscriptions(org.apache.roller.planet.pojos.PlanetGroup, int, int):java.util.List" />
+			<role name="Request()" element="org.apache.roller.planet.business.jpa.JPAPlanetManagerImpl::getGroupById(java.lang.String):org.apache.roller.planet.pojos.PlanetGroup" />
+			<role name="Request()" element="org.apache.roller.planet.business.jpa.JPAPlanetManagerImpl::savePlanet(org.apache.roller.planet.pojos.Planet):void" />
+			<role name="Request()" element="org.apache.roller.planet.business.jpa.JPAPlanetManagerImpl::getPlanet(java.lang.String):org.apache.roller.planet.pojos.Planet" />
+			<role name="Request()" element="org.apache.roller.planet.business.jpa.JPAPlanetManagerImpl::getPlanetById(java.lang.String):org.apache.roller.planet.pojos.Planet" />
+			<role name="Request()" element="org.apache.roller.planet.business.jpa.JPAPlanetManagerImpl::getPlanets():java.util.List" />
+			<role name="Request()" element="org.apache.roller.planet.business.jpa.JPAPlanetManagerImpl::getGroup(org.apache.roller.planet.pojos.Planet, java.lang.String):org.apache.roller.planet.pojos.PlanetGroup" />
+			<role name="Request()" element="org.apache.roller.planet.business.jpa.JPAPlanetManagerImpl::deletePlanet(org.apache.roller.planet.pojos.Planet):void" />
+			<role name="Request()" element="org.apache.roller.planet.business.jpa.JPAPlanetManagerImpl::deleteEntries(org.apache.roller.planet.pojos.Subscription):void" />
+			<role name="Request()" element="org.apache.roller.planet.business.jpa.JPAPlanetManagerImpl::getSubscriptions():java.util.List" />
+			<role name="Request()" element="org.apache.roller.planet.business.jpa.JPAPlanetManagerImpl::getEntryById(java.lang.String):org.apache.roller.planet.pojos.SubscriptionEntry" />
+			<role name="Request()" element="org.apache.roller.planet.business.jpa.JPAPlanetManagerImpl::getEntries(org.apache.roller.planet.pojos.Subscription, int, int):java.util.List" />
+			<role name="Request()" element="org.apache.roller.planet.business.jpa.JPAPlanetManagerImpl::getEntries(org.apache.roller.planet.pojos.PlanetGroup, java.util.Date, java.util.Date, int, int):java.util.List" />
+		</instance>
+		<instance>
+			<role name="Adaptee" element="org.apache.roller.planet.business.jpa.JPAPersistenceStrategy" />
+			<role name="Adapter" element="org.apache.roller.planet.business.jpa.JPAPropertiesManagerImpl" />
+			<role name="adaptee" element="org.apache.roller.planet.business.jpa.JPAPropertiesManagerImpl::strategy:org.apache.roller.planet.business.jpa.JPAPersistenceStrategy" />
+			<role name="Request()" element="org.apache.roller.planet.business.jpa.JPAPropertiesManagerImpl::getProperty(java.lang.String):org.apache.roller.planet.pojos.RuntimeConfigProperty" />
+			<role name="Request()" element="org.apache.roller.planet.business.jpa.JPAPropertiesManagerImpl::getProperties():java.util.Map" />
+			<role name="Request()" element="org.apache.roller.planet.business.jpa.JPAPropertiesManagerImpl::saveProperty(org.apache.roller.planet.pojos.RuntimeConfigProperty):void" />
+			<role name="Request()" element="org.apache.roller.planet.business.jpa.JPAPropertiesManagerImpl::saveProperties(java.util.Map):void" />
+		</instance>
+		<instance>
+			<role name="Adaptee" element="org.apache.roller.weblogger.business.jpa.JPAPersistenceStrategy" />
+			<role name="Adapter" element="org.apache.roller.weblogger.business.jpa.JPAPingQueueManagerImpl" />
+			<role name="adaptee" element="org.apache.roller.weblogger.business.jpa.JPAPingQueueManagerImpl::strategy:org.apache.roller.weblogger.business.jpa.JPAPersistenceStrategy" />
+			<role name="Request()" element="org.apache.roller.weblogger.business.jpa.JPAPingQueueManagerImpl::getQueueEntry(java.lang.String):org.apache.roller.weblogger.pojos.PingQueueEntry" />
+			<role name="Request()" element="org.apache.roller.weblogger.business.jpa.JPAPingQueueManagerImpl::saveQueueEntry(org.apache.roller.weblogger.pojos.PingQueueEntry):void" />
+			<role name="Request()" element="org.apache.roller.weblogger.business.jpa.JPAPingQueueManagerImpl::removeQueueEntry(org.apache.roller.weblogger.pojos.PingQueueEntry):void" />
+			<role name="Request()" element="org.apache.roller.weblogger.business.jpa.JPAPingQueueManagerImpl::getAllQueueEntries():java.util.List" />
+		</instance>
+		<instance>
+			<role name="Adaptee" element="org.apache.roller.planet.ui.rendering.util.PlanetGroupRequest" />
+			<role name="Adapter" element="org.apache.roller.planet.ui.rendering.model.PlanetGroupModel" />
+			<role name="adaptee" element="org.apache.roller.planet.ui.rendering.model.PlanetGroupModel::planetGroupRequest:org.apache.roller.planet.ui.rendering.util.PlanetGroupRequest" />
+			<role name="Request()" element="org.apache.roller.planet.ui.rendering.model.PlanetGroupModel::init(java.util.Map):void" />
+		</instance>
+		<instance>
+			<role name="Adaptee" element="org.apache.roller.weblogger.business.WeblogManager" />
+			<role name="Adapter" element="org.apache.roller.weblogger.business.WebloggerImpl" />
+			<role name="adaptee" element="org.apache.roller.weblogger.business.WebloggerImpl::weblogManager:org.apache.roller.weblogger.business.WeblogManager" />
+			<role name="Request()" element="org.apache.roller.weblogger.business.WebloggerImpl::release():void" />
+		</instance>
+		<instance>
+			<role name="Adaptee" element="org.apache.roller.weblogger.business.Weblogger" />
+			<role name="Adapter" element="org.apache.roller.weblogger.business.jpa.JPAWeblogManagerImpl" />
+			<role name="adaptee" element="org.apache.roller.weblogger.business.jpa.JPAWeblogManagerImpl::roller:org.apache.roller.weblogger.business.Weblogger" />
+			<role name="Request()" element="org.apache.roller.weblogger.business.jpa.JPAWeblogManagerImpl::savePage(org.apache.roller.weblogger.pojos.WeblogTemplate):void" />
+			<role name="Request()" element="org.apache.roller.weblogger.business.jpa.JPAWeblogManagerImpl::removePage(org.apache.roller.weblogger.pojos.WeblogTemplate):void" />
+			<role name="Request()" element="org.apache.roller.weblogger.business.jpa.JPAWeblogManagerImpl::getUserWeblogs(org.apache.roller.weblogger.pojos.User, boolean):java.util.List" />
+			<role name="Request()" element="org.apache.roller.weblogger.business.jpa.JPAWeblogManagerImpl::getWeblogUsers(org.apache.roller.weblogger.pojos.Weblog, boolean):java.util.List" />
+		</instance>
+		<instance>
+			<role name="Adaptee" element="org.apache.roller.weblogger.business.MediaFileManager" />
+			<role name="Adapter" element="org.apache.roller.weblogger.business.WebloggerImpl" />
+			<role name="adaptee" element="org.apache.roller.weblogger.business.WebloggerImpl::mediaFileManager:org.apache.roller.weblogger.business.MediaFileManager" />
+			<role name="Request()" element="org.apache.roller.weblogger.business.WebloggerImpl::release():void" />
+		</instance>
+		<instance>
+			<role name="Adaptee" element="org.apache.roller.weblogger.business.Weblogger" />
+			<role name="Adapter" element="org.apache.roller.weblogger.business.jpa.JPAMediaFileManagerImpl" />
+			<role name="adaptee" element="org.apache.roller.weblogger.business.jpa.JPAMediaFileManagerImpl::roller:org.apache.roller.weblogger.business.Weblogger" />
+			<role name="Request()" element="org.apache.roller.weblogger.business.jpa.JPAMediaFileManagerImpl::moveMediaFileDirectories(java.util.Collection, org.apache.roller.weblogger.pojos.MediaFileDirectory):void" />
+			<role name="Request()" element="org.apache.roller.weblogger.business.jpa.JPAMediaFileManagerImpl::moveMediaFiles(java.util.Collection, org.apache.roller.weblogger.pojos.MediaFileDirectory):void" />
+			<role name="Request()" element="org.apache.roller.weblogger.business.jpa.JPAMediaFileManagerImpl::createMediaFileDirectory(org.apache.roller.weblogger.pojos.MediaFileDirectory, java.lang.String):org.apache.roller.weblogger.pojos.MediaFileDirectory" />
+			<role name="Request()" element="org.apache.roller.weblogger.business.jpa.JPAMediaFileManagerImpl::createMediaFileDirectory(org.apache.roller.weblogger.pojos.MediaFileDirectory):void" />
+			<role name="Request()" element="org.apache.roller.weblogger.business.jpa.JPAMediaFileManagerImpl::createMediaFileDirectoryByPath(org.apache.roller.weblogger.pojos.Weblog, java.lang.String):org.apache.roller.weblogger.pojos.MediaFileDirectory" />
+			<role name="Request()" element="org.apache.roller.weblogger.business.jpa.JPAMediaFileManagerImpl::createMediaFile(org.apache.roller.weblogger.pojos.Weblog, org.apache.roller.weblogger.pojos.MediaFile, org.apache.roller.weblogger.util.RollerMessages):void" />
+			<role name="Request()" element="org.apache.roller.weblogger.business.jpa.JPAMediaFileManagerImpl::updateMediaFile(org.apache.roller.weblogger.pojos.Weblog, org.apache.roller.weblogger.pojos.MediaFile):void" />
+			<role name="Request()" element="org.apache.roller.weblogger.business.jpa.JPAMediaFileManagerImpl::updateMediaFile(org.apache.roller.weblogger.pojos.Weblog, org.apache.roller.weblogger.pojos.MediaFile, java.io.InputStream):void" />
+			<role name="Request()" element="org.apache.roller.weblogger.business.jpa.JPAMediaFileManagerImpl::removeMediaFile(org.apache.roller.weblogger.pojos.Weblog, org.apache.roller.weblogger.pojos.MediaFile):void" />
+		</instance>
+		<instance>
+			<role name="Adaptee" element="org.apache.roller.weblogger.business.URLStrategy" />
+			<role name="Adapter" element="org.apache.roller.weblogger.ui.rendering.pagers.SearchResultsPager" />
+			<role name="adaptee" element="org.apache.roller.weblogger.ui.rendering.pagers.SearchResultsPager::urlStrategy:org.apache.roller.weblogger.business.URLStrategy" />
+			<role name="Request()" element="org.apache.roller.weblogger.ui.rendering.pagers.SearchResultsPager::getHomeLink():java.lang.String" />
+			<role name="Request()" element="org.apache.roller.weblogger.ui.rendering.pagers.SearchResultsPager::getNextLink():java.lang.String" />
+			<role name="Request()" element="org.apache.roller.weblogger.ui.rendering.pagers.SearchResultsPager::getPrevLink():java.lang.String" />
+		</instance>
+		<instance>
+			<role name="Adaptee" element="org.apache.roller.weblogger.business.Weblogger" />
+			<role name="Adapter" element="org.apache.roller.weblogger.business.themes.ThemeManagerImpl" />
+			<role name="adaptee" element="org.apache.roller.weblogger.business.themes.ThemeManagerImpl::roller:org.apache.roller.weblogger.business.Weblogger" />
+			<role name="Request()" element="org.apache.roller.weblogger.business.themes.ThemeManagerImpl::getTheme(org.apache.roller.weblogger.pojos.Weblog):org.apache.roller.weblogger.pojos.WeblogTheme" />
+			<role name="Request()" element="org.apache.roller.weblogger.business.themes.ThemeManagerImpl::importTheme(org.apache.roller.weblogger.pojos.Weblog, org.apache.roller.weblogger.business.themes.SharedTheme):void" />
+		</instance>
+		<instance>
+			<role name="Adaptee" element="org.apache.roller.weblogger.pojos.WeblogTemplate" />
+			<role name="Adapter" element="org.apache.roller.scripting.GSPRenderer" />
+			<role name="adaptee" element="org.apache.roller.scripting.GSPRenderer::template:org.apache.roller.weblogger.pojos.WeblogTemplate" />
+			<role name="Request()" element="org.apache.roller.scripting.GSPRenderer::render(java.util.Map, java.io.Writer):void" />
+		</instance>
+		<instance>
+			<role name="Adaptee" element="org.apache.roller.weblogger.pojos.WeblogTemplate" />
+			<role name="Adapter" element="org.apache.roller.scripting.GroovletRenderer" />
+			<role name="adaptee" element="org.apache.roller.scripting.GroovletRenderer::template:org.apache.roller.weblogger.pojos.WeblogTemplate" />
+			<role name="Request()" element="org.apache.roller.scripting.GroovletRenderer::render(java.util.Map, java.io.Writer):void" />
+		</instance>
+		<instance>
+			<role name="Adaptee" element="org.apache.roller.weblogger.business.Weblogger" />
+			<role name="Adapter" element="org.apache.roller.weblogger.business.jpa.JPARefererManagerImpl" />
+			<role name="adaptee" element="org.apache.roller.weblogger.business.jpa.JPARefererManagerImpl::roller:org.apache.roller.weblogger.business.Weblogger" />
+			<role name="Request()" element="org.apache.roller.weblogger.business.jpa.JPARefererManagerImpl::processReferrer(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String):void" />
+		</instance>
+		<instance>
+			<role name="Adaptee" element="org.apache.roller.weblogger.business.referrers.RefererManager" />
+			<role name="Adapter" element="org.apache.roller.weblogger.business.WebloggerImpl" />
+			<role name="adaptee" element="org.apache.roller.weblogger.business.WebloggerImpl::refererManager:org.apache.roller.weblogger.business.referrers.RefererManager" />
+			<role name="Request()" element="org.apache.roller.weblogger.business.WebloggerImpl::release():void" />
+		</instance>
+		<instance>
+			<role name="Adaptee" element="org.apache.roller.weblogger.util.cache.Cache" />
+			<role name="Adapter" element="org.apache.roller.weblogger.ui.rendering.util.cache.SiteWideCache" />
+			<role name="adaptee" element="org.apache.roller.weblogger.ui.rendering.util.cache.SiteWideCache::contentCache:org.apache.roller.weblogger.util.cache.Cache" />
+			<role name="Request()" element="org.apache.roller.weblogger.ui.rendering.util.cache.SiteWideCache::invalidate(org.apache.roller.weblogger.pojos.WeblogEntry):void" />
+			<role name="Request()" element="org.apache.roller.weblogger.ui.rendering.util.cache.SiteWideCache::invalidate(org.apache.roller.weblogger.pojos.Weblog):void" />
+		</instance>
+		<instance>
+			<role name="Adaptee" element="org.apache.roller.weblogger.business.Weblogger" />
+			<role name="Adapter" element="org.apache.roller.weblogger.business.jpa.JPAAutoPingManagerImpl" />
+			<role name="adaptee" element="org.apache.roller.weblogger.business.jpa.JPAAutoPingManagerImpl::roller:org.apache.roller.weblogger.business.Weblogger" />
+			<role name="Request()" element="org.apache.roller.weblogger.business.jpa.JPAAutoPingManagerImpl::queueApplicableAutoPings(org.apache.roller.weblogger.pojos.WeblogEntry):void" />
+		</instance>
+		<instance>
+			<role name="Adaptee" element="org.apache.roller.weblogger.business.pings.AutoPingManager" />
+			<role name="Adapter" element="org.apache.roller.weblogger.business.WebloggerImpl" />
+			<role name="adaptee" element="org.apache.roller.weblogger.business.WebloggerImpl::autoPingManager:org.apache.roller.weblogger.business.pings.AutoPingManager" />
+			<role name="Request()" element="org.apache.roller.weblogger.business.WebloggerImpl::release():void" />
+		</instance>
+		<instance>
+			<role name="Adaptee" element="org.apache.roller.weblogger.business.Weblogger" />
+			<role name="Adapter" element="org.apache.roller.weblogger.business.search.IndexManagerImpl" />
+			<role name="adaptee" element="org.apache.roller.weblogger.business.search.IndexManagerImpl::roller:org.apache.roller.weblogger.business.Weblogger" />
+			<role name="Request()" element="org.apache.roller.weblogger.business.search.IndexManagerImpl::executeIndexOperationNow(org.apache.roller.weblogger.business.search.operations.IndexOperation):void" />
+		</instance>
+		<instance>
+			<role name="Adaptee" element="org.apache.roller.weblogger.business.search.IndexManager" />
+			<role name="Adapter" element="org.apache.roller.weblogger.business.WebloggerImpl" />
+			<role name="adaptee" element="org.apache.roller.weblogger.business.WebloggerImpl::indexManager:org.apache.roller.weblogger.business.search.IndexManager" />
+			<role name="Request()" element="org.apache.roller.weblogger.business.WebloggerImpl::shutdown():void" />
+		</instance>
+		<instance>
+			<role name="Adaptee" element="org.apache.roller.weblogger.business.runnable.ThreadManager" />
+			<role name="Adapter" element="org.apache.roller.weblogger.business.WebloggerImpl" />
+			<role name="adaptee" element="org.apache.roller.weblogger.business.WebloggerImpl::threadManager:org.apache.roller.weblogger.business.runnable.ThreadManager" />
+			<role name="Request()" element="org.apache.roller.weblogger.business.WebloggerImpl::release():void" />
+			<role name="Request()" element="org.apache.roller.weblogger.business.WebloggerImpl::shutdown():void" />
+		</instance>
+		<instance>
+			<role name="Adaptee" element="org.apache.roller.weblogger.business.BookmarkManager" />
+			<role name="Adapter" element="org.apache.roller.weblogger.business.WebloggerImpl" />
+			<role name="adaptee" element="org.apache.roller.weblogger.business.WebloggerImpl::bookmarkManager:org.apache.roller.weblogger.business.BookmarkManager" />
+			<role name="Request()" element="org.apache.roller.weblogger.business.WebloggerImpl::release():void" />
+		</instance>
+		<instance>
+			<role name="Adaptee" element="org.apache.roller.weblogger.business.Weblogger" />
+			<role name="Adapter" element="org.apache.roller.weblogger.business.jpa.JPABookmarkManagerImpl" />
+			<role name="adaptee" element="org.apache.roller.weblogger.business.jpa.JPABookmarkManagerImpl::roller:org.apache.roller.weblogger.business.Weblogger" />
+			<role name="Request()" element="org.apache.roller.weblogger.business.jpa.JPABookmarkManagerImpl::saveBookmark(org.apache.roller.weblogger.pojos.WeblogBookmark):void" />
+			<role name="Request()" element="org.apache.roller.weblogger.business.jpa.JPABookmarkManagerImpl::removeBookmark(org.apache.roller.weblogger.pojos.WeblogBookmark):void" />
+			<role name="Request()" element="org.apache.roller.weblogger.business.jpa.JPABookmarkManagerImpl::saveFolder(org.apache.roller.weblogger.pojos.WeblogBookmarkFolder):void" />
+			<role name="Request()" element="org.apache.roller.weblogger.business.jpa.JPABookmarkManagerImpl::removeFolder(org.apache.roller.weblogger.pojos.WeblogBookmarkFolder):void" />
+		</instance>
+		<instance>
+			<role name="Adaptee" element="org.apache.roller.weblogger.business.Weblogger" />
+			<role name="Adapter" element="org.apache.roller.weblogger.business.jpa.JPAWeblogEntryManagerImpl" />
+			<role name="adaptee" element="org.apache.roller.weblogger.business.jpa.JPAWeblogEntryManagerImpl::roller:org.apache.roller.weblogger.business.Weblogger" />
+			<role name="Request()" element="org.apache.roller.weblogger.business.jpa.JPAWeblogEntryManagerImpl::saveWeblogCategory(org.apache.roller.weblogger.pojos.WeblogCategory):void" />
+			<role name="Request()" element="org.apache.roller.weblogger.business.jpa.JPAWeblogEntryManagerImpl::removeWeblogCategory(org.apache.roller.weblogger.pojos.WeblogCategory):void" />
+			<role name="Request()" element="org.apache.roller.weblogger.business.jpa.JPAWeblogEntryManagerImpl::saveComment(org.apache.roller.weblogger.pojos.WeblogEntryComment):void" />
+			<role name="Request()" element="org.apache.roller.weblogger.business.jpa.JPAWeblogEntryManagerImpl::removeComment(org.apache.roller.weblogger.pojos.WeblogEntryComment):void" />
+			<role name="Request()" element="org.apache.roller.weblogger.business.jpa.JPAWeblogEntryManagerImpl::saveWeblogEntry(org.apache.roller.weblogger.pojos.WeblogEntry):void" />
+			<role name="Request()" element="org.apache.roller.weblogger.business.jpa.JPAWeblogEntryManagerImpl::removeWeblogEntry(org.apache.roller.weblogger.pojos.WeblogEntry):void" />
+		</instance>
+		<instance>
+			<role name="Adaptee" element="org.apache.roller.weblogger.business.pings.PingTargetManager" />
+			<role name="Adapter" element="org.apache.roller.weblogger.business.WebloggerImpl" />
+			<role name="adaptee" element="org.apache.roller.weblogger.business.WebloggerImpl::pingTargetManager:org.apache.roller.weblogger.business.pings.PingTargetManager" />
+			<role name="Request()" element="org.apache.roller.weblogger.business.WebloggerImpl::release():void" />
+		</instance>
+		<instance>
+			<role name="Adaptee" element="org.apache.roller.weblogger.business.Weblogger" />
+			<role name="Adapter" element="org.apache.roller.weblogger.business.referrers.ReferrerQueueManagerImpl" />
+			<role name="adaptee" element="org.apache.roller.weblogger.business.referrers.ReferrerQueueManagerImpl::roller:org.apache.roller.weblogger.business.Weblogger" />
+			<role name="Request()" element="org.apache.roller.weblogger.business.referrers.ReferrerQueueManagerImpl::processReferrer(org.apache.roller.weblogger.business.referrers.IncomingReferrer):void" />
+		</instance>
+		<instance>
+			<role name="Adaptee" element="org.apache.roller.planet.pojos.Template" />
+			<role name="Adapter" element="org.apache.roller.planet.ui.rendering.velocity.VelocityRenderer" />
+			<role name="adaptee" element="org.apache.roller.planet.ui.rendering.velocity.VelocityRenderer::renderTemplate:org.apache.roller.planet.pojos.Template" />
+			<role name="Request()" element="org.apache.roller.planet.ui.rendering.velocity.VelocityRenderer::render(java.util.Map, java.io.Writer):void" />
+		</instance>
+		<instance>
+			<role name="Adaptee" element="org.apache.roller.weblogger.business.FileContentManager" />
+			<role name="Adapter" element="org.apache.roller.weblogger.business.WebloggerImpl" />
+			<role name="adaptee" element="org.apache.roller.weblogger.business.WebloggerImpl::fileContentManager:org.apache.roller.weblogger.business.FileContentManager" />
+			<role name="Request()" element="org.apache.roller.weblogger.business.WebloggerImpl::release():void" />
+		</instance>
+		<instance>
+			<role name="Adaptee" element="org.apache.roller.weblogger.business.Weblogger" />
+			<role name="Adapter" element="org.apache.roller.weblogger.business.jpa.JPAOAuthManagerImpl" />
+			<role name="adaptee" element="org.apache.roller.weblogger.business.jpa.JPAOAuthManagerImpl::roller:org.apache.roller.weblogger.business.Weblogger" />
+			<role name="Request()" element="org.apache.roller.weblogger.business.jpa.JPAOAuthManagerImpl::getServiceProvider():net.oauth.OAuthServiceProvider" />
+		</instance>
+		<instance>
+			<role name="Adaptee" element="org.apache.roller.weblogger.business.UserManager" />
+			<role name="Adapter" element="org.apache.roller.weblogger.business.WebloggerImpl" />
+			<role name="adaptee" element="org.apache.roller.weblogger.business.WebloggerImpl::userManager:org.apache.roller.weblogger.business.UserManager" />
+			<role name="Request()" element="org.apache.roller.weblogger.business.WebloggerImpl::release():void" />
+		</instance>
+		<instance>
+			<role name="Adaptee" element="org.apache.roller.weblogger.business.pings.PingQueueManager" />
+			<role name="Adapter" element="org.apache.roller.weblogger.business.WebloggerImpl" />
+			<role name="adaptee" element="org.apache.roller.weblogger.business.WebloggerImpl::pingQueueManager:org.apache.roller.weblogger.business.pings.PingQueueManager" />
+			<role name="Request()" element="org.apache.roller.weblogger.business.WebloggerImpl::release():void" />
+		</instance>
+		<instance>
+			<role name="Adaptee" element="org.apache.roller.weblogger.business.plugins.PluginManager" />
+			<role name="Adapter" element="org.apache.roller.weblogger.business.WebloggerImpl" />
+			<role name="adaptee" element="org.apache.roller.weblogger.business.WebloggerImpl::pluginManager:org.apache.roller.weblogger.business.plugins.PluginManager" />
+			<role name="Request()" element="org.apache.roller.weblogger.business.WebloggerImpl::release():void" />
+		</instance>
+		<instance>
+			<role name="Adaptee" element="org.apache.roller.weblogger.pojos.Template" />
+			<role name="Adapter" element="org.apache.roller.weblogger.ui.rendering.velocity.VelocityRenderer" />
+			<role name="adaptee" element="org.apache.roller.weblogger.ui.rendering.velocity.VelocityRenderer::renderTemplate:org.apache.roller.weblogger.pojos.Template" />
+			<role name="Request()" element="org.apache.roller.weblogger.ui.rendering.velocity.VelocityRenderer::render(java.util.Map, java.io.Writer):void" />
+		</instance>
+	</pattern>
+	<pattern name="Command" />
+	<pattern name="Composite" />
+	<pattern name="Decorator" />
+	<pattern name="Observer" />
+	<pattern name="State">
+		<instance>
+			<role name="Context" element="org.apache.roller.weblogger.webservices.atomprotocol.EntryCollection" />
+			<role name="State" element="org.apache.roller.weblogger.business.Weblogger" />
+			<role name="state" element="org.apache.roller.weblogger.webservices.atomprotocol.EntryCollection::roller:org.apache.roller.weblogger.business.Weblogger" />
+			<role name="Request()" element="org.apache.roller.weblogger.webservices.atomprotocol.EntryCollection::postEntry(com.sun.syndication.propono.atom.server.AtomRequest, com.sun.syndication.feed.atom.Entry):com.sun.syndication.feed.atom.Entry" />
+			<role name="Request()" element="org.apache.roller.weblogger.webservices.atomprotocol.EntryCollection::getEntry(com.sun.syndication.propono.atom.server.AtomRequest):com.sun.syndication.feed.atom.Entry" />
+			<role name="Request()" element="org.apache.roller.weblogger.webservices.atomprotocol.EntryCollection::getCollection(com.sun.syndication.propono.atom.server.AtomRequest):com.sun.syndication.feed.atom.Feed" />
+			<role name="Request()" element="org.apache.roller.weblogger.webservices.atomprotocol.EntryCollection::putEntry(com.sun.syndication.propono.atom.server.AtomRequest, com.sun.syndication.feed.atom.Entry):void" />
+			<role name="Request()" element="org.apache.roller.weblogger.webservices.atomprotocol.EntryCollection::deleteEntry(com.sun.syndication.propono.atom.server.AtomRequest):void" />
+			<role name="Request()" element="org.apache.roller.weblogger.webservices.atomprotocol.EntryCollection::copyToRollerEntry(com.sun.syndication.feed.atom.Entry, org.apache.roller.weblogger.pojos.WeblogEntry):void" />
+			<role name="Request()" element="org.apache.roller.weblogger.webservices.atomprotocol.EntryCollection::reindexEntry(org.apache.roller.weblogger.pojos.WeblogEntry):void" />
+		</instance>
+		<instance>
+			<role name="Context" element="org.apache.roller.weblogger.webservices.atomprotocol.MediaCollection" />
+			<role name="State" element="org.apache.roller.weblogger.business.Weblogger" />
+			<role name="state" element="org.apache.roller.weblogger.webservices.atomprotocol.MediaCollection::roller:org.apache.roller.weblogger.business.Weblogger" />
+			<role name="Request()" element="org.apache.roller.weblogger.webservices.atomprotocol.MediaCollection::postMedia(com.sun.syndication.propono.atom.server.AtomRequest, com.sun.syndication.feed.atom.Entry):com.sun.syndication.feed.atom.Entry" />
+			<role name="Request()" element="org.apache.roller.weblogger.webservices.atomprotocol.MediaCollection::getEntry(com.sun.syndication.propono.atom.server.AtomRequest):com.sun.syndication.feed.atom.Entry" />
+			<role name="Request()" element="org.apache.roller.weblogger.webservices.atomprotocol.MediaCollection::getMediaResource(com.sun.syndication.propono.atom.server.AtomRequest):com.sun.syndication.propono.atom.server.AtomMediaResource" />
+			<role name="Request()" element="org.apache.roller.weblogger.webservices.atomprotocol.MediaCollection::getCollection(com.sun.syndication.propono.atom.server.AtomRequest):com.sun.syndication.feed.atom.Feed" />
+			<role name="Request()" element="org.apache.roller.weblogger.webservices.atomprotocol.MediaCollection::putMedia(com.sun.syndication.propono.atom.server.AtomRequest):void" />
+			<role name="Request()" element="org.apache.roller.weblogger.webservices.atomprotocol.MediaCollection::deleteEntry(com.sun.syndication.propono.atom.server.AtomRequest):void" />
+		</instance>
+		<instance>
+			<role name="Context" element="org.apache.roller.weblogger.webservices.atomprotocol.RollerAtomHandler" />
+			<role name="State" element="org.apache.roller.weblogger.business.Weblogger" />
+			<role name="state" element="org.apache.roller.weblogger.webservices.atomprotocol.RollerAtomHandler::roller:org.apache.roller.weblogger.business.Weblogger" />
+			<role name="Request()" element="org.apache.roller.weblogger.webservices.atomprotocol.RollerAtomHandler::authenticateWSSE(javax.servlet.http.HttpServletRequest):java.lang.String" />
+			<role name="Request()" element="org.apache.roller.weblogger.webservices.atomprotocol.RollerAtomHandler::authenticateBASIC(javax.servlet.http.HttpServletRequest):java.lang.String" />
+		</instance>
+		<instance>
+			<role name="Context" element="org.apache.roller.weblogger.ui.rendering.velocity.deprecated.OldWeblogPageModel" />
+			<role name="State" element="org.apache.roller.weblogger.business.WeblogEntryManager" />
+			<role name="state" element="org.apache.roller.weblogger.ui.rendering.velocity.deprecated.OldWeblogPageModel::mWeblogEntryMgr:org.apache.roller.weblogger.business.WeblogEntryManager" />
+			<role name="Request()" element="org.apache.roller.weblogger.ui.rendering.velocity.deprecated.OldWeblogPageModel::getCommentCount(java.lang.String, boolean, boolean):int" />
+			<role name="Request()" element="org.apache.roller.weblogger.ui.rendering.velocity.deprecated.OldWeblogPageModel::getDayHits():int" />
+			<role name="Request()" element="org.apache.roller.weblogger.ui.rendering.velocity.deprecated.OldWeblogPageModel::getWeblogCategories(java.lang.String):java.util.Set" />
+			<role name="Request()" element="org.apache.roller.weblogger.ui.rendering.velocity.deprecated.OldWeblogPageModel::getNextEntry():org.apache.roller.weblogger.pojos.wrapper.WeblogEntryWrapper" />
+			<role name="Request()" element="org.apache.roller.weblogger.ui.rendering.velocity.deprecated.OldWeblogPageModel::getPreviousEntry():org.apache.roller.weblogger.pojos.wrapper.WeblogEntryWrapper" />
+		</instance>
+		<instance>
+			<role name="Context" element="org.apache.roller.weblogger.ui.rendering.velocity.deprecated.OldWeblogPageModel" />
+			<role name="State" element="org.apache.roller.weblogger.business.WeblogManager" />
+			<role name="state" element="org.apache.roller.weblogger.ui.rendering.velocity.deprecated.OldWeblogPageModel::mWeblogMgr:org.apache.roller.weblogger.business.WeblogManager" />
+			<role name="Request()" element="org.apache.roller.weblogger.ui.rendering.velocity.deprecated.OldWeblogPageModel::getTopLevelFolders():java.util.Collection" />
+			<role name="Request()" element="org.apache.roller.weblogger.ui.rendering.velocity.deprecated.OldWeblogPageModel::getFolder(java.lang.String):org.apache.roller.weblogger.pojos.wrapper.WeblogBookmarkFolderWrapper" />
+		</instance>
+		<instance>
+			<role name="Context" element="org.apache.roller.weblogger.pojos.wrapper.ThemeTemplateWrapper" />
+			<role name="State" element="org.apache.roller.weblogger.pojos.ThemeTemplate" />
+			<role name="state" element="org.apache.roller.weblogger.pojos.wrapper.ThemeTemplateWrapper::pojo:org.apache.roller.weblogger.pojos.ThemeTemplate" />
+			<role name="Request()" element="org.apache.roller.weblogger.pojos.wrapper.ThemeTemplateWrapper::getContents():java.lang.String" />
+			<role name="Request()" element="org.apache.roller.weblogger.pojos.wrapper.ThemeTemplateWrapper::getLink():java.lang.String" />
+			<role name="Request()" element="org.apache.roller.weblogger.pojos.wrapper.ThemeTemplateWrapper::isHidden():boolean" />
+			<role name="Request()" element="org.apache.roller.weblogger.pojos.wrapper.ThemeTemplateWrapper::isNavbar():boolean" />
+		</instance>
+		<instance>
+			<role name="Context" element="org.apache.roller.weblogger.ui.rendering.velocity.deprecated.OldWeblogPageModel" />
+			<role name="State" element="org.apache.roller.weblogger.business.BookmarkManager" />
+			<role name="state" element="org.apache.roller.weblogger.ui.rendering.velocity.deprecated.OldWeblogPageModel::mBookmarkMgr:org.apache.roller.weblogger.business.BookmarkManager" />
+			<role name="Request()" element="org.apache.roller.weblogger.ui.rendering.velocity.deprecated.OldWeblogPageModel::getTopLevelFolders():java.util.Collection" />
+			<role name="Request()" element="org.apache.roller.weblogger.ui.rendering.velocity.deprecated.OldWeblogPageModel::getFolder(java.lang.String):org.apache.roller.weblogger.pojos.wrapper.WeblogBookmarkFolderWrapper" />
+			<role name="Request()" element="org.apache.roller.weblogger.ui.rendering.velocity.deprecated.OldWeblogPageModel::getFolderByPath(java.lang.String):org.apache.roller.weblogger.pojos.wrapper.WeblogBookmarkFolderWrapper" />
+		</instance>
+		<instance>
+			<role name="Context" element="org.apache.roller.weblogger.ui.rendering.velocity.deprecated.OldWeblogPageModel" />
+			<role name="State" element="org.apache.roller.weblogger.business.referrers.RefererManager" />
+			<role name="state" element="org.apache.roller.weblogger.ui.rendering.velocity.deprecated.OldWeblogPageModel::mRefererMgr:org.apache.roller.weblogger.business.referrers.RefererManager" />
+			<role name="Request()" element="org.apache.roller.weblogger.ui.rendering.velocity.deprecated.OldWeblogPageModel::getReferers(java.lang.String):java.util.List" />
+			<role name="Request()" element="org.apache.roller.weblogger.ui.rendering.velocity.deprecated.OldWeblogPageModel::getEntryReferers(org.apache.roller.weblogger.pojos.wrapper.WeblogEntryWrapper):java.util.List" />
+		</instance>
+		<instance>
+			<role name="Context" element="org.apache.roller.planet.tasks.StaticPlanetModel" />
+			<role name="State" element="org.apache.roller.planet.business.PlanetManager" />
+			<role name="state" element="org.apache.roller.planet.tasks.StaticPlanetModel::planetManager:org.apache.roller.planet.business.PlanetManager" />
+			<role name="Request()" element="org.apache.roller.planet.tasks.StaticPlanetModel::getSubscription(java.lang.String):org.apache.roller.planet.pojos.Subscription" />
+			<role name="Request()" element="org.apache.roller.planet.tasks.StaticPlanetModel::getFeedEntries(java.lang.String, int):java.util.List" />
+			<role name="Request()" element="org.apache.roller.planet.tasks.StaticPlanetModel::getAggregation(org.apache.roller.planet.pojos.PlanetGroup, int):java.util.List" />
+			<role name="Request()" element="org.apache.roller.planet.tasks.StaticPlanetModel::getAllSubscriptions():java.util.Iterator" />
+			<role name="Request()" element="org.apache.roller.planet.tasks.StaticPlanetModel::getSubscriptionCount():int" />
+		</instance>
+		<instance>
+			<role name="Context" element="org.apache.roller.weblogger.ui.rendering.util.cache.PlanetCache" />
+			<role name="State" element="org.apache.roller.weblogger.util.cache.Cache" />
+			<role name="state" element="org.apache.roller.weblogger.ui.rendering.util.cache.PlanetCache::contentCache:org.apache.roller.weblogger.util.cache.Cache" />
+			<role name="Request()" element="org.apache.roller.weblogger.ui.rendering.util.cache.PlanetCache::get(java.lang.String):java.lang.Object" />
+			<role name="Request()" element="org.apache.roller.weblogger.ui.rendering.util.cache.PlanetCache::put(java.lang.String, java.lang.Object):void" />
+			<role name="Request()" element="org.apache.roller.weblogger.ui.rendering.util.cache.PlanetCache::remove(java.lang.String):void" />
+			<role name="Request()" element="org.apache.roller.weblogger.ui.rendering.util.cache.PlanetCache::clear():void" />
+		</instance>
+		<instance>
+			<role name="Context" element="org.apache.roller.weblogger.ui.rendering.util.cache.SaltCache" />
+			<role name="State" element="org.apache.roller.weblogger.util.cache.Cache" />
+			<role name="state" element="org.apache.roller.weblogger.ui.rendering.util.cache.SaltCache::contentCache:org.apache.roller.weblogger.util.cache.Cache" />
+			<role name="Request()" element="org.apache.roller.weblogger.ui.rendering.util.cache.SaltCache::get(java.lang.String):java.lang.Object" />
+			<role name="Request()" element="org.apache.roller.weblogger.ui.rendering.util.cache.SaltCache::put(java.lang.String, java.lang.Object):void" />
+			<role name="Request()" element="org.apache.roller.weblogger.ui.rendering.util.cache.SaltCache::remove(java.lang.String):void" />
+			<role name="Request()" element="org.apache.roller.weblogger.ui.rendering.util.cache.SaltCache::clear():void" />
+		</instance>
+		<instance>
+			<role name="Context" element="org.apache.roller.weblogger.ui.rendering.util.cache.WeblogFeedCache" />
+			<role name="State" element="org.apache.roller.weblogger.util.cache.Cache" />
+			<role name="state" element="org.apache.roller.weblogger.ui.rendering.util.cache.WeblogFeedCache::contentCache:org.apache.roller.weblogger.util.cache.Cache" />
+			<role name="Request()" element="org.apache.roller.weblogger.ui.rendering.util.cache.WeblogFeedCache::get(java.lang.String, long):java.lang.Object" />
+			<role name="Request()" element="org.apache.roller.weblogger.ui.rendering.util.cache.WeblogFeedCache::put(java.lang.String, java.lang.Object):void" />
+			<role name="Request()" element="org.apache.roller.weblogger.ui.rendering.util.cache.WeblogFeedCache::remove(java.lang.String):void" />
+			<role name="Request()" element="org.apache.roller.weblogger.ui.rendering.util.cache.WeblogFeedCache::clear():void" />
+		</instance>
+		<instance>
+			<role name="Context" element="org.apache.roller.weblogger.ui.rendering.util.cache.WeblogPageCache" />
+			<role name="State" element="org.apache.roller.weblogger.util.cache.Cache" />
+			<role name="state" element="org.apache.roller.weblogger.ui.rendering.util.cache.WeblogPageCache::contentCache:org.apache.roller.weblogger.util.cache.Cache" />
+			<role name="Request()" element="org.apache.roller.weblogger.ui.rendering.util.cache.WeblogPageCache::get(java.lang.String, long):java.lang.Object" />
+			<role name="Request()" element="org.apache.roller.weblogger.ui.rendering.util.cache.WeblogPageCache::put(java.lang.String, java.lang.Object):void" />
+			<role name="Request()" element="org.apache.roller.weblogger.ui.rendering.util.cache.WeblogPageCache::remove(java.lang.String):void" />
+			<role name="Request()" element="org.apache.roller.weblogger.ui.rendering.util.cache.WeblogPageCache::clear():void" />
+		</instance>
+		<instance>
+			<role name="Context" element="org.apache.roller.weblogger.util.GenericThrottle" />
+			<role name="State" element="org.apache.roller.weblogger.util.cache.Cache" />
+			<role name="state" element="org.apache.roller.weblogger.util.GenericThrottle::clientHistoryCache:org.apache.roller.weblogger.util.cache.Cache" />
+			<role name="Request()" element="org.apache.roller.weblogger.util.GenericThrottle::processHit(java.lang.String):boolean" />
+			<role name="Request()" element="org.apache.roller.weblogger.util.GenericThrottle::isAbusive(java.lang.String):boolean" />
+		</instance>
+		<instance>
+			<role name="Context" element="org.apache.roller.weblogger.business.pings.PingQueueProcessor" />
+			<role name="State" element="org.apache.roller.weblogger.business.pings.PingQueueManager" />
+			<role name="state" element="org.apache.roller.weblogger.business.pings.PingQueueProcessor::pingQueueMgr:org.apache.roller.weblogger.business.pings.PingQueueManager" />
+			<role name="Request()" element="org.apache.roller.weblogger.business.pings.PingQueueProcessor::processQueue():void" />
+			<role name="Request()" element="org.apache.roller.weblogger.business.pings.PingQueueProcessor::processQueueEntry(org.apache.roller.weblogger.pojos.PingQueueEntry):void" />
+			<role name="Request()" element="org.apache.roller.weblogger.business.pings.PingQueueProcessor::handlePingError(org.apache.roller.weblogger.pojos.PingQueueEntry, java.lang.Exception):void" />
+		</instance>
+		<instance>
+			<role name="Context" element="org.apache.roller.weblogger.business.search.operations.AddEntryOperation" />
+			<role name="State" element="org.apache.roller.weblogger.business.Weblogger" />
+			<role name="state" element="org.apache.roller.weblogger.business.search.operations.AddEntryOperation::roller:org.apache.roller.weblogger.business.Weblogger" />
+			<role name="Request()" element="org.apache.roller.weblogger.business.search.operations.AddEntryOperation::doRun():void" />
+		</instance>
+		<instance>
+			<role name="Context" element="org.apache.roller.weblogger.business.search.operations.ReIndexEntryOperation" />
+			<role name="State" element="org.apache.roller.weblogger.business.Weblogger" />
+			<role name="state" element="org.apache.roller.weblogger.business.search.operations.ReIndexEntryOperation::roller:org.apache.roller.weblogger.business.Weblogger" />
+			<role name="Request()" element="org.apache.roller.weblogger.business.search.operations.ReIndexEntryOperation::doRun():void" />
+		</instance>
+		<instance>
+			<role name="Context" element="org.apache.roller.weblogger.business.search.operations.RebuildWebsiteIndexOperation" />
+			<role name="State" element="org.apache.roller.weblogger.business.Weblogger" />
+			<role name="state" element="org.apache.roller.weblogger.business.search.operations.RebuildWebsiteIndexOperation::roller:org.apache.roller.weblogger.business.Weblogger" />
+			<role name="Request()" element="org.apache.roller.weblogger.business.search.operations.RebuildWebsiteIndexOperation::doRun():void" />
+		</instance>
+		<instance>
+			<role name="Context" element="org.apache.roller.weblogger.business.search.operations.RemoveEntryOperation" />
+			<role name="State" element="org.apache.roller.weblogger.business.Weblogger" />
+			<role name="state" element="org.apache.roller.weblogger.business.search.operations.RemoveEntryOperation::roller:org.apache.roller.weblogger.business.Weblogger" />
+			<role name="Request()" element="org.apache.roller.weblogger.business.search.operations.RemoveEntryOperation::doRun():void" />
+		</instance>
+		<instance>
+			<role name="Context" element="org.apache.roller.weblogger.business.search.operations.RemoveWebsiteIndexOperation" />
+			<role name="State" element="org.apache.roller.weblogger.business.Weblogger" />
+			<role name="state" element="org.apache.roller.weblogger.business.search.operations.RemoveWebsiteIndexOperation::roller:org.apache.roller.weblogger.business.Weblogger" />
+			<role name="Request()" element="org.apache.roller.weblogger.business.search.operations.RemoveWebsiteIndexOperation::doRun():void" />
+		</instance>
+		<instance>
+			<role name="Context" element="org.apache.roller.weblogger.business.jpa.JPAWeblogManagerImpl" />
+			<role name="State" element="org.apache.roller.weblogger.business.Weblogger" />
+			<role name="state" element="org.apache.roller.weblogger.business.jpa.JPAWeblogManagerImpl::roller:org.apache.roller.weblogger.business.Weblogger" />
+			<role name="Request()" element="org.apache.roller.weblogger.business.jpa.JPAWeblogManagerImpl::removeWebsiteContents(org.apache.roller.weblogger.pojos.Weblog):void" />
+			<role name="Request()" element="org.apache.roller.weblogger.business.jpa.JPAWeblogManagerImpl::savePage(org.apache.roller.weblogger.pojos.WeblogTemplate):void" />
+			<role name="Request()" element="org.apache.roller.weblogger.business.jpa.JPAWeblogManagerImpl::removePage(org.apache.roller.weblogger.pojos.WeblogTemplate):void" />
+			<role name="Request()" element="org.apache.roller.weblogger.business.jpa.JPAWeblogManagerImpl::addWeblogContents(org.apache.roller.weblogger.pojos.Weblog):void" />
+			<role name="Request()" element="org.apache.roller.weblogger.business.jpa.JPAWeblogManagerImpl::getUserWeblogs(org.apache.roller.weblogger.pojos.User, boolean):java.util.List" />
+			<role name="Request()" element="org.apache.roller.weblogger.business.jpa.JPAWeblogManagerImpl::getWeblogUsers(org.apache.roller.weblogger.pojos.Weblog, boolean):java.util.List" />
+		</instance>
+		<instance>
+			<role name="Context" element="org.apache.roller.weblogger.business.jpa.JPAMediaFileManagerImpl" />
+			<role name="State" element="org.apache.roller.weblogger.business.Weblogger" />
+			<role name="state" element="org.apache.roller.weblogger.business.jpa.JPAMediaFileManagerImpl::roller:org.apache.roller.weblogger.business.Weblogger" />
+			<role name="Request()" element="org.apache.roller.weblogger.business.jpa.JPAMediaFileManagerImpl::moveMediaFileDirectories(java.util.Collection, org.apache.roller.weblogger.pojos.MediaFileDirectory):void" />
+			<role name="Request()" element="org.apache.roller.weblogger.business.jpa.JPAMediaFileManagerImpl::moveMediaFiles(java.util.Collection, org.apache.roller.weblogger.pojos.MediaFileDirectory):void" />
+			<role name="Request()" element="org.apache.roller.weblogger.business.jpa.JPAMediaFileManagerImpl::createMediaFileDirectory(org.apache.roller.weblogger.pojos.MediaFileDirectory, java.lang.String):org.apache.roller.weblogger.pojos.MediaFileDirectory" />
+			<role name="Request()" element="org.apache.roller.weblogger.business.jpa.JPAMediaFileManagerImpl::createMediaFileDirectory(org.apache.roller.weblogger.pojos.MediaFileDirectory):void" />
+			<role name="Request()" element="org.apache.roller.weblogger.business.jpa.JPAMediaFileManagerImpl::createMediaFileDirectoryByPath(org.apache.roller.weblogger.pojos.Weblog, java.lang.String):org.apache.roller.weblogger.pojos.MediaFileDirectory" />
+			<role name="Request()" element="org.apache.roller.weblogger.business.jpa.JPAMediaFileManagerImpl::createMediaFile(org.apache.roller.weblogger.pojos.Weblog, org.apache.roller.weblogger.pojos.MediaFile, org.apache.roller.weblogger.util.RollerMessages):void" />
+			<role name="Request()" element="org.apache.roller.weblogger.business.jpa.JPAMediaFileManagerImpl::updateMediaFile(org.apache.roller.weblogger.pojos.Weblog, org.apache.roller.weblogger.pojos.MediaFile):void" />
+			<role name="Request()" element="org.apache.roller.weblogger.business.jpa.JPAMediaFileManagerImpl::updateMediaFile(org.apache.roller.weblogger.pojos.Weblog, org.apache.roller.weblogger.pojos.MediaFile, java.io.InputStream):void" />
+			<role name="Request()" element="org.apache.roller.weblogger.business.jpa.JPAMediaFileManagerImpl::removeMediaFile(org.apache.roller.weblogger.pojos.Weblog, org.apache.roller.weblogger.pojos.MediaFile):void" />
+			<role name="Request()" element="org.apache.roller.weblogger.business.jpa.JPAMediaFileManagerImpl::upgradeFileStorage():java.util.List" />
+			<role name="Request()" element="org.apache.roller.weblogger.business.jpa.JPAMediaFileManagerImpl::upgradeUploadsDir(org.apache.roller.weblogger.pojos.Weblog, org.apache.roller.weblogger.pojos.User, java.io.File, org.apache.roller.weblogger.pojos.MediaFileDirectory):void" />
+		</instance>
+		<instance>
+			<role name="Context" element="org.apache.roller.weblogger.business.themes.ThemeManagerImpl" />
+			<role name="State" element="org.apache.roller.weblogger.business.Weblogger" />
+			<role name="state" element="org.apache.roller.weblogger.business.themes.ThemeManagerImpl::roller:org.apache.roller.weblogger.business.Weblogger" />
+			<role name="Request()" element="org.apache.roller.weblogger.business.themes.ThemeManagerImpl::getTheme(org.apache.roller.weblogger.pojos.Weblog):org.apache.roller.weblogger.pojos.WeblogTheme" />
+			<role name="Request()" element="org.apache.roller.weblogger.business.themes.ThemeManagerImpl::importTheme(org.apache.roller.weblogger.pojos.Weblog, org.apache.roller.weblogger.business.themes.SharedTheme):void" />
+		</instance>
+		<instance>
+			<role name="Context" element="org.apache.roller.weblogger.business.jpa.JPARefererManagerImpl" />
+			<role name="State" element="org.apache.roller.weblogger.business.Weblogger" />
+			<role name="state" element="org.apache.roller.weblogger.business.jpa.JPARefererManagerImpl::roller:org.apache.roller.weblogger.business.Weblogger" />
+			<role name="Request()" element="org.apache.roller.weblogger.business.jpa.JPARefererManagerImpl::processReferrer(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String):void" />
+		</instance>
+		<instance>
+			<role name="State" element="org.apache.roller.weblogger.ui.rendering.plugins.comments.CommentAuthenticator" />
+			<role name="Context" element="org.apache.roller.weblogger.ui.rendering.servlets.CommentServlet" />
+			<role name="state" element="org.apache.roller.weblogger.ui.rendering.servlets.CommentServlet::authenticator:org.apache.roller.weblogger.ui.rendering.plugins.comments.CommentAuthenticator" />
+			<role name="Request()" element="org.apache.roller.weblogger.ui.rendering.servlets.CommentServlet::doPost(javax.servlet.http.HttpServletRequest, javax.servlet.http.HttpServletResponse):void" />
+		</instance>
+		<instance>
+			<role name="State" element="org.apache.roller.weblogger.ui.rendering.plugins.comments.CommentAuthenticator" />
+			<role name="Context" element="org.apache.roller.weblogger.ui.rendering.servlets.CommentAuthenticatorServlet" />
+			<role name="state" element="org.apache.roller.weblogger.ui.rendering.servlets.CommentAuthenticatorServlet::authenticator:org.apache.roller.weblogger.ui.rendering.plugins.comments.CommentAuthenticator" />
+			<role name="Request()" element="org.apache.roller.weblogger.ui.rendering.servlets.CommentAuthenticatorServlet::doGet(javax.servlet.http.HttpServletRequest, javax.servlet.http.HttpServletResponse):void" />
+		</instance>
+		<instance>
+			<role name="Context" element="org.apache.roller.weblogger.ui.rendering.util.cache.SiteWideCache" />
+			<role name="State" element="org.apache.roller.weblogger.util.cache.Cache" />
+			<role name="state" element="org.apache.roller.weblogger.ui.rendering.util.cache.SiteWideCache::contentCache:org.apache.roller.weblogger.util.cache.Cache" />
+			<role name="Request()" element="org.apache.roller.weblogger.ui.rendering.util.cache.SiteWideCache::get(java.lang.String):java.lang.Object" />
+			<role name="Request()" element="org.apache.roller.weblogger.ui.rendering.util.cache.SiteWideCache::put(java.lang.String, java.lang.Object):void" />
+			<role name="Request()" element="org.apache.roller.weblogger.ui.rendering.util.cache.SiteWideCache::remove(java.lang.String):void" />
+			<role name="Request()" element="org.apache.roller.weblogger.ui.rendering.util.cache.SiteWideCache::clear():void" />
+			<role name="Request()" element="org.apache.roller.weblogger.ui.rendering.util.cache.SiteWideCache::invalidate(org.apache.roller.weblogger.pojos.WeblogEntry):void" />
+			<role name="Request()" element="org.apache.roller.weblogger.ui.rendering.util.cache.SiteWideCache::invalidate(org.apache.roller.weblogger.pojos.Weblog):void" />
+		</instance>
+		<instance>
+			<role name="Context" element="org.apache.roller.weblogger.business.jpa.JPAAutoPingManagerImpl" />
+			<role name="State" element="org.apache.roller.weblogger.business.Weblogger" />
+			<role name="state" element="org.apache.roller.weblogger.business.jpa.JPAAutoPingManagerImpl::roller:org.apache.roller.weblogger.business.Weblogger" />
+			<role name="Request()" element="org.apache.roller.weblogger.business.jpa.JPAAutoPingManagerImpl::queueApplicableAutoPings(org.apache.roller.weblogger.pojos.WeblogEntry):void" />
+		</instance>
+		<instance>
+			<role name="Context" element="org.apache.roller.weblogger.business.search.IndexManagerImpl" />
+			<role name="State" element="org.apache.roller.weblogger.business.Weblogger" />
+			<role name="state" element="org.apache.roller.weblogger.business.search.IndexManagerImpl::roller:org.apache.roller.weblogger.business.Weblogger" />
+			<role name="Request()" element="org.apache.roller.weblogger.business.search.IndexManagerImpl::scheduleIndexOperation(org.apache.roller.weblogger.business.search.operations.IndexOperation):void" />
+			<role name="Request()" element="org.apache.roller.weblogger.business.search.IndexManagerImpl::executeIndexOperationNow(org.apache.roller.weblogger.business.search.operations.IndexOperation):void" />
+		</instance>
+		<instance>
+			<role name="Context" element="org.apache.roller.weblogger.business.WebloggerFactory" />
+			<role name="State" element="org.apache.roller.weblogger.business.WebloggerProvider" />
+			<role name="state" element="org.apache.roller.weblogger.business.WebloggerFactory::webloggerProvider:org.apache.roller.weblogger.business.WebloggerProvider" />
+			<role name="Request()" element="org.apache.roller.weblogger.business.WebloggerFactory::getWeblogger():org.apache.roller.weblogger.business.Weblogger" />
+			<role name="Request()" element="org.apache.roller.weblogger.business.WebloggerFactory::bootstrap(org.apache.roller.weblogger.business.WebloggerProvider):void" />
+		</instance>
+		<instance>
+			<role name="Context" element="org.apache.roller.weblogger.business.jpa.JPABookmarkManagerImpl" />
+			<role name="State" element="org.apache.roller.weblogger.business.Weblogger" />
+			<role name="state" element="org.apache.roller.weblogger.business.jpa.JPABookmarkManagerImpl::roller:org.apache.roller.weblogger.business.Weblogger" />
+			<role name="Request()" element="org.apache.roller.weblogger.business.jpa.JPABookmarkManagerImpl::saveBookmark(org.apache.roller.weblogger.pojos.WeblogBookmark):void" />
+			<role name="Request()" element="org.apache.roller.weblogger.business.jpa.JPABookmarkManagerImpl::removeBookmark(org.apache.roller.weblogger.pojos.WeblogBookmark):void" />
+			<role name="Request()" element="org.apache.roller.weblogger.business.jpa.JPABookmarkManagerImpl::saveFolder(org.apache.roller.weblogger.pojos.WeblogBookmarkFolder):void" />
+			<role name="Request()" element="org.apache.roller.weblogger.business.jpa.JPABookmarkManagerImpl::removeFolder(org.apache.roller.weblogger.pojos.WeblogBookmarkFolder):void" />
+		</instance>
+		<instance>
+			<role name="Context" element="org.apache.roller.weblogger.business.jpa.JPAWeblogEntryManagerImpl" />
+			<role name="State" element="org.apache.roller.weblogger.business.Weblogger" />
+			<role name="state" element="org.apache.roller.weblogger.business.jpa.JPAWeblogEntryManagerImpl::roller:org.apache.roller.weblogger.business.Weblogger" />
+			<role name="Request()" element="org.apache.roller.weblogger.business.jpa.JPAWeblogEntryManagerImpl::saveWeblogCategory(org.apache.roller.weblogger.pojos.WeblogCategory):void" />
+			<role name="Request()" element="org.apache.roller.weblogger.business.jpa.JPAWeblogEntryManagerImpl::removeWeblogCategory(org.apache.roller.weblogger.pojos.WeblogCategory):void" />
+			<role name="Request()" element="org.apache.roller.weblogger.business.jpa.JPAWeblogEntryManagerImpl::saveComment(org.apache.roller.weblogger.pojos.WeblogEntryComment):void" />
+			<role name="Request()" element="org.apache.roller.weblogger.business.jpa.JPAWeblogEntryManagerImpl::removeComment(org.apache.roller.weblogger.pojos.WeblogEntryComment):void" />
+			<role name="Request()" element="org.apache.roller.weblogger.business.jpa.JPAWeblogEntryManagerImpl::saveWeblogEntry(org.apache.roller.weblogger.pojos.WeblogEntry):void" />
+			<role name="Request()" element="org.apache.roller.weblogger.business.jpa.JPAWeblogEntryManagerImpl::removeWeblogEntry(org.apache.roller.weblogger.pojos.WeblogEntry):void" />
+		</instance>
+		<instance>
+			<role name="Context" element="org.apache.roller.weblogger.business.referrers.ReferrerQueueManagerImpl" />
+			<role name="State" element="org.apache.roller.weblogger.business.Weblogger" />
+			<role name="state" element="org.apache.roller.weblogger.business.referrers.ReferrerQueueManagerImpl::roller:org.apache.roller.weblogger.business.Weblogger" />
+			<role name="Request()" element="org.apache.roller.weblogger.business.referrers.ReferrerQueueManagerImpl::processReferrer(org.apache.roller.weblogger.business.referrers.IncomingReferrer):void" />
+		</instance>
+		<instance>
+			<role name="State" element="org.apache.roller.weblogger.business.startup.DatabaseScriptProvider" />
+			<role name="Context" element="org.apache.roller.weblogger.business.startup.DatabaseInstaller" />
+			<role name="state" element="org.apache.roller.weblogger.business.startup.DatabaseInstaller::scripts:org.apache.roller.weblogger.business.startup.DatabaseScriptProvider" />
+			<role name="Request()" element="org.apache.roller.weblogger.business.startup.DatabaseInstaller::createDatabase():void" />
+			<role name="Request()" element="org.apache.roller.weblogger.business.startup.DatabaseInstaller::upgradeTo130(java.sql.Connection, boolean):void" />
+			<role name="Request()" element="org.apache.roller.weblogger.business.startup.DatabaseInstaller::upgradeTo200(java.sql.Connection, boolean):void" />
+			<role name="Request()" element="org.apache.roller.weblogger.business.startup.DatabaseInstaller::upgradeTo210(java.sql.Connection, boolean):void" />
+			<role name="Request()" element="org.apache.roller.weblogger.business.startup.DatabaseInstaller::upgradeTo230(java.sql.Connection, boolean):void" />
+			<role name="Request()" element="org.apache.roller.weblogger.business.startup.DatabaseInstaller::upgradeTo240(java.sql.Connection, boolean):void" />
+			<role name="Request()" element="org.apache.roller.weblogger.business.startup.DatabaseInstaller::upgradeTo300(java.sql.Connection, boolean):void" />
+			<role name="Request()" element="org.apache.roller.weblogger.business.startup.DatabaseInstaller::upgradeTo310(java.sql.Connection, boolean):void" />
+			<role name="Request()" element="org.apache.roller.weblogger.business.startup.DatabaseInstaller::upgradeTo400(java.sql.Connection, boolean):void" />
+			<role name="Request()" element="org.apache.roller.weblogger.business.startup.DatabaseInstaller::upgradeTo500(java.sql.Connection, boolean):void" />
+		</instance>
+		<instance>
+			<role name="Context" element="org.apache.roller.weblogger.util.LRUCache2" />
+			<role name="State" element="org.apache.roller.weblogger.util.LRUCache2$Environment" />
+			<role name="state" element="org.apache.roller.weblogger.util.LRUCache2::environment:org.apache.roller.weblogger.util.LRUCache2$Environment" />
+			<role name="Request()" element="org.apache.roller.weblogger.util.LRUCache2::put(java.lang.Object, java.lang.Object):void" />
+			<role name="Request()" element="org.apache.roller.weblogger.util.LRUCache2::get(java.lang.Object):java.lang.Object" />
+		</instance>
+		<instance>
+			<role name="Context" element="org.apache.roller.planet.ui.rendering.velocity.VelocityRenderer" />
+			<role name="State" element="org.apache.roller.planet.pojos.Template" />
+			<role name="state" element="org.apache.roller.planet.ui.rendering.velocity.VelocityRenderer::renderTemplate:org.apache.roller.planet.pojos.Template" />
+			<role name="Request()" element="org.apache.roller.planet.ui.rendering.velocity.VelocityRenderer::render(java.util.Map, java.io.Writer):void" />
+		</instance>
+		<instance>
+			<role name="Context" element="org.apache.roller.weblogger.business.jpa.JPAOAuthManagerImpl" />
+			<role name="State" element="org.apache.roller.weblogger.business.Weblogger" />
+			<role name="state" element="org.apache.roller.weblogger.business.jpa.JPAOAuthManagerImpl::roller:org.apache.roller.weblogger.business.Weblogger" />
+			<role name="Request()" element="org.apache.roller.weblogger.business.jpa.JPAOAuthManagerImpl::getServiceProvider():net.oauth.OAuthServiceProvider" />
+		</instance>
+		<instance>
+			<role name="Context" element="org.apache.roller.weblogger.business.runnable.WorkerThread" />
+			<role name="State" element="org.apache.roller.weblogger.business.runnable.Job" />
+			<role name="state" element="org.apache.roller.weblogger.business.runnable.WorkerThread::job:org.apache.roller.weblogger.business.runnable.Job" />
+			<role name="Request()" element="org.apache.roller.weblogger.business.runnable.WorkerThread::run():void" />
+		</instance>
+		<instance>
+			<role name="Context" element="org.apache.roller.weblogger.ui.rendering.velocity.VelocityRenderer" />
+			<role name="State" element="org.apache.roller.weblogger.pojos.Template" />
+			<role name="state" element="org.apache.roller.weblogger.ui.rendering.velocity.VelocityRenderer::renderTemplate:org.apache.roller.weblogger.pojos.Template" />
+			<role name="Request()" element="org.apache.roller.weblogger.ui.rendering.velocity.VelocityRenderer::render(java.util.Map, java.io.Writer):void" />
+		</instance>
+		<instance>
+			<role name="Context" element="org.apache.roller.weblogger.ui.core.plugins.UIPluginManagerImpl" />
+			<role name="State" element="org.apache.roller.weblogger.ui.core.plugins.WeblogEntryEditor" />
+			<role name="state" element="org.apache.roller.weblogger.ui.core.plugins.UIPluginManagerImpl::defaultEditor:org.apache.roller.weblogger.ui.core.plugins.WeblogEntryEditor" />
+			<role name="Request()" element="org.apache.roller.weblogger.ui.core.plugins.UIPluginManagerImpl::loadEntryEditorClasses():void" />
+		</instance>
+		<instance>
+			<role name="Context" element="org.apache.roller.weblogger.util.cache.CacheManager" />
+			<role name="State" element="org.apache.roller.weblogger.util.cache.CacheFactory" />
+			<role name="state" element="org.apache.roller.weblogger.util.cache.CacheManager::cacheFactory:org.apache.roller.weblogger.util.cache.CacheFactory" />
+			<role name="Request()" element="org.apache.roller.weblogger.util.cache.CacheManager::constructCache(org.apache.roller.weblogger.util.cache.CacheHandler, java.util.Map):org.apache.roller.weblogger.util.cache.Cache" />
+		</instance>
+	</pattern>
+	<pattern name="Strategy">
+		<instance>
+			<role name="Context" element="org.apache.roller.weblogger.pojos.wrapper.WeblogWrapper" />
+			<role name="Strategy" element="org.apache.roller.weblogger.business.URLStrategy" />
+			<role name="strategy" element="org.apache.roller.weblogger.pojos.wrapper.WeblogWrapper::urlStrategy:org.apache.roller.weblogger.business.URLStrategy" />
+			<role name="ContextInterface()" element="org.apache.roller.weblogger.pojos.wrapper.WeblogWrapper::getStylesheet():java.lang.String" />
+			<role name="ContextInterface()" element="org.apache.roller.weblogger.pojos.wrapper.WeblogWrapper::getIcon():java.lang.String" />
+		</instance>
+		<instance>
+			<role name="Strategy" element="org.apache.roller.weblogger.business.URLStrategy" />
+			<role name="Context" element="org.apache.roller.weblogger.ui.rendering.model.PlanetModel" />
+			<role name="strategy" element="org.apache.roller.weblogger.ui.rendering.model.PlanetModel::urlStrategy:org.apache.roller.weblogger.business.URLStrategy" />
+			<role name="ContextInterface()" element="org.apache.roller.weblogger.ui.rendering.model.PlanetModel::getAggregationPager(int, int):org.apache.roller.weblogger.ui.rendering.pagers.Pager" />
+			<role name="ContextInterface()" element="org.apache.roller.weblogger.ui.rendering.model.PlanetModel::getAggregationPager(java.lang.String, int, int):org.apache.roller.weblogger.ui.rendering.pagers.Pager" />
+			<role name="ContextInterface()" element="org.apache.roller.weblogger.ui.rendering.model.PlanetModel::getFeedPager(java.lang.String, int):org.apache.roller.weblogger.ui.rendering.pagers.Pager" />
+		</instance>
+		<instance>
+			<role name="Strategy" element="org.apache.roller.weblogger.business.URLStrategy" />
+			<role name="Context" element="org.apache.roller.weblogger.ui.rendering.model.PreviewURLModel" />
+			<role name="strategy" element="org.apache.roller.weblogger.ui.rendering.model.PreviewURLModel::urlStrategy:org.apache.roller.weblogger.business.URLStrategy" />
+			<role name="ContextInterface()" element="org.apache.roller.weblogger.ui.rendering.model.PreviewURLModel::resource(java.lang.String):java.lang.String" />
+		</instance>
+		<instance>
+			<role name="Strategy" element="org.apache.roller.weblogger.business.URLStrategy" />
+			<role name="Context" element="org.apache.roller.weblogger.ui.rendering.model.SearchResultsFeedModel" />
+			<role name="strategy" element="org.apache.roller.weblogger.ui.rendering.model.SearchResultsFeedModel::urlStrategy:org.apache.roller.weblogger.business.URLStrategy" />
+			<role name="ContextInterface()" element="org.apache.roller.weblogger.ui.rendering.model.SearchResultsFeedModel::init(java.util.Map):void" />
+		</instance>
+		<instance>
+			<role name="Strategy" element="org.apache.roller.weblogger.business.URLStrategy" />
+			<role name="Context" element="org.apache.roller.weblogger.ui.rendering.model.SiteModel" />
+			<role name="strategy" element="org.apache.roller.weblogger.ui.rendering.model.SiteModel::urlStrategy:org.apache.roller.weblogger.business.URLStrategy" />
+			<role name="ContextInterface()" element="org.apache.roller.weblogger.ui.rendering.model.SiteModel::getWeblogEntriesPager(int, int):org.apache.roller.weblogger.ui.rendering.pagers.Pager" />
+			<role name="ContextInterface()" element="org.apache.roller.weblogger.ui.rendering.model.SiteModel::getWeblogEntriesPager(org.apache.roller.weblogger.pojos.wrapper.WeblogWrapper, org.apache.roller.weblogger.pojos.User, java.lang.String, int, int):org.apache.roller.weblogger.ui.rendering.pagers.Pager" />
+			<role name="ContextInterface()" element="org.apache.roller.weblogger.ui.rendering.model.SiteModel::getCommentsPager(int, int):org.apache.roller.weblogger.ui.rendering.pagers.Pager" />
+			<role name="ContextInterface()" element="org.apache.roller.weblogger.ui.rendering.model.SiteModel::getUsersByLetterPager(java.lang.String, int, int):org.apache.roller.weblogger.ui.rendering.pagers.Pager" />
+			<role name="ContextInterface()" element="org.apache.roller.weblogger.ui.rendering.model.SiteModel::getWeblogsByLetterPager(java.lang.String, int, int):org.apache.roller.weblogger.ui.rendering.pagers.Pager" />
+		</instance>
+		<instance>
+			<role name="Strategy" element="org.apache.roller.weblogger.business.URLStrategy" />
+			<role name="Context" element="org.apache.roller.weblogger.ui.rendering.model.URLModel" />
+			<role name="strategy" element="org.apache.roller.weblogger.ui.rendering.model.URLModel::urlStrategy:org.apache.roller.weblogger.business.URLStrategy" />
+			<role name="ContextInterface()" element="org.apache.roller.weblogger.ui.rendering.model.URLModel::getLogin():java.lang.String" />
+			<role name="ContextInterface()" element="org.apache.roller.weblogger.ui.rendering.model.URLModel::getLogout():java.lang.String" />
+			<role name="ContextInterface()" element="org.apache.roller.weblogger.ui.rendering.model.URLModel::action(java.lang.String, java.lang.String):java.lang.String" />
+			<role name="ContextInterface()" element="org.apache.roller.weblogger.ui.rendering.model.URLModel::getHome():java.lang.String" />
+			<role name="ContextInterface()" element="org.apache.roller.weblogger.ui.rendering.model.URLModel::home(int):java.lang.String" />
+			<role name="ContextInterface()" element="org.apache.roller.weblogger.ui.rendering.model.URLModel::home(java.lang.String):java.lang.String" />
+			<role name="ContextInterface()" element="org.apache.roller.weblogger.ui.rendering.model.URLModel::home(java.lang.String, int):java.lang.String" />
+			<role name="ContextInterface()" element="org.apache.roller.weblogger.ui.rendering.model.URLModel::entry(java.lang.String):java.lang.String" />
+			<role name="ContextInterface()" element="org.apache.roller.weblogger.ui.rendering.model.URLModel::comment(java.lang.String, java.lang.String):java.lang.String" />
+			<role name="ContextInterface()" element="org.apache.roller.weblogger.ui.rendering.model.URLModel::comments(java.lang.String):java.lang.String" />
+			<role name="ContextInterface()" element="org.apache.roller.weblogger.ui.rendering.model.URLModel::trackback(java.lang.String):java.lang.String" />
+			<role name="ContextInterface()" element="org.apache.roller.weblogger.ui.rendering.model.URLModel::date(java.lang.String):java.lang.String" />
+			<role name="ContextInterface()" element="org.apache.roller.weblogger.ui.rendering.model.URLModel::date(java.lang.String, int):java.lang.String" />
+			<role name="ContextInterface()" element="org.apache.roller.weblogger.ui.rendering.model.URLModel::category(java.lang.String):java.lang.String" />
+			<role name="ContextInterface()" element="org.apache.roller.weblogger.ui.rendering.model.URLModel::category(java.lang.String, int):java.lang.String" />
+			<role name="ContextInterface()" element="org.apache.roller.weblogger.ui.rendering.model.URLModel::tag(java.lang.String):java.lang.String" />
+			<role name="ContextInterface()" element="org.apache.roller.weblogger.ui.rendering.model.URLModel::tag(java.lang.String, int):java.lang.String" />
+			<role name="ContextInterface()" element="org.apache.roller.weblogger.ui.rendering.model.URLModel::tags(java.util.List):java.lang.String" />
+			<role name="ContextInterface()" element="org.apache.roller.weblogger.ui.rendering.model.URLModel::tags(java.util.List, int):java.lang.String" />
+			<role name="ContextInterface()" element="org.apache.roller.weblogger.ui.rendering.model.URLModel::collection(java.lang.String, java.lang.String):java.lang.String" />
+			<role name="ContextInterface()" element="org.apache.roller.weblogger.ui.rendering.model.URLModel::collection(java.lang.String, java.lang.String, int):java.lang.String" />
+			<role name="ContextInterface()" element="org.apache.roller.weblogger.ui.rendering.model.URLModel::getSearch():java.lang.String" />
+			<role name="ContextInterface()" element="org.apache.roller.weblogger.ui.rendering.model.URLModel::search(java.lang.String, int):java.lang.String" />
+			<role name="ContextInterface()" element="org.apache.roller.weblogger.ui.rendering.model.URLModel::search(java.lang.String, java.lang.String, int):java.lang.String" />
+			<role name="ContextInterface()" element="org.apache.roller.weblogger.ui.rendering.model.URLModel::absoluteSearch(java.lang.String, java.lang.String, int):java.lang.String" />
+			<role name="ContextInterface()" element="org.apache.roller.weblogger.ui.rendering.model.URLModel::getOpenSearchSite():java.lang.String" />
+			<role name="ContextInterface()" element="org.apache.roller.weblogger.ui.rendering.model.URLModel::getOpenSearchWeblog():java.lang.String" />
+			<role name="ContextInterface()" element="org.apache.roller.weblogger.ui.rendering.model.URLModel::page(java.lang.String):java.lang.String" />
+			<role name="ContextInterface()" element="org.apache.roller.weblogger.ui.rendering.model.URLModel::page(java.lang.String, java.lang.String, java.lang.String, int):java.lang.String" />
+			<role name="ContextInterface()" element="org.apache.roller.weblogger.ui.rendering.model.URLModel::resource(java.lang.String):java.lang.String" />
+			<role name="ContextInterface()" element="org.apache.roller.weblogger.ui.rendering.model.URLModel::getRsd():java.lang.String" />
+			<role name="ContextInterface()" element="org.apache.roller.weblogger.ui.rendering.model.URLModel::editEntry(java.lang.String):java.lang.String" />
+			<role name="ContextInterface()" element="org.apache.roller.weblogger.ui.rendering.model.URLModel::getCreateEntry():java.lang.String" />
+			<role name="ContextInterface()" element="org.apache.roller.weblogger.ui.rendering.model.URLModel::getEditSettings():java.lang.String" />
+		</instance>
+		<instance>
+			<role name="Context" element="org.apache.roller.weblogger.ui.rendering.pagers.SearchResultsPager" />
+			<role name="Strategy" element="org.apache.roller.weblogger.business.URLStrategy" />
+			<role name="strategy" element="org.apache.roller.weblogger.ui.rendering.pagers.SearchResultsPager::urlStrategy:org.apache.roller.weblogger.business.URLStrategy" />
+			<role name="ContextInterface()" element="org.apache.roller.weblogger.ui.rendering.pagers.SearchResultsPager::getHomeLink():java.lang.String" />
+			<role name="ContextInterface()" element="org.apache.roller.weblogger.ui.rendering.pagers.SearchResultsPager::getNextLink():java.lang.String" />
+			<role name="ContextInterface()" element="org.apache.roller.weblogger.ui.rendering.pagers.SearchResultsPager::getPrevLink():java.lang.String" />
+		</instance>
+		<instance>
+			<role name="Context" element="org.apache.roller.planet.ui.rendering.model.PlanetURLModel" />
+			<role name="Strategy" element="org.apache.roller.planet.business.URLStrategy" />
+			<role name="strategy" element="org.apache.roller.planet.ui.rendering.model.PlanetURLModel::urlStrategy:org.apache.roller.planet.business.URLStrategy" />
+			<role name="ContextInterface()" element="org.apache.roller.planet.ui.rendering.model.PlanetURLModel::getHome():java.lang.String" />
+			<role name="ContextInterface()" element="org.apache.roller.planet.ui.rendering.model.PlanetURLModel::group(java.lang.String):java.lang.String" />
+			<role name="ContextInterface()" element="org.apache.roller.planet.ui.rendering.model.PlanetURLModel::group(java.lang.String, int):java.lang.String" />
+			<role name="ContextInterface()" element="org.apache.roller.planet.ui.rendering.model.PlanetURLModel::opml(java.lang.String):java.lang.String" />
+		</instance>
+		<instance>
+			<role name="Context" element="org.apache.roller.planet.ui.rendering.model.SiteURLModel" />
+			<role name="Strategy" element="org.apache.roller.planet.business.URLStrategy" />
+			<role name="strategy" element="org.apache.roller.planet.ui.rendering.model.SiteURLModel::urlStrategy:org.apache.roller.planet.business.URLStrategy" />
+			<role name="ContextInterface()" element="org.apache.roller.planet.ui.rendering.model.SiteURLModel::planet(java.lang.String):java.lang.String" />
+		</instance>
+		<instance>
+			<role name="Context" element="org.apache.roller.weblogger.ui.rendering.model.PlanetModel" />
+			<role name="Strategy" element="org.apache.roller.planet.business.URLStrategy" />
+			<role name="strategy" element="org.apache.roller.weblogger.ui.rendering.model.PlanetModel::planetUrlStrategy:org.apache.roller.planet.business.URLStrategy" />
+			<role name="ContextInterface()" element="org.apache.roller.weblogger.ui.rendering.model.PlanetModel::getPlanetURL():java.lang.String" />
+			<role name="ContextInterface()" element="org.apache.roller.weblogger.ui.rendering.model.PlanetModel::getPlanetGroupURL(java.lang.String, int):java.lang.String" />
+			<role name="ContextInterface()" element="org.apache.roller.weblogger.ui.rendering.model.PlanetModel::getPlanetFeedURL(java.lang.String, java.lang.String):java.lang.String" />
+		</instance>
+	</pattern>
+	<pattern name="Bridge">
+		<instance>
+			<role name="Abstraction" element="org.apache.roller.weblogger.business.WebloggerImpl" />
+			<role name="Implementor" element="org.apache.roller.weblogger.business.WeblogManager" />
+			<role name="implementor" element="org.apache.roller.weblogger.business.WebloggerImpl::weblogManager:org.apache.roller.weblogger.business.WeblogManager" />
+			<role name="Operation()" element="org.apache.roller.weblogger.business.WebloggerImpl::release():void" />
+		</instance>
+		<instance>
+			<role name="Abstraction" element="org.apache.roller.weblogger.business.WebloggerImpl" />
+			<role name="Implementor" element="org.apache.roller.weblogger.business.MediaFileManager" />
+			<role name="implementor" element="org.apache.roller.weblogger.business.WebloggerImpl::mediaFileManager:org.apache.roller.weblogger.business.MediaFileManager" />
+			<role name="Operation()" element="org.apache.roller.weblogger.business.WebloggerImpl::release():void" />
+		</instance>
+		<instance>
+			<role name="Abstraction" element="org.apache.roller.weblogger.ui.rendering.pagers.AbstractWeblogEntriesPager" />
+			<role name="Implementor" element="org.apache.roller.weblogger.business.URLStrategy" />
+			<role name="implementor" element="org.apache.roller.weblogger.ui.rendering.pagers.AbstractWeblogEntriesPager::urlStrategy:org.apache.roller.weblogger.business.URLStrategy" />
+			<role name="Operation()" element="org.apache.roller.weblogger.ui.rendering.pagers.AbstractWeblogEntriesPager::createURL(int, int, org.apache.roller.weblogger.pojos.Weblog, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.util.List):java.lang.String" />
+		</instance>
+		<instance>
+			<role name="Abstraction" element="org.apache.roller.planet.business.PlanetFactory" />
+			<role name="Implementor" element="org.apache.roller.planet.business.PlanetProvider" />
+			<role name="implementor" element="org.apache.roller.planet.business.PlanetFactory::planetProvider:org.apache.roller.planet.business.PlanetProvider" />
+			<role name="Operation()" element="org.apache.roller.planet.business.PlanetFactory::getPlanet():org.apache.roller.planet.business.Planet" />
+			<role name="Operation()" element="org.apache.roller.planet.business.PlanetFactory::bootstrap(org.apache.roller.planet.business.PlanetProvider):void" />
+		</instance>
+		<instance>
+			<role name="Abstraction" element="org.apache.roller.weblogger.business.WebloggerImpl" />
+			<role name="Implementor" element="org.apache.roller.weblogger.business.referrers.RefererManager" />
+			<role name="implementor" element="org.apache.roller.weblogger.business.WebloggerImpl::refererManager:org.apache.roller.weblogger.business.referrers.RefererManager" />
+			<role name="Operation()" element="org.apache.roller.weblogger.business.WebloggerImpl::release():void" />
+		</instance>
+		<instance>
+			<role name="Abstraction" element="org.apache.roller.weblogger.business.WebloggerImpl" />
+			<role name="Implementor" element="org.apache.roller.weblogger.business.pings.AutoPingManager" />
+			<role name="implementor" element="org.apache.roller.weblogger.business.WebloggerImpl::autoPingManager:org.apache.roller.weblogger.business.pings.AutoPingManager" />
+			<role name="Operation()" element="org.apache.roller.weblogger.business.WebloggerImpl::release():void" />
+		</instance>
+		<instance>
+			<role name="Abstraction" element="org.apache.roller.weblogger.business.WebloggerImpl" />
+			<role name="Implementor" element="org.apache.roller.weblogger.business.search.IndexManager" />
+			<role name="implementor" element="org.apache.roller.weblogger.business.WebloggerImpl::indexManager:org.apache.roller.weblogger.business.search.IndexManager" />
+			<role name="Operation()" element="org.apache.roller.weblogger.business.WebloggerImpl::shutdown():void" />
+		</instance>
+		<instance>
+			<role name="Abstraction" element="org.apache.roller.weblogger.business.WebloggerImpl" />
+			<role name="Implementor" element="org.apache.roller.weblogger.business.runnable.ThreadManager" />
+			<role name="implementor" element="org.apache.roller.weblogger.business.WebloggerImpl::threadManager:org.apache.roller.weblogger.business.runnable.ThreadManager" />
+			<role name="Operation()" element="org.apache.roller.weblogger.business.WebloggerImpl::release():void" />
+			<role name="Operation()" element="org.apache.roller.weblogger.business.WebloggerImpl::shutdown():void" />
+		</instance>
+		<instance>
+			<role name="Abstraction" element="org.apache.roller.weblogger.business.WebloggerImpl" />
+			<role name="Implementor" element="org.apache.roller.weblogger.business.BookmarkManager" />
+			<role name="implementor" element="org.apache.roller.weblogger.business.WebloggerImpl::bookmarkManager:org.apache.roller.weblogger.business.BookmarkManager" />
+			<role name="Operation()" element="org.apache.roller.weblogger.business.WebloggerImpl::release():void" />
+		</instance>
+		<instance>
+			<role name="Abstraction" element="org.apache.roller.weblogger.business.WebloggerImpl" />
+			<role name="Implementor" element="org.apache.roller.weblogger.business.pings.PingTargetManager" />
+			<role name="implementor" element="org.apache.roller.weblogger.business.WebloggerImpl::pingTargetManager:org.apache.roller.weblogger.business.pings.PingTargetManager" />
+			<role name="Operation()" element="org.apache.roller.weblogger.business.WebloggerImpl::release():void" />
+		</instance>
+		<instance>
+			<role name="Abstraction" element="org.apache.roller.weblogger.business.WebloggerImpl" />
+			<role name="Implementor" element="org.apache.roller.weblogger.business.FileContentManager" />
+			<role name="implementor" element="org.apache.roller.weblogger.business.WebloggerImpl::fileContentManager:org.apache.roller.weblogger.business.FileContentManager" />
+			<role name="Operation()" element="org.apache.roller.weblogger.business.WebloggerImpl::release():void" />
+		</instance>
+		<instance>
+			<role name="Abstraction" element="org.apache.roller.weblogger.business.WebloggerImpl" />
+			<role name="Implementor" element="org.apache.roller.weblogger.business.UserManager" />
+			<role name="implementor" element="org.apache.roller.weblogger.business.WebloggerImpl::userManager:org.apache.roller.weblogger.business.UserManager" />
+			<role name="Operation()" element="org.apache.roller.weblogger.business.WebloggerImpl::release():void" />
+		</instance>
+		<instance>
+			<role name="Abstraction" element="org.apache.roller.weblogger.business.WebloggerImpl" />
+			<role name="Implementor" element="org.apache.roller.weblogger.business.pings.PingQueueManager" />
+			<role name="implementor" element="org.apache.roller.weblogger.business.WebloggerImpl::pingQueueManager:org.apache.roller.weblogger.business.pings.PingQueueManager" />
+			<role name="Operation()" element="org.apache.roller.weblogger.business.WebloggerImpl::release():void" />
+		</instance>
+		<instance>
+			<role name="Abstraction" element="org.apache.roller.weblogger.business.WebloggerImpl" />
+			<role name="Implementor" element="org.apache.roller.weblogger.business.plugins.PluginManager" />
+			<role name="implementor" element="org.apache.roller.weblogger.business.WebloggerImpl::pluginManager:org.apache.roller.weblogger.business.plugins.PluginManager" />
+			<role name="Operation()" element="org.apache.roller.weblogger.business.WebloggerImpl::release():void" />
+		</instance>
+	</pattern>
+	<pattern name="Template Method">
+		<instance>
+			<role name="AbstractClass" element="org.apache.roller.weblogger.business.plugins.entry.SearchPluginBase" />
+			<role name="TemplateMethod()" element="org.apache.roller.weblogger.business.plugins.entry.SearchPluginBase::init(org.apache.roller.weblogger.pojos.Weblog):void" />
+			<role name="TemplateMethod()" element="org.apache.roller.weblogger.business.plugins.entry.SearchPluginBase::render(org.apache.roller.weblogger.pojos.WeblogEntry, java.lang.String):java.lang.String" />
+		</instance>
+		<instance>
+			<role name="AbstractClass" element="org.apache.roller.weblogger.business.runnable.RollerTaskWithLeasing" />
+			<role name="TemplateMethod()" element="org.apache.roller.weblogger.business.runnable.RollerTaskWithLeasing::run():void" />
+		</instance>
+		<instance>
+			<role name="AbstractClass" element="org.apache.roller.weblogger.business.search.operations.IndexOperation" />
+			<role name="TemplateMethod()" element="org.apache.roller.weblogger.business.search.operations.IndexOperation::run():void" />
+		</instance>
+		<instance>
+			<role name="AbstractClass" element="org.apache.roller.weblogger.pojos.RollerPermission" />
+			<role name="TemplateMethod()" element="org.apache.roller.weblogger.pojos.RollerPermission::getActionsAsList():java.util.List" />
+			<role name="TemplateMethod()" element="org.apache.roller.weblogger.pojos.RollerPermission::setActionsAsList(java.util.List):void" />
+			<role name="TemplateMethod()" element="org.apache.roller.weblogger.pojos.RollerPermission::isEmpty():boolean" />
+		</instance>
+		<instance>
+			<role name="AbstractClass" element="org.apache.roller.weblogger.ui.struts2.common.PingTargetAddBase" />
+			<role name="TemplateMethod()" element="org.apache.roller.weblogger.ui.struts2.common.PingTargetAddBase::save():java.lang.String" />
+			<role name="TemplateMethod()" element="org.apache.roller.weblogger.ui.struts2.common.PingTargetAddBase::myValidate(org.apache.roller.weblogger.pojos.PingTarget):void" />
+		</instance>
+		<instance>
+			<role name="AbstractClass" element="org.apache.roller.weblogger.ui.struts2.common.PingTargetEditBase" />
+			<role name="TemplateMethod()" element="org.apache.roller.weblogger.ui.struts2.common.PingTargetEditBase::myPrepare():void" />
+			<role name="TemplateMethod()" element="org.apache.roller.weblogger.ui.struts2.common.PingTargetEditBase::save():java.lang.String" />
+			<role name="TemplateMethod()" element="org.apache.roller.weblogger.ui.struts2.common.PingTargetEditBase::myValidate(org.apache.roller.weblogger.pojos.PingTarget):void" />
+		</instance>
+		<instance>
+			<role name="AbstractClass" element="org.apache.roller.weblogger.ui.struts2.common.PingTargetsBase" />
+			<role name="TemplateMethod()" element="org.apache.roller.weblogger.ui.struts2.common.PingTargetsBase::myPrepare():void" />
+			<role name="TemplateMethod()" element="org.apache.roller.weblogger.ui.struts2.common.PingTargetsBase::delete():java.lang.String" />
+		</instance>
+		<instance>
+			<role name="AbstractClass" element="org.apache.roller.weblogger.ui.tags.StringTagSupport" />
+			<role name="TemplateMethod()" element="org.apache.roller.weblogger.ui.tags.StringTagSupport::doEndTag():int" />
+		</instance>
+		<instance>
+			<role name="AbstractClass" element="org.apache.roller.weblogger.webservices.adminprotocol.Handler" />
+			<role name="TemplateMethod()" element="org.apache.roller.weblogger.webservices.adminprotocol.Handler::getEntrySet(java.io.Reader):org.apache.roller.weblogger.webservices.adminprotocol.sdk.EntrySet" />
+		</instance>
+		<instance>
+			<role name="AbstractClass" element="org.apache.roller.weblogger.webservices.adminprotocol.sdk.Entry" />
+			<role name="TemplateMethod()" element="org.apache.roller.weblogger.webservices.adminprotocol.sdk.Entry::toString():java.lang.String" />
+			<role name="TemplateMethod()" element="org.apache.roller.weblogger.webservices.adminprotocol.sdk.Entry::equals(java.lang.Object):boolean" />
+		</instance>
+		<instance>
+			<role name="AbstractClass" element="org.apache.roller.weblogger.webservices.adminprotocol.sdk.EntrySet" />
+			<role name="TemplateMethod()" element="org.apache.roller.weblogger.webservices.adminprotocol.sdk.EntrySet::toDocument():org.jdom.Document" />
+			<role name="TemplateMethod()" element="org.apache.roller.weblogger.webservices.adminprotocol.sdk.EntrySet::equals(java.lang.Object):boolean" />
+		</instance>
+	</pattern>
+	<pattern name="Visitor" />
+	<pattern name="Proxy">
+		<instance>
+			<role name="Proxy" element="org.apache.roller.weblogger.business.themes.WeblogSharedTheme" />
+			<role name="RealSubject" element="org.apache.roller.weblogger.business.themes.SharedTheme" />
+			<role name="Request()" element="org.apache.roller.weblogger.business.themes.WeblogSharedTheme::getId():java.lang.String" />
+			<role name="Request()" element="org.apache.roller.weblogger.business.themes.WeblogSharedTheme::getName():java.lang.String" />
+			<role name="Request()" element="org.apache.roller.weblogger.business.themes.WeblogSharedTheme::getDescription():java.lang.String" />
+			<role name="Request()" element="org.apache.roller.weblogger.business.themes.WeblogSharedTheme::getLastModified():java.util.Date" />
+			<role name="Request()" element="org.apache.roller.weblogger.business.themes.WeblogSharedTheme::isEnabled():boolean" />
+		</instance>
+	</pattern>
+	<pattern name="Proxy2" />
+	<pattern name="Chain of Responsibility" />
+</system>
+

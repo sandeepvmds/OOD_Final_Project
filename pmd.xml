@@ -1,0 +1,1132 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<system>
+	<pattern name="Factory Method">
+		<instance>
+			<role name="Creator" element="net.sourceforge.pmd.ant.Formatter$RendererBuilder" />
+			<role name="FactoryMethod()" element="net.sourceforge.pmd.ant.Formatter$RendererBuilder::build(java.lang.Object[]):net.sourceforge.pmd.renderers.Renderer" />
+		</instance>
+		<instance>
+			<role name="Creator" element="net.sourceforge.pmd.sourcetypehandlers.SourceTypeHandler" />
+			<role name="FactoryMethod()" element="net.sourceforge.pmd.sourcetypehandlers.SourceTypeHandler::getDataFlowFacade():net.sourceforge.pmd.sourcetypehandlers.VisitorStarter" />
+			<role name="FactoryMethod()" element="net.sourceforge.pmd.sourcetypehandlers.SourceTypeHandler::getSymbolFacade():net.sourceforge.pmd.sourcetypehandlers.VisitorStarter" />
+			<role name="FactoryMethod()" element="net.sourceforge.pmd.sourcetypehandlers.SourceTypeHandler::getTypeResolutionFacade(java.lang.ClassLoader):net.sourceforge.pmd.sourcetypehandlers.VisitorStarter" />
+			<role name="FactoryMethod()" element="net.sourceforge.pmd.sourcetypehandlers.SourceTypeHandler::getParser():net.sourceforge.pmd.parsers.Parser" />
+		</instance>
+		<instance>
+			<role name="Creator" element="net.sourceforge.pmd.symboltable.Scope" />
+			<role name="FactoryMethod()" element="net.sourceforge.pmd.symboltable.Scope::getEnclosingClassScope():net.sourceforge.pmd.symboltable.ClassScope" />
+			<role name="FactoryMethod()" element="net.sourceforge.pmd.symboltable.Scope::getEnclosingSourceFileScope():net.sourceforge.pmd.symboltable.SourceFileScope" />
+		</instance>
+		<instance>
+			<role name="Creator" element="net.sourceforge.pmd.TargetJDKVersion" />
+			<role name="FactoryMethod()" element="net.sourceforge.pmd.TargetJDKVersion::createParser(java.io.InputStream):net.sourceforge.pmd.ast.JavaParser" />
+			<role name="FactoryMethod()" element="net.sourceforge.pmd.TargetJDKVersion::createParser(java.io.Reader):net.sourceforge.pmd.ast.JavaParser" />
+		</instance>
+	</pattern>
+	<pattern name="Prototype" />
+	<pattern name="Singleton">
+		<instance>
+			<role name="Singleton" element="net.sourceforge.pmd.cpd.TokenEntry" />
+			<role name="uniqueInstance" element="net.sourceforge.pmd.cpd.TokenEntry::EOF:net.sourceforge.pmd.cpd.TokenEntry" />
+		</instance>
+		<instance>
+			<role name="Singleton" element="net.sourceforge.pmd.dcd.graph.ClassNodeComparator" />
+			<role name="uniqueInstance" element="net.sourceforge.pmd.dcd.graph.ClassNodeComparator::INSTANCE:net.sourceforge.pmd.dcd.graph.ClassNodeComparator" />
+		</instance>
+		<instance>
+			<role name="Singleton" element="net.sourceforge.pmd.dcd.graph.MemberNodeComparator" />
+			<role name="uniqueInstance" element="net.sourceforge.pmd.dcd.graph.MemberNodeComparator::INSTANCE:net.sourceforge.pmd.dcd.graph.MemberNodeComparator" />
+		</instance>
+		<instance>
+			<role name="Singleton" element="net.sourceforge.pmd.sourcetypehandlers.VisitorStarter" />
+			<role name="uniqueInstance" element="net.sourceforge.pmd.sourcetypehandlers.VisitorStarter::dummy:net.sourceforge.pmd.sourcetypehandlers.VisitorStarter" />
+		</instance>
+		<instance>
+			<role name="Singleton" element="net.sourceforge.pmd.TargetJDKVersion" />
+			<role name="uniqueInstance" element="net.sourceforge.pmd.TargetJDKVersion::DEFAULT_JDK_VERSION:net.sourceforge.pmd.TargetJDKVersion" />
+		</instance>
+		<instance>
+			<role name="Singleton" element="net.sourceforge.pmd.util.filter.DirectoryFilter" />
+			<role name="uniqueInstance" element="net.sourceforge.pmd.util.filter.DirectoryFilter::INSTANCE:net.sourceforge.pmd.util.filter.DirectoryFilter" />
+		</instance>
+	</pattern>
+	<pattern name="(Object)Adapter">
+		<instance>
+			<role name="Adaptee" element="net.sourceforge.pmd.Report" />
+			<role name="Adapter" element="net.sourceforge.pmd.renderers.AbstractRenderer" />
+			<role name="adaptee" element="net.sourceforge.pmd.renderers.AbstractRenderer::mainReport:net.sourceforge.pmd.Report" />
+			<role name="Request()" element="net.sourceforge.pmd.renderers.AbstractRenderer::renderFileReport(net.sourceforge.pmd.Report):void" />
+		</instance>
+		<instance>
+			<role name="Adapter" element="net.sourceforge.pmd.util.viewer.gui.MainFrame" />
+			<role name="Adaptee" element="net.sourceforge.pmd.util.viewer.model.ViewerModel" />
+			<role name="adaptee" element="net.sourceforge.pmd.util.viewer.gui.MainFrame::model:net.sourceforge.pmd.util.viewer.model.ViewerModel" />
+			<role name="Request()" element="net.sourceforge.pmd.util.viewer.gui.MainFrame::viewerModelChanged(net.sourceforge.pmd.util.viewer.model.ViewerModelEvent):void" />
+		</instance>
+		<instance>
+			<role name="Adapter" element="net.sourceforge.pmd.util.viewer.gui.ASTPanel" />
+			<role name="Adaptee" element="net.sourceforge.pmd.util.viewer.model.ViewerModel" />
+			<role name="adaptee" element="net.sourceforge.pmd.util.viewer.gui.ASTPanel::model:net.sourceforge.pmd.util.viewer.model.ViewerModel" />
+			<role name="Request()" element="net.sourceforge.pmd.util.viewer.gui.ASTPanel::viewerModelChanged(net.sourceforge.pmd.util.viewer.model.ViewerModelEvent):void" />
+		</instance>
+		<instance>
+			<role name="Adapter" element="net.sourceforge.pmd.util.viewer.gui.EvaluationResultsPanel" />
+			<role name="Adaptee" element="net.sourceforge.pmd.util.viewer.model.ViewerModel" />
+			<role name="adaptee" element="net.sourceforge.pmd.util.viewer.gui.EvaluationResultsPanel::model:net.sourceforge.pmd.util.viewer.model.ViewerModel" />
+			<role name="Request()" element="net.sourceforge.pmd.util.viewer.gui.EvaluationResultsPanel::viewerModelChanged(net.sourceforge.pmd.util.viewer.model.ViewerModelEvent):void" />
+		</instance>
+		<instance>
+			<role name="Adaptee" element="net.sourceforge.pmd.cpd.cppast.SimpleCharStream" />
+			<role name="Adapter" element="net.sourceforge.pmd.cpd.CPPTokenizer" />
+			<role name="adaptee" element="net.sourceforge.pmd.cpd.CPPTokenizer::charStream:net.sourceforge.pmd.cpd.cppast.SimpleCharStream" />
+			<role name="Request()" element="net.sourceforge.pmd.cpd.CPPTokenizer::tokenize(net.sourceforge.pmd.cpd.SourceCode, net.sourceforge.pmd.cpd.Tokens):void" />
+		</instance>
+		<instance>
+			<role name="Adaptee" element="net.sourceforge.pmd.ast.JavaParser" />
+			<role name="Adapter" element="net.sourceforge.pmd.parsers.Java13Parser" />
+			<role name="adaptee" element="net.sourceforge.pmd.parsers.Java13Parser::parser:net.sourceforge.pmd.ast.JavaParser" />
+			<role name="Request()" element="net.sourceforge.pmd.parsers.Java13Parser::parse(java.io.Reader):java.lang.Object" />
+			<role name="Request()" element="net.sourceforge.pmd.parsers.Java13Parser::getExcludeMap():java.util.Map" />
+		</instance>
+		<instance>
+			<role name="Adaptee" element="net.sourceforge.pmd.ast.JavaParser" />
+			<role name="Adapter" element="net.sourceforge.pmd.parsers.Java14Parser" />
+			<role name="adaptee" element="net.sourceforge.pmd.parsers.Java14Parser::parser:net.sourceforge.pmd.ast.JavaParser" />
+			<role name="Request()" element="net.sourceforge.pmd.parsers.Java14Parser::parse(java.io.Reader):java.lang.Object" />
+			<role name="Request()" element="net.sourceforge.pmd.parsers.Java14Parser::getExcludeMap():java.util.Map" />
+		</instance>
+		<instance>
+			<role name="Adaptee" element="net.sourceforge.pmd.ast.JavaParser" />
+			<role name="Adapter" element="net.sourceforge.pmd.parsers.Java15Parser" />
+			<role name="adaptee" element="net.sourceforge.pmd.parsers.Java15Parser::parser:net.sourceforge.pmd.ast.JavaParser" />
+			<role name="Request()" element="net.sourceforge.pmd.parsers.Java15Parser::parse(java.io.Reader):java.lang.Object" />
+			<role name="Request()" element="net.sourceforge.pmd.parsers.Java15Parser::getExcludeMap():java.util.Map" />
+		</instance>
+		<instance>
+			<role name="Adaptee" element="net.sourceforge.pmd.ast.JavaParser" />
+			<role name="Adapter" element="net.sourceforge.pmd.parsers.Java16Parser" />
+			<role name="adaptee" element="net.sourceforge.pmd.parsers.Java16Parser::parser:net.sourceforge.pmd.ast.JavaParser" />
+			<role name="Request()" element="net.sourceforge.pmd.parsers.Java16Parser::parse(java.io.Reader):java.lang.Object" />
+			<role name="Request()" element="net.sourceforge.pmd.parsers.Java16Parser::getExcludeMap():java.util.Map" />
+		</instance>
+		<instance>
+			<role name="Adaptee" element="net.sourceforge.pmd.ast.JavaParser" />
+			<role name="Adapter" element="net.sourceforge.pmd.parsers.Java17Parser" />
+			<role name="adaptee" element="net.sourceforge.pmd.parsers.Java17Parser::parser:net.sourceforge.pmd.ast.JavaParser" />
+			<role name="Request()" element="net.sourceforge.pmd.parsers.Java17Parser::parse(java.io.Reader):java.lang.Object" />
+			<role name="Request()" element="net.sourceforge.pmd.parsers.Java17Parser::getExcludeMap():java.util.Map" />
+		</instance>
+		<instance>
+			<role name="Adaptee" element="net.sourceforge.pmd.ast.SimpleNode" />
+			<role name="Adapter" element="net.sourceforge.pmd.symboltable.AbstractNameDeclaration" />
+			<role name="adaptee" element="net.sourceforge.pmd.symboltable.AbstractNameDeclaration::node:net.sourceforge.pmd.ast.SimpleNode" />
+			<role name="Request()" element="net.sourceforge.pmd.symboltable.AbstractNameDeclaration::getImage():java.lang.String" />
+			<role name="Request()" element="net.sourceforge.pmd.symboltable.AbstractNameDeclaration::getScope():net.sourceforge.pmd.symboltable.Scope" />
+		</instance>
+	</pattern>
+	<pattern name="Command" />
+	<pattern name="Composite" />
+	<pattern name="Decorator">
+		<instance>
+			<role name="Component" element="net.sourceforge.pmd.Rule" />
+			<role name="Decorator" element="net.sourceforge.pmd.AbstractDelegateRule" />
+			<role name="component" element="net.sourceforge.pmd.AbstractDelegateRule::rule:net.sourceforge.pmd.Rule" />
+			<role name="Operation()" element="net.sourceforge.pmd.AbstractDelegateRule::getName():java.lang.String" />
+			<role name="Operation()" element="net.sourceforge.pmd.AbstractDelegateRule::setName(java.lang.String):void" />
+			<role name="Operation()" element="net.sourceforge.pmd.AbstractDelegateRule::getSince():java.lang.String" />
+			<role name="Operation()" element="net.sourceforge.pmd.AbstractDelegateRule::setSince(java.lang.String):void" />
+			<role name="Operation()" element="net.sourceforge.pmd.AbstractDelegateRule::getRuleClass():java.lang.String" />
+			<role name="Operation()" element="net.sourceforge.pmd.AbstractDelegateRule::setRuleClass(java.lang.String):void" />
+			<role name="Operation()" element="net.sourceforge.pmd.AbstractDelegateRule::getRuleSetName():java.lang.String" />
+			<role name="Operation()" element="net.sourceforge.pmd.AbstractDelegateRule::setRuleSetName(java.lang.String):void" />
+			<role name="Operation()" element="net.sourceforge.pmd.AbstractDelegateRule::getMessage():java.lang.String" />
+			<role name="Operation()" element="net.sourceforge.pmd.AbstractDelegateRule::setMessage(java.lang.String):void" />
+			<role name="Operation()" element="net.sourceforge.pmd.AbstractDelegateRule::getDescription():java.lang.String" />
+			<role name="Operation()" element="net.sourceforge.pmd.AbstractDelegateRule::setDescription(java.lang.String):void" />
+			<role name="Operation()" element="net.sourceforge.pmd.AbstractDelegateRule::getExamples():java.util.List" />
+			<role name="Operation()" element="net.sourceforge.pmd.AbstractDelegateRule::getExample():java.lang.String" />
+			<role name="Operation()" element="net.sourceforge.pmd.AbstractDelegateRule::addExample(java.lang.String):void" />
+			<role name="Operation()" element="net.sourceforge.pmd.AbstractDelegateRule::getExternalInfoUrl():java.lang.String" />
+			<role name="Operation()" element="net.sourceforge.pmd.AbstractDelegateRule::setExternalInfoUrl(java.lang.String):void" />
+			<role name="Operation()" element="net.sourceforge.pmd.AbstractDelegateRule::getPriority():int" />
+			<role name="Operation()" element="net.sourceforge.pmd.AbstractDelegateRule::setPriority(int):void" />
+			<role name="Operation()" element="net.sourceforge.pmd.AbstractDelegateRule::getPriorityName():java.lang.String" />
+			<role name="Operation()" element="net.sourceforge.pmd.AbstractDelegateRule::include():boolean" />
+			<role name="Operation()" element="net.sourceforge.pmd.AbstractDelegateRule::setInclude(boolean):void" />
+			<role name="Operation()" element="net.sourceforge.pmd.AbstractDelegateRule::getProperties():java.util.Properties" />
+			<role name="Operation()" element="net.sourceforge.pmd.AbstractDelegateRule::addProperty(java.lang.String, java.lang.String):void" />
+			<role name="Operation()" element="net.sourceforge.pmd.AbstractDelegateRule::addProperties(java.util.Properties):void" />
+			<role name="Operation()" element="net.sourceforge.pmd.AbstractDelegateRule::hasProperty(java.lang.String):boolean" />
+			<role name="Operation()" element="net.sourceforge.pmd.AbstractDelegateRule::getBooleanProperty(java.lang.String):boolean" />
+			<role name="Operation()" element="net.sourceforge.pmd.AbstractDelegateRule::getIntProperty(java.lang.String):int" />
+			<role name="Operation()" element="net.sourceforge.pmd.AbstractDelegateRule::getDoubleProperty(java.lang.String):double" />
+			<role name="Operation()" element="net.sourceforge.pmd.AbstractDelegateRule::getStringProperty(java.lang.String):java.lang.String" />
+			<role name="Operation()" element="net.sourceforge.pmd.AbstractDelegateRule::propertyDescriptorFor(java.lang.String):net.sourceforge.pmd.PropertyDescriptor" />
+			<role name="Operation()" element="net.sourceforge.pmd.AbstractDelegateRule::setUsesDFA():void" />
+			<role name="Operation()" element="net.sourceforge.pmd.AbstractDelegateRule::usesDFA():boolean" />
+			<role name="Operation()" element="net.sourceforge.pmd.AbstractDelegateRule::setUsesTypeResolution():void" />
+			<role name="Operation()" element="net.sourceforge.pmd.AbstractDelegateRule::usesTypeResolution():boolean" />
+			<role name="Operation()" element="net.sourceforge.pmd.AbstractDelegateRule::usesRuleChain():boolean" />
+			<role name="Operation()" element="net.sourceforge.pmd.AbstractDelegateRule::getRuleChainVisits():java.util.List" />
+			<role name="Operation()" element="net.sourceforge.pmd.AbstractDelegateRule::addRuleChainVisit(java.lang.String):void" />
+			<role name="Operation()" element="net.sourceforge.pmd.AbstractDelegateRule::start(net.sourceforge.pmd.RuleContext):void" />
+			<role name="Operation()" element="net.sourceforge.pmd.AbstractDelegateRule::end(net.sourceforge.pmd.RuleContext):void" />
+		</instance>
+		<instance>
+			<role name="Component" element="net.sourceforge.pmd.symboltable.Scope" />
+			<role name="Decorator" element="net.sourceforge.pmd.symboltable.AbstractScope" />
+			<role name="component" element="net.sourceforge.pmd.symboltable.AbstractScope::parent:net.sourceforge.pmd.symboltable.Scope" />
+			<role name="Operation()" element="net.sourceforge.pmd.symboltable.AbstractScope::getEnclosingMethodScope():net.sourceforge.pmd.symboltable.MethodScope" />
+			<role name="Operation()" element="net.sourceforge.pmd.symboltable.AbstractScope::getEnclosingClassScope():net.sourceforge.pmd.symboltable.ClassScope" />
+			<role name="Operation()" element="net.sourceforge.pmd.symboltable.AbstractScope::getEnclosingSourceFileScope():net.sourceforge.pmd.symboltable.SourceFileScope" />
+			<role name="Operation()" element="net.sourceforge.pmd.symboltable.AbstractScope::addDeclaration(net.sourceforge.pmd.symboltable.MethodNameDeclaration):void" />
+			<role name="Operation()" element="net.sourceforge.pmd.symboltable.AbstractScope::addDeclaration(net.sourceforge.pmd.symboltable.ClassNameDeclaration):void" />
+		</instance>
+		<instance>
+			<role name="Component" element="net.sourceforge.pmd.util.filter.Filter" />
+			<role name="Decorator" element="net.sourceforge.pmd.util.filter.AbstractDelegateFilter" />
+			<role name="component" element="net.sourceforge.pmd.util.filter.AbstractDelegateFilter::filter:net.sourceforge.pmd.util.filter.Filter" />
+			<role name="Operation()" element="net.sourceforge.pmd.util.filter.AbstractDelegateFilter::filter(T):boolean" />
+		</instance>
+	</pattern>
+	<pattern name="Observer">
+		<instance>
+			<role name="Observer" element="net.sourceforge.pmd.ast.Node" />
+			<role name="Subject" element="net.sourceforge.pmd.ast.JJTJavaParserState" />
+			<role name="Notify()" element="net.sourceforge.pmd.ast.JJTJavaParserState::closeNodeScope(net.sourceforge.pmd.ast.Node, int):void" />
+			<role name="Notify()" element="net.sourceforge.pmd.ast.JJTJavaParserState::closeNodeScope(net.sourceforge.pmd.ast.Node, boolean):void" />
+		</instance>
+		<instance>
+			<role name="Observer" element="net.sourceforge.pmd.util.viewer.model.ViewerModelListener" />
+			<role name="Subject" element="net.sourceforge.pmd.util.viewer.model.ViewerModel" />
+			<role name="Notify()" element="net.sourceforge.pmd.util.viewer.model.ViewerModel::fireViewerModelEvent(net.sourceforge.pmd.util.viewer.model.ViewerModelEvent):void" />
+		</instance>
+	</pattern>
+	<pattern name="State">
+		<instance>
+			<role name="State" element="net.sourceforge.pmd.Rule" />
+			<role name="Context" element="net.sourceforge.pmd.util.Benchmark$Result" />
+			<role name="state" element="net.sourceforge.pmd.util.Benchmark$Result::rule:net.sourceforge.pmd.Rule" />
+			<role name="Request()" element="net.sourceforge.pmd.util.Benchmark$Result::compareTo(net.sourceforge.pmd.util.Benchmark$Result):int" />
+		</instance>
+		<instance>
+			<role name="Context" element="net.sourceforge.pmd.util.designer.Designer$ASTTreeNode" />
+			<role name="State" element="net.sourceforge.pmd.ast.Node" />
+			<role name="state" element="net.sourceforge.pmd.util.designer.Designer$ASTTreeNode::node:net.sourceforge.pmd.ast.Node" />
+			<role name="Request()" element="net.sourceforge.pmd.util.designer.Designer$ASTTreeNode::getChildCount():int" />
+			<role name="Request()" element="net.sourceforge.pmd.util.designer.Designer$ASTTreeNode::isLeaf():boolean" />
+			<role name="Request()" element="net.sourceforge.pmd.util.designer.Designer$ASTTreeNode::getChildAt(int):javax.swing.tree.TreeNode" />
+		</instance>
+		<instance>
+			<role name="Context" element="net.sourceforge.pmd.ant.Formatter" />
+			<role name="State" element="net.sourceforge.pmd.renderers.Renderer" />
+			<role name="state" element="net.sourceforge.pmd.ant.Formatter::renderer:net.sourceforge.pmd.renderers.Renderer" />
+			<role name="Request()" element="net.sourceforge.pmd.ant.Formatter::start(java.lang.String):void" />
+			<role name="Request()" element="net.sourceforge.pmd.ant.Formatter::end(net.sourceforge.pmd.Report):void" />
+		</instance>
+		<instance>
+			<role name="Context" element="net.sourceforge.pmd.cpd.CPD" />
+			<role name="State" element="net.sourceforge.pmd.cpd.CPDListener" />
+			<role name="state" element="net.sourceforge.pmd.cpd.CPD::listener:net.sourceforge.pmd.cpd.CPDListener" />
+			<role name="Request()" element="net.sourceforge.pmd.cpd.CPD::add(int, java.io.File):void" />
+		</instance>
+		<instance>
+			<role name="Context" element="net.sourceforge.pmd.cpd.MatchAlgorithm" />
+			<role name="State" element="net.sourceforge.pmd.cpd.CPDListener" />
+			<role name="state" element="net.sourceforge.pmd.cpd.MatchAlgorithm::cpdListener:net.sourceforge.pmd.cpd.CPDListener" />
+			<role name="Request()" element="net.sourceforge.pmd.cpd.MatchAlgorithm::findMatches():void" />
+		</instance>
+		<instance>
+			<role name="State" element="net.sourceforge.pmd.dfa.IDataFlowNode" />
+			<role name="Context" element="net.sourceforge.pmd.dfa.DaaRule$Usage" />
+			<role name="state" element="net.sourceforge.pmd.dfa.DaaRule$Usage::node:net.sourceforge.pmd.dfa.IDataFlowNode" />
+			<role name="Request()" element="net.sourceforge.pmd.dfa.DaaRule$Usage::toString():java.lang.String" />
+		</instance>
+		<instance>
+			<role name="State" element="net.sourceforge.pmd.dfa.IDataFlowNode" />
+			<role name="Context" element="net.sourceforge.pmd.rules.UselessAssignment$Usage" />
+			<role name="state" element="net.sourceforge.pmd.rules.UselessAssignment$Usage::node:net.sourceforge.pmd.dfa.IDataFlowNode" />
+			<role name="Request()" element="net.sourceforge.pmd.rules.UselessAssignment$Usage::toString():java.lang.String" />
+		</instance>
+		<instance>
+			<role name="Context" element="net.sourceforge.pmd.dfa.pathfinder.DAAPathFinder" />
+			<role name="State" element="net.sourceforge.pmd.dfa.pathfinder.Executable" />
+			<role name="state" element="net.sourceforge.pmd.dfa.pathfinder.DAAPathFinder::shim:net.sourceforge.pmd.dfa.pathfinder.Executable" />
+			<role name="Request()" element="net.sourceforge.pmd.dfa.pathfinder.DAAPathFinder::phase1():void" />
+		</instance>
+		<instance>
+			<role name="Context" element="net.sourceforge.pmd.RuleSet" />
+			<role name="State" element="net.sourceforge.pmd.util.filter.Filter" />
+			<role name="state" element="net.sourceforge.pmd.RuleSet::filter:net.sourceforge.pmd.util.filter.Filter" />
+			<role name="Request()" element="net.sourceforge.pmd.RuleSet::applies(java.io.File):boolean" />
+		</instance>
+		<instance>
+			<role name="Context" element="net.sourceforge.pmd.dcd.graph.UsageGraphBuilder" />
+			<role name="State" element="net.sourceforge.pmd.util.filter.Filter" />
+			<role name="state" element="net.sourceforge.pmd.dcd.graph.UsageGraphBuilder::classFilter:net.sourceforge.pmd.util.filter.Filter" />
+			<role name="Request()" element="net.sourceforge.pmd.dcd.graph.UsageGraphBuilder::index(java.lang.String):void" />
+		</instance>
+		<instance>
+			<role name="Context" element="net.sourceforge.pmd.util.designer.DFAPanel$DFACanvas" />
+			<role name="State" element="net.sourceforge.pmd.util.LineGetter" />
+			<role name="state" element="net.sourceforge.pmd.util.designer.DFAPanel$DFACanvas::lines:net.sourceforge.pmd.util.LineGetter" />
+			<role name="Request()" element="net.sourceforge.pmd.util.designer.DFAPanel$DFACanvas::paintComponent(java.awt.Graphics):void" />
+		</instance>
+		<instance>
+			<role name="State" element="net.sourceforge.pmd.ast.CharStream" />
+			<role name="Context" element="net.sourceforge.pmd.ast.JavaParserTokenManager" />
+			<role name="state" element="net.sourceforge.pmd.ast.JavaParserTokenManager::input_stream:net.sourceforge.pmd.ast.CharStream" />
+			<role name="Request()" element="net.sourceforge.pmd.ast.JavaParserTokenManager::jjMoveStringLiteralDfa1_0(long, long):int" />
+			<role name="Request()" element="net.sourceforge.pmd.ast.JavaParserTokenManager::jjMoveStringLiteralDfa2_0(long, long, long, long):int" />
+			<role name="Request()" element="net.sourceforge.pmd.ast.JavaParserTokenManager::jjMoveStringLiteralDfa3_0(long, long, long, long):int" />
+			<role name="Request()" element="net.sourceforge.pmd.ast.JavaParserTokenManager::jjMoveStringLiteralDfa4_0(long, long, long, long):int" />
+			<role name="Request()" element="net.sourceforge.pmd.ast.JavaParserTokenManager::jjMoveStringLiteralDfa5_0(long, long):int" />
+			<role name="Request()" element="net.sourceforge.pmd.ast.JavaParserTokenManager::jjMoveStringLiteralDfa6_0(long, long):int" />
+			<role name="Request()" element="net.sourceforge.pmd.ast.JavaParserTokenManager::jjMoveStringLiteralDfa7_0(long, long):int" />
+			<role name="Request()" element="net.sourceforge.pmd.ast.JavaParserTokenManager::jjMoveStringLiteralDfa8_0(long, long):int" />
+			<role name="Request()" element="net.sourceforge.pmd.ast.JavaParserTokenManager::jjMoveStringLiteralDfa9_0(long, long):int" />
+			<role name="Request()" element="net.sourceforge.pmd.ast.JavaParserTokenManager::jjMoveStringLiteralDfa10_0(long, long):int" />
+			<role name="Request()" element="net.sourceforge.pmd.ast.JavaParserTokenManager::jjMoveStringLiteralDfa11_0(long, long):int" />
+			<role name="Request()" element="net.sourceforge.pmd.ast.JavaParserTokenManager::jjStartNfaWithStates_0(int, int, int):int" />
+			<role name="Request()" element="net.sourceforge.pmd.ast.JavaParserTokenManager::jjMoveNfa_0(int, int):int" />
+			<role name="Request()" element="net.sourceforge.pmd.ast.JavaParserTokenManager::jjMoveStringLiteralDfa1_2(long):int" />
+			<role name="Request()" element="net.sourceforge.pmd.ast.JavaParserTokenManager::jjMoveStringLiteralDfa1_1(long):int" />
+			<role name="Request()" element="net.sourceforge.pmd.ast.JavaParserTokenManager::jjFillToken():net.sourceforge.pmd.ast.Token" />
+			<role name="Request()" element="net.sourceforge.pmd.ast.JavaParserTokenManager::getNextToken():net.sourceforge.pmd.ast.Token" />
+			<role name="Request()" element="net.sourceforge.pmd.ast.JavaParserTokenManager::SkipLexicalActions(net.sourceforge.pmd.ast.Token):void" />
+			<role name="Request()" element="net.sourceforge.pmd.ast.JavaParserTokenManager::MoreLexicalActions():void" />
+			<role name="Request()" element="net.sourceforge.pmd.ast.JavaParserTokenManager::TokenLexicalActions(net.sourceforge.pmd.ast.Token):void" />
+		</instance>
+		<instance>
+			<role name="State" element="net.sourceforge.pmd.jsp.ast.CharStream" />
+			<role name="Context" element="net.sourceforge.pmd.jsp.ast.JspParserTokenManager" />
+			<role name="state" element="net.sourceforge.pmd.jsp.ast.JspParserTokenManager::input_stream:net.sourceforge.pmd.jsp.ast.CharStream" />
+			<role name="Request()" element="net.sourceforge.pmd.jsp.ast.JspParserTokenManager::jjMoveStringLiteralDfa1_9(long):int" />
+			<role name="Request()" element="net.sourceforge.pmd.jsp.ast.JspParserTokenManager::jjMoveNfa_9(int, int):int" />
+			<role name="Request()" element="net.sourceforge.pmd.jsp.ast.JspParserTokenManager::jjMoveStringLiteralDfa1_4(long):int" />
+			<role name="Request()" element="net.sourceforge.pmd.jsp.ast.JspParserTokenManager::jjMoveStringLiteralDfa2_4(long, long):int" />
+			<role name="Request()" element="net.sourceforge.pmd.jsp.ast.JspParserTokenManager::jjMoveNfa_6(int, int):int" />
+			<role name="Request()" element="net.sourceforge.pmd.jsp.ast.JspParserTokenManager::jjMoveNfa_3(int, int):int" />
+			<role name="Request()" element="net.sourceforge.pmd.jsp.ast.JspParserTokenManager::jjMoveNfa_0(int, int):int" />
+			<role name="Request()" element="net.sourceforge.pmd.jsp.ast.JspParserTokenManager::jjMoveNfa_2(int, int):int" />
+			<role name="Request()" element="net.sourceforge.pmd.jsp.ast.JspParserTokenManager::jjMoveStringLiteralDfa1_7(long):int" />
+			<role name="Request()" element="net.sourceforge.pmd.jsp.ast.JspParserTokenManager::jjMoveStringLiteralDfa2_7(long, long):int" />
+			<role name="Request()" element="net.sourceforge.pmd.jsp.ast.JspParserTokenManager::jjMoveStringLiteralDfa3_7(long, long):int" />
+			<role name="Request()" element="net.sourceforge.pmd.jsp.ast.JspParserTokenManager::jjMoveNfa_7(int, int):int" />
+			<role name="Request()" element="net.sourceforge.pmd.jsp.ast.JspParserTokenManager::jjMoveNfa_13(int, int):int" />
+			<role name="Request()" element="net.sourceforge.pmd.jsp.ast.JspParserTokenManager::jjMoveStringLiteralDfa1_16(long):int" />
+			<role name="Request()" element="net.sourceforge.pmd.jsp.ast.JspParserTokenManager::jjMoveStringLiteralDfa2_16(long, long):int" />
+			<role name="Request()" element="net.sourceforge.pmd.jsp.ast.JspParserTokenManager::jjMoveStringLiteralDfa3_16(long, long):int" />
+			<role name="Request()" element="net.sourceforge.pmd.jsp.ast.JspParserTokenManager::jjMoveStringLiteralDfa4_16(long, long):int" />
+			<role name="Request()" element="net.sourceforge.pmd.jsp.ast.JspParserTokenManager::jjMoveStringLiteralDfa5_16(long, long):int" />
+			<role name="Request()" element="net.sourceforge.pmd.jsp.ast.JspParserTokenManager::jjMoveStringLiteralDfa6_16(long, long):int" />
+			<role name="Request()" element="net.sourceforge.pmd.jsp.ast.JspParserTokenManager::jjMoveStringLiteralDfa7_16(long, long):int" />
+			<role name="Request()" element="net.sourceforge.pmd.jsp.ast.JspParserTokenManager::jjMoveStringLiteralDfa8_16(long, long):int" />
+			<role name="Request()" element="net.sourceforge.pmd.jsp.ast.JspParserTokenManager::jjMoveNfa_16(int, int):int" />
+			<role name="Request()" element="net.sourceforge.pmd.jsp.ast.JspParserTokenManager::jjMoveStringLiteralDfa1_12(long):int" />
+			<role name="Request()" element="net.sourceforge.pmd.jsp.ast.JspParserTokenManager::jjMoveStringLiteralDfa2_12(long, long):int" />
+			<role name="Request()" element="net.sourceforge.pmd.jsp.ast.JspParserTokenManager::jjMoveStringLiteralDfa3_12(long, long):int" />
+			<role name="Request()" element="net.sourceforge.pmd.jsp.ast.JspParserTokenManager::jjMoveStringLiteralDfa4_12(long, long):int" />
+			<role name="Request()" element="net.sourceforge.pmd.jsp.ast.JspParserTokenManager::jjMoveStringLiteralDfa5_12(long, long):int" />
+			<role name="Request()" element="net.sourceforge.pmd.jsp.ast.JspParserTokenManager::jjMoveStringLiteralDfa6_12(long, long):int" />
+			<role name="Request()" element="net.sourceforge.pmd.jsp.ast.JspParserTokenManager::jjMoveStringLiteralDfa7_12(long, long):int" />
+			<role name="Request()" element="net.sourceforge.pmd.jsp.ast.JspParserTokenManager::jjMoveStringLiteralDfa8_12(long, long):int" />
+			<role name="Request()" element="net.sourceforge.pmd.jsp.ast.JspParserTokenManager::jjMoveNfa_12(int, int):int" />
+			<role name="Request()" element="net.sourceforge.pmd.jsp.ast.JspParserTokenManager::jjMoveStringLiteralDfa1_8(long):int" />
+			<role name="Request()" element="net.sourceforge.pmd.jsp.ast.JspParserTokenManager::jjMoveNfa_8(int, int):int" />
+			<role name="Request()" element="net.sourceforge.pmd.jsp.ast.JspParserTokenManager::jjMoveStringLiteralDfa1_11(long):int" />
+			<role name="Request()" element="net.sourceforge.pmd.jsp.ast.JspParserTokenManager::jjMoveNfa_11(int, int):int" />
+			<role name="Request()" element="net.sourceforge.pmd.jsp.ast.JspParserTokenManager::jjMoveNfa_15(int, int):int" />
+			<role name="Request()" element="net.sourceforge.pmd.jsp.ast.JspParserTokenManager::jjMoveNfa_1(int, int):int" />
+			<role name="Request()" element="net.sourceforge.pmd.jsp.ast.JspParserTokenManager::jjMoveStringLiteralDfa1_5(long):int" />
+			<role name="Request()" element="net.sourceforge.pmd.jsp.ast.JspParserTokenManager::jjMoveStringLiteralDfa2_5(long, long):int" />
+			<role name="Request()" element="net.sourceforge.pmd.jsp.ast.JspParserTokenManager::jjMoveStringLiteralDfa3_5(long, long):int" />
+			<role name="Request()" element="net.sourceforge.pmd.jsp.ast.JspParserTokenManager::jjMoveStringLiteralDfa4_5(long, long):int" />
+			<role name="Request()" element="net.sourceforge.pmd.jsp.ast.JspParserTokenManager::jjMoveStringLiteralDfa5_5(long, long):int" />
+			<role name="Request()" element="net.sourceforge.pmd.jsp.ast.JspParserTokenManager::jjMoveNfa_5(int, int):int" />
+			<role name="Request()" element="net.sourceforge.pmd.jsp.ast.JspParserTokenManager::jjMoveStringLiteralDfa1_10(long):int" />
+			<role name="Request()" element="net.sourceforge.pmd.jsp.ast.JspParserTokenManager::jjMoveNfa_10(int, int):int" />
+			<role name="Request()" element="net.sourceforge.pmd.jsp.ast.JspParserTokenManager::jjMoveStringLiteralDfa1_14(long):int" />
+			<role name="Request()" element="net.sourceforge.pmd.jsp.ast.JspParserTokenManager::jjMoveNfa_14(int, int):int" />
+			<role name="Request()" element="net.sourceforge.pmd.jsp.ast.JspParserTokenManager::jjFillToken():net.sourceforge.pmd.jsp.ast.Token" />
+			<role name="Request()" element="net.sourceforge.pmd.jsp.ast.JspParserTokenManager::getNextToken():net.sourceforge.pmd.jsp.ast.Token" />
+		</instance>
+		<instance>
+			<role name="Context" element="net.sourceforge.pmd.PMD$PmdRunnable" />
+			<role name="State" element="net.sourceforge.pmd.DataSource" />
+			<role name="state" element="net.sourceforge.pmd.PMD$PmdRunnable::dataSource:net.sourceforge.pmd.DataSource" />
+			<role name="Request()" element="net.sourceforge.pmd.PMD$PmdRunnable::call():net.sourceforge.pmd.Report" />
+		</instance>
+		<instance>
+			<role name="State" element="net.sourceforge.pmd.cpd.Language" />
+			<role name="Context" element="net.sourceforge.pmd.cpd.CPD" />
+			<role name="state" element="net.sourceforge.pmd.cpd.CPD::language:net.sourceforge.pmd.cpd.Language" />
+			<role name="Request()" element="net.sourceforge.pmd.cpd.CPD::addDirectory(java.lang.String, boolean):void" />
+			<role name="Request()" element="net.sourceforge.pmd.cpd.CPD::add(int, java.io.File):void" />
+		</instance>
+		<instance>
+			<role name="Context" element="net.sourceforge.pmd.cpd.SourceCode" />
+			<role name="State" element="net.sourceforge.pmd.cpd.SourceCode$CodeLoader" />
+			<role name="state" element="net.sourceforge.pmd.cpd.SourceCode::cl:net.sourceforge.pmd.cpd.SourceCode$CodeLoader" />
+			<role name="Request()" element="net.sourceforge.pmd.cpd.SourceCode::getFileName():java.lang.String" />
+		</instance>
+		<instance>
+			<role name="Context" element="net.sourceforge.pmd.cpd.GUI$SaveListener" />
+			<role name="State" element="net.sourceforge.pmd.cpd.GUI$Renderer" />
+			<role name="state" element="net.sourceforge.pmd.cpd.GUI$SaveListener::renderer:net.sourceforge.pmd.cpd.GUI$Renderer" />
+			<role name="Request()" element="net.sourceforge.pmd.cpd.GUI$SaveListener::actionPerformed(java.awt.event.ActionEvent):void" />
+		</instance>
+		<instance>
+			<role name="Context" element="net.sourceforge.pmd.dcd.graph.UsageGraph" />
+			<role name="State" element="net.sourceforge.pmd.util.filter.Filter" />
+			<role name="state" element="net.sourceforge.pmd.dcd.graph.UsageGraph::classFilter:net.sourceforge.pmd.util.filter.Filter" />
+			<role name="Request()" element="net.sourceforge.pmd.dcd.graph.UsageGraph::usageField(java.lang.String, java.lang.String, java.lang.String, net.sourceforge.pmd.dcd.graph.MemberNode):void" />
+			<role name="Request()" element="net.sourceforge.pmd.dcd.graph.UsageGraph::usageMethod(java.lang.String, java.lang.String, java.lang.String, net.sourceforge.pmd.dcd.graph.MemberNode):void" />
+		</instance>
+		<instance>
+			<role name="Context" element="net.sourceforge.pmd.symboltable.ImageFinderFunction" />
+			<role name="State" element="net.sourceforge.pmd.symboltable.NameDeclaration" />
+			<role name="state" element="net.sourceforge.pmd.symboltable.ImageFinderFunction::decl:net.sourceforge.pmd.symboltable.NameDeclaration" />
+			<role name="Request()" element="net.sourceforge.pmd.symboltable.ImageFinderFunction::applyTo(net.sourceforge.pmd.symboltable.NameDeclaration):void" />
+		</instance>
+	</pattern>
+	<pattern name="Strategy" />
+	<pattern name="Bridge">
+		<instance>
+			<role name="Abstraction" element="test.net.sourceforge.pmd.testframework.AbstractTokenizerTest" />
+			<role name="Implementor" element="net.sourceforge.pmd.cpd.Tokenizer" />
+			<role name="implementor" element="test.net.sourceforge.pmd.testframework.AbstractTokenizerTest::tokenizer:net.sourceforge.pmd.cpd.Tokenizer" />
+			<role name="Operation()" element="test.net.sourceforge.pmd.testframework.AbstractTokenizerTest::tokenizeTest():void" />
+		</instance>
+	</pattern>
+	<pattern name="Template Method">
+		<instance>
+			<role name="AbstractClass" element="net.sourceforge.pmd.AbstractRuleChainVisitor" />
+			<role name="TemplateMethod()" element="net.sourceforge.pmd.AbstractRuleChainVisitor::visitAll(java.util.List, net.sourceforge.pmd.RuleContext):void" />
+		</instance>
+		<instance>
+			<role name="AbstractClass" element="net.sourceforge.pmd.cpd.SourceCode$CodeLoader" />
+			<role name="TemplateMethod()" element="net.sourceforge.pmd.cpd.SourceCode$CodeLoader::load():java.util.List" />
+		</instance>
+		<instance>
+			<role name="AbstractClass" element="net.sourceforge.pmd.dcd.graph.MemberNode" />
+			<role name="TemplateMethod()" element="net.sourceforge.pmd.dcd.graph.MemberNode::toStringLong():java.lang.String" />
+		</instance>
+		<instance>
+			<role name="AbstractClass" element="net.sourceforge.pmd.jaxen.NodeIterator" />
+			<role name="TemplateMethod()" element="net.sourceforge.pmd.jaxen.NodeIterator::next():net.sourceforge.pmd.ast.Node" />
+		</instance>
+		<instance>
+			<role name="AbstractClass" element="net.sourceforge.pmd.properties.AbstractScalarProperty" />
+			<role name="TemplateMethod()" element="net.sourceforge.pmd.properties.AbstractScalarProperty::valueFrom(java.lang.String):java.lang.Object" />
+		</instance>
+		<instance>
+			<role name="AbstractClass" element="net.sourceforge.pmd.renderers.OnTheFlyRenderer" />
+			<role name="TemplateMethod()" element="net.sourceforge.pmd.renderers.OnTheFlyRenderer::render(java.io.Writer, net.sourceforge.pmd.Report):void" />
+			<role name="TemplateMethod()" element="net.sourceforge.pmd.renderers.OnTheFlyRenderer::renderFileReport(net.sourceforge.pmd.Report):void" />
+		</instance>
+		<instance>
+			<role name="AbstractClass" element="net.sourceforge.pmd.rules.AbstractInefficientZeroCheck" />
+			<role name="TemplateMethod()" element="net.sourceforge.pmd.rules.AbstractInefficientZeroCheck::visit(net.sourceforge.pmd.ast.ASTVariableDeclaratorId, java.lang.Object):java.lang.Object" />
+		</instance>
+		<instance>
+			<role name="AbstractClass" element="net.sourceforge.pmd.rules.AbstractPoorMethodCall" />
+			<role name="TemplateMethod()" element="net.sourceforge.pmd.rules.AbstractPoorMethodCall::isNotedMethod(net.sourceforge.pmd.symboltable.NameOccurrence):boolean" />
+			<role name="TemplateMethod()" element="net.sourceforge.pmd.rules.AbstractPoorMethodCall::visit(net.sourceforge.pmd.ast.ASTVariableDeclaratorId, java.lang.Object):java.lang.Object" />
+		</instance>
+		<instance>
+			<role name="AbstractClass" element="net.sourceforge.pmd.symboltable.AbstractScope" />
+			<role name="TemplateMethod()" element="net.sourceforge.pmd.symboltable.AbstractScope::contains(net.sourceforge.pmd.symboltable.NameOccurrence):boolean" />
+		</instance>
+		<instance>
+			<role name="AbstractClass" element="net.sourceforge.pmd.util.filter.AbstractCompoundFilter" />
+			<role name="TemplateMethod()" element="net.sourceforge.pmd.util.filter.AbstractCompoundFilter::toString():java.lang.String" />
+		</instance>
+	</pattern>
+	<pattern name="Visitor">
+		<instance>
+			<role name="ConcreteElement" element="net.sourceforge.pmd.ast.ASTAdditiveExpression" />
+			<role name="Visitor" element="net.sourceforge.pmd.ast.JavaParserVisitor" />
+			<role name="Accept()" element="net.sourceforge.pmd.ast.ASTAdditiveExpression::jjtAccept(net.sourceforge.pmd.ast.JavaParserVisitor, java.lang.Object):java.lang.Object" />
+		</instance>
+		<instance>
+			<role name="ConcreteElement" element="net.sourceforge.pmd.ast.ASTAllocationExpression" />
+			<role name="Visitor" element="net.sourceforge.pmd.ast.JavaParserVisitor" />
+			<role name="Accept()" element="net.sourceforge.pmd.ast.ASTAllocationExpression::jjtAccept(net.sourceforge.pmd.ast.JavaParserVisitor, java.lang.Object):java.lang.Object" />
+		</instance>
+		<instance>
+			<role name="ConcreteElement" element="net.sourceforge.pmd.ast.ASTAndExpression" />
+			<role name="Visitor" element="net.sourceforge.pmd.ast.JavaParserVisitor" />
+			<role name="Accept()" element="net.sourceforge.pmd.ast.ASTAndExpression::jjtAccept(net.sourceforge.pmd.ast.JavaParserVisitor, java.lang.Object):java.lang.Object" />
+		</instance>
+		<instance>
+			<role name="ConcreteElement" element="net.sourceforge.pmd.ast.ASTAnnotation" />
+			<role name="Visitor" element="net.sourceforge.pmd.ast.JavaParserVisitor" />
+			<role name="Accept()" element="net.sourceforge.pmd.ast.ASTAnnotation::jjtAccept(net.sourceforge.pmd.ast.JavaParserVisitor, java.lang.Object):java.lang.Object" />
+		</instance>
+		<instance>
+			<role name="ConcreteElement" element="net.sourceforge.pmd.ast.ASTAnnotationMethodDeclaration" />
+			<role name="Visitor" element="net.sourceforge.pmd.ast.JavaParserVisitor" />
+			<role name="Accept()" element="net.sourceforge.pmd.ast.ASTAnnotationMethodDeclaration::jjtAccept(net.sourceforge.pmd.ast.JavaParserVisitor, java.lang.Object):java.lang.Object" />
+		</instance>
+		<instance>
+			<role name="ConcreteElement" element="net.sourceforge.pmd.ast.ASTAnnotationTypeBody" />
+			<role name="Visitor" element="net.sourceforge.pmd.ast.JavaParserVisitor" />
+			<role name="Accept()" element="net.sourceforge.pmd.ast.ASTAnnotationTypeBody::jjtAccept(net.sourceforge.pmd.ast.JavaParserVisitor, java.lang.Object):java.lang.Object" />
+		</instance>
+		<instance>
+			<role name="ConcreteElement" element="net.sourceforge.pmd.ast.ASTAnnotationTypeDeclaration" />
+			<role name="Visitor" element="net.sourceforge.pmd.ast.JavaParserVisitor" />
+			<role name="Accept()" element="net.sourceforge.pmd.ast.ASTAnnotationTypeDeclaration::jjtAccept(net.sourceforge.pmd.ast.JavaParserVisitor, java.lang.Object):java.lang.Object" />
+		</instance>
+		<instance>
+			<role name="ConcreteElement" element="net.sourceforge.pmd.ast.ASTAnnotationTypeMemberDeclaration" />
+			<role name="Visitor" element="net.sourceforge.pmd.ast.JavaParserVisitor" />
+			<role name="Accept()" element="net.sourceforge.pmd.ast.ASTAnnotationTypeMemberDeclaration::jjtAccept(net.sourceforge.pmd.ast.JavaParserVisitor, java.lang.Object):java.lang.Object" />
+		</instance>
+		<instance>
+			<role name="ConcreteElement" element="net.sourceforge.pmd.ast.ASTArgumentList" />
+			<role name="Visitor" element="net.sourceforge.pmd.ast.JavaParserVisitor" />
+			<role name="Accept()" element="net.sourceforge.pmd.ast.ASTArgumentList::jjtAccept(net.sourceforge.pmd.ast.JavaParserVisitor, java.lang.Object):java.lang.Object" />
+		</instance>
+		<instance>
+			<role name="ConcreteElement" element="net.sourceforge.pmd.ast.ASTArguments" />
+			<role name="Visitor" element="net.sourceforge.pmd.ast.JavaParserVisitor" />
+			<role name="Accept()" element="net.sourceforge.pmd.ast.ASTArguments::jjtAccept(net.sourceforge.pmd.ast.JavaParserVisitor, java.lang.Object):java.lang.Object" />
+		</instance>
+		<instance>
+			<role name="ConcreteElement" element="net.sourceforge.pmd.ast.ASTArrayDimsAndInits" />
+			<role name="Visitor" element="net.sourceforge.pmd.ast.JavaParserVisitor" />
+			<role name="Accept()" element="net.sourceforge.pmd.ast.ASTArrayDimsAndInits::jjtAccept(net.sourceforge.pmd.ast.JavaParserVisitor, java.lang.Object):java.lang.Object" />
+		</instance>
+		<instance>
+			<role name="ConcreteElement" element="net.sourceforge.pmd.ast.ASTArrayInitializer" />
+			<role name="Visitor" element="net.sourceforge.pmd.ast.JavaParserVisitor" />
+			<role name="Accept()" element="net.sourceforge.pmd.ast.ASTArrayInitializer::jjtAccept(net.sourceforge.pmd.ast.JavaParserVisitor, java.lang.Object):java.lang.Object" />
+		</instance>
+		<instance>
+			<role name="ConcreteElement" element="net.sourceforge.pmd.ast.ASTAssertStatement" />
+			<role name="Visitor" element="net.sourceforge.pmd.ast.JavaParserVisitor" />
+			<role name="Accept()" element="net.sourceforge.pmd.ast.ASTAssertStatement::jjtAccept(net.sourceforge.pmd.ast.JavaParserVisitor, java.lang.Object):java.lang.Object" />
+		</instance>
+		<instance>
+			<role name="ConcreteElement" element="net.sourceforge.pmd.ast.ASTAssignmentOperator" />
+			<role name="Visitor" element="net.sourceforge.pmd.ast.JavaParserVisitor" />
+			<role name="Accept()" element="net.sourceforge.pmd.ast.ASTAssignmentOperator::jjtAccept(net.sourceforge.pmd.ast.JavaParserVisitor, java.lang.Object):java.lang.Object" />
+		</instance>
+		<instance>
+			<role name="ConcreteElement" element="net.sourceforge.pmd.ast.ASTBlock" />
+			<role name="Visitor" element="net.sourceforge.pmd.ast.JavaParserVisitor" />
+			<role name="Accept()" element="net.sourceforge.pmd.ast.ASTBlock::jjtAccept(net.sourceforge.pmd.ast.JavaParserVisitor, java.lang.Object):java.lang.Object" />
+		</instance>
+		<instance>
+			<role name="ConcreteElement" element="net.sourceforge.pmd.ast.ASTBlockStatement" />
+			<role name="Visitor" element="net.sourceforge.pmd.ast.JavaParserVisitor" />
+			<role name="Accept()" element="net.sourceforge.pmd.ast.ASTBlockStatement::jjtAccept(net.sourceforge.pmd.ast.JavaParserVisitor, java.lang.Object):java.lang.Object" />
+		</instance>
+		<instance>
+			<role name="ConcreteElement" element="net.sourceforge.pmd.ast.ASTBooleanLiteral" />
+			<role name="Visitor" element="net.sourceforge.pmd.ast.JavaParserVisitor" />
+			<role name="Accept()" element="net.sourceforge.pmd.ast.ASTBooleanLiteral::jjtAccept(net.sourceforge.pmd.ast.JavaParserVisitor, java.lang.Object):java.lang.Object" />
+		</instance>
+		<instance>
+			<role name="ConcreteElement" element="net.sourceforge.pmd.ast.ASTBreakStatement" />
+			<role name="Visitor" element="net.sourceforge.pmd.ast.JavaParserVisitor" />
+			<role name="Accept()" element="net.sourceforge.pmd.ast.ASTBreakStatement::jjtAccept(net.sourceforge.pmd.ast.JavaParserVisitor, java.lang.Object):java.lang.Object" />
+		</instance>
+		<instance>
+			<role name="ConcreteElement" element="net.sourceforge.pmd.ast.ASTCastExpression" />
+			<role name="Visitor" element="net.sourceforge.pmd.ast.JavaParserVisitor" />
+			<role name="Accept()" element="net.sourceforge.pmd.ast.ASTCastExpression::jjtAccept(net.sourceforge.pmd.ast.JavaParserVisitor, java.lang.Object):java.lang.Object" />
+		</instance>
+		<instance>
+			<role name="ConcreteElement" element="net.sourceforge.pmd.ast.ASTCatchStatement" />
+			<role name="Visitor" element="net.sourceforge.pmd.ast.JavaParserVisitor" />
+			<role name="Accept()" element="net.sourceforge.pmd.ast.ASTCatchStatement::jjtAccept(net.sourceforge.pmd.ast.JavaParserVisitor, java.lang.Object):java.lang.Object" />
+		</instance>
+		<instance>
+			<role name="ConcreteElement" element="net.sourceforge.pmd.ast.ASTClassOrInterfaceBody" />
+			<role name="Visitor" element="net.sourceforge.pmd.ast.JavaParserVisitor" />
+			<role name="Accept()" element="net.sourceforge.pmd.ast.ASTClassOrInterfaceBody::jjtAccept(net.sourceforge.pmd.ast.JavaParserVisitor, java.lang.Object):java.lang.Object" />
+		</instance>
+		<instance>
+			<role name="ConcreteElement" element="net.sourceforge.pmd.ast.ASTClassOrInterfaceBodyDeclaration" />
+			<role name="Visitor" element="net.sourceforge.pmd.ast.JavaParserVisitor" />
+			<role name="Accept()" element="net.sourceforge.pmd.ast.ASTClassOrInterfaceBodyDeclaration::jjtAccept(net.sourceforge.pmd.ast.JavaParserVisitor, java.lang.Object):java.lang.Object" />
+		</instance>
+		<instance>
+			<role name="ConcreteElement" element="net.sourceforge.pmd.ast.ASTClassOrInterfaceDeclaration" />
+			<role name="Visitor" element="net.sourceforge.pmd.ast.JavaParserVisitor" />
+			<role name="Accept()" element="net.sourceforge.pmd.ast.ASTClassOrInterfaceDeclaration::jjtAccept(net.sourceforge.pmd.ast.JavaParserVisitor, java.lang.Object):java.lang.Object" />
+		</instance>
+		<instance>
+			<role name="ConcreteElement" element="net.sourceforge.pmd.ast.ASTClassOrInterfaceType" />
+			<role name="Visitor" element="net.sourceforge.pmd.ast.JavaParserVisitor" />
+			<role name="Accept()" element="net.sourceforge.pmd.ast.ASTClassOrInterfaceType::jjtAccept(net.sourceforge.pmd.ast.JavaParserVisitor, java.lang.Object):java.lang.Object" />
+		</instance>
+		<instance>
+			<role name="ConcreteElement" element="net.sourceforge.pmd.ast.ASTCompilationUnit" />
+			<role name="Visitor" element="net.sourceforge.pmd.ast.JavaParserVisitor" />
+			<role name="Accept()" element="net.sourceforge.pmd.ast.ASTCompilationUnit::jjtAccept(net.sourceforge.pmd.ast.JavaParserVisitor, java.lang.Object):java.lang.Object" />
+		</instance>
+		<instance>
+			<role name="ConcreteElement" element="net.sourceforge.pmd.ast.ASTConditionalAndExpression" />
+			<role name="Visitor" element="net.sourceforge.pmd.ast.JavaParserVisitor" />
+			<role name="Accept()" element="net.sourceforge.pmd.ast.ASTConditionalAndExpression::jjtAccept(net.sourceforge.pmd.ast.JavaParserVisitor, java.lang.Object):java.lang.Object" />
+		</instance>
+		<instance>
+			<role name="ConcreteElement" element="net.sourceforge.pmd.ast.ASTConditionalExpression" />
+			<role name="Visitor" element="net.sourceforge.pmd.ast.JavaParserVisitor" />
+			<role name="Accept()" element="net.sourceforge.pmd.ast.ASTConditionalExpression::jjtAccept(net.sourceforge.pmd.ast.JavaParserVisitor, java.lang.Object):java.lang.Object" />
+		</instance>
+		<instance>
+			<role name="ConcreteElement" element="net.sourceforge.pmd.ast.ASTConditionalOrExpression" />
+			<role name="Visitor" element="net.sourceforge.pmd.ast.JavaParserVisitor" />
+			<role name="Accept()" element="net.sourceforge.pmd.ast.ASTConditionalOrExpression::jjtAccept(net.sourceforge.pmd.ast.JavaParserVisitor, java.lang.Object):java.lang.Object" />
+		</instance>
+		<instance>
+			<role name="ConcreteElement" element="net.sourceforge.pmd.ast.ASTConstructorDeclaration" />
+			<role name="Visitor" element="net.sourceforge.pmd.ast.JavaParserVisitor" />
+			<role name="Accept()" element="net.sourceforge.pmd.ast.ASTConstructorDeclaration::jjtAccept(net.sourceforge.pmd.ast.JavaParserVisitor, java.lang.Object):java.lang.Object" />
+		</instance>
+		<instance>
+			<role name="ConcreteElement" element="net.sourceforge.pmd.ast.ASTContinueStatement" />
+			<role name="Visitor" element="net.sourceforge.pmd.ast.JavaParserVisitor" />
+			<role name="Accept()" element="net.sourceforge.pmd.ast.ASTContinueStatement::jjtAccept(net.sourceforge.pmd.ast.JavaParserVisitor, java.lang.Object):java.lang.Object" />
+		</instance>
+		<instance>
+			<role name="ConcreteElement" element="net.sourceforge.pmd.ast.ASTDefaultValue" />
+			<role name="Visitor" element="net.sourceforge.pmd.ast.JavaParserVisitor" />
+			<role name="Accept()" element="net.sourceforge.pmd.ast.ASTDefaultValue::jjtAccept(net.sourceforge.pmd.ast.JavaParserVisitor, java.lang.Object):java.lang.Object" />
+		</instance>
+		<instance>
+			<role name="ConcreteElement" element="net.sourceforge.pmd.ast.ASTDoStatement" />
+			<role name="Visitor" element="net.sourceforge.pmd.ast.JavaParserVisitor" />
+			<role name="Accept()" element="net.sourceforge.pmd.ast.ASTDoStatement::jjtAccept(net.sourceforge.pmd.ast.JavaParserVisitor, java.lang.Object):java.lang.Object" />
+		</instance>
+		<instance>
+			<role name="ConcreteElement" element="net.sourceforge.pmd.ast.ASTEmptyStatement" />
+			<role name="Visitor" element="net.sourceforge.pmd.ast.JavaParserVisitor" />
+			<role name="Accept()" element="net.sourceforge.pmd.ast.ASTEmptyStatement::jjtAccept(net.sourceforge.pmd.ast.JavaParserVisitor, java.lang.Object):java.lang.Object" />
+		</instance>
+		<instance>
+			<role name="ConcreteElement" element="net.sourceforge.pmd.ast.ASTEnumBody" />
+			<role name="Visitor" element="net.sourceforge.pmd.ast.JavaParserVisitor" />
+			<role name="Accept()" element="net.sourceforge.pmd.ast.ASTEnumBody::jjtAccept(net.sourceforge.pmd.ast.JavaParserVisitor, java.lang.Object):java.lang.Object" />
+		</instance>
+		<instance>
+			<role name="ConcreteElement" element="net.sourceforge.pmd.ast.ASTEnumConstant" />
+			<role name="Visitor" element="net.sourceforge.pmd.ast.JavaParserVisitor" />
+			<role name="Accept()" element="net.sourceforge.pmd.ast.ASTEnumConstant::jjtAccept(net.sourceforge.pmd.ast.JavaParserVisitor, java.lang.Object):java.lang.Object" />
+		</instance>
+		<instance>
+			<role name="ConcreteElement" element="net.sourceforge.pmd.ast.ASTEnumDeclaration" />
+			<role name="Visitor" element="net.sourceforge.pmd.ast.JavaParserVisitor" />
+			<role name="Accept()" element="net.sourceforge.pmd.ast.ASTEnumDeclaration::jjtAccept(net.sourceforge.pmd.ast.JavaParserVisitor, java.lang.Object):java.lang.Object" />
+		</instance>
+		<instance>
+			<role name="ConcreteElement" element="net.sourceforge.pmd.ast.ASTEqualityExpression" />
+			<role name="Visitor" element="net.sourceforge.pmd.ast.JavaParserVisitor" />
+			<role name="Accept()" element="net.sourceforge.pmd.ast.ASTEqualityExpression::jjtAccept(net.sourceforge.pmd.ast.JavaParserVisitor, java.lang.Object):java.lang.Object" />
+		</instance>
+		<instance>
+			<role name="ConcreteElement" element="net.sourceforge.pmd.ast.ASTExclusiveOrExpression" />
+			<role name="Visitor" element="net.sourceforge.pmd.ast.JavaParserVisitor" />
+			<role name="Accept()" element="net.sourceforge.pmd.ast.ASTExclusiveOrExpression::jjtAccept(net.sourceforge.pmd.ast.JavaParserVisitor, java.lang.Object):java.lang.Object" />
+		</instance>
+		<instance>
+			<role name="ConcreteElement" element="net.sourceforge.pmd.ast.ASTExplicitConstructorInvocation" />
+			<role name="Visitor" element="net.sourceforge.pmd.ast.JavaParserVisitor" />
+			<role name="Accept()" element="net.sourceforge.pmd.ast.ASTExplicitConstructorInvocation::jjtAccept(net.sourceforge.pmd.ast.JavaParserVisitor, java.lang.Object):java.lang.Object" />
+		</instance>
+		<instance>
+			<role name="ConcreteElement" element="net.sourceforge.pmd.ast.ASTExpression" />
+			<role name="Visitor" element="net.sourceforge.pmd.ast.JavaParserVisitor" />
+			<role name="Accept()" element="net.sourceforge.pmd.ast.ASTExpression::jjtAccept(net.sourceforge.pmd.ast.JavaParserVisitor, java.lang.Object):java.lang.Object" />
+		</instance>
+		<instance>
+			<role name="ConcreteElement" element="net.sourceforge.pmd.ast.ASTExtendsList" />
+			<role name="Visitor" element="net.sourceforge.pmd.ast.JavaParserVisitor" />
+			<role name="Accept()" element="net.sourceforge.pmd.ast.ASTExtendsList::jjtAccept(net.sourceforge.pmd.ast.JavaParserVisitor, java.lang.Object):java.lang.Object" />
+		</instance>
+		<instance>
+			<role name="ConcreteElement" element="net.sourceforge.pmd.ast.ASTFieldDeclaration" />
+			<role name="Visitor" element="net.sourceforge.pmd.ast.JavaParserVisitor" />
+			<role name="Accept()" element="net.sourceforge.pmd.ast.ASTFieldDeclaration::jjtAccept(net.sourceforge.pmd.ast.JavaParserVisitor, java.lang.Object):java.lang.Object" />
+		</instance>
+		<instance>
+			<role name="ConcreteElement" element="net.sourceforge.pmd.ast.ASTFinallyStatement" />
+			<role name="Visitor" element="net.sourceforge.pmd.ast.JavaParserVisitor" />
+			<role name="Accept()" element="net.sourceforge.pmd.ast.ASTFinallyStatement::jjtAccept(net.sourceforge.pmd.ast.JavaParserVisitor, java.lang.Object):java.lang.Object" />
+		</instance>
+		<instance>
+			<role name="ConcreteElement" element="net.sourceforge.pmd.ast.ASTForInit" />
+			<role name="Visitor" element="net.sourceforge.pmd.ast.JavaParserVisitor" />
+			<role name="Accept()" element="net.sourceforge.pmd.ast.ASTForInit::jjtAccept(net.sourceforge.pmd.ast.JavaParserVisitor, java.lang.Object):java.lang.Object" />
+		</instance>
+		<instance>
+			<role name="ConcreteElement" element="net.sourceforge.pmd.ast.ASTForStatement" />
+			<role name="Visitor" element="net.sourceforge.pmd.ast.JavaParserVisitor" />
+			<role name="Accept()" element="net.sourceforge.pmd.ast.ASTForStatement::jjtAccept(net.sourceforge.pmd.ast.JavaParserVisitor, java.lang.Object):java.lang.Object" />
+		</instance>
+		<instance>
+			<role name="ConcreteElement" element="net.sourceforge.pmd.ast.ASTForUpdate" />
+			<role name="Visitor" element="net.sourceforge.pmd.ast.JavaParserVisitor" />
+			<role name="Accept()" element="net.sourceforge.pmd.ast.ASTForUpdate::jjtAccept(net.sourceforge.pmd.ast.JavaParserVisitor, java.lang.Object):java.lang.Object" />
+		</instance>
+		<instance>
+			<role name="ConcreteElement" element="net.sourceforge.pmd.ast.ASTFormalParameter" />
+			<role name="Visitor" element="net.sourceforge.pmd.ast.JavaParserVisitor" />
+			<role name="Accept()" element="net.sourceforge.pmd.ast.ASTFormalParameter::jjtAccept(net.sourceforge.pmd.ast.JavaParserVisitor, java.lang.Object):java.lang.Object" />
+		</instance>
+		<instance>
+			<role name="ConcreteElement" element="net.sourceforge.pmd.ast.ASTFormalParameters" />
+			<role name="Visitor" element="net.sourceforge.pmd.ast.JavaParserVisitor" />
+			<role name="Accept()" element="net.sourceforge.pmd.ast.ASTFormalParameters::jjtAccept(net.sourceforge.pmd.ast.JavaParserVisitor, java.lang.Object):java.lang.Object" />
+		</instance>
+		<instance>
+			<role name="ConcreteElement" element="net.sourceforge.pmd.ast.ASTIfStatement" />
+			<role name="Visitor" element="net.sourceforge.pmd.ast.JavaParserVisitor" />
+			<role name="Accept()" element="net.sourceforge.pmd.ast.ASTIfStatement::jjtAccept(net.sourceforge.pmd.ast.JavaParserVisitor, java.lang.Object):java.lang.Object" />
+		</instance>
+		<instance>
+			<role name="ConcreteElement" element="net.sourceforge.pmd.ast.ASTImplementsList" />
+			<role name="Visitor" element="net.sourceforge.pmd.ast.JavaParserVisitor" />
+			<role name="Accept()" element="net.sourceforge.pmd.ast.ASTImplementsList::jjtAccept(net.sourceforge.pmd.ast.JavaParserVisitor, java.lang.Object):java.lang.Object" />
+		</instance>
+		<instance>
+			<role name="ConcreteElement" element="net.sourceforge.pmd.ast.ASTImportDeclaration" />
+			<role name="Visitor" element="net.sourceforge.pmd.ast.JavaParserVisitor" />
+			<role name="Accept()" element="net.sourceforge.pmd.ast.ASTImportDeclaration::jjtAccept(net.sourceforge.pmd.ast.JavaParserVisitor, java.lang.Object):java.lang.Object" />
+		</instance>
+		<instance>
+			<role name="ConcreteElement" element="net.sourceforge.pmd.ast.ASTInclusiveOrExpression" />
+			<role name="Visitor" element="net.sourceforge.pmd.ast.JavaParserVisitor" />
+			<role name="Accept()" element="net.sourceforge.pmd.ast.ASTInclusiveOrExpression::jjtAccept(net.sourceforge.pmd.ast.JavaParserVisitor, java.lang.Object):java.lang.Object" />
+		</instance>
+		<instance>
+			<role name="ConcreteElement" element="net.sourceforge.pmd.ast.ASTInitializer" />
+			<role name="Visitor" element="net.sourceforge.pmd.ast.JavaParserVisitor" />
+			<role name="Accept()" element="net.sourceforge.pmd.ast.ASTInitializer::jjtAccept(net.sourceforge.pmd.ast.JavaParserVisitor, java.lang.Object):java.lang.Object" />
+		</instance>
+		<instance>
+			<role name="ConcreteElement" element="net.sourceforge.pmd.ast.ASTInstanceOfExpression" />
+			<role name="Visitor" element="net.sourceforge.pmd.ast.JavaParserVisitor" />
+			<role name="Accept()" element="net.sourceforge.pmd.ast.ASTInstanceOfExpression::jjtAccept(net.sourceforge.pmd.ast.JavaParserVisitor, java.lang.Object):java.lang.Object" />
+		</instance>
+		<instance>
+			<role name="ConcreteElement" element="net.sourceforge.pmd.ast.ASTLabeledStatement" />
+			<role name="Visitor" element="net.sourceforge.pmd.ast.JavaParserVisitor" />
+			<role name="Accept()" element="net.sourceforge.pmd.ast.ASTLabeledStatement::jjtAccept(net.sourceforge.pmd.ast.JavaParserVisitor, java.lang.Object):java.lang.Object" />
+		</instance>
+		<instance>
+			<role name="ConcreteElement" element="net.sourceforge.pmd.ast.ASTLiteral" />
+			<role name="Visitor" element="net.sourceforge.pmd.ast.JavaParserVisitor" />
+			<role name="Accept()" element="net.sourceforge.pmd.ast.ASTLiteral::jjtAccept(net.sourceforge.pmd.ast.JavaParserVisitor, java.lang.Object):java.lang.Object" />
+		</instance>
+		<instance>
+			<role name="ConcreteElement" element="net.sourceforge.pmd.ast.ASTLocalVariableDeclaration" />
+			<role name="Visitor" element="net.sourceforge.pmd.ast.JavaParserVisitor" />
+			<role name="Accept()" element="net.sourceforge.pmd.ast.ASTLocalVariableDeclaration::jjtAccept(net.sourceforge.pmd.ast.JavaParserVisitor, java.lang.Object):java.lang.Object" />
+		</instance>
+		<instance>
+			<role name="ConcreteElement" element="net.sourceforge.pmd.ast.ASTMarkerAnnotation" />
+			<role name="Visitor" element="net.sourceforge.pmd.ast.JavaParserVisitor" />
+			<role name="Accept()" element="net.sourceforge.pmd.ast.ASTMarkerAnnotation::jjtAccept(net.sourceforge.pmd.ast.JavaParserVisitor, java.lang.Object):java.lang.Object" />
+		</instance>
+		<instance>
+			<role name="ConcreteElement" element="net.sourceforge.pmd.ast.ASTMemberSelector" />
+			<role name="Visitor" element="net.sourceforge.pmd.ast.JavaParserVisitor" />
+			<role name="Accept()" element="net.sourceforge.pmd.ast.ASTMemberSelector::jjtAccept(net.sourceforge.pmd.ast.JavaParserVisitor, java.lang.Object):java.lang.Object" />
+		</instance>
+		<instance>
+			<role name="ConcreteElement" element="net.sourceforge.pmd.ast.ASTMemberValue" />
+			<role name="Visitor" element="net.sourceforge.pmd.ast.JavaParserVisitor" />
+			<role name="Accept()" element="net.sourceforge.pmd.ast.ASTMemberValue::jjtAccept(net.sourceforge.pmd.ast.JavaParserVisitor, java.lang.Object):java.lang.Object" />
+		</instance>
+		<instance>
+			<role name="ConcreteElement" element="net.sourceforge.pmd.ast.ASTMemberValueArrayInitializer" />
+			<role name="Visitor" element="net.sourceforge.pmd.ast.JavaParserVisitor" />
+			<role name="Accept()" element="net.sourceforge.pmd.ast.ASTMemberValueArrayInitializer::jjtAccept(net.sourceforge.pmd.ast.JavaParserVisitor, java.lang.Object):java.lang.Object" />
+		</instance>
+		<instance>
+			<role name="ConcreteElement" element="net.sourceforge.pmd.ast.ASTMemberValuePair" />
+			<role name="Visitor" element="net.sourceforge.pmd.ast.JavaParserVisitor" />
+			<role name="Accept()" element="net.sourceforge.pmd.ast.ASTMemberValuePair::jjtAccept(net.sourceforge.pmd.ast.JavaParserVisitor, java.lang.Object):java.lang.Object" />
+		</instance>
+		<instance>
+			<role name="ConcreteElement" element="net.sourceforge.pmd.ast.ASTMemberValuePairs" />
+			<role name="Visitor" element="net.sourceforge.pmd.ast.JavaParserVisitor" />
+			<role name="Accept()" element="net.sourceforge.pmd.ast.ASTMemberValuePairs::jjtAccept(net.sourceforge.pmd.ast.JavaParserVisitor, java.lang.Object):java.lang.Object" />
+		</instance>
+		<instance>
+			<role name="ConcreteElement" element="net.sourceforge.pmd.ast.ASTMethodDeclaration" />
+			<role name="Visitor" element="net.sourceforge.pmd.ast.JavaParserVisitor" />
+			<role name="Accept()" element="net.sourceforge.pmd.ast.ASTMethodDeclaration::jjtAccept(net.sourceforge.pmd.ast.JavaParserVisitor, java.lang.Object):java.lang.Object" />
+		</instance>
+		<instance>
+			<role name="ConcreteElement" element="net.sourceforge.pmd.ast.ASTMethodDeclarator" />
+			<role name="Visitor" element="net.sourceforge.pmd.ast.JavaParserVisitor" />
+			<role name="Accept()" element="net.sourceforge.pmd.ast.ASTMethodDeclarator::jjtAccept(net.sourceforge.pmd.ast.JavaParserVisitor, java.lang.Object):java.lang.Object" />
+		</instance>
+		<instance>
+			<role name="ConcreteElement" element="net.sourceforge.pmd.ast.ASTMultiplicativeExpression" />
+			<role name="Visitor" element="net.sourceforge.pmd.ast.JavaParserVisitor" />
+			<role name="Accept()" element="net.sourceforge.pmd.ast.ASTMultiplicativeExpression::jjtAccept(net.sourceforge.pmd.ast.JavaParserVisitor, java.lang.Object):java.lang.Object" />
+		</instance>
+		<instance>
+			<role name="ConcreteElement" element="net.sourceforge.pmd.ast.ASTName" />
+			<role name="Visitor" element="net.sourceforge.pmd.ast.JavaParserVisitor" />
+			<role name="Accept()" element="net.sourceforge.pmd.ast.ASTName::jjtAccept(net.sourceforge.pmd.ast.JavaParserVisitor, java.lang.Object):java.lang.Object" />
+		</instance>
+		<instance>
+			<role name="ConcreteElement" element="net.sourceforge.pmd.ast.ASTNameList" />
+			<role name="Visitor" element="net.sourceforge.pmd.ast.JavaParserVisitor" />
+			<role name="Accept()" element="net.sourceforge.pmd.ast.ASTNameList::jjtAccept(net.sourceforge.pmd.ast.JavaParserVisitor, java.lang.Object):java.lang.Object" />
+		</instance>
+		<instance>
+			<role name="ConcreteElement" element="net.sourceforge.pmd.ast.ASTNormalAnnotation" />
+			<role name="Visitor" element="net.sourceforge.pmd.ast.JavaParserVisitor" />
+			<role name="Accept()" element="net.sourceforge.pmd.ast.ASTNormalAnnotation::jjtAccept(net.sourceforge.pmd.ast.JavaParserVisitor, java.lang.Object):java.lang.Object" />
+		</instance>
+		<instance>
+			<role name="ConcreteElement" element="net.sourceforge.pmd.ast.ASTNullLiteral" />
+			<role name="Visitor" element="net.sourceforge.pmd.ast.JavaParserVisitor" />
+			<role name="Accept()" element="net.sourceforge.pmd.ast.ASTNullLiteral::jjtAccept(net.sourceforge.pmd.ast.JavaParserVisitor, java.lang.Object):java.lang.Object" />
+		</instance>
+		<instance>
+			<role name="ConcreteElement" element="net.sourceforge.pmd.ast.ASTPackageDeclaration" />
+			<role name="Visitor" element="net.sourceforge.pmd.ast.JavaParserVisitor" />
+			<role name="Accept()" element="net.sourceforge.pmd.ast.ASTPackageDeclaration::jjtAccept(net.sourceforge.pmd.ast.JavaParserVisitor, java.lang.Object):java.lang.Object" />
+		</instance>
+		<instance>
+			<role name="ConcreteElement" element="net.sourceforge.pmd.ast.ASTPostfixExpression" />
+			<role name="Visitor" element="net.sourceforge.pmd.ast.JavaParserVisitor" />
+			<role name="Accept()" element="net.sourceforge.pmd.ast.ASTPostfixExpression::jjtAccept(net.sourceforge.pmd.ast.JavaParserVisitor, java.lang.Object):java.lang.Object" />
+		</instance>
+		<instance>
+			<role name="ConcreteElement" element="net.sourceforge.pmd.ast.ASTPreDecrementExpression" />
+			<role name="Visitor" element="net.sourceforge.pmd.ast.JavaParserVisitor" />
+			<role name="Accept()" element="net.sourceforge.pmd.ast.ASTPreDecrementExpression::jjtAccept(net.sourceforge.pmd.ast.JavaParserVisitor, java.lang.Object):java.lang.Object" />
+		</instance>
+		<instance>
+			<role name="ConcreteElement" element="net.sourceforge.pmd.ast.ASTPreIncrementExpression" />
+			<role name="Visitor" element="net.sourceforge.pmd.ast.JavaParserVisitor" />
+			<role name="Accept()" element="net.sourceforge.pmd.ast.ASTPreIncrementExpression::jjtAccept(net.sourceforge.pmd.ast.JavaParserVisitor, java.lang.Object):java.lang.Object" />
+		</instance>
+		<instance>
+			<role name="ConcreteElement" element="net.sourceforge.pmd.ast.ASTPrimaryExpression" />
+			<role name="Visitor" element="net.sourceforge.pmd.ast.JavaParserVisitor" />
+			<role name="Accept()" element="net.sourceforge.pmd.ast.ASTPrimaryExpression::jjtAccept(net.sourceforge.pmd.ast.JavaParserVisitor, java.lang.Object):java.lang.Object" />
+		</instance>
+		<instance>
+			<role name="ConcreteElement" element="net.sourceforge.pmd.ast.ASTPrimaryPrefix" />
+			<role name="Visitor" element="net.sourceforge.pmd.ast.JavaParserVisitor" />
+			<role name="Accept()" element="net.sourceforge.pmd.ast.ASTPrimaryPrefix::jjtAccept(net.sourceforge.pmd.ast.JavaParserVisitor, java.lang.Object):java.lang.Object" />
+		</instance>
+		<instance>
+			<role name="ConcreteElement" element="net.sourceforge.pmd.ast.ASTPrimarySuffix" />
+			<role name="Visitor" element="net.sourceforge.pmd.ast.JavaParserVisitor" />
+			<role name="Accept()" element="net.sourceforge.pmd.ast.ASTPrimarySuffix::jjtAccept(net.sourceforge.pmd.ast.JavaParserVisitor, java.lang.Object):java.lang.Object" />
+		</instance>
+		<instance>
+			<role name="ConcreteElement" element="net.sourceforge.pmd.ast.ASTPrimitiveType" />
+			<role name="Visitor" element="net.sourceforge.pmd.ast.JavaParserVisitor" />
+			<role name="Accept()" element="net.sourceforge.pmd.ast.ASTPrimitiveType::jjtAccept(net.sourceforge.pmd.ast.JavaParserVisitor, java.lang.Object):java.lang.Object" />
+		</instance>
+		<instance>
+			<role name="ConcreteElement" element="net.sourceforge.pmd.ast.ASTRSIGNEDSHIFT" />
+			<role name="Visitor" element="net.sourceforge.pmd.ast.JavaParserVisitor" />
+			<role name="Accept()" element="net.sourceforge.pmd.ast.ASTRSIGNEDSHIFT::jjtAccept(net.sourceforge.pmd.ast.JavaParserVisitor, java.lang.Object):java.lang.Object" />
+		</instance>
+		<instance>
+			<role name="ConcreteElement" element="net.sourceforge.pmd.ast.ASTRUNSIGNEDSHIFT" />
+			<role name="Visitor" element="net.sourceforge.pmd.ast.JavaParserVisitor" />
+			<role name="Accept()" element="net.sourceforge.pmd.ast.ASTRUNSIGNEDSHIFT::jjtAccept(net.sourceforge.pmd.ast.JavaParserVisitor, java.lang.Object):java.lang.Object" />
+		</instance>
+		<instance>
+			<role name="ConcreteElement" element="net.sourceforge.pmd.ast.ASTReferenceType" />
+			<role name="Visitor" element="net.sourceforge.pmd.ast.JavaParserVisitor" />
+			<role name="Accept()" element="net.sourceforge.pmd.ast.ASTReferenceType::jjtAccept(net.sourceforge.pmd.ast.JavaParserVisitor, java.lang.Object):java.lang.Object" />
+		</instance>
+		<instance>
+			<role name="ConcreteElement" element="net.sourceforge.pmd.ast.ASTRelationalExpression" />
+			<role name="Visitor" element="net.sourceforge.pmd.ast.JavaParserVisitor" />
+			<role name="Accept()" element="net.sourceforge.pmd.ast.ASTRelationalExpression::jjtAccept(net.sourceforge.pmd.ast.JavaParserVisitor, java.lang.Object):java.lang.Object" />
+		</instance>
+		<instance>
+			<role name="ConcreteElement" element="net.sourceforge.pmd.ast.ASTResultType" />
+			<role name="Visitor" element="net.sourceforge.pmd.ast.JavaParserVisitor" />
+			<role name="Accept()" element="net.sourceforge.pmd.ast.ASTResultType::jjtAccept(net.sourceforge.pmd.ast.JavaParserVisitor, java.lang.Object):java.lang.Object" />
+		</instance>
+		<instance>
+			<role name="ConcreteElement" element="net.sourceforge.pmd.ast.ASTReturnStatement" />
+			<role name="Visitor" element="net.sourceforge.pmd.ast.JavaParserVisitor" />
+			<role name="Accept()" element="net.sourceforge.pmd.ast.ASTReturnStatement::jjtAccept(net.sourceforge.pmd.ast.JavaParserVisitor, java.lang.Object):java.lang.Object" />
+		</instance>
+		<instance>
+			<role name="ConcreteElement" element="net.sourceforge.pmd.ast.ASTShiftExpression" />
+			<role name="Visitor" element="net.sourceforge.pmd.ast.JavaParserVisitor" />
+			<role name="Accept()" element="net.sourceforge.pmd.ast.ASTShiftExpression::jjtAccept(net.sourceforge.pmd.ast.JavaParserVisitor, java.lang.Object):java.lang.Object" />
+		</instance>
+		<instance>
+			<role name="ConcreteElement" element="net.sourceforge.pmd.ast.ASTSingleMemberAnnotation" />
+			<role name="Visitor" element="net.sourceforge.pmd.ast.JavaParserVisitor" />
+			<role name="Accept()" element="net.sourceforge.pmd.ast.ASTSingleMemberAnnotation::jjtAccept(net.sourceforge.pmd.ast.JavaParserVisitor, java.lang.Object):java.lang.Object" />
+		</instance>
+		<instance>
+			<role name="ConcreteElement" element="net.sourceforge.pmd.ast.ASTStatement" />
+			<role name="Visitor" element="net.sourceforge.pmd.ast.JavaParserVisitor" />
+			<role name="Accept()" element="net.sourceforge.pmd.ast.ASTStatement::jjtAccept(net.sourceforge.pmd.ast.JavaParserVisitor, java.lang.Object):java.lang.Object" />
+		</instance>
+		<instance>
+			<role name="ConcreteElement" element="net.sourceforge.pmd.ast.ASTStatementExpression" />
+			<role name="Visitor" element="net.sourceforge.pmd.ast.JavaParserVisitor" />
+			<role name="Accept()" element="net.sourceforge.pmd.ast.ASTStatementExpression::jjtAccept(net.sourceforge.pmd.ast.JavaParserVisitor, java.lang.Object):java.lang.Object" />
+		</instance>
+		<instance>
+			<role name="ConcreteElement" element="net.sourceforge.pmd.ast.ASTStatementExpressionList" />
+			<role name="Visitor" element="net.sourceforge.pmd.ast.JavaParserVisitor" />
+			<role name="Accept()" element="net.sourceforge.pmd.ast.ASTStatementExpressionList::jjtAccept(net.sourceforge.pmd.ast.JavaParserVisitor, java.lang.Object):java.lang.Object" />
+		</instance>
+		<instance>
+			<role name="ConcreteElement" element="net.sourceforge.pmd.ast.ASTSwitchLabel" />
+			<role name="Visitor" element="net.sourceforge.pmd.ast.JavaParserVisitor" />
+			<role name="Accept()" element="net.sourceforge.pmd.ast.ASTSwitchLabel::jjtAccept(net.sourceforge.pmd.ast.JavaParserVisitor, java.lang.Object):java.lang.Object" />
+		</instance>
+		<instance>
+			<role name="ConcreteElement" element="net.sourceforge.pmd.ast.ASTSwitchStatement" />
+			<role name="Visitor" element="net.sourceforge.pmd.ast.JavaParserVisitor" />
+			<role name="Accept()" element="net.sourceforge.pmd.ast.ASTSwitchStatement::jjtAccept(net.sourceforge.pmd.ast.JavaParserVisitor, java.lang.Object):java.lang.Object" />
+		</instance>
+		<instance>
+			<role name="ConcreteElement" element="net.sourceforge.pmd.ast.ASTSynchronizedStatement" />
+			<role name="Visitor" element="net.sourceforge.pmd.ast.JavaParserVisitor" />
+			<role name="Accept()" element="net.sourceforge.pmd.ast.ASTSynchronizedStatement::jjtAccept(net.sourceforge.pmd.ast.JavaParserVisitor, java.lang.Object):java.lang.Object" />
+		</instance>
+		<instance>
+			<role name="ConcreteElement" element="net.sourceforge.pmd.ast.ASTThrowStatement" />
+			<role name="Visitor" element="net.sourceforge.pmd.ast.JavaParserVisitor" />
+			<role name="Accept()" element="net.sourceforge.pmd.ast.ASTThrowStatement::jjtAccept(net.sourceforge.pmd.ast.JavaParserVisitor, java.lang.Object):java.lang.Object" />
+		</instance>
+		<instance>
+			<role name="ConcreteElement" element="net.sourceforge.pmd.ast.ASTTryStatement" />
+			<role name="Visitor" element="net.sourceforge.pmd.ast.JavaParserVisitor" />
+			<role name="Accept()" element="net.sourceforge.pmd.ast.ASTTryStatement::jjtAccept(net.sourceforge.pmd.ast.JavaParserVisitor, java.lang.Object):java.lang.Object" />
+		</instance>
+		<instance>
+			<role name="ConcreteElement" element="net.sourceforge.pmd.ast.ASTType" />
+			<role name="Visitor" element="net.sourceforge.pmd.ast.JavaParserVisitor" />
+			<role name="Accept()" element="net.sourceforge.pmd.ast.ASTType::jjtAccept(net.sourceforge.pmd.ast.JavaParserVisitor, java.lang.Object):java.lang.Object" />
+		</instance>
+		<instance>
+			<role name="ConcreteElement" element="net.sourceforge.pmd.ast.ASTTypeArgument" />
+			<role name="Visitor" element="net.sourceforge.pmd.ast.JavaParserVisitor" />
+			<role name="Accept()" element="net.sourceforge.pmd.ast.ASTTypeArgument::jjtAccept(net.sourceforge.pmd.ast.JavaParserVisitor, java.lang.Object):java.lang.Object" />
+		</instance>
+		<instance>
+			<role name="ConcreteElement" element="net.sourceforge.pmd.ast.ASTTypeArguments" />
+			<role name="Visitor" element="net.sourceforge.pmd.ast.JavaParserVisitor" />
+			<role name="Accept()" element="net.sourceforge.pmd.ast.ASTTypeArguments::jjtAccept(net.sourceforge.pmd.ast.JavaParserVisitor, java.lang.Object):java.lang.Object" />
+		</instance>
+		<instance>
+			<role name="ConcreteElement" element="net.sourceforge.pmd.ast.ASTTypeBound" />
+			<role name="Visitor" element="net.sourceforge.pmd.ast.JavaParserVisitor" />
+			<role name="Accept()" element="net.sourceforge.pmd.ast.ASTTypeBound::jjtAccept(net.sourceforge.pmd.ast.JavaParserVisitor, java.lang.Object):java.lang.Object" />
+		</instance>
+		<instance>
+			<role name="ConcreteElement" element="net.sourceforge.pmd.ast.ASTTypeDeclaration" />
+			<role name="Visitor" element="net.sourceforge.pmd.ast.JavaParserVisitor" />
+			<role name="Accept()" element="net.sourceforge.pmd.ast.ASTTypeDeclaration::jjtAccept(net.sourceforge.pmd.ast.JavaParserVisitor, java.lang.Object):java.lang.Object" />
+		</instance>
+		<instance>
+			<role name="ConcreteElement" element="net.sourceforge.pmd.ast.ASTTypeParameter" />
+			<role name="Visitor" element="net.sourceforge.pmd.ast.JavaParserVisitor" />
+			<role name="Accept()" element="net.sourceforge.pmd.ast.ASTTypeParameter::jjtAccept(net.sourceforge.pmd.ast.JavaParserVisitor, java.lang.Object):java.lang.Object" />
+		</instance>
+		<instance>
+			<role name="ConcreteElement" element="net.sourceforge.pmd.ast.ASTTypeParameters" />
+			<role name="Visitor" element="net.sourceforge.pmd.ast.JavaParserVisitor" />
+			<role name="Accept()" element="net.sourceforge.pmd.ast.ASTTypeParameters::jjtAccept(net.sourceforge.pmd.ast.JavaParserVisitor, java.lang.Object):java.lang.Object" />
+		</instance>
+		<instance>
+			<role name="ConcreteElement" element="net.sourceforge.pmd.ast.ASTUnaryExpression" />
+			<role name="Visitor" element="net.sourceforge.pmd.ast.JavaParserVisitor" />
+			<role name="Accept()" element="net.sourceforge.pmd.ast.ASTUnaryExpression::jjtAccept(net.sourceforge.pmd.ast.JavaParserVisitor, java.lang.Object):java.lang.Object" />
+		</instance>
+		<instance>
+			<role name="ConcreteElement" element="net.sourceforge.pmd.ast.ASTUnaryExpressionNotPlusMinus" />
+			<role name="Visitor" element="net.sourceforge.pmd.ast.JavaParserVisitor" />
+			<role name="Accept()" element="net.sourceforge.pmd.ast.ASTUnaryExpressionNotPlusMinus::jjtAccept(net.sourceforge.pmd.ast.JavaParserVisitor, java.lang.Object):java.lang.Object" />
+		</instance>
+		<instance>
+			<role name="ConcreteElement" element="net.sourceforge.pmd.ast.ASTVariableDeclarator" />
+			<role name="Visitor" element="net.sourceforge.pmd.ast.JavaParserVisitor" />
+			<role name="Accept()" element="net.sourceforge.pmd.ast.ASTVariableDeclarator::jjtAccept(net.sourceforge.pmd.ast.JavaParserVisitor, java.lang.Object):java.lang.Object" />
+		</instance>
+		<instance>
+			<role name="ConcreteElement" element="net.sourceforge.pmd.ast.ASTVariableDeclaratorId" />
+			<role name="Visitor" element="net.sourceforge.pmd.ast.JavaParserVisitor" />
+			<role name="Accept()" element="net.sourceforge.pmd.ast.ASTVariableDeclaratorId::jjtAccept(net.sourceforge.pmd.ast.JavaParserVisitor, java.lang.Object):java.lang.Object" />
+		</instance>
+		<instance>
+			<role name="ConcreteElement" element="net.sourceforge.pmd.ast.ASTVariableInitializer" />
+			<role name="Visitor" element="net.sourceforge.pmd.ast.JavaParserVisitor" />
+			<role name="Accept()" element="net.sourceforge.pmd.ast.ASTVariableInitializer::jjtAccept(net.sourceforge.pmd.ast.JavaParserVisitor, java.lang.Object):java.lang.Object" />
+		</instance>
+		<instance>
+			<role name="ConcreteElement" element="net.sourceforge.pmd.ast.ASTWhileStatement" />
+			<role name="Visitor" element="net.sourceforge.pmd.ast.JavaParserVisitor" />
+			<role name="Accept()" element="net.sourceforge.pmd.ast.ASTWhileStatement::jjtAccept(net.sourceforge.pmd.ast.JavaParserVisitor, java.lang.Object):java.lang.Object" />
+		</instance>
+		<instance>
+			<role name="ConcreteElement" element="net.sourceforge.pmd.ast.ASTWildcardBounds" />
+			<role name="Visitor" element="net.sourceforge.pmd.ast.JavaParserVisitor" />
+			<role name="Accept()" element="net.sourceforge.pmd.ast.ASTWildcardBounds::jjtAccept(net.sourceforge.pmd.ast.JavaParserVisitor, java.lang.Object):java.lang.Object" />
+		</instance>
+		<instance>
+			<role name="ConcreteElement" element="net.sourceforge.pmd.ast.SimpleJavaNode" />
+			<role name="Visitor" element="net.sourceforge.pmd.ast.JavaParserVisitor" />
+			<role name="Accept()" element="net.sourceforge.pmd.ast.SimpleJavaNode::jjtAccept(net.sourceforge.pmd.ast.JavaParserVisitor, java.lang.Object):java.lang.Object" />
+		</instance>
+		<instance>
+			<role name="ConcreteElement" element="net.sourceforge.pmd.dcd.graph.ClassNode" />
+			<role name="Visitor" element="net.sourceforge.pmd.dcd.graph.NodeVisitor" />
+			<role name="Accept()" element="net.sourceforge.pmd.dcd.graph.ClassNode::accept(net.sourceforge.pmd.dcd.graph.NodeVisitor, java.lang.Object):java.lang.Object" />
+		</instance>
+		<instance>
+			<role name="ConcreteElement" element="net.sourceforge.pmd.dcd.graph.MemberNode" />
+			<role name="Visitor" element="net.sourceforge.pmd.dcd.graph.NodeVisitor" />
+			<role name="Accept()" element="net.sourceforge.pmd.dcd.graph.MemberNode::accept(net.sourceforge.pmd.dcd.graph.NodeVisitor, java.lang.Object):java.lang.Object" />
+		</instance>
+		<instance>
+			<role name="ConcreteElement" element="net.sourceforge.pmd.jsp.ast.ASTAttribute" />
+			<role name="Visitor" element="net.sourceforge.pmd.jsp.ast.JspParserVisitor" />
+			<role name="Accept()" element="net.sourceforge.pmd.jsp.ast.ASTAttribute::jjtAccept(net.sourceforge.pmd.jsp.ast.JspParserVisitor, java.lang.Object):java.lang.Object" />
+		</instance>
+		<instance>
+			<role name="ConcreteElement" element="net.sourceforge.pmd.jsp.ast.ASTAttributeValue" />
+			<role name="Visitor" element="net.sourceforge.pmd.jsp.ast.JspParserVisitor" />
+			<role name="Accept()" element="net.sourceforge.pmd.jsp.ast.ASTAttributeValue::jjtAccept(net.sourceforge.pmd.jsp.ast.JspParserVisitor, java.lang.Object):java.lang.Object" />
+		</instance>
+		<instance>
+			<role name="ConcreteElement" element="net.sourceforge.pmd.jsp.ast.ASTCData" />
+			<role name="Visitor" element="net.sourceforge.pmd.jsp.ast.JspParserVisitor" />
+			<role name="Accept()" element="net.sourceforge.pmd.jsp.ast.ASTCData::jjtAccept(net.sourceforge.pmd.jsp.ast.JspParserVisitor, java.lang.Object):java.lang.Object" />
+		</instance>
+		<instance>
+			<role name="ConcreteElement" element="net.sourceforge.pmd.jsp.ast.ASTCommentTag" />
+			<role name="Visitor" element="net.sourceforge.pmd.jsp.ast.JspParserVisitor" />
+			<role name="Accept()" element="net.sourceforge.pmd.jsp.ast.ASTCommentTag::jjtAccept(net.sourceforge.pmd.jsp.ast.JspParserVisitor, java.lang.Object):java.lang.Object" />
+		</instance>
+		<instance>
+			<role name="ConcreteElement" element="net.sourceforge.pmd.jsp.ast.ASTCompilationUnit" />
+			<role name="Visitor" element="net.sourceforge.pmd.jsp.ast.JspParserVisitor" />
+			<role name="Accept()" element="net.sourceforge.pmd.jsp.ast.ASTCompilationUnit::jjtAccept(net.sourceforge.pmd.jsp.ast.JspParserVisitor, java.lang.Object):java.lang.Object" />
+		</instance>
+		<instance>
+			<role name="ConcreteElement" element="net.sourceforge.pmd.jsp.ast.ASTContent" />
+			<role name="Visitor" element="net.sourceforge.pmd.jsp.ast.JspParserVisitor" />
+			<role name="Accept()" element="net.sourceforge.pmd.jsp.ast.ASTContent::jjtAccept(net.sourceforge.pmd.jsp.ast.JspParserVisitor, java.lang.Object):java.lang.Object" />
+		</instance>
+		<instance>
+			<role name="ConcreteElement" element="net.sourceforge.pmd.jsp.ast.ASTDeclaration" />
+			<role name="Visitor" element="net.sourceforge.pmd.jsp.ast.JspParserVisitor" />
+			<role name="Accept()" element="net.sourceforge.pmd.jsp.ast.ASTDeclaration::jjtAccept(net.sourceforge.pmd.jsp.ast.JspParserVisitor, java.lang.Object):java.lang.Object" />
+		</instance>
+		<instance>
+			<role name="ConcreteElement" element="net.sourceforge.pmd.jsp.ast.ASTDoctypeDeclaration" />
+			<role name="Visitor" element="net.sourceforge.pmd.jsp.ast.JspParserVisitor" />
+			<role name="Accept()" element="net.sourceforge.pmd.jsp.ast.ASTDoctypeDeclaration::jjtAccept(net.sourceforge.pmd.jsp.ast.JspParserVisitor, java.lang.Object):java.lang.Object" />
+		</instance>
+		<instance>
+			<role name="ConcreteElement" element="net.sourceforge.pmd.jsp.ast.ASTDoctypeExternalId" />
+			<role name="Visitor" element="net.sourceforge.pmd.jsp.ast.JspParserVisitor" />
+			<role name="Accept()" element="net.sourceforge.pmd.jsp.ast.ASTDoctypeExternalId::jjtAccept(net.sourceforge.pmd.jsp.ast.JspParserVisitor, java.lang.Object):java.lang.Object" />
+		</instance>
+		<instance>
+			<role name="ConcreteElement" element="net.sourceforge.pmd.jsp.ast.ASTElExpression" />
+			<role name="Visitor" element="net.sourceforge.pmd.jsp.ast.JspParserVisitor" />
+			<role name="Accept()" element="net.sourceforge.pmd.jsp.ast.ASTElExpression::jjtAccept(net.sourceforge.pmd.jsp.ast.JspParserVisitor, java.lang.Object):java.lang.Object" />
+		</instance>
+		<instance>
+			<role name="ConcreteElement" element="net.sourceforge.pmd.jsp.ast.ASTElement" />
+			<role name="Visitor" element="net.sourceforge.pmd.jsp.ast.JspParserVisitor" />
+			<role name="Accept()" element="net.sourceforge.pmd.jsp.ast.ASTElement::jjtAccept(net.sourceforge.pmd.jsp.ast.JspParserVisitor, java.lang.Object):java.lang.Object" />
+		</instance>
+		<instance>
+			<role name="ConcreteElement" element="net.sourceforge.pmd.jsp.ast.ASTJspComment" />
+			<role name="Visitor" element="net.sourceforge.pmd.jsp.ast.JspParserVisitor" />
+			<role name="Accept()" element="net.sourceforge.pmd.jsp.ast.ASTJspComment::jjtAccept(net.sourceforge.pmd.jsp.ast.JspParserVisitor, java.lang.Object):java.lang.Object" />
+		</instance>
+		<instance>
+			<role name="ConcreteElement" element="net.sourceforge.pmd.jsp.ast.ASTJspDeclaration" />
+			<role name="Visitor" element="net.sourceforge.pmd.jsp.ast.JspParserVisitor" />
+			<role name="Accept()" element="net.sourceforge.pmd.jsp.ast.ASTJspDeclaration::jjtAccept(net.sourceforge.pmd.jsp.ast.JspParserVisitor, java.lang.Object):java.lang.Object" />
+		</instance>
+		<instance>
+			<role name="ConcreteElement" element="net.sourceforge.pmd.jsp.ast.ASTJspDeclarations" />
+			<role name="Visitor" element="net.sourceforge.pmd.jsp.ast.JspParserVisitor" />
+			<role name="Accept()" element="net.sourceforge.pmd.jsp.ast.ASTJspDeclarations::jjtAccept(net.sourceforge.pmd.jsp.ast.JspParserVisitor, java.lang.Object):java.lang.Object" />
+		</instance>
+		<instance>
+			<role name="ConcreteElement" element="net.sourceforge.pmd.jsp.ast.ASTJspDirective" />
+			<role name="Visitor" element="net.sourceforge.pmd.jsp.ast.JspParserVisitor" />
+			<role name="Accept()" element="net.sourceforge.pmd.jsp.ast.ASTJspDirective::jjtAccept(net.sourceforge.pmd.jsp.ast.JspParserVisitor, java.lang.Object):java.lang.Object" />
+		</instance>
+		<instance>
+			<role name="ConcreteElement" element="net.sourceforge.pmd.jsp.ast.ASTJspDirectiveAttribute" />
+			<role name="Visitor" element="net.sourceforge.pmd.jsp.ast.JspParserVisitor" />
+			<role name="Accept()" element="net.sourceforge.pmd.jsp.ast.ASTJspDirectiveAttribute::jjtAccept(net.sourceforge.pmd.jsp.ast.JspParserVisitor, java.lang.Object):java.lang.Object" />
+		</instance>
+		<instance>
+			<role name="ConcreteElement" element="net.sourceforge.pmd.jsp.ast.ASTJspDocument" />
+			<role name="Visitor" element="net.sourceforge.pmd.jsp.ast.JspParserVisitor" />
+			<role name="Accept()" element="net.sourceforge.pmd.jsp.ast.ASTJspDocument::jjtAccept(net.sourceforge.pmd.jsp.ast.JspParserVisitor, java.lang.Object):java.lang.Object" />
+		</instance>
+		<instance>
+			<role name="ConcreteElement" element="net.sourceforge.pmd.jsp.ast.ASTJspExpression" />
+			<role name="Visitor" element="net.sourceforge.pmd.jsp.ast.JspParserVisitor" />
+			<role name="Accept()" element="net.sourceforge.pmd.jsp.ast.ASTJspExpression::jjtAccept(net.sourceforge.pmd.jsp.ast.JspParserVisitor, java.lang.Object):java.lang.Object" />
+		</instance>
+		<instance>
+			<role name="ConcreteElement" element="net.sourceforge.pmd.jsp.ast.ASTJspExpressionInAttribute" />
+			<role name="Visitor" element="net.sourceforge.pmd.jsp.ast.JspParserVisitor" />
+			<role name="Accept()" element="net.sourceforge.pmd.jsp.ast.ASTJspExpressionInAttribute::jjtAccept(net.sourceforge.pmd.jsp.ast.JspParserVisitor, java.lang.Object):java.lang.Object" />
+		</instance>
+		<instance>
+			<role name="ConcreteElement" element="net.sourceforge.pmd.jsp.ast.ASTJspScriptlet" />
+			<role name="Visitor" element="net.sourceforge.pmd.jsp.ast.JspParserVisitor" />
+			<role name="Accept()" element="net.sourceforge.pmd.jsp.ast.ASTJspScriptlet::jjtAccept(net.sourceforge.pmd.jsp.ast.JspParserVisitor, java.lang.Object):java.lang.Object" />
+		</instance>
+		<instance>
+			<role name="ConcreteElement" element="net.sourceforge.pmd.jsp.ast.ASTText" />
+			<role name="Visitor" element="net.sourceforge.pmd.jsp.ast.JspParserVisitor" />
+			<role name="Accept()" element="net.sourceforge.pmd.jsp.ast.ASTText::jjtAccept(net.sourceforge.pmd.jsp.ast.JspParserVisitor, java.lang.Object):java.lang.Object" />
+		</instance>
+		<instance>
+			<role name="ConcreteElement" element="net.sourceforge.pmd.jsp.ast.ASTUnparsedText" />
+			<role name="Visitor" element="net.sourceforge.pmd.jsp.ast.JspParserVisitor" />
+			<role name="Accept()" element="net.sourceforge.pmd.jsp.ast.ASTUnparsedText::jjtAccept(net.sourceforge.pmd.jsp.ast.JspParserVisitor, java.lang.Object):java.lang.Object" />
+		</instance>
+		<instance>
+			<role name="ConcreteElement" element="net.sourceforge.pmd.jsp.ast.ASTValueBinding" />
+			<role name="Visitor" element="net.sourceforge.pmd.jsp.ast.JspParserVisitor" />
+			<role name="Accept()" element="net.sourceforge.pmd.jsp.ast.ASTValueBinding::jjtAccept(net.sourceforge.pmd.jsp.ast.JspParserVisitor, java.lang.Object):java.lang.Object" />
+		</instance>
+		<instance>
+			<role name="ConcreteElement" element="net.sourceforge.pmd.jsp.ast.SimpleNode" />
+			<role name="Visitor" element="net.sourceforge.pmd.jsp.ast.JspParserVisitor" />
+			<role name="Accept()" element="net.sourceforge.pmd.jsp.ast.SimpleNode::jjtAccept(net.sourceforge.pmd.jsp.ast.JspParserVisitor, java.lang.Object):java.lang.Object" />
+		</instance>
+	</pattern>
+	<pattern name="Proxy" />
+	<pattern name="Proxy2" />
+	<pattern name="Chain of Responsibility">
+		<instance>
+			<role name="Handler" element="net.sourceforge.pmd.dfa.report.AbstractReportNode" />
+			<role name="successor" element="net.sourceforge.pmd.dfa.report.AbstractReportNode::parentNode:net.sourceforge.pmd.dfa.report.AbstractReportNode" />
+		</instance>
+	</pattern>
+</system>
+

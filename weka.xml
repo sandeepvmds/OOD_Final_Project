@@ -1,0 +1,206 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<system>
+	<pattern name="Factory Method">
+		<instance>
+			<role name="Creator" element="weka.associations.Associator" />
+			<role name="FactoryMethod()" element="weka.associations.Associator::getCapabilities():weka.core.Capabilities" />
+		</instance>
+		<instance>
+			<role name="Creator" element="weka.attributeSelection.AttributeTransformer" />
+			<role name="FactoryMethod()" element="weka.attributeSelection.AttributeTransformer::transformedData(weka.core.Instances):weka.core.Instances" />
+			<role name="FactoryMethod()" element="weka.attributeSelection.AttributeTransformer::convertInstance(weka.core.Instance):weka.core.Instance" />
+		</instance>
+		<instance>
+			<role name="Creator" element="weka.classifiers.functions.pace.MixtureDistribution" />
+			<role name="FactoryMethod()" element="weka.classifiers.functions.pace.MixtureDistribution::supportPoints(weka.core.matrix.DoubleVector, int):weka.core.matrix.DoubleVector" />
+			<role name="FactoryMethod()" element="weka.classifiers.functions.pace.MixtureDistribution::fittingIntervals(weka.core.matrix.DoubleVector):weka.classifiers.functions.pace.PaceMatrix" />
+			<role name="FactoryMethod()" element="weka.classifiers.functions.pace.MixtureDistribution::probabilityMatrix(weka.core.matrix.DoubleVector, weka.classifiers.functions.pace.PaceMatrix):weka.classifiers.functions.pace.PaceMatrix" />
+		</instance>
+		<instance>
+			<role name="Creator" element="weka.classifiers.trees.adtree.Splitter" />
+			<role name="FactoryMethod()" element="weka.classifiers.trees.adtree.Splitter::instancesDownBranch(int, weka.core.Instances):weka.classifiers.trees.adtree.ReferenceInstances" />
+		</instance>
+		<instance>
+			<role name="Creator" element="weka.classifiers.trees.j48.ModelSelection" />
+			<role name="FactoryMethod()" element="weka.classifiers.trees.j48.ModelSelection::selectModel(weka.core.Instances):weka.classifiers.trees.j48.ClassifierSplitModel" />
+		</instance>
+		<instance>
+			<role name="Creator" element="weka.classifiers.trees.LADTree$Splitter" />
+			<role name="FactoryMethod()" element="weka.classifiers.trees.LADTree$Splitter::instancesDownBranch(int, weka.core.Instances):weka.core.Instances" />
+		</instance>
+		<instance>
+			<role name="Creator" element="weka.clusterers.Clusterer" />
+			<role name="FactoryMethod()" element="weka.clusterers.Clusterer::getCapabilities():weka.core.Capabilities" />
+		</instance>
+		<instance>
+			<role name="Creator" element="weka.core.CapabilitiesHandler" />
+			<role name="FactoryMethod()" element="weka.core.CapabilitiesHandler::getCapabilities():weka.core.Capabilities" />
+		</instance>
+		<instance>
+			<role name="Creator" element="weka.core.converters.AbstractLoader" />
+			<role name="FactoryMethod()" element="weka.core.converters.AbstractLoader::getStructure():weka.core.Instances" />
+			<role name="FactoryMethod()" element="weka.core.converters.AbstractLoader::getDataSet():weka.core.Instances" />
+		</instance>
+		<instance>
+			<role name="Creator" element="weka.core.MultiInstanceCapabilitiesHandler" />
+			<role name="FactoryMethod()" element="weka.core.MultiInstanceCapabilitiesHandler::getMultiInstanceCapabilities():weka.core.Capabilities" />
+		</instance>
+		<instance>
+			<role name="Creator" element="weka.core.neighboursearch.balltrees.BallTreeConstructor" />
+			<role name="FactoryMethod()" element="weka.core.neighboursearch.balltrees.BallTreeConstructor::buildTree():weka.core.neighboursearch.balltrees.BallNode" />
+		</instance>
+		<instance>
+			<role name="Creator" element="weka.core.neighboursearch.NearestNeighbourSearch" />
+			<role name="FactoryMethod()" element="weka.core.neighboursearch.NearestNeighbourSearch::kNearestNeighbours(weka.core.Instance, int):weka.core.Instances" />
+		</instance>
+		<instance>
+			<role name="Creator" element="weka.core.pmml.Expression" />
+			<role name="FactoryMethod()" element="weka.core.pmml.Expression::getOutputDef():weka.core.Attribute" />
+		</instance>
+		<instance>
+			<role name="Creator" element="weka.core.pmml.FieldMetaInfo" />
+			<role name="FactoryMethod()" element="weka.core.pmml.FieldMetaInfo::getFieldAsAttribute():weka.core.Attribute" />
+		</instance>
+		<instance>
+			<role name="Creator" element="weka.core.pmml.Function" />
+			<role name="FactoryMethod()" element="weka.core.pmml.Function::getOutputDef():weka.core.Attribute" />
+		</instance>
+		<instance>
+			<role name="Creator" element="weka.core.TechnicalInformationHandler" />
+			<role name="FactoryMethod()" element="weka.core.TechnicalInformationHandler::getTechnicalInformation():weka.core.TechnicalInformation" />
+		</instance>
+		<instance>
+			<role name="Creator" element="weka.estimators.ConditionalEstimator" />
+			<role name="FactoryMethod()" element="weka.estimators.ConditionalEstimator::getEstimator(double):weka.estimators.Estimator" />
+		</instance>
+		<instance>
+			<role name="Creator" element="weka.experiment.Tester" />
+			<role name="FactoryMethod()" element="weka.experiment.Tester::calculateStatistics(weka.core.Instance, int, int, int):weka.experiment.PairedStats" />
+		</instance>
+		<instance>
+			<role name="Creator" element="weka.filters.SimpleFilter" />
+			<role name="FactoryMethod()" element="weka.filters.SimpleFilter::process(weka.core.Instances):weka.core.Instances" />
+		</instance>
+		<instance>
+			<role name="Creator" element="weka.filters.SimpleStreamFilter" />
+			<role name="FactoryMethod()" element="weka.filters.SimpleStreamFilter::determineOutputFormat(weka.core.Instances):weka.core.Instances" />
+			<role name="FactoryMethod()" element="weka.filters.SimpleStreamFilter::process(weka.core.Instance):weka.core.Instance" />
+		</instance>
+		<instance>
+			<role name="Creator" element="weka.filters.unsupervised.attribute.AbstractTimeSeries" />
+			<role name="FactoryMethod()" element="weka.filters.unsupervised.attribute.AbstractTimeSeries::mergeInstances(weka.core.Instance, weka.core.Instance):weka.core.Instance" />
+		</instance>
+		<instance>
+			<role name="Creator" element="weka.gui.streams.InstanceProducer" />
+			<role name="FactoryMethod()" element="weka.gui.streams.InstanceProducer::outputFormat():weka.core.Instances" />
+		</instance>
+	</pattern>
+	<pattern name="Prototype" />
+	<pattern name="Singleton">
+		<instance>
+			<role name="Singleton" element="weka.associations.gsp.Messages" />
+			<role name="uniqueInstance" element="weka.associations.gsp.Messages::instance:weka.associations.gsp.Messages" />
+		</instance>
+		<instance>
+			<role name="Singleton" element="weka.associations.Messages" />
+			<role name="uniqueInstance" element="weka.associations.Messages::instance:weka.associations.Messages" />
+		</instance>
+		<instance>
+			<role name="Singleton" element="weka.core.Environment" />
+			<role name="uniqueInstance" element="weka.core.Environment::m_systemWide:weka.core.Environment" />
+		</instance>
+		<instance>
+			<role name="Singleton" element="weka.core.logging.Logger" />
+			<role name="uniqueInstance" element="weka.core.logging.Logger::m_Singleton:weka.core.logging.Logger" />
+		</instance>
+		<instance>
+			<role name="Singleton" element="weka.core.Stopwords" />
+			<role name="uniqueInstance" element="weka.core.Stopwords::m_Stopwords:weka.core.Stopwords" />
+		</instance>
+		<instance>
+			<role name="Singleton" element="weka.gui.arffviewer.ArffViewer" />
+			<role name="uniqueInstance" element="weka.gui.arffviewer.ArffViewer::m_Viewer:weka.gui.arffviewer.ArffViewer" />
+		</instance>
+		<instance>
+			<role name="Singleton" element="weka.gui.arffviewer.Messages" />
+			<role name="uniqueInstance" element="weka.gui.arffviewer.Messages::instance:weka.gui.arffviewer.Messages" />
+		</instance>
+		<instance>
+			<role name="Singleton" element="weka.gui.beans.KnowledgeFlowApp" />
+			<role name="uniqueInstance" element="weka.gui.beans.KnowledgeFlowApp::m_knowledgeFlow:weka.gui.beans.KnowledgeFlowApp" />
+		</instance>
+		<instance>
+			<role name="Singleton" element="weka.gui.beans.Messages" />
+			<role name="uniqueInstance" element="weka.gui.beans.Messages::instance:weka.gui.beans.Messages" />
+		</instance>
+		<instance>
+			<role name="Singleton" element="weka.gui.beans.xml.Messages" />
+			<role name="uniqueInstance" element="weka.gui.beans.xml.Messages::instance:weka.gui.beans.xml.Messages" />
+		</instance>
+		<instance>
+			<role name="Singleton" element="weka.gui.boundaryvisualizer.Messages" />
+			<role name="uniqueInstance" element="weka.gui.boundaryvisualizer.Messages::instance:weka.gui.boundaryvisualizer.Messages" />
+		</instance>
+		<instance>
+			<role name="Singleton" element="weka.gui.experiment.Experimenter" />
+			<role name="uniqueInstance" element="weka.gui.experiment.Experimenter::m_experimenter:weka.gui.experiment.Experimenter" />
+		</instance>
+		<instance>
+			<role name="Singleton" element="weka.gui.experiment.Messages" />
+			<role name="uniqueInstance" element="weka.gui.experiment.Messages::instance:weka.gui.experiment.Messages" />
+		</instance>
+		<instance>
+			<role name="Singleton" element="weka.gui.explorer.Explorer" />
+			<role name="uniqueInstance" element="weka.gui.explorer.Explorer::m_explorer:weka.gui.explorer.Explorer" />
+		</instance>
+		<instance>
+			<role name="Singleton" element="weka.gui.explorer.Messages" />
+			<role name="uniqueInstance" element="weka.gui.explorer.Messages::instance:weka.gui.explorer.Messages" />
+		</instance>
+		<instance>
+			<role name="Singleton" element="weka.gui.graphvisualizer.Messages" />
+			<role name="uniqueInstance" element="weka.gui.graphvisualizer.Messages::instance:weka.gui.graphvisualizer.Messages" />
+		</instance>
+		<instance>
+			<role name="Singleton" element="weka.gui.GUIChooser" />
+			<role name="uniqueInstance" element="weka.gui.GUIChooser::m_chooser:weka.gui.GUIChooser" />
+		</instance>
+		<instance>
+			<role name="Singleton" element="weka.gui.hierarchyvisualizer.Messages" />
+			<role name="uniqueInstance" element="weka.gui.hierarchyvisualizer.Messages::instance:weka.gui.hierarchyvisualizer.Messages" />
+		</instance>
+		<instance>
+			<role name="Singleton" element="weka.gui.Messages" />
+			<role name="uniqueInstance" element="weka.gui.Messages::instance:weka.gui.Messages" />
+		</instance>
+		<instance>
+			<role name="Singleton" element="weka.gui.SplashWindow" />
+			<role name="uniqueInstance" element="weka.gui.SplashWindow::m_instance:weka.gui.SplashWindow" />
+		</instance>
+		<instance>
+			<role name="Singleton" element="weka.gui.sql.event.Messages" />
+			<role name="uniqueInstance" element="weka.gui.sql.event.Messages::instance:weka.gui.sql.event.Messages" />
+		</instance>
+		<instance>
+			<role name="Singleton" element="weka.gui.sql.Messages" />
+			<role name="uniqueInstance" element="weka.gui.sql.Messages::instance:weka.gui.sql.Messages" />
+		</instance>
+		<instance>
+			<role name="Singleton" element="weka.gui.sql.SqlViewer" />
+			<role name="uniqueInstance" element="weka.gui.sql.SqlViewer::m_Viewer:weka.gui.sql.SqlViewer" />
+		</instance>
+		<instance>
+			<role name="Singleton" element="weka.gui.streams.Messages" />
+			<role name="uniqueInstance" element="weka.gui.streams.Messages::instance:weka.gui.streams.Messages" />
+		</instance>
+		<instance>
+			<role name="Singleton" element="weka.gui.treevisualizer.Messages" />
+			<role name="uniqueInstance" element="weka.gui.treevisualizer.Messages::instance:weka.gui.treevisualizer.Messages" />
+		</instance>
+		<instance>
+			<role name="Singleton" element="weka.gui.visualize.Messages" />
+			<role name="uniqueInstance" element="weka.gui.visualize.Messages::instance:weka.gui.visualize.Messages" />
+		</instance>
+	</pattern>
+</system>
+

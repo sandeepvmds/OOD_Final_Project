@@ -1,0 +1,823 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<system>
+	<pattern name="Factory Method">
+		<instance>
+			<role name="Creator" element="org.apache.velocity.runtime.RuntimeServices" />
+			<role name="FactoryMethod()" element="org.apache.velocity.runtime.RuntimeServices::createNewParser():org.apache.velocity.runtime.parser.Parser" />
+		</instance>
+		<instance>
+			<role name="Creator" element="org.apache.velocity.util.introspection.Uberspect" />
+			<role name="FactoryMethod()" element="org.apache.velocity.util.introspection.Uberspect::getMethod(java.lang.Object, java.lang.String, java.lang.Object[], org.apache.velocity.util.introspection.Info):org.apache.velocity.util.introspection.VelMethod" />
+			<role name="FactoryMethod()" element="org.apache.velocity.util.introspection.Uberspect::getPropertyGet(java.lang.Object, java.lang.String, org.apache.velocity.util.introspection.Info):org.apache.velocity.util.introspection.VelPropertyGet" />
+			<role name="FactoryMethod()" element="org.apache.velocity.util.introspection.Uberspect::getPropertySet(java.lang.Object, java.lang.String, java.lang.Object, org.apache.velocity.util.introspection.Info):org.apache.velocity.util.introspection.VelPropertySet" />
+		</instance>
+	</pattern>
+	<pattern name="Prototype" />
+	<pattern name="Singleton">
+		<instance>
+			<role name="Singleton" element="java.org.apache.velocity.texen.Generator" />
+			<role name="uniqueInstance" element="java.org.apache.velocity.texen.Generator::instance:java.org.apache.velocity.texen.Generator" />
+		</instance>
+		<instance>
+			<role name="Singleton" element="org.apache.velocity.texen.Generator" />
+			<role name="uniqueInstance" element="org.apache.velocity.texen.Generator::instance:org.apache.velocity.texen.Generator" />
+		</instance>
+	</pattern>
+	<pattern name="(Object)Adapter">
+		<instance>
+			<role name="Adaptee" element="org.apache.velocity.runtime.VelocimacroFactory" />
+			<role name="Adapter" element="org.apache.velocity.runtime.RuntimeInstance" />
+			<role name="adaptee" element="org.apache.velocity.runtime.RuntimeInstance::vmFactory:org.apache.velocity.runtime.VelocimacroFactory" />
+			<role name="Request()" element="org.apache.velocity.runtime.RuntimeInstance::init():void" />
+			<role name="Request()" element="org.apache.velocity.runtime.RuntimeInstance::getVelocimacro(java.lang.String, java.lang.String):org.apache.velocity.runtime.directive.Directive" />
+			<role name="Request()" element="org.apache.velocity.runtime.RuntimeInstance::getVelocimacro(java.lang.String, java.lang.String, java.lang.String):org.apache.velocity.runtime.directive.Directive" />
+			<role name="Request()" element="org.apache.velocity.runtime.RuntimeInstance::addVelocimacro(java.lang.String, java.lang.String, java.lang.String[], java.lang.String):boolean" />
+			<role name="Request()" element="org.apache.velocity.runtime.RuntimeInstance::addVelocimacro(java.lang.String, org.apache.velocity.runtime.parser.node.Node, java.lang.String[], java.lang.String):boolean" />
+			<role name="Request()" element="org.apache.velocity.runtime.RuntimeInstance::isVelocimacro(java.lang.String, java.lang.String):boolean" />
+			<role name="Request()" element="org.apache.velocity.runtime.RuntimeInstance::dumpVMNamespace(java.lang.String):boolean" />
+		</instance>
+		<instance>
+			<role name="Adaptee" element="org.apache.velocity.runtime.parser.node.SimpleNode" />
+			<role name="Adapter" element="org.apache.velocity.runtime.directive.VelocimacroProxy" />
+			<role name="adaptee" element="org.apache.velocity.runtime.directive.VelocimacroProxy::nodeTree:org.apache.velocity.runtime.parser.node.SimpleNode" />
+			<role name="Request()" element="org.apache.velocity.runtime.directive.VelocimacroProxy::render(org.apache.velocity.context.InternalContextAdapter, java.io.Writer, org.apache.velocity.runtime.parser.node.Node):boolean" />
+		</instance>
+		<instance>
+			<role name="Adapter" element="org.apache.velocity.runtime.parser.node.SimpleNode" />
+			<role name="Adaptee" element="org.apache.velocity.runtime.parser.Parser" />
+			<role name="adaptee" element="org.apache.velocity.runtime.parser.node.SimpleNode::parser:org.apache.velocity.runtime.parser.Parser" />
+			<role name="Request()" element="org.apache.velocity.runtime.parser.node.SimpleNode::jjtOpen():void" />
+			<role name="Request()" element="org.apache.velocity.runtime.parser.node.SimpleNode::jjtClose():void" />
+		</instance>
+		<instance>
+			<role name="Adaptee" element="org.apache.velocity.runtime.log.Log" />
+			<role name="Adapter" element="org.apache.velocity.runtime.RuntimeInstance" />
+			<role name="adaptee" element="org.apache.velocity.runtime.RuntimeInstance::log:org.apache.velocity.runtime.log.Log" />
+			<role name="Request()" element="org.apache.velocity.runtime.RuntimeInstance::init():void" />
+			<role name="Request()" element="org.apache.velocity.runtime.RuntimeInstance::parse(java.io.Reader, java.lang.String, boolean):org.apache.velocity.runtime.parser.node.SimpleNode" />
+		</instance>
+		<instance>
+			<role name="Adapter" element="org.apache.velocity.runtime.parser.node.SimpleNode" />
+			<role name="Adaptee" element="org.apache.velocity.runtime.RuntimeServices" />
+			<role name="adaptee" element="org.apache.velocity.runtime.parser.node.SimpleNode::rsvc:org.apache.velocity.runtime.RuntimeServices" />
+			<role name="Request()" element="org.apache.velocity.runtime.parser.node.SimpleNode::init(org.apache.velocity.context.InternalContextAdapter, java.lang.Object):java.lang.Object" />
+		</instance>
+		<instance>
+			<role name="Adaptee" element="org.apache.velocity.runtime.RuntimeServices" />
+			<role name="Adapter" element="org.apache.velocity.runtime.log.AvalonLogChute" />
+			<role name="adaptee" element="org.apache.velocity.runtime.log.AvalonLogChute::rsvc:org.apache.velocity.runtime.RuntimeServices" />
+			<role name="Request()" element="org.apache.velocity.runtime.log.AvalonLogChute::init(org.apache.velocity.runtime.RuntimeServices):void" />
+		</instance>
+		<instance>
+			<role name="Adaptee" element="org.apache.velocity.runtime.RuntimeServices" />
+			<role name="Adapter" element="org.apache.velocity.runtime.log.Log4JLogChute" />
+			<role name="adaptee" element="org.apache.velocity.runtime.log.Log4JLogChute::rsvc:org.apache.velocity.runtime.RuntimeServices" />
+			<role name="Request()" element="org.apache.velocity.runtime.log.Log4JLogChute::init(org.apache.velocity.runtime.RuntimeServices):void" />
+		</instance>
+		<instance>
+			<role name="Adaptee" element="org.apache.velocity.runtime.log.LogSystem" />
+			<role name="Adapter" element="org.apache.velocity.runtime.log.LogChuteSystem" />
+			<role name="adaptee" element="org.apache.velocity.runtime.log.LogChuteSystem::logSystem:org.apache.velocity.runtime.log.LogSystem" />
+			<role name="Request()" element="org.apache.velocity.runtime.log.LogChuteSystem::init(org.apache.velocity.runtime.RuntimeServices):void" />
+			<role name="Request()" element="org.apache.velocity.runtime.log.LogChuteSystem::log(int, java.lang.String):void" />
+			<role name="Request()" element="org.apache.velocity.runtime.log.LogChuteSystem::log(int, java.lang.String, java.lang.Throwable):void" />
+		</instance>
+		<instance>
+			<role name="Adaptee" element="org.apache.velocity.runtime.RuntimeServices" />
+			<role name="Adapter" element="org.apache.velocity.app.event.implement.EscapeReference" />
+			<role name="adaptee" element="org.apache.velocity.app.event.implement.EscapeReference::rs:org.apache.velocity.runtime.RuntimeServices" />
+			<role name="Request()" element="org.apache.velocity.app.event.implement.EscapeReference::setRuntimeServices(org.apache.velocity.runtime.RuntimeServices):void" />
+		</instance>
+		<instance>
+			<role name="Adaptee" element="org.apache.velocity.runtime.RuntimeServices" />
+			<role name="Adapter" element="org.apache.velocity.app.event.implement.IncludeNotFound" />
+			<role name="adaptee" element="org.apache.velocity.app.event.implement.IncludeNotFound::rs:org.apache.velocity.runtime.RuntimeServices" />
+			<role name="Request()" element="org.apache.velocity.app.event.implement.IncludeNotFound::includeEvent(java.lang.String, java.lang.String, java.lang.String):java.lang.String" />
+			<role name="Request()" element="org.apache.velocity.app.event.implement.IncludeNotFound::setRuntimeServices(org.apache.velocity.runtime.RuntimeServices):void" />
+		</instance>
+		<instance>
+			<role name="Adaptee" element="org.apache.velocity.runtime.RuntimeServices" />
+			<role name="Adapter" element="org.apache.velocity.app.event.implement.PrintExceptions" />
+			<role name="adaptee" element="org.apache.velocity.app.event.implement.PrintExceptions::rs:org.apache.velocity.runtime.RuntimeServices" />
+			<role name="Request()" element="org.apache.velocity.app.event.implement.PrintExceptions::methodException(java.lang.Class, java.lang.String, java.lang.Exception):java.lang.Object" />
+		</instance>
+		<instance>
+			<role name="Adaptee" element="org.apache.velocity.runtime.RuntimeServices" />
+			<role name="Adapter" element="org.apache.velocity.runtime.resource.ResourceManagerImpl" />
+			<role name="adaptee" element="org.apache.velocity.runtime.resource.ResourceManagerImpl::rsvc:org.apache.velocity.runtime.RuntimeServices" />
+			<role name="Request()" element="org.apache.velocity.runtime.resource.ResourceManagerImpl::initialize(org.apache.velocity.runtime.RuntimeServices):void" />
+		</instance>
+		<instance>
+			<role name="Adaptee" element="org.apache.velocity.runtime.resource.ResourceManager" />
+			<role name="Adapter" element="org.apache.velocity.runtime.RuntimeInstance" />
+			<role name="adaptee" element="org.apache.velocity.runtime.RuntimeInstance::resourceManager:org.apache.velocity.runtime.resource.ResourceManager" />
+			<role name="Request()" element="org.apache.velocity.runtime.RuntimeInstance::getTemplate(java.lang.String, java.lang.String):org.apache.velocity.Template" />
+			<role name="Request()" element="org.apache.velocity.runtime.RuntimeInstance::getContent(java.lang.String, java.lang.String):org.apache.velocity.runtime.resource.ContentResource" />
+			<role name="Request()" element="org.apache.velocity.runtime.RuntimeInstance::getLoaderNameForResource(java.lang.String):java.lang.String" />
+		</instance>
+		<instance>
+			<role name="Adaptee" element="org.apache.velocity.runtime.ParserPool" />
+			<role name="Adapter" element="org.apache.velocity.runtime.RuntimeInstance" />
+			<role name="adaptee" element="org.apache.velocity.runtime.RuntimeInstance::parserPool:org.apache.velocity.runtime.ParserPool" />
+			<role name="Request()" element="org.apache.velocity.runtime.RuntimeInstance::parse(java.io.Reader, java.lang.String, boolean):org.apache.velocity.runtime.parser.node.SimpleNode" />
+		</instance>
+		<instance>
+			<role name="Adaptee" element="org.apache.velocity.runtime.log.Log" />
+			<role name="Adapter" element="org.apache.velocity.runtime.resource.ResourceManagerImpl" />
+			<role name="adaptee" element="org.apache.velocity.runtime.resource.ResourceManagerImpl::log:org.apache.velocity.runtime.log.Log" />
+			<role name="Request()" element="org.apache.velocity.runtime.resource.ResourceManagerImpl::initialize(org.apache.velocity.runtime.RuntimeServices):void" />
+			<role name="Request()" element="org.apache.velocity.runtime.resource.ResourceManagerImpl::getResource(java.lang.String, int, java.lang.String):org.apache.velocity.runtime.resource.Resource" />
+		</instance>
+		<instance>
+			<role name="Adaptee" element="org.apache.velocity.runtime.directive.Define" />
+			<role name="Adapter" element="org.apache.velocity.runtime.directive.Define$Block" />
+			<role name="adaptee" element="org.apache.velocity.runtime.directive.Define$Block::parent:org.apache.velocity.runtime.directive.Define" />
+			<role name="Request()" element="org.apache.velocity.runtime.directive.Define$Block::render(org.apache.velocity.context.InternalContextAdapter, java.io.Writer):boolean" />
+		</instance>
+		<instance>
+			<role name="Adaptee" element="org.apache.velocity.runtime.resource.ResourceCache" />
+			<role name="Adapter" element="org.apache.velocity.runtime.resource.ResourceManagerImpl" />
+			<role name="adaptee" element="org.apache.velocity.runtime.resource.ResourceManagerImpl::globalCache:org.apache.velocity.runtime.resource.ResourceCache" />
+			<role name="Request()" element="org.apache.velocity.runtime.resource.ResourceManagerImpl::initialize(org.apache.velocity.runtime.RuntimeServices):void" />
+			<role name="Request()" element="org.apache.velocity.runtime.resource.ResourceManagerImpl::getResource(java.lang.String, int, java.lang.String):org.apache.velocity.runtime.resource.Resource" />
+		</instance>
+		<instance>
+			<role name="Adaptee" element="org.apache.velocity.runtime.log.Log" />
+			<role name="Adapter" element="org.apache.velocity.util.introspection.UberspectImpl" />
+			<role name="adaptee" element="org.apache.velocity.util.introspection.UberspectImpl::log:org.apache.velocity.runtime.log.Log" />
+			<role name="Request()" element="org.apache.velocity.util.introspection.UberspectImpl::getIterator(java.lang.Object, org.apache.velocity.util.introspection.Info):java.util.Iterator" />
+		</instance>
+		<instance>
+			<role name="Adaptee" element="org.apache.velocity.context.Context" />
+			<role name="Adapter" element="org.apache.velocity.test.EventHandlingTestCase$TestEventCartridge" />
+			<role name="adaptee" element="org.apache.velocity.test.EventHandlingTestCase$TestEventCartridge::context:org.apache.velocity.context.Context" />
+			<role name="Request()" element="org.apache.velocity.test.EventHandlingTestCase$TestEventCartridge::methodException(java.lang.Class, java.lang.String, java.lang.Exception):java.lang.Object" />
+		</instance>
+		<instance>
+			<role name="Adaptee" element="org.apache.velocity.util.SimplePool" />
+			<role name="Adapter" element="org.apache.velocity.runtime.ParserPoolImpl" />
+			<role name="adaptee" element="org.apache.velocity.runtime.ParserPoolImpl::pool:org.apache.velocity.util.SimplePool" />
+			<role name="Request()" element="org.apache.velocity.runtime.ParserPoolImpl::initialize(org.apache.velocity.runtime.RuntimeServices):void" />
+			<role name="Request()" element="org.apache.velocity.runtime.ParserPoolImpl::get():org.apache.velocity.runtime.parser.Parser" />
+			<role name="Request()" element="org.apache.velocity.runtime.ParserPoolImpl::put(org.apache.velocity.runtime.parser.Parser):void" />
+		</instance>
+		<instance>
+			<role name="Adaptee" element="org.apache.velocity.runtime.parser.node.AbstractExecutor" />
+			<role name="Adapter" element="org.apache.velocity.util.introspection.UberspectImpl$VelGetterImpl" />
+			<role name="adaptee" element="org.apache.velocity.util.introspection.UberspectImpl$VelGetterImpl::getExecutor:org.apache.velocity.runtime.parser.node.AbstractExecutor" />
+			<role name="Request()" element="org.apache.velocity.util.introspection.UberspectImpl$VelGetterImpl::invoke(java.lang.Object):java.lang.Object" />
+			<role name="Request()" element="org.apache.velocity.util.introspection.UberspectImpl$VelGetterImpl::getMethodName():java.lang.String" />
+		</instance>
+		<instance>
+			<role name="Adaptee" element="org.apache.velocity.runtime.parser.node.SetExecutor" />
+			<role name="Adapter" element="org.apache.velocity.util.introspection.UberspectImpl$VelSetterImpl" />
+			<role name="adaptee" element="org.apache.velocity.util.introspection.UberspectImpl$VelSetterImpl::setExecutor:org.apache.velocity.runtime.parser.node.SetExecutor" />
+			<role name="Request()" element="org.apache.velocity.util.introspection.UberspectImpl$VelSetterImpl::invoke(java.lang.Object, java.lang.Object):java.lang.Object" />
+			<role name="Request()" element="org.apache.velocity.util.introspection.UberspectImpl$VelSetterImpl::getMethodName():java.lang.String" />
+		</instance>
+		<instance>
+			<role name="Adaptee" element="org.apache.velocity.runtime.resource.util.StringResourceRepository" />
+			<role name="Adapter" element="org.apache.velocity.runtime.resource.loader.StringResourceLoader" />
+			<role name="adaptee" element="org.apache.velocity.runtime.resource.loader.StringResourceLoader::repository:org.apache.velocity.runtime.resource.util.StringResourceRepository" />
+			<role name="Request()" element="org.apache.velocity.runtime.resource.loader.StringResourceLoader::init(org.apache.commons.collections.ExtendedProperties):void" />
+			<role name="Request()" element="org.apache.velocity.runtime.resource.loader.StringResourceLoader::getResourceStream(java.lang.String):java.io.InputStream" />
+			<role name="Request()" element="org.apache.velocity.runtime.resource.loader.StringResourceLoader::isSourceModified(org.apache.velocity.runtime.resource.Resource):boolean" />
+			<role name="Request()" element="org.apache.velocity.runtime.resource.loader.StringResourceLoader::getLastModified(org.apache.velocity.runtime.resource.Resource):long" />
+		</instance>
+		<instance>
+			<role name="Adaptee" element="org.apache.velocity.util.introspection.Introspector" />
+			<role name="Adapter" element="org.apache.velocity.util.introspection.UberspectImpl" />
+			<role name="adaptee" element="org.apache.velocity.util.introspection.UberspectImpl::introspector:org.apache.velocity.util.introspection.Introspector" />
+			<role name="Request()" element="org.apache.velocity.util.introspection.UberspectImpl::getMethod(java.lang.Object, java.lang.String, java.lang.Object[], org.apache.velocity.util.introspection.Info):org.apache.velocity.util.introspection.VelMethod" />
+		</instance>
+		<instance>
+			<role name="Adaptee" element="org.apache.velocity.runtime.RuntimeServices" />
+			<role name="Adapter" element="org.apache.velocity.runtime.log.SimpleLog4JLogSystem" />
+			<role name="adaptee" element="org.apache.velocity.runtime.log.SimpleLog4JLogSystem::rsvc:org.apache.velocity.runtime.RuntimeServices" />
+			<role name="Request()" element="org.apache.velocity.runtime.log.SimpleLog4JLogSystem::init(org.apache.velocity.runtime.RuntimeServices):void" />
+		</instance>
+		<instance>
+			<role name="Adaptee" element="org.apache.velocity.runtime.RuntimeServices" />
+			<role name="Adapter" element="org.apache.velocity.runtime.resource.ResourceCacheImpl" />
+			<role name="adaptee" element="org.apache.velocity.runtime.resource.ResourceCacheImpl::rsvc:org.apache.velocity.runtime.RuntimeServices" />
+			<role name="Request()" element="org.apache.velocity.runtime.resource.ResourceCacheImpl::initialize(org.apache.velocity.runtime.RuntimeServices):void" />
+		</instance>
+		<instance>
+			<role name="Adaptee" element="org.apache.velocity.runtime.log.Log" />
+			<role name="Adapter" element="org.apache.velocity.util.introspection.IntrospectorCacheImpl" />
+			<role name="adaptee" element="org.apache.velocity.util.introspection.IntrospectorCacheImpl::log:org.apache.velocity.runtime.log.Log" />
+			<role name="Request()" element="org.apache.velocity.util.introspection.IntrospectorCacheImpl::clear():void" />
+		</instance>
+	</pattern>
+	<pattern name="Command" />
+	<pattern name="Composite">
+		<instance>
+			<role name="Component" element="org.apache.velocity.runtime.parser.node.Node" />
+			<role name="Composite" element="org.apache.velocity.runtime.parser.node.SimpleNode" />
+			<role name="Operation()" element="org.apache.velocity.runtime.parser.node.SimpleNode::init(org.apache.velocity.context.InternalContextAdapter, java.lang.Object):java.lang.Object" />
+			<role name="Operation()" element="org.apache.velocity.runtime.parser.node.SimpleNode::render(org.apache.velocity.context.InternalContextAdapter, java.io.Writer):boolean" />
+		</instance>
+	</pattern>
+	<pattern name="Decorator">
+		<instance>
+			<role name="Component" element="org.apache.velocity.context.Context" />
+			<role name="Decorator" element="org.apache.velocity.context.AbstractContext" />
+			<role name="component" element="org.apache.velocity.context.AbstractContext::innerContext:org.apache.velocity.context.Context" />
+			<role name="Operation()" element="org.apache.velocity.context.AbstractContext::get(java.lang.String):java.lang.Object" />
+			<role name="Operation()" element="org.apache.velocity.context.AbstractContext::containsKey(java.lang.Object):boolean" />
+		</instance>
+		<instance>
+			<role name="Component" element="org.apache.velocity.context.Context" />
+			<role name="Decorator" element="org.apache.velocity.test.misc.TestContext" />
+			<role name="component" element="org.apache.velocity.test.misc.TestContext::innerContext:org.apache.velocity.context.Context" />
+			<role name="Operation()" element="org.apache.velocity.test.misc.TestContext::containsKey(java.lang.Object):boolean" />
+			<role name="Operation()" element="org.apache.velocity.test.misc.TestContext::get(java.lang.String):java.lang.Object" />
+			<role name="Operation()" element="org.apache.velocity.test.misc.TestContext::put(java.lang.String, java.lang.Object):java.lang.Object" />
+			<role name="Operation()" element="org.apache.velocity.test.misc.TestContext::remove(java.lang.Object):java.lang.Object" />
+		</instance>
+		<instance>
+			<role name="Component" element="org.apache.velocity.util.introspection.Uberspect" />
+			<role name="Decorator" element="org.apache.velocity.util.introspection.AbstractChainableUberspector" />
+			<role name="component" element="org.apache.velocity.util.introspection.AbstractChainableUberspector::inner:org.apache.velocity.util.introspection.Uberspect" />
+			<role name="Operation()" element="org.apache.velocity.util.introspection.AbstractChainableUberspector::init():void" />
+			<role name="Operation()" element="org.apache.velocity.util.introspection.AbstractChainableUberspector::getIterator(java.lang.Object, org.apache.velocity.util.introspection.Info):java.util.Iterator" />
+			<role name="Operation()" element="org.apache.velocity.util.introspection.AbstractChainableUberspector::getMethod(java.lang.Object, java.lang.String, java.lang.Object[], org.apache.velocity.util.introspection.Info):org.apache.velocity.util.introspection.VelMethod" />
+			<role name="Operation()" element="org.apache.velocity.util.introspection.AbstractChainableUberspector::getPropertyGet(java.lang.Object, java.lang.String, org.apache.velocity.util.introspection.Info):org.apache.velocity.util.introspection.VelPropertyGet" />
+			<role name="Operation()" element="org.apache.velocity.util.introspection.AbstractChainableUberspector::getPropertySet(java.lang.Object, java.lang.String, java.lang.Object, org.apache.velocity.util.introspection.Info):org.apache.velocity.util.introspection.VelPropertySet" />
+		</instance>
+		<instance>
+			<role name="Component" element="org.apache.velocity.util.introspection.Uberspect" />
+			<role name="Decorator" element="org.apache.velocity.util.introspection.LinkingUberspector" />
+			<role name="component" element="org.apache.velocity.util.introspection.LinkingUberspector::leftUberspect:org.apache.velocity.util.introspection.Uberspect" />
+			<role name="component" element="org.apache.velocity.util.introspection.LinkingUberspector::rightUberspect:org.apache.velocity.util.introspection.Uberspect" />
+			<role name="Operation()" element="org.apache.velocity.util.introspection.LinkingUberspector::init():void" />
+			<role name="Operation()" element="org.apache.velocity.util.introspection.LinkingUberspector::getIterator(java.lang.Object, org.apache.velocity.util.introspection.Info):java.util.Iterator" />
+			<role name="Operation()" element="org.apache.velocity.util.introspection.LinkingUberspector::getMethod(java.lang.Object, java.lang.String, java.lang.Object[], org.apache.velocity.util.introspection.Info):org.apache.velocity.util.introspection.VelMethod" />
+			<role name="Operation()" element="org.apache.velocity.util.introspection.LinkingUberspector::getPropertyGet(java.lang.Object, java.lang.String, org.apache.velocity.util.introspection.Info):org.apache.velocity.util.introspection.VelPropertyGet" />
+			<role name="Operation()" element="org.apache.velocity.util.introspection.LinkingUberspector::getPropertySet(java.lang.Object, java.lang.String, java.lang.Object, org.apache.velocity.util.introspection.Info):org.apache.velocity.util.introspection.VelPropertySet" />
+		</instance>
+	</pattern>
+	<pattern name="Observer">
+		<instance>
+			<role name="Observer" element="org.apache.velocity.runtime.parser.node.Node" />
+			<role name="Subject" element="org.apache.velocity.runtime.parser.JJTParserState" />
+			<role name="Notify()" element="org.apache.velocity.runtime.parser.JJTParserState::closeNodeScope(org.apache.velocity.runtime.parser.node.Node, int):void" />
+			<role name="Notify()" element="org.apache.velocity.runtime.parser.JJTParserState::closeNodeScope(org.apache.velocity.runtime.parser.node.Node, boolean):void" />
+		</instance>
+	</pattern>
+	<pattern name="State">
+		<instance>
+			<role name="Context" element="org.apache.velocity.app.tools.VelocityFormatter" />
+			<role name="State" element="org.apache.velocity.context.Context" />
+			<role name="state" element="org.apache.velocity.app.tools.VelocityFormatter::context:org.apache.velocity.context.Context" />
+			<role name="Request()" element="org.apache.velocity.app.tools.VelocityFormatter::makeAlternator(java.lang.String, java.lang.String, java.lang.String):java.lang.String" />
+			<role name="Request()" element="org.apache.velocity.app.tools.VelocityFormatter::makeAlternator(java.lang.String, java.lang.String, java.lang.String, java.lang.String):java.lang.String" />
+			<role name="Request()" element="org.apache.velocity.app.tools.VelocityFormatter::makeAlternator(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String):java.lang.String" />
+			<role name="Request()" element="org.apache.velocity.app.tools.VelocityFormatter::makeAutoAlternator(java.lang.String, java.lang.String, java.lang.String):java.lang.String" />
+		</instance>
+		<instance>
+			<role name="Context" element="org.apache.velocity.texen.Generator" />
+			<role name="State" element="org.apache.velocity.context.Context" />
+			<role name="state" element="org.apache.velocity.texen.Generator::controlContext:org.apache.velocity.context.Context" />
+			<role name="Request()" element="org.apache.velocity.texen.Generator::parse(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.Object):java.lang.String" />
+		</instance>
+		<instance>
+			<role name="State" element="org.apache.velocity.runtime.parser.node.Node" />
+			<role name="Context" element="org.apache.velocity.runtime.directive.Define" />
+			<role name="state" element="org.apache.velocity.runtime.directive.Define::block:org.apache.velocity.runtime.parser.node.Node" />
+			<role name="Request()" element="org.apache.velocity.runtime.directive.Define::init(org.apache.velocity.runtime.RuntimeServices, org.apache.velocity.context.InternalContextAdapter, org.apache.velocity.runtime.parser.node.Node):void" />
+		</instance>
+		<instance>
+			<role name="State" element="org.apache.velocity.runtime.parser.node.Node" />
+			<role name="Context" element="org.apache.velocity.runtime.directive.RuntimeMacro" />
+			<role name="state" element="org.apache.velocity.runtime.directive.RuntimeMacro::node:org.apache.velocity.runtime.parser.node.Node" />
+			<role name="Request()" element="org.apache.velocity.runtime.directive.RuntimeMacro::init(org.apache.velocity.runtime.RuntimeServices, org.apache.velocity.context.InternalContextAdapter, org.apache.velocity.runtime.parser.node.Node):void" />
+			<role name="Request()" element="org.apache.velocity.runtime.directive.RuntimeMacro::getLiteral():java.lang.String" />
+		</instance>
+		<instance>
+			<role name="State" element="org.apache.velocity.runtime.directive.Directive" />
+			<role name="Context" element="org.apache.velocity.runtime.parser.node.ASTDirective" />
+			<role name="state" element="org.apache.velocity.runtime.parser.node.ASTDirective::directive:org.apache.velocity.runtime.directive.Directive" />
+			<role name="Request()" element="org.apache.velocity.runtime.parser.node.ASTDirective::render(org.apache.velocity.context.InternalContextAdapter, java.io.Writer):boolean" />
+		</instance>
+		<instance>
+			<role name="State" element="org.apache.velocity.runtime.RuntimeServices" />
+			<role name="Context" element="org.apache.velocity.runtime.VelocimacroFactory" />
+			<role name="state" element="org.apache.velocity.runtime.VelocimacroFactory::rsvc:org.apache.velocity.runtime.RuntimeServices" />
+			<role name="Request()" element="org.apache.velocity.runtime.VelocimacroFactory::initVelocimacro():void" />
+			<role name="Request()" element="org.apache.velocity.runtime.VelocimacroFactory::addVelocimacro(java.lang.String, java.lang.String, java.lang.String[], java.lang.String):boolean" />
+			<role name="Request()" element="org.apache.velocity.runtime.VelocimacroFactory::getVelocimacro(java.lang.String, java.lang.String, java.lang.String):org.apache.velocity.runtime.directive.Directive" />
+		</instance>
+		<instance>
+			<role name="Context" element="org.apache.velocity.runtime.log.RuntimeLoggerLog" />
+			<role name="State" element="org.apache.velocity.runtime.RuntimeLogger" />
+			<role name="state" element="org.apache.velocity.runtime.log.RuntimeLoggerLog::rlog:org.apache.velocity.runtime.RuntimeLogger" />
+			<role name="Request()" element="org.apache.velocity.runtime.log.RuntimeLoggerLog::debug(java.lang.Object):void" />
+			<role name="Request()" element="org.apache.velocity.runtime.log.RuntimeLoggerLog::debug(java.lang.Object, java.lang.Throwable):void" />
+			<role name="Request()" element="org.apache.velocity.runtime.log.RuntimeLoggerLog::info(java.lang.Object):void" />
+			<role name="Request()" element="org.apache.velocity.runtime.log.RuntimeLoggerLog::info(java.lang.Object, java.lang.Throwable):void" />
+			<role name="Request()" element="org.apache.velocity.runtime.log.RuntimeLoggerLog::warn(java.lang.Object):void" />
+			<role name="Request()" element="org.apache.velocity.runtime.log.RuntimeLoggerLog::warn(java.lang.Object, java.lang.Throwable):void" />
+			<role name="Request()" element="org.apache.velocity.runtime.log.RuntimeLoggerLog::error(java.lang.Object):void" />
+			<role name="Request()" element="org.apache.velocity.runtime.log.RuntimeLoggerLog::error(java.lang.Object, java.lang.Throwable):void" />
+		</instance>
+		<instance>
+			<role name="Context" element="org.apache.velocity.context.InternalContextAdapterImpl" />
+			<role name="State" element="org.apache.velocity.context.InternalHousekeepingContext" />
+			<role name="state" element="org.apache.velocity.context.InternalContextAdapterImpl::icb:org.apache.velocity.context.InternalHousekeepingContext" />
+			<role name="Request()" element="org.apache.velocity.context.InternalContextAdapterImpl::pushCurrentTemplateName(java.lang.String):void" />
+			<role name="Request()" element="org.apache.velocity.context.InternalContextAdapterImpl::popCurrentTemplateName():void" />
+			<role name="Request()" element="org.apache.velocity.context.InternalContextAdapterImpl::getCurrentTemplateName():java.lang.String" />
+			<role name="Request()" element="org.apache.velocity.context.InternalContextAdapterImpl::getTemplateNameStack():java.lang.Object[]" />
+			<role name="Request()" element="org.apache.velocity.context.InternalContextAdapterImpl::pushCurrentMacroName(java.lang.String):void" />
+			<role name="Request()" element="org.apache.velocity.context.InternalContextAdapterImpl::popCurrentMacroName():void" />
+			<role name="Request()" element="org.apache.velocity.context.InternalContextAdapterImpl::getCurrentMacroName():java.lang.String" />
+			<role name="Request()" element="org.apache.velocity.context.InternalContextAdapterImpl::getCurrentMacroCallDepth():int" />
+			<role name="Request()" element="org.apache.velocity.context.InternalContextAdapterImpl::getMacroNameStack():java.lang.Object[]" />
+			<role name="Request()" element="org.apache.velocity.context.InternalContextAdapterImpl::icacheGet(java.lang.Object):org.apache.velocity.util.introspection.IntrospectionCacheData" />
+			<role name="Request()" element="org.apache.velocity.context.InternalContextAdapterImpl::icachePut(java.lang.Object, org.apache.velocity.util.introspection.IntrospectionCacheData):void" />
+			<role name="Request()" element="org.apache.velocity.context.InternalContextAdapterImpl::setCurrentResource(org.apache.velocity.runtime.resource.Resource):void" />
+			<role name="Request()" element="org.apache.velocity.context.InternalContextAdapterImpl::getCurrentResource():org.apache.velocity.runtime.resource.Resource" />
+			<role name="Request()" element="org.apache.velocity.context.InternalContextAdapterImpl::getAllowRendering():boolean" />
+			<role name="Request()" element="org.apache.velocity.context.InternalContextAdapterImpl::setAllowRendering(boolean):void" />
+			<role name="Request()" element="org.apache.velocity.context.InternalContextAdapterImpl::setMacroLibraries(java.util.List):void" />
+			<role name="Request()" element="org.apache.velocity.context.InternalContextAdapterImpl::getMacroLibraries():java.util.List" />
+		</instance>
+		<instance>
+			<role name="Context" element="org.apache.velocity.runtime.parser.node.SimpleNode" />
+			<role name="State" element="org.apache.velocity.runtime.RuntimeServices" />
+			<role name="state" element="org.apache.velocity.runtime.parser.node.SimpleNode::rsvc:org.apache.velocity.runtime.RuntimeServices" />
+			<role name="Request()" element="org.apache.velocity.runtime.parser.node.SimpleNode::init(org.apache.velocity.context.InternalContextAdapter, java.lang.Object):java.lang.Object" />
+		</instance>
+		<instance>
+			<role name="Context" element="org.apache.velocity.runtime.log.AvalonLogChute" />
+			<role name="State" element="org.apache.velocity.runtime.RuntimeServices" />
+			<role name="state" element="org.apache.velocity.runtime.log.AvalonLogChute::rsvc:org.apache.velocity.runtime.RuntimeServices" />
+			<role name="Request()" element="org.apache.velocity.runtime.log.AvalonLogChute::init(org.apache.velocity.runtime.RuntimeServices):void" />
+		</instance>
+		<instance>
+			<role name="Context" element="org.apache.velocity.runtime.log.Log4JLogChute" />
+			<role name="State" element="org.apache.velocity.runtime.RuntimeServices" />
+			<role name="state" element="org.apache.velocity.runtime.log.Log4JLogChute::rsvc:org.apache.velocity.runtime.RuntimeServices" />
+			<role name="Request()" element="org.apache.velocity.runtime.log.Log4JLogChute::init(org.apache.velocity.runtime.RuntimeServices):void" />
+			<role name="Request()" element="org.apache.velocity.runtime.log.Log4JLogChute::initAppender(java.lang.String):void" />
+		</instance>
+		<instance>
+			<role name="Context" element="org.apache.velocity.runtime.parser.ParserTokenManager" />
+			<role name="State" element="org.apache.velocity.runtime.parser.CharStream" />
+			<role name="state" element="org.apache.velocity.runtime.parser.ParserTokenManager::input_stream:org.apache.velocity.runtime.parser.CharStream" />
+			<role name="Request()" element="org.apache.velocity.runtime.parser.ParserTokenManager::jjStartNfaWithStates_0(int, int, int):int" />
+			<role name="Request()" element="org.apache.velocity.runtime.parser.ParserTokenManager::jjMoveStringLiteralDfa1_0(long):int" />
+			<role name="Request()" element="org.apache.velocity.runtime.parser.ParserTokenManager::jjMoveStringLiteralDfa2_0(long, long):int" />
+			<role name="Request()" element="org.apache.velocity.runtime.parser.ParserTokenManager::jjMoveStringLiteralDfa3_0(long, long):int" />
+			<role name="Request()" element="org.apache.velocity.runtime.parser.ParserTokenManager::jjMoveStringLiteralDfa4_0(long, long):int" />
+			<role name="Request()" element="org.apache.velocity.runtime.parser.ParserTokenManager::jjMoveNfa_0(int, int):int" />
+			<role name="Request()" element="org.apache.velocity.runtime.parser.ParserTokenManager::jjStartNfaWithStates_6(int, int, int):int" />
+			<role name="Request()" element="org.apache.velocity.runtime.parser.ParserTokenManager::jjMoveStringLiteralDfa1_6(long):int" />
+			<role name="Request()" element="org.apache.velocity.runtime.parser.ParserTokenManager::jjMoveNfa_6(int, int):int" />
+			<role name="Request()" element="org.apache.velocity.runtime.parser.ParserTokenManager::jjStartNfaWithStates_5(int, int, int):int" />
+			<role name="Request()" element="org.apache.velocity.runtime.parser.ParserTokenManager::jjMoveStringLiteralDfa1_5(long):int" />
+			<role name="Request()" element="org.apache.velocity.runtime.parser.ParserTokenManager::jjMoveNfa_5(int, int):int" />
+			<role name="Request()" element="org.apache.velocity.runtime.parser.ParserTokenManager::jjStartNfaWithStates_3(int, int, int):int" />
+			<role name="Request()" element="org.apache.velocity.runtime.parser.ParserTokenManager::jjMoveStringLiteralDfa1_3(long):int" />
+			<role name="Request()" element="org.apache.velocity.runtime.parser.ParserTokenManager::jjMoveNfa_3(int, int):int" />
+			<role name="Request()" element="org.apache.velocity.runtime.parser.ParserTokenManager::jjStartNfaWithStates_7(int, int, int):int" />
+			<role name="Request()" element="org.apache.velocity.runtime.parser.ParserTokenManager::jjMoveStringLiteralDfa1_7(long):int" />
+			<role name="Request()" element="org.apache.velocity.runtime.parser.ParserTokenManager::jjMoveNfa_7(int, int):int" />
+			<role name="Request()" element="org.apache.velocity.runtime.parser.ParserTokenManager::jjStartNfaWithStates_8(int, int, int):int" />
+			<role name="Request()" element="org.apache.velocity.runtime.parser.ParserTokenManager::jjMoveStringLiteralDfa1_8(long):int" />
+			<role name="Request()" element="org.apache.velocity.runtime.parser.ParserTokenManager::jjMoveNfa_8(int, int):int" />
+			<role name="Request()" element="org.apache.velocity.runtime.parser.ParserTokenManager::jjStartNfaWithStates_4(int, int, int):int" />
+			<role name="Request()" element="org.apache.velocity.runtime.parser.ParserTokenManager::jjMoveStringLiteralDfa1_4(long):int" />
+			<role name="Request()" element="org.apache.velocity.runtime.parser.ParserTokenManager::jjMoveStringLiteralDfa2_4(long, long):int" />
+			<role name="Request()" element="org.apache.velocity.runtime.parser.ParserTokenManager::jjMoveStringLiteralDfa3_4(long, long):int" />
+			<role name="Request()" element="org.apache.velocity.runtime.parser.ParserTokenManager::jjMoveStringLiteralDfa4_4(long, long):int" />
+			<role name="Request()" element="org.apache.velocity.runtime.parser.ParserTokenManager::jjMoveNfa_4(int, int):int" />
+			<role name="Request()" element="org.apache.velocity.runtime.parser.ParserTokenManager::jjStartNfaWithStates_1(int, int, int):int" />
+			<role name="Request()" element="org.apache.velocity.runtime.parser.ParserTokenManager::jjMoveStringLiteralDfa1_1(long):int" />
+			<role name="Request()" element="org.apache.velocity.runtime.parser.ParserTokenManager::jjMoveStringLiteralDfa2_1(long, long):int" />
+			<role name="Request()" element="org.apache.velocity.runtime.parser.ParserTokenManager::jjMoveStringLiteralDfa3_1(long, long):int" />
+			<role name="Request()" element="org.apache.velocity.runtime.parser.ParserTokenManager::jjMoveStringLiteralDfa4_1(long, long):int" />
+			<role name="Request()" element="org.apache.velocity.runtime.parser.ParserTokenManager::jjMoveNfa_1(int, int):int" />
+			<role name="Request()" element="org.apache.velocity.runtime.parser.ParserTokenManager::jjStartNfaWithStates_2(int, int, int):int" />
+			<role name="Request()" element="org.apache.velocity.runtime.parser.ParserTokenManager::jjMoveStringLiteralDfa1_2(long):int" />
+			<role name="Request()" element="org.apache.velocity.runtime.parser.ParserTokenManager::jjMoveStringLiteralDfa2_2(long, long):int" />
+			<role name="Request()" element="org.apache.velocity.runtime.parser.ParserTokenManager::jjMoveStringLiteralDfa3_2(long, long):int" />
+			<role name="Request()" element="org.apache.velocity.runtime.parser.ParserTokenManager::jjMoveStringLiteralDfa4_2(long, long):int" />
+			<role name="Request()" element="org.apache.velocity.runtime.parser.ParserTokenManager::jjMoveNfa_2(int, int):int" />
+			<role name="Request()" element="org.apache.velocity.runtime.parser.ParserTokenManager::jjFillToken():org.apache.velocity.runtime.parser.Token" />
+			<role name="Request()" element="org.apache.velocity.runtime.parser.ParserTokenManager::getNextToken():org.apache.velocity.runtime.parser.Token" />
+			<role name="Request()" element="org.apache.velocity.runtime.parser.ParserTokenManager::SkipLexicalActions(org.apache.velocity.runtime.parser.Token):void" />
+			<role name="Request()" element="org.apache.velocity.runtime.parser.ParserTokenManager::MoreLexicalActions():void" />
+			<role name="Request()" element="org.apache.velocity.runtime.parser.ParserTokenManager::TokenLexicalActions(org.apache.velocity.runtime.parser.Token):void" />
+		</instance>
+		<instance>
+			<role name="Context" element="org.apache.velocity.runtime.log.LogChuteSystem" />
+			<role name="State" element="org.apache.velocity.runtime.log.LogSystem" />
+			<role name="state" element="org.apache.velocity.runtime.log.LogChuteSystem::logSystem:org.apache.velocity.runtime.log.LogSystem" />
+			<role name="Request()" element="org.apache.velocity.runtime.log.LogChuteSystem::init(org.apache.velocity.runtime.RuntimeServices):void" />
+			<role name="Request()" element="org.apache.velocity.runtime.log.LogChuteSystem::log(int, java.lang.String):void" />
+			<role name="Request()" element="org.apache.velocity.runtime.log.LogChuteSystem::log(int, java.lang.String, java.lang.Throwable):void" />
+		</instance>
+		<instance>
+			<role name="Context" element="org.apache.velocity.context.EvaluateContext" />
+			<role name="State" element="org.apache.velocity.context.Context" />
+			<role name="state" element="org.apache.velocity.context.EvaluateContext::localContext:org.apache.velocity.context.Context" />
+			<role name="Request()" element="org.apache.velocity.context.EvaluateContext::put(java.lang.String, java.lang.Object):java.lang.Object" />
+			<role name="Request()" element="org.apache.velocity.context.EvaluateContext::get(java.lang.String):java.lang.Object" />
+			<role name="Request()" element="org.apache.velocity.context.EvaluateContext::containsKey(java.lang.Object):boolean" />
+			<role name="Request()" element="org.apache.velocity.context.EvaluateContext::getKeys():java.lang.Object[]" />
+			<role name="Request()" element="org.apache.velocity.context.EvaluateContext::remove(java.lang.Object):java.lang.Object" />
+			<role name="Request()" element="org.apache.velocity.context.EvaluateContext::localPut(java.lang.String, java.lang.Object):java.lang.Object" />
+		</instance>
+		<instance>
+			<role name="Context" element="org.apache.velocity.context.InternalContextAdapterImpl" />
+			<role name="State" element="org.apache.velocity.context.Context" />
+			<role name="state" element="org.apache.velocity.context.InternalContextAdapterImpl::context:org.apache.velocity.context.Context" />
+			<role name="Request()" element="org.apache.velocity.context.InternalContextAdapterImpl::put(java.lang.String, java.lang.Object):java.lang.Object" />
+			<role name="Request()" element="org.apache.velocity.context.InternalContextAdapterImpl::get(java.lang.String):java.lang.Object" />
+			<role name="Request()" element="org.apache.velocity.context.InternalContextAdapterImpl::containsKey(java.lang.Object):boolean" />
+			<role name="Request()" element="org.apache.velocity.context.InternalContextAdapterImpl::getKeys():java.lang.Object[]" />
+			<role name="Request()" element="org.apache.velocity.context.InternalContextAdapterImpl::remove(java.lang.Object):java.lang.Object" />
+		</instance>
+		<instance>
+			<role name="Context" element="org.apache.velocity.app.event.implement.IncludeNotFound" />
+			<role name="State" element="org.apache.velocity.runtime.RuntimeServices" />
+			<role name="state" element="org.apache.velocity.app.event.implement.IncludeNotFound::rs:org.apache.velocity.runtime.RuntimeServices" />
+			<role name="Request()" element="org.apache.velocity.app.event.implement.IncludeNotFound::includeEvent(java.lang.String, java.lang.String, java.lang.String):java.lang.String" />
+			<role name="Request()" element="org.apache.velocity.app.event.implement.IncludeNotFound::setRuntimeServices(org.apache.velocity.runtime.RuntimeServices):void" />
+		</instance>
+		<instance>
+			<role name="Context" element="org.apache.velocity.app.event.implement.PrintExceptions" />
+			<role name="State" element="org.apache.velocity.runtime.RuntimeServices" />
+			<role name="state" element="org.apache.velocity.app.event.implement.PrintExceptions::rs:org.apache.velocity.runtime.RuntimeServices" />
+			<role name="Request()" element="org.apache.velocity.app.event.implement.PrintExceptions::methodException(java.lang.Class, java.lang.String, java.lang.Exception):java.lang.Object" />
+		</instance>
+		<instance>
+			<role name="Context" element="org.apache.velocity.util.introspection.SecureUberspector" />
+			<role name="State" element="org.apache.velocity.runtime.RuntimeServices" />
+			<role name="state" element="org.apache.velocity.util.introspection.SecureUberspector::runtimeServices:org.apache.velocity.runtime.RuntimeServices" />
+			<role name="Request()" element="org.apache.velocity.util.introspection.SecureUberspector::init():void" />
+		</instance>
+		<instance>
+			<role name="Context" element="org.apache.velocity.runtime.RuntimeInstance" />
+			<role name="State" element="org.apache.velocity.runtime.resource.ResourceManager" />
+			<role name="state" element="org.apache.velocity.runtime.RuntimeInstance::resourceManager:org.apache.velocity.runtime.resource.ResourceManager" />
+			<role name="Request()" element="org.apache.velocity.runtime.RuntimeInstance::initializeResourceManager():void" />
+			<role name="Request()" element="org.apache.velocity.runtime.RuntimeInstance::getTemplate(java.lang.String, java.lang.String):org.apache.velocity.Template" />
+			<role name="Request()" element="org.apache.velocity.runtime.RuntimeInstance::getContent(java.lang.String, java.lang.String):org.apache.velocity.runtime.resource.ContentResource" />
+			<role name="Request()" element="org.apache.velocity.runtime.RuntimeInstance::getLoaderNameForResource(java.lang.String):java.lang.String" />
+		</instance>
+		<instance>
+			<role name="Context" element="org.apache.velocity.runtime.resource.ResourceManagerImpl" />
+			<role name="State" element="org.apache.velocity.runtime.RuntimeServices" />
+			<role name="state" element="org.apache.velocity.runtime.resource.ResourceManagerImpl::rsvc:org.apache.velocity.runtime.RuntimeServices" />
+			<role name="Request()" element="org.apache.velocity.runtime.resource.ResourceManagerImpl::initialize(org.apache.velocity.runtime.RuntimeServices):void" />
+			<role name="Request()" element="org.apache.velocity.runtime.resource.ResourceManagerImpl::assembleResourceLoaderInitializers():void" />
+		</instance>
+		<instance>
+			<role name="Context" element="org.apache.velocity.context.ProxyVMContext" />
+			<role name="State" element="org.apache.velocity.runtime.RuntimeServices" />
+			<role name="state" element="org.apache.velocity.context.ProxyVMContext::rsvc:org.apache.velocity.runtime.RuntimeServices" />
+			<role name="Request()" element="org.apache.velocity.context.ProxyVMContext::get(java.lang.String):java.lang.Object" />
+		</instance>
+		<instance>
+			<role name="Context" element="org.apache.velocity.runtime.RuntimeInstance" />
+			<role name="State" element="org.apache.velocity.runtime.ParserPool" />
+			<role name="state" element="org.apache.velocity.runtime.RuntimeInstance::parserPool:org.apache.velocity.runtime.ParserPool" />
+			<role name="Request()" element="org.apache.velocity.runtime.RuntimeInstance::initializeParserPool():void" />
+			<role name="Request()" element="org.apache.velocity.runtime.RuntimeInstance::parse(java.io.Reader, java.lang.String, boolean):org.apache.velocity.runtime.parser.node.SimpleNode" />
+		</instance>
+		<instance>
+			<role name="Context" element="org.apache.velocity.runtime.parser.Parser" />
+			<role name="State" element="org.apache.velocity.runtime.RuntimeServices" />
+			<role name="state" element="org.apache.velocity.runtime.parser.Parser::rsvc:org.apache.velocity.runtime.RuntimeServices" />
+			<role name="Request()" element="org.apache.velocity.runtime.parser.Parser::parse(java.io.Reader, java.lang.String):org.apache.velocity.runtime.parser.node.SimpleNode" />
+			<role name="Request()" element="org.apache.velocity.runtime.parser.Parser::escapedDirective(java.lang.String):java.lang.String" />
+			<role name="Request()" element="org.apache.velocity.runtime.parser.Parser::Escape():void" />
+			<role name="Request()" element="org.apache.velocity.runtime.parser.Parser::Directive():org.apache.velocity.runtime.parser.node.SimpleNode" />
+		</instance>
+		<instance>
+			<role name="Context" element="org.apache.velocity.runtime.resource.ResourceManagerImpl" />
+			<role name="State" element="org.apache.velocity.runtime.resource.ResourceCache" />
+			<role name="state" element="org.apache.velocity.runtime.resource.ResourceManagerImpl::globalCache:org.apache.velocity.runtime.resource.ResourceCache" />
+			<role name="Request()" element="org.apache.velocity.runtime.resource.ResourceManagerImpl::initialize(org.apache.velocity.runtime.RuntimeServices):void" />
+			<role name="Request()" element="org.apache.velocity.runtime.resource.ResourceManagerImpl::getResource(java.lang.String, int, java.lang.String):org.apache.velocity.runtime.resource.Resource" />
+			<role name="Request()" element="org.apache.velocity.runtime.resource.ResourceManagerImpl::refreshResource(org.apache.velocity.runtime.resource.Resource, java.lang.String):org.apache.velocity.runtime.resource.Resource" />
+		</instance>
+		<instance>
+			<role name="Context" element="org.apache.velocity.test.EventHandlingTestCase$TestEventCartridge" />
+			<role name="State" element="org.apache.velocity.context.Context" />
+			<role name="state" element="org.apache.velocity.test.EventHandlingTestCase$TestEventCartridge::context:org.apache.velocity.context.Context" />
+			<role name="Request()" element="org.apache.velocity.test.EventHandlingTestCase$TestEventCartridge::methodException(java.lang.Class, java.lang.String, java.lang.Exception):java.lang.Object" />
+		</instance>
+		<instance>
+			<role name="Context" element="org.apache.velocity.context.InternalContextAdapterImpl" />
+			<role name="State" element="org.apache.velocity.context.InternalEventContext" />
+			<role name="state" element="org.apache.velocity.context.InternalContextAdapterImpl::iec:org.apache.velocity.context.InternalEventContext" />
+			<role name="Request()" element="org.apache.velocity.context.InternalContextAdapterImpl::attachEventCartridge(org.apache.velocity.app.event.EventCartridge):org.apache.velocity.app.event.EventCartridge" />
+			<role name="Request()" element="org.apache.velocity.context.InternalContextAdapterImpl::getEventCartridge():org.apache.velocity.app.event.EventCartridge" />
+		</instance>
+		<instance>
+			<role name="Context" element="org.apache.velocity.util.introspection.UberspectImpl$VelGetterImpl" />
+			<role name="State" element="org.apache.velocity.runtime.parser.node.AbstractExecutor" />
+			<role name="state" element="org.apache.velocity.util.introspection.UberspectImpl$VelGetterImpl::getExecutor:org.apache.velocity.runtime.parser.node.AbstractExecutor" />
+			<role name="Request()" element="org.apache.velocity.util.introspection.UberspectImpl$VelGetterImpl::invoke(java.lang.Object):java.lang.Object" />
+		</instance>
+		<instance>
+			<role name="Context" element="org.apache.velocity.util.introspection.UberspectImpl$VelSetterImpl" />
+			<role name="State" element="org.apache.velocity.runtime.parser.node.SetExecutor" />
+			<role name="state" element="org.apache.velocity.util.introspection.UberspectImpl$VelSetterImpl::setExecutor:org.apache.velocity.runtime.parser.node.SetExecutor" />
+			<role name="Request()" element="org.apache.velocity.util.introspection.UberspectImpl$VelSetterImpl::invoke(java.lang.Object, java.lang.Object):java.lang.Object" />
+		</instance>
+		<instance>
+			<role name="Context" element="org.apache.velocity.runtime.resource.loader.StringResourceLoader" />
+			<role name="State" element="org.apache.velocity.runtime.resource.util.StringResourceRepository" />
+			<role name="state" element="org.apache.velocity.runtime.resource.loader.StringResourceLoader::repository:org.apache.velocity.runtime.resource.util.StringResourceRepository" />
+			<role name="Request()" element="org.apache.velocity.runtime.resource.loader.StringResourceLoader::init(org.apache.commons.collections.ExtendedProperties):void" />
+			<role name="Request()" element="org.apache.velocity.runtime.resource.loader.StringResourceLoader::resourceExists(java.lang.String):boolean" />
+			<role name="Request()" element="org.apache.velocity.runtime.resource.loader.StringResourceLoader::getResourceStream(java.lang.String):java.io.InputStream" />
+			<role name="Request()" element="org.apache.velocity.runtime.resource.loader.StringResourceLoader::isSourceModified(org.apache.velocity.runtime.resource.Resource):boolean" />
+			<role name="Request()" element="org.apache.velocity.runtime.resource.loader.StringResourceLoader::getLastModified(org.apache.velocity.runtime.resource.Resource):long" />
+		</instance>
+		<instance>
+			<role name="Context" element="org.apache.velocity.runtime.RuntimeInstance" />
+			<role name="State" element="org.apache.velocity.util.introspection.Uberspect" />
+			<role name="state" element="org.apache.velocity.runtime.RuntimeInstance::uberSpect:org.apache.velocity.util.introspection.Uberspect" />
+			<role name="Request()" element="org.apache.velocity.runtime.RuntimeInstance::initializeIntrospection():void" />
+		</instance>
+		<instance>
+			<role name="Context" element="org.apache.velocity.runtime.log.SimpleLog4JLogSystem" />
+			<role name="State" element="org.apache.velocity.runtime.RuntimeServices" />
+			<role name="state" element="org.apache.velocity.runtime.log.SimpleLog4JLogSystem::rsvc:org.apache.velocity.runtime.RuntimeServices" />
+			<role name="Request()" element="org.apache.velocity.runtime.log.SimpleLog4JLogSystem::init(org.apache.velocity.runtime.RuntimeServices):void" />
+		</instance>
+		<instance>
+			<role name="Context" element="org.apache.velocity.runtime.resource.ResourceCacheImpl" />
+			<role name="State" element="org.apache.velocity.runtime.RuntimeServices" />
+			<role name="state" element="org.apache.velocity.runtime.resource.ResourceCacheImpl::rsvc:org.apache.velocity.runtime.RuntimeServices" />
+			<role name="Request()" element="org.apache.velocity.runtime.resource.ResourceCacheImpl::initialize(org.apache.velocity.runtime.RuntimeServices):void" />
+		</instance>
+	</pattern>
+	<pattern name="Strategy" />
+	<pattern name="Bridge">
+		<instance>
+			<role name="Abstraction" element="org.apache.velocity.runtime.resource.Resource" />
+			<role name="Implementor" element="org.apache.velocity.runtime.resource.loader.ResourceLoader" />
+			<role name="implementor" element="org.apache.velocity.runtime.resource.Resource::resourceLoader:org.apache.velocity.runtime.resource.loader.ResourceLoader" />
+			<role name="Operation()" element="org.apache.velocity.runtime.resource.Resource::isSourceModified():boolean" />
+		</instance>
+		<instance>
+			<role name="Abstraction" element="org.apache.velocity.app.event.implement.EscapeReference" />
+			<role name="Implementor" element="org.apache.velocity.runtime.RuntimeServices" />
+			<role name="implementor" element="org.apache.velocity.app.event.implement.EscapeReference::rs:org.apache.velocity.runtime.RuntimeServices" />
+			<role name="Operation()" element="org.apache.velocity.app.event.implement.EscapeReference::setRuntimeServices(org.apache.velocity.runtime.RuntimeServices):void" />
+		</instance>
+		<instance>
+			<role name="Abstraction" element="org.apache.velocity.runtime.resource.loader.ResourceLoader" />
+			<role name="Implementor" element="org.apache.velocity.runtime.RuntimeServices" />
+			<role name="implementor" element="org.apache.velocity.runtime.resource.loader.ResourceLoader::rsvc:org.apache.velocity.runtime.RuntimeServices" />
+			<role name="Operation()" element="org.apache.velocity.runtime.resource.loader.ResourceLoader::commonInit(org.apache.velocity.runtime.RuntimeServices, org.apache.commons.collections.ExtendedProperties):void" />
+		</instance>
+	</pattern>
+	<pattern name="Template Method">
+		<instance>
+			<role name="AbstractClass" element="org.apache.velocity.app.event.implement.EscapeReference" />
+			<role name="TemplateMethod()" element="org.apache.velocity.app.event.implement.EscapeReference::referenceInsert(java.lang.String, java.lang.Object):java.lang.Object" />
+			<role name="TemplateMethod()" element="org.apache.velocity.app.event.implement.EscapeReference::setRuntimeServices(org.apache.velocity.runtime.RuntimeServices):void" />
+		</instance>
+		<instance>
+			<role name="AbstractClass" element="org.apache.velocity.context.AbstractContext" />
+			<role name="TemplateMethod()" element="org.apache.velocity.context.AbstractContext::put(java.lang.String, java.lang.Object):java.lang.Object" />
+			<role name="TemplateMethod()" element="org.apache.velocity.context.AbstractContext::get(java.lang.String):java.lang.Object" />
+			<role name="TemplateMethod()" element="org.apache.velocity.context.AbstractContext::containsKey(java.lang.Object):boolean" />
+			<role name="TemplateMethod()" element="org.apache.velocity.context.AbstractContext::getKeys():java.lang.Object[]" />
+			<role name="TemplateMethod()" element="org.apache.velocity.context.AbstractContext::remove(java.lang.Object):java.lang.Object" />
+		</instance>
+		<instance>
+			<role name="AbstractClass" element="org.apache.velocity.runtime.parser.node.ASTMathNode" />
+			<role name="TemplateMethod()" element="org.apache.velocity.runtime.parser.node.ASTMathNode::value(org.apache.velocity.context.InternalContextAdapter):java.lang.Object" />
+		</instance>
+		<instance>
+			<role name="AbstractClass" element="org.apache.velocity.runtime.resource.loader.ResourceLoader" />
+			<role name="TemplateMethod()" element="org.apache.velocity.runtime.resource.loader.ResourceLoader::resourceExists(java.lang.String):boolean" />
+		</instance>
+	</pattern>
+	<pattern name="Visitor">
+		<instance>
+			<role name="Visitor" element="org.apache.velocity.runtime.parser.node.ParserVisitor" />
+			<role name="ConcreteElement" element="org.apache.velocity.runtime.parser.node.ASTAndNode" />
+			<role name="Accept()" element="org.apache.velocity.runtime.parser.node.ASTAndNode::jjtAccept(org.apache.velocity.runtime.parser.node.ParserVisitor, java.lang.Object):java.lang.Object" />
+		</instance>
+		<instance>
+			<role name="Visitor" element="org.apache.velocity.runtime.parser.node.ParserVisitor" />
+			<role name="ConcreteElement" element="org.apache.velocity.runtime.parser.node.ASTAssignment" />
+			<role name="Accept()" element="org.apache.velocity.runtime.parser.node.ASTAssignment::jjtAccept(org.apache.velocity.runtime.parser.node.ParserVisitor, java.lang.Object):java.lang.Object" />
+		</instance>
+		<instance>
+			<role name="Visitor" element="org.apache.velocity.runtime.parser.node.ParserVisitor" />
+			<role name="ConcreteElement" element="org.apache.velocity.runtime.parser.node.ASTBlock" />
+			<role name="Accept()" element="org.apache.velocity.runtime.parser.node.ASTBlock::jjtAccept(org.apache.velocity.runtime.parser.node.ParserVisitor, java.lang.Object):java.lang.Object" />
+		</instance>
+		<instance>
+			<role name="Visitor" element="org.apache.velocity.runtime.parser.node.ParserVisitor" />
+			<role name="ConcreteElement" element="org.apache.velocity.runtime.parser.node.ASTComment" />
+			<role name="Accept()" element="org.apache.velocity.runtime.parser.node.ASTComment::jjtAccept(org.apache.velocity.runtime.parser.node.ParserVisitor, java.lang.Object):java.lang.Object" />
+		</instance>
+		<instance>
+			<role name="Visitor" element="org.apache.velocity.runtime.parser.node.ParserVisitor" />
+			<role name="ConcreteElement" element="org.apache.velocity.runtime.parser.node.ASTDirective" />
+			<role name="Accept()" element="org.apache.velocity.runtime.parser.node.ASTDirective::jjtAccept(org.apache.velocity.runtime.parser.node.ParserVisitor, java.lang.Object):java.lang.Object" />
+		</instance>
+		<instance>
+			<role name="Visitor" element="org.apache.velocity.runtime.parser.node.ParserVisitor" />
+			<role name="ConcreteElement" element="org.apache.velocity.runtime.parser.node.ASTEQNode" />
+			<role name="Accept()" element="org.apache.velocity.runtime.parser.node.ASTEQNode::jjtAccept(org.apache.velocity.runtime.parser.node.ParserVisitor, java.lang.Object):java.lang.Object" />
+		</instance>
+		<instance>
+			<role name="Visitor" element="org.apache.velocity.runtime.parser.node.ParserVisitor" />
+			<role name="ConcreteElement" element="org.apache.velocity.runtime.parser.node.ASTElseIfStatement" />
+			<role name="Accept()" element="org.apache.velocity.runtime.parser.node.ASTElseIfStatement::jjtAccept(org.apache.velocity.runtime.parser.node.ParserVisitor, java.lang.Object):java.lang.Object" />
+		</instance>
+		<instance>
+			<role name="Visitor" element="org.apache.velocity.runtime.parser.node.ParserVisitor" />
+			<role name="ConcreteElement" element="org.apache.velocity.runtime.parser.node.ASTElseStatement" />
+			<role name="Accept()" element="org.apache.velocity.runtime.parser.node.ASTElseStatement::jjtAccept(org.apache.velocity.runtime.parser.node.ParserVisitor, java.lang.Object):java.lang.Object" />
+		</instance>
+		<instance>
+			<role name="Visitor" element="org.apache.velocity.runtime.parser.node.ParserVisitor" />
+			<role name="ConcreteElement" element="org.apache.velocity.runtime.parser.node.ASTEscape" />
+			<role name="Accept()" element="org.apache.velocity.runtime.parser.node.ASTEscape::jjtAccept(org.apache.velocity.runtime.parser.node.ParserVisitor, java.lang.Object):java.lang.Object" />
+		</instance>
+		<instance>
+			<role name="Visitor" element="org.apache.velocity.runtime.parser.node.ParserVisitor" />
+			<role name="ConcreteElement" element="org.apache.velocity.runtime.parser.node.ASTEscapedDirective" />
+			<role name="Accept()" element="org.apache.velocity.runtime.parser.node.ASTEscapedDirective::jjtAccept(org.apache.velocity.runtime.parser.node.ParserVisitor, java.lang.Object):java.lang.Object" />
+		</instance>
+		<instance>
+			<role name="Visitor" element="org.apache.velocity.runtime.parser.node.ParserVisitor" />
+			<role name="ConcreteElement" element="org.apache.velocity.runtime.parser.node.ASTExpression" />
+			<role name="Accept()" element="org.apache.velocity.runtime.parser.node.ASTExpression::jjtAccept(org.apache.velocity.runtime.parser.node.ParserVisitor, java.lang.Object):java.lang.Object" />
+		</instance>
+		<instance>
+			<role name="Visitor" element="org.apache.velocity.runtime.parser.node.ParserVisitor" />
+			<role name="ConcreteElement" element="org.apache.velocity.runtime.parser.node.ASTFalse" />
+			<role name="Accept()" element="org.apache.velocity.runtime.parser.node.ASTFalse::jjtAccept(org.apache.velocity.runtime.parser.node.ParserVisitor, java.lang.Object):java.lang.Object" />
+		</instance>
+		<instance>
+			<role name="Visitor" element="org.apache.velocity.runtime.parser.node.ParserVisitor" />
+			<role name="ConcreteElement" element="org.apache.velocity.runtime.parser.node.ASTFloatingPointLiteral" />
+			<role name="Accept()" element="org.apache.velocity.runtime.parser.node.ASTFloatingPointLiteral::jjtAccept(org.apache.velocity.runtime.parser.node.ParserVisitor, java.lang.Object):java.lang.Object" />
+		</instance>
+		<instance>
+			<role name="Visitor" element="org.apache.velocity.runtime.parser.node.ParserVisitor" />
+			<role name="ConcreteElement" element="org.apache.velocity.runtime.parser.node.ASTGENode" />
+			<role name="Accept()" element="org.apache.velocity.runtime.parser.node.ASTGENode::jjtAccept(org.apache.velocity.runtime.parser.node.ParserVisitor, java.lang.Object):java.lang.Object" />
+		</instance>
+		<instance>
+			<role name="Visitor" element="org.apache.velocity.runtime.parser.node.ParserVisitor" />
+			<role name="ConcreteElement" element="org.apache.velocity.runtime.parser.node.ASTGTNode" />
+			<role name="Accept()" element="org.apache.velocity.runtime.parser.node.ASTGTNode::jjtAccept(org.apache.velocity.runtime.parser.node.ParserVisitor, java.lang.Object):java.lang.Object" />
+		</instance>
+		<instance>
+			<role name="Visitor" element="org.apache.velocity.runtime.parser.node.ParserVisitor" />
+			<role name="ConcreteElement" element="org.apache.velocity.runtime.parser.node.ASTIdentifier" />
+			<role name="Accept()" element="org.apache.velocity.runtime.parser.node.ASTIdentifier::jjtAccept(org.apache.velocity.runtime.parser.node.ParserVisitor, java.lang.Object):java.lang.Object" />
+		</instance>
+		<instance>
+			<role name="Visitor" element="org.apache.velocity.runtime.parser.node.ParserVisitor" />
+			<role name="ConcreteElement" element="org.apache.velocity.runtime.parser.node.ASTIfStatement" />
+			<role name="Accept()" element="org.apache.velocity.runtime.parser.node.ASTIfStatement::jjtAccept(org.apache.velocity.runtime.parser.node.ParserVisitor, java.lang.Object):java.lang.Object" />
+		</instance>
+		<instance>
+			<role name="Visitor" element="org.apache.velocity.runtime.parser.node.ParserVisitor" />
+			<role name="ConcreteElement" element="org.apache.velocity.runtime.parser.node.ASTIncludeStatement" />
+			<role name="Accept()" element="org.apache.velocity.runtime.parser.node.ASTIncludeStatement::jjtAccept(org.apache.velocity.runtime.parser.node.ParserVisitor, java.lang.Object):java.lang.Object" />
+		</instance>
+		<instance>
+			<role name="Visitor" element="org.apache.velocity.runtime.parser.node.ParserVisitor" />
+			<role name="ConcreteElement" element="org.apache.velocity.runtime.parser.node.ASTIntegerLiteral" />
+			<role name="Accept()" element="org.apache.velocity.runtime.parser.node.ASTIntegerLiteral::jjtAccept(org.apache.velocity.runtime.parser.node.ParserVisitor, java.lang.Object):java.lang.Object" />
+		</instance>
+		<instance>
+			<role name="Visitor" element="org.apache.velocity.runtime.parser.node.ParserVisitor" />
+			<role name="ConcreteElement" element="org.apache.velocity.runtime.parser.node.ASTIntegerRange" />
+			<role name="Accept()" element="org.apache.velocity.runtime.parser.node.ASTIntegerRange::jjtAccept(org.apache.velocity.runtime.parser.node.ParserVisitor, java.lang.Object):java.lang.Object" />
+		</instance>
+		<instance>
+			<role name="Visitor" element="org.apache.velocity.runtime.parser.node.ParserVisitor" />
+			<role name="ConcreteElement" element="org.apache.velocity.runtime.parser.node.ASTLENode" />
+			<role name="Accept()" element="org.apache.velocity.runtime.parser.node.ASTLENode::jjtAccept(org.apache.velocity.runtime.parser.node.ParserVisitor, java.lang.Object):java.lang.Object" />
+		</instance>
+		<instance>
+			<role name="Visitor" element="org.apache.velocity.runtime.parser.node.ParserVisitor" />
+			<role name="ConcreteElement" element="org.apache.velocity.runtime.parser.node.ASTLTNode" />
+			<role name="Accept()" element="org.apache.velocity.runtime.parser.node.ASTLTNode::jjtAccept(org.apache.velocity.runtime.parser.node.ParserVisitor, java.lang.Object):java.lang.Object" />
+		</instance>
+		<instance>
+			<role name="Visitor" element="org.apache.velocity.runtime.parser.node.ParserVisitor" />
+			<role name="ConcreteElement" element="org.apache.velocity.runtime.parser.node.ASTMap" />
+			<role name="Accept()" element="org.apache.velocity.runtime.parser.node.ASTMap::jjtAccept(org.apache.velocity.runtime.parser.node.ParserVisitor, java.lang.Object):java.lang.Object" />
+		</instance>
+		<instance>
+			<role name="Visitor" element="org.apache.velocity.runtime.parser.node.ParserVisitor" />
+			<role name="ConcreteElement" element="org.apache.velocity.runtime.parser.node.ASTMathNode" />
+			<role name="Accept()" element="org.apache.velocity.runtime.parser.node.ASTMathNode::jjtAccept(org.apache.velocity.runtime.parser.node.ParserVisitor, java.lang.Object):java.lang.Object" />
+		</instance>
+		<instance>
+			<role name="Visitor" element="org.apache.velocity.runtime.parser.node.ParserVisitor" />
+			<role name="ConcreteElement" element="org.apache.velocity.runtime.parser.node.ASTMethod" />
+			<role name="Accept()" element="org.apache.velocity.runtime.parser.node.ASTMethod::jjtAccept(org.apache.velocity.runtime.parser.node.ParserVisitor, java.lang.Object):java.lang.Object" />
+		</instance>
+		<instance>
+			<role name="Visitor" element="org.apache.velocity.runtime.parser.node.ParserVisitor" />
+			<role name="ConcreteElement" element="org.apache.velocity.runtime.parser.node.ASTNENode" />
+			<role name="Accept()" element="org.apache.velocity.runtime.parser.node.ASTNENode::jjtAccept(org.apache.velocity.runtime.parser.node.ParserVisitor, java.lang.Object):java.lang.Object" />
+		</instance>
+		<instance>
+			<role name="Visitor" element="org.apache.velocity.runtime.parser.node.ParserVisitor" />
+			<role name="ConcreteElement" element="org.apache.velocity.runtime.parser.node.ASTNotNode" />
+			<role name="Accept()" element="org.apache.velocity.runtime.parser.node.ASTNotNode::jjtAccept(org.apache.velocity.runtime.parser.node.ParserVisitor, java.lang.Object):java.lang.Object" />
+		</instance>
+		<instance>
+			<role name="Visitor" element="org.apache.velocity.runtime.parser.node.ParserVisitor" />
+			<role name="ConcreteElement" element="org.apache.velocity.runtime.parser.node.ASTObjectArray" />
+			<role name="Accept()" element="org.apache.velocity.runtime.parser.node.ASTObjectArray::jjtAccept(org.apache.velocity.runtime.parser.node.ParserVisitor, java.lang.Object):java.lang.Object" />
+		</instance>
+		<instance>
+			<role name="Visitor" element="org.apache.velocity.runtime.parser.node.ParserVisitor" />
+			<role name="ConcreteElement" element="org.apache.velocity.runtime.parser.node.ASTOrNode" />
+			<role name="Accept()" element="org.apache.velocity.runtime.parser.node.ASTOrNode::jjtAccept(org.apache.velocity.runtime.parser.node.ParserVisitor, java.lang.Object):java.lang.Object" />
+		</instance>
+		<instance>
+			<role name="Visitor" element="org.apache.velocity.runtime.parser.node.ParserVisitor" />
+			<role name="ConcreteElement" element="org.apache.velocity.runtime.parser.node.ASTParameters" />
+			<role name="Accept()" element="org.apache.velocity.runtime.parser.node.ASTParameters::jjtAccept(org.apache.velocity.runtime.parser.node.ParserVisitor, java.lang.Object):java.lang.Object" />
+		</instance>
+		<instance>
+			<role name="Visitor" element="org.apache.velocity.runtime.parser.node.ParserVisitor" />
+			<role name="ConcreteElement" element="org.apache.velocity.runtime.parser.node.ASTReference" />
+			<role name="Accept()" element="org.apache.velocity.runtime.parser.node.ASTReference::jjtAccept(org.apache.velocity.runtime.parser.node.ParserVisitor, java.lang.Object):java.lang.Object" />
+		</instance>
+		<instance>
+			<role name="Visitor" element="org.apache.velocity.runtime.parser.node.ParserVisitor" />
+			<role name="ConcreteElement" element="org.apache.velocity.runtime.parser.node.ASTSetDirective" />
+			<role name="Accept()" element="org.apache.velocity.runtime.parser.node.ASTSetDirective::jjtAccept(org.apache.velocity.runtime.parser.node.ParserVisitor, java.lang.Object):java.lang.Object" />
+		</instance>
+		<instance>
+			<role name="Visitor" element="org.apache.velocity.runtime.parser.node.ParserVisitor" />
+			<role name="ConcreteElement" element="org.apache.velocity.runtime.parser.node.ASTStop" />
+			<role name="Accept()" element="org.apache.velocity.runtime.parser.node.ASTStop::jjtAccept(org.apache.velocity.runtime.parser.node.ParserVisitor, java.lang.Object):java.lang.Object" />
+		</instance>
+		<instance>
+			<role name="Visitor" element="org.apache.velocity.runtime.parser.node.ParserVisitor" />
+			<role name="ConcreteElement" element="org.apache.velocity.runtime.parser.node.ASTStringLiteral" />
+			<role name="Accept()" element="org.apache.velocity.runtime.parser.node.ASTStringLiteral::jjtAccept(org.apache.velocity.runtime.parser.node.ParserVisitor, java.lang.Object):java.lang.Object" />
+		</instance>
+		<instance>
+			<role name="Visitor" element="org.apache.velocity.runtime.parser.node.ParserVisitor" />
+			<role name="ConcreteElement" element="org.apache.velocity.runtime.parser.node.ASTText" />
+			<role name="Accept()" element="org.apache.velocity.runtime.parser.node.ASTText::jjtAccept(org.apache.velocity.runtime.parser.node.ParserVisitor, java.lang.Object):java.lang.Object" />
+		</instance>
+		<instance>
+			<role name="Visitor" element="org.apache.velocity.runtime.parser.node.ParserVisitor" />
+			<role name="ConcreteElement" element="org.apache.velocity.runtime.parser.node.ASTTrue" />
+			<role name="Accept()" element="org.apache.velocity.runtime.parser.node.ASTTrue::jjtAccept(org.apache.velocity.runtime.parser.node.ParserVisitor, java.lang.Object):java.lang.Object" />
+		</instance>
+		<instance>
+			<role name="Visitor" element="org.apache.velocity.runtime.parser.node.ParserVisitor" />
+			<role name="ConcreteElement" element="org.apache.velocity.runtime.parser.node.ASTVariable" />
+			<role name="Accept()" element="org.apache.velocity.runtime.parser.node.ASTVariable::jjtAccept(org.apache.velocity.runtime.parser.node.ParserVisitor, java.lang.Object):java.lang.Object" />
+		</instance>
+		<instance>
+			<role name="Visitor" element="org.apache.velocity.runtime.parser.node.ParserVisitor" />
+			<role name="ConcreteElement" element="org.apache.velocity.runtime.parser.node.ASTWord" />
+			<role name="Accept()" element="org.apache.velocity.runtime.parser.node.ASTWord::jjtAccept(org.apache.velocity.runtime.parser.node.ParserVisitor, java.lang.Object):java.lang.Object" />
+		</instance>
+		<instance>
+			<role name="Visitor" element="org.apache.velocity.runtime.parser.node.ParserVisitor" />
+			<role name="ConcreteElement" element="org.apache.velocity.runtime.parser.node.ASTprocess" />
+			<role name="Accept()" element="org.apache.velocity.runtime.parser.node.ASTprocess::jjtAccept(org.apache.velocity.runtime.parser.node.ParserVisitor, java.lang.Object):java.lang.Object" />
+		</instance>
+		<instance>
+			<role name="Visitor" element="org.apache.velocity.runtime.parser.node.ParserVisitor" />
+			<role name="ConcreteElement" element="org.apache.velocity.runtime.parser.node.SimpleNode" />
+			<role name="Accept()" element="org.apache.velocity.runtime.parser.node.SimpleNode::jjtAccept(org.apache.velocity.runtime.parser.node.ParserVisitor, java.lang.Object):java.lang.Object" />
+		</instance>
+	</pattern>
+	<pattern name="Proxy" />
+	<pattern name="Proxy2">
+		<instance>
+			<role name="Proxy" element="org.apache.velocity.test.misc.TestContext" />
+			<role name="RealSubject" element="org.apache.velocity.VelocityContext" />
+			<role name="Subject" element="org.apache.velocity.context.Context" />
+			<role name="subject" element="org.apache.velocity.test.misc.TestContext::innerContext:org.apache.velocity.context.Context" />
+			<role name="Request()" element="org.apache.velocity.test.misc.TestContext::containsKey(java.lang.Object):boolean" />
+			<role name="Request()" element="org.apache.velocity.test.misc.TestContext::get(java.lang.String):java.lang.Object" />
+			<role name="Request()" element="org.apache.velocity.test.misc.TestContext::put(java.lang.String, java.lang.Object):java.lang.Object" />
+			<role name="Request()" element="org.apache.velocity.test.misc.TestContext::remove(java.lang.Object):java.lang.Object" />
+		</instance>
+	</pattern>
+	<pattern name="Chain of Responsibility" />
+</system>
+

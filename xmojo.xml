@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<system>
+	<pattern name="Factory Method" />
+	<pattern name="Prototype" />
+	<pattern name="Singleton" />
+	<pattern name="(Object)Adapter">
+		<instance>
+			<role name="Adaptee" element="tutorials.application.shoppingcart.ShoppingCart" />
+			<role name="Adapter" element="tutorials.mbeans.standard.Cart" />
+			<role name="adaptee" element="tutorials.mbeans.standard.Cart::cart:tutorials.application.shoppingcart.ShoppingCart" />
+			<role name="Request()" element="tutorials.mbeans.standard.Cart::getTotalItemCount():java.lang.Integer" />
+			<role name="Request()" element="tutorials.mbeans.standard.Cart::getTotalPrice():java.lang.Integer" />
+			<role name="Request()" element="tutorials.mbeans.standard.Cart::addItem(java.lang.String, java.lang.Integer):void" />
+			<role name="Request()" element="tutorials.mbeans.standard.Cart::updateItem(java.lang.String, java.lang.Integer):boolean" />
+			<role name="Request()" element="tutorials.mbeans.standard.Cart::getItemsPurchased():java.util.Vector" />
+			<role name="Request()" element="tutorials.mbeans.standard.Cart::reset():void" />
+		</instance>
+	</pattern>
+	<pattern name="Command" />
+	<pattern name="Composite" />
+	<pattern name="Decorator" />
+	<pattern name="Observer" />
+	<pattern name="State" />
+	<pattern name="Strategy" />
+	<pattern name="Bridge" />
+	<pattern name="Template Method" />
+	<pattern name="Visitor" />
+	<pattern name="Proxy" />
+	<pattern name="Proxy2" />
+	<pattern name="Chain of Responsibility" />
+</system>
+

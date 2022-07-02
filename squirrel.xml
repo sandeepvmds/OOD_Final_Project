@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<system>
+	<pattern name="Factory Method" />
+	<pattern name="Prototype" />
+	<pattern name="Singleton" />
+	<pattern name="(Object)Adapter">
+		<instance>
+			<role name="Adapter" element="net.sourceforge.squirrel_sql.plugins.graph.ConstraintView" />
+			<role name="Adaptee" element="net.sourceforge.squirrel_sql.plugins.graph.GraphDesktopController" />
+			<role name="adaptee" element="net.sourceforge.squirrel_sql.plugins.graph.ConstraintView::_desktopController:net.sourceforge.squirrel_sql.plugins.graph.GraphDesktopController" />
+			<role name="Request()" element="net.sourceforge.squirrel_sql.plugins.graph.ConstraintView::paint(java.awt.Graphics, boolean):void" />
+		</instance>
+		<instance>
+			<role name="Adapter" element="net.sourceforge.squirrel_sql.plugins.graph.ConstraintView" />
+			<role name="Adaptee" element="net.sourceforge.squirrel_sql.plugins.graph.ConstraintData" />
+			<role name="adaptee" element="net.sourceforge.squirrel_sql.plugins.graph.ConstraintView::_constraintData:net.sourceforge.squirrel_sql.plugins.graph.ConstraintData" />
+			<role name="Request()" element="net.sourceforge.squirrel_sql.plugins.graph.ConstraintView::paint(java.awt.Graphics, boolean):void" />
+		</instance>
+		<instance>
+			<role name="Adapter" element="net.sourceforge.squirrel_sql.plugins.graph.ConstraintView" />
+			<role name="Adaptee" element="net.sourceforge.squirrel_sql.plugins.graph.ConstraintGraph" />
+			<role name="adaptee" element="net.sourceforge.squirrel_sql.plugins.graph.ConstraintView::_constraintGraph:net.sourceforge.squirrel_sql.plugins.graph.ConstraintGraph" />
+			<role name="Request()" element="net.sourceforge.squirrel_sql.plugins.graph.ConstraintView::paint(java.awt.Graphics, boolean):void" />
+			<role name="Request()" element="net.sourceforge.squirrel_sql.plugins.graph.ConstraintView::getRequiredSize():java.awt.Dimension" />
+		</instance>
+		<instance>
+			<role name="Adapter" element="net.sourceforge.squirrel_sql.plugins.graph.ZoomableColumnTextArea" />
+			<role name="Adaptee" element="net.sourceforge.squirrel_sql.plugins.graph.DndHandler" />
+			<role name="adaptee" element="net.sourceforge.squirrel_sql.plugins.graph.ZoomableColumnTextArea::_dndHandler:net.sourceforge.squirrel_sql.plugins.graph.DndHandler" />
+			<role name="Request()" element="net.sourceforge.squirrel_sql.plugins.graph.ZoomableColumnTextArea::getDndEvent():net.sourceforge.squirrel_sql.plugins.graph.DndEvent" />
+			<role name="Request()" element="net.sourceforge.squirrel_sql.plugins.graph.ZoomableColumnTextArea::setDndEvent(net.sourceforge.squirrel_sql.plugins.graph.DndEvent):void" />
+		</instance>
+		<instance>
+			<role name="Adapter" element="net.sourceforge.squirrel_sql.plugins.graph.ColumnTextArea" />
+			<role name="Adaptee" element="net.sourceforge.squirrel_sql.plugins.graph.DndHandler" />
+			<role name="adaptee" element="net.sourceforge.squirrel_sql.plugins.graph.ColumnTextArea::_dndHandler:net.sourceforge.squirrel_sql.plugins.graph.DndHandler" />
+			<role name="Request()" element="net.sourceforge.squirrel_sql.plugins.graph.ColumnTextArea::getDndEvent():net.sourceforge.squirrel_sql.plugins.graph.DndEvent" />
+			<role name="Request()" element="net.sourceforge.squirrel_sql.plugins.graph.ColumnTextArea::setDndEvent(net.sourceforge.squirrel_sql.plugins.graph.DndEvent):void" />
+		</instance>
+	</pattern>
+	<pattern name="Command" />
+	<pattern name="Composite" />
+	<pattern name="Decorator" />
+	<pattern name="Observer">
+		<instance>
+			<role name="Observer" element="net.sourceforge.squirrel_sql.plugins.graph.ZoomerListener" />
+			<role name="Subject" element="net.sourceforge.squirrel_sql.plugins.graph.Zoomer" />
+			<role name="Notify()" element="net.sourceforge.squirrel_sql.plugins.graph.Zoomer::setEnabled(boolean):void" />
+			<role name="Notify()" element="net.sourceforge.squirrel_sql.plugins.graph.Zoomer::setZoom(double, boolean):void" />
+			<role name="Notify()" element="net.sourceforge.squirrel_sql.plugins.graph.Zoomer::setHideScrollBars(boolean):void" />
+		</instance>
+	</pattern>
+	<pattern name="State">
+		<instance>
+			<role name="State" element="net.sourceforge.squirrel_sql.plugins.graph.GraphControllerAccessor" />
+			<role name="Context" element="net.sourceforge.squirrel_sql.plugins.graph.TableFrameController" />
+			<role name="state" element="net.sourceforge.squirrel_sql.plugins.graph.TableFrameController::_graphControllerAccessor:net.sourceforge.squirrel_sql.plugins.graph.GraphControllerAccessor" />
+			<role name="Request()" element="net.sourceforge.squirrel_sql.plugins.graph.TableFrameController::recalculateAllConnections(boolean):void" />
+		</instance>
+		<instance>
+			<role name="State" element="net.sourceforge.squirrel_sql.plugins.graph.GraphPrintable" />
+			<role name="Context" element="net.sourceforge.squirrel_sql.plugins.graph.ZoomPrintController" />
+			<role name="state" element="net.sourceforge.squirrel_sql.plugins.graph.ZoomPrintController::_printable:net.sourceforge.squirrel_sql.plugins.graph.GraphPrintable" />
+			<role name="Request()" element="net.sourceforge.squirrel_sql.plugins.graph.ZoomPrintController::onSaveImages():void" />
+			<role name="Request()" element="net.sourceforge.squirrel_sql.plugins.graph.ZoomPrintController::initPrint(boolean):java.awt.print.PageFormat" />
+		</instance>
+		<instance>
+			<role name="State" element="net.sourceforge.squirrel_sql.plugins.graph.GraphDesktopListener" />
+			<role name="Context" element="net.sourceforge.squirrel_sql.plugins.graph.GraphDesktopController" />
+			<role name="state" element="net.sourceforge.squirrel_sql.plugins.graph.GraphDesktopController::_listener:net.sourceforge.squirrel_sql.plugins.graph.GraphDesktopListener" />
+			<role name="Request()" element="net.sourceforge.squirrel_sql.plugins.graph.GraphDesktopController::onShowQualifiedTableNames():void" />
+			<role name="Request()" element="net.sourceforge.squirrel_sql.plugins.graph.GraphDesktopController::onAllTablesPkConstOrder():void" />
+			<role name="Request()" element="net.sourceforge.squirrel_sql.plugins.graph.GraphDesktopController::onAllTablesByNameOrder():void" />
+			<role name="Request()" element="net.sourceforge.squirrel_sql.plugins.graph.GraphDesktopController::onAllTablesDbOrder():void" />
+			<role name="Request()" element="net.sourceforge.squirrel_sql.plugins.graph.GraphDesktopController::onScriptAllTables():void" />
+			<role name="Request()" element="net.sourceforge.squirrel_sql.plugins.graph.GraphDesktopController::onRefreshAllTables():void" />
+			<role name="Request()" element="net.sourceforge.squirrel_sql.plugins.graph.GraphDesktopController::onRemoveGraph():void" />
+			<role name="Request()" element="net.sourceforge.squirrel_sql.plugins.graph.GraphDesktopController::onRenameGraph():void" />
+			<role name="Request()" element="net.sourceforge.squirrel_sql.plugins.graph.GraphDesktopController::onSaveGraph():void" />
+		</instance>
+		<instance>
+			<role name="Context" element="net.sourceforge.squirrel_sql.plugins.graph.DndHandler" />
+			<role name="State" element="net.sourceforge.squirrel_sql.plugins.graph.DndCallback" />
+			<role name="state" element="net.sourceforge.squirrel_sql.plugins.graph.DndHandler::_dndCallback:net.sourceforge.squirrel_sql.plugins.graph.DndCallback" />
+			<role name="Request()" element="net.sourceforge.squirrel_sql.plugins.graph.DndHandler::getDndEvent():net.sourceforge.squirrel_sql.plugins.graph.DndEvent" />
+			<role name="Request()" element="net.sourceforge.squirrel_sql.plugins.graph.DndHandler::setDndEvent(net.sourceforge.squirrel_sql.plugins.graph.DndEvent):void" />
+		</instance>
+		<instance>
+			<role name="State" element="net.sourceforge.squirrel_sql.plugins.graph.EdgesListener" />
+			<role name="Context" element="net.sourceforge.squirrel_sql.plugins.graph.ZoomPrintController" />
+			<role name="state" element="net.sourceforge.squirrel_sql.plugins.graph.ZoomPrintController::_edgesListener:net.sourceforge.squirrel_sql.plugins.graph.EdgesListener" />
+			<role name="Request()" element="net.sourceforge.squirrel_sql.plugins.graph.ZoomPrintController::fireEdgesGraphComponentChanged(boolean):void" />
+		</instance>
+		<instance>
+			<role name="State" element="net.sourceforge.squirrel_sql.plugins.graph.FormatControllerListener" />
+			<role name="Context" element="net.sourceforge.squirrel_sql.plugins.graph.FormatController" />
+			<role name="state" element="net.sourceforge.squirrel_sql.plugins.graph.FormatController::_listener:net.sourceforge.squirrel_sql.plugins.graph.FormatControllerListener" />
+			<role name="Request()" element="net.sourceforge.squirrel_sql.plugins.graph.FormatController::onSave():void" />
+			<role name="Request()" element="net.sourceforge.squirrel_sql.plugins.graph.FormatController::onLandscape():void" />
+			<role name="Request()" element="net.sourceforge.squirrel_sql.plugins.graph.FormatController::onWindowClosing():void" />
+		</instance>
+		<instance>
+			<role name="Context" element="net.sourceforge.squirrel_sql.plugins.graph.ColumnTextArea" />
+			<role name="State" element="net.sourceforge.squirrel_sql.plugins.graph.TableToolTipProvider" />
+			<role name="state" element="net.sourceforge.squirrel_sql.plugins.graph.ColumnTextArea::_toolTipProvider:net.sourceforge.squirrel_sql.plugins.graph.TableToolTipProvider" />
+			<role name="Request()" element="net.sourceforge.squirrel_sql.plugins.graph.ColumnTextArea::getToolTipText(java.awt.event.MouseEvent):java.lang.String" />
+		</instance>
+		<instance>
+			<role name="Context" element="net.sourceforge.squirrel_sql.plugins.graph.ZoomableColumnTextArea" />
+			<role name="State" element="net.sourceforge.squirrel_sql.plugins.graph.TableToolTipProvider" />
+			<role name="state" element="net.sourceforge.squirrel_sql.plugins.graph.ZoomableColumnTextArea::_toolTipProvider:net.sourceforge.squirrel_sql.plugins.graph.TableToolTipProvider" />
+			<role name="Request()" element="net.sourceforge.squirrel_sql.plugins.graph.ZoomableColumnTextArea::getToolTipText(java.awt.event.MouseEvent):java.lang.String" />
+		</instance>
+		<instance>
+			<role name="State" element="net.sourceforge.squirrel_sql.plugins.graph.AddTableListener" />
+			<role name="Context" element="net.sourceforge.squirrel_sql.plugins.graph.TableFrameController" />
+			<role name="state" element="net.sourceforge.squirrel_sql.plugins.graph.TableFrameController::_addTablelListener:net.sourceforge.squirrel_sql.plugins.graph.AddTableListener" />
+			<role name="Request()" element="net.sourceforge.squirrel_sql.plugins.graph.TableFrameController::onAddTableForForeignKey(net.sourceforge.squirrel_sql.plugins.graph.ColumnInfo):void" />
+			<role name="Request()" element="net.sourceforge.squirrel_sql.plugins.graph.TableFrameController::onAddChildTables():void" />
+			<role name="Request()" element="net.sourceforge.squirrel_sql.plugins.graph.TableFrameController::onAddParentTables():void" />
+			<role name="Request()" element="net.sourceforge.squirrel_sql.plugins.graph.TableFrameController::maybeShowPopup(java.awt.event.MouseEvent):void" />
+		</instance>
+	</pattern>
+	<pattern name="Strategy" />
+	<pattern name="Bridge" />
+	<pattern name="Template Method" />
+	<pattern name="Visitor" />
+	<pattern name="Proxy" />
+	<pattern name="Proxy2" />
+	<pattern name="Chain of Responsibility" />
+</system>
+

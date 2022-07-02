@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<system>
+	<pattern name="Factory Method" />
+	<pattern name="Prototype" />
+	<pattern name="Singleton">
+		<instance>
+			<role name="Singleton" element="ExceptionThrow" />
+			<role name="uniqueInstance" element="ExceptionThrow::_instance:ExceptionThrow" />
+		</instance>
+		<instance>
+			<role name="Singleton" element="org.quilt.cl.ClassFactory" />
+			<role name="uniqueInstance" element="org.quilt.cl.ClassFactory::instance:org.quilt.cl.ClassFactory" />
+		</instance>
+		<instance>
+			<role name="Singleton" element="org.quilt.cover.stmt.StmtRegistry" />
+			<role name="uniqueInstance" element="org.quilt.cover.stmt.StmtRegistry::INSTANCE:org.quilt.cover.stmt.StmtRegistry" />
+		</instance>
+		<instance>
+			<role name="Singleton" element="StaticInit" />
+			<role name="uniqueInstance" element="StaticInit::_instance:StaticInit" />
+		</instance>
+	</pattern>
+	<pattern name="(Object)Adapter">
+		<instance>
+			<role name="Adaptee" element="org.quilt.graph.Edge" />
+			<role name="Adapter" element="org.quilt.graph.BinaryConnector" />
+			<role name="adaptee" element="org.quilt.graph.BinaryConnector::edge:org.quilt.graph.Edge" />
+			<role name="Request()" element="org.quilt.graph.BinaryConnector::getTarget():org.quilt.graph.Vertex" />
+			<role name="Request()" element="org.quilt.graph.BinaryConnector::setTarget(org.quilt.graph.Vertex):void" />
+		</instance>
+		<instance>
+			<role name="Adaptee" element="org.quilt.graph.Edge" />
+			<role name="Adapter" element="org.quilt.graph.ComplexConnector" />
+			<role name="adaptee" element="org.quilt.graph.ComplexConnector::edge:org.quilt.graph.Edge" />
+			<role name="Request()" element="org.quilt.graph.ComplexConnector::getTarget():org.quilt.graph.Vertex" />
+			<role name="Request()" element="org.quilt.graph.ComplexConnector::setTarget(org.quilt.graph.Vertex):void" />
+		</instance>
+		<instance>
+			<role name="Adaptee" element="org.quilt.graph.Edge" />
+			<role name="Adapter" element="org.quilt.graph.UnaryConnector" />
+			<role name="adaptee" element="org.quilt.graph.UnaryConnector::edge:org.quilt.graph.Edge" />
+			<role name="Request()" element="org.quilt.graph.UnaryConnector::getTarget():org.quilt.graph.Vertex" />
+			<role name="Request()" element="org.quilt.graph.UnaryConnector::setTarget(org.quilt.graph.Vertex):void" />
+		</instance>
+		<instance>
+			<role name="Adaptee" element="org.quilt.cl.ControlFlowGraph" />
+			<role name="Adapter" element="org.quilt.cl.BytecodeCollector" />
+			<role name="adaptee" element="org.quilt.cl.BytecodeCollector::graph:org.quilt.cl.ControlFlowGraph" />
+			<role name="Request()" element="org.quilt.cl.BytecodeCollector::discoverGraph(org.quilt.graph.Directed):void" />
+		</instance>
+		<instance>
+			<role name="Adaptee" element="org.quilt.cl.ControlFlowGraph" />
+			<role name="Adapter" element="org.quilt.cover.stmt.GraphAction$LampLighter" />
+			<role name="adaptee" element="org.quilt.cover.stmt.GraphAction$LampLighter::graph:org.quilt.cl.ControlFlowGraph" />
+			<role name="Request()" element="org.quilt.cover.stmt.GraphAction$LampLighter::discoverEdge(org.quilt.graph.Edge):void" />
+		</instance>
+		<instance>
+			<role name="Adaptee" element="org.quilt.cl.ClassTransformer" />
+			<role name="Adapter" element="org.quilt.cover.stmt.ClassAction" />
+			<role name="adaptee" element="org.quilt.cover.stmt.ClassAction::classTrans:org.quilt.cl.ClassTransformer" />
+			<role name="Request()" element="org.quilt.cover.stmt.ClassAction::preMethods(org.apache.bcel.generic.ClassGen):void" />
+		</instance>
+		<instance>
+			<role name="Adaptee" element="org.quilt.cover.stmt.Ephemera" />
+			<role name="Adapter" element="org.quilt.cover.stmt.ClassAction" />
+			<role name="adaptee" element="org.quilt.cover.stmt.ClassAction::eph:org.quilt.cover.stmt.Ephemera" />
+			<role name="Request()" element="org.quilt.cover.stmt.ClassAction::postMethods(org.apache.bcel.generic.ClassGen):void" />
+		</instance>
+		<instance>
+			<role name="Adaptee" element="org.quilt.cover.stmt.StmtRegistry" />
+			<role name="Adapter" element="org.quilt.cover.stmt.ClassAction" />
+			<role name="adaptee" element="org.quilt.cover.stmt.ClassAction::stmtReg:org.quilt.cover.stmt.StmtRegistry" />
+			<role name="Request()" element="org.quilt.cover.stmt.ClassAction::preMethods(org.apache.bcel.generic.ClassGen):void" />
+			<role name="Request()" element="org.quilt.cover.stmt.ClassAction::postMethods(org.apache.bcel.generic.ClassGen):void" />
+		</instance>
+		<instance>
+			<role name="Adaptee" element="org.quilt.cover.stmt.StmtRegistry" />
+			<role name="Adapter" element="org.quilt.cover.stmt.GraphAction" />
+			<role name="adaptee" element="org.quilt.cover.stmt.GraphAction::stmtReg:org.quilt.cover.stmt.StmtRegistry" />
+			<role name="Request()" element="org.quilt.cover.stmt.GraphAction::xform(org.apache.bcel.generic.ClassGen, org.apache.bcel.generic.MethodGen, org.quilt.cl.ControlFlowGraph):void" />
+		</instance>
+	</pattern>
+	<pattern name="Command" />
+	<pattern name="Composite" />
+	<pattern name="Decorator" />
+	<pattern name="Observer" />
+	<pattern name="State">
+		<instance>
+			<role name="Context" element="org.quilt.frontend.ant.CallTest" />
+			<role name="State" element="org.quilt.runner.Runner" />
+			<role name="state" element="org.quilt.frontend.ant.CallTest::runner:org.quilt.runner.Runner" />
+			<role name="Request()" element="org.quilt.frontend.ant.CallTest::execTest(org.quilt.framework.QuiltTest, org.quilt.frontend.ant.TaskControl):int" />
+		</instance>
+		<instance>
+			<role name="Context" element="org.quilt.frontend.ant.TaskControl" />
+			<role name="State" element="org.quilt.runner.Runner" />
+			<role name="state" element="org.quilt.frontend.ant.TaskControl::runner:org.quilt.runner.Runner" />
+			<role name="Request()" element="org.quilt.frontend.ant.TaskControl::handleOutput(java.lang.String):void" />
+			<role name="Request()" element="org.quilt.frontend.ant.TaskControl::handleFlush(java.lang.String):void" />
+			<role name="Request()" element="org.quilt.frontend.ant.TaskControl::handleErrorOutput(java.lang.String):void" />
+			<role name="Request()" element="org.quilt.frontend.ant.TaskControl::handleErrorFlush(java.lang.String):void" />
+		</instance>
+		<instance>
+			<role name="Context" element="org.quilt.graph.Vertex" />
+			<role name="State" element="org.quilt.graph.Connector" />
+			<role name="state" element="org.quilt.graph.Vertex::connector:org.quilt.graph.Connector" />
+			<role name="Request()" element="org.quilt.graph.Vertex::getEdge():org.quilt.graph.Edge" />
+			<role name="Request()" element="org.quilt.graph.Vertex::getTarget():org.quilt.graph.Vertex" />
+		</instance>
+		<instance>
+			<role name="Context" element="org.quilt.graph.Walker" />
+			<role name="State" element="org.quilt.graph.Visitor" />
+			<role name="state" element="org.quilt.graph.Walker::visitor:org.quilt.graph.Visitor" />
+			<role name="Request()" element="org.quilt.graph.Walker::visit(org.quilt.graph.Directed, org.quilt.graph.Visitor):org.quilt.graph.Exit" />
+			<role name="Request()" element="org.quilt.graph.Walker::visitVertex(org.quilt.graph.Vertex):void" />
+			<role name="Request()" element="org.quilt.graph.Walker::visitEdge(org.quilt.graph.Edge):void" />
+		</instance>
+	</pattern>
+	<pattern name="Strategy" />
+	<pattern name="Bridge" />
+	<pattern name="Template Method" />
+	<pattern name="Visitor" />
+	<pattern name="Proxy" />
+	<pattern name="Proxy2" />
+	<pattern name="Chain of Responsibility" />
+</system>
+

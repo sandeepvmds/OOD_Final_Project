@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<system>
+	<pattern name="Factory Method" />
+	<pattern name="Prototype" />
+	<pattern name="Singleton" />
+	<pattern name="(Object)Adapter">
+		<instance>
+			<role name="Adaptee" element="gnu.trove.TPrimitiveHash" />
+			<role name="Adapter" element="gnu.trove.TPrimitiveIterator" />
+			<role name="adaptee" element="gnu.trove.TPrimitiveIterator::_hash:gnu.trove.TPrimitiveHash" />
+			<role name="Request()" element="gnu.trove.TPrimitiveIterator::nextIndex():int" />
+		</instance>
+		<instance>
+			<role name="Adaptee" element="gnu.trove.benchmark.Operation" />
+			<role name="Adapter" element="gnu.trove.benchmark.Repeater" />
+			<role name="adaptee" element="gnu.trove.benchmark.Repeater::_operation:gnu.trove.benchmark.Operation" />
+			<role name="Request()" element="gnu.trove.benchmark.Repeater::theirs():long" />
+			<role name="Request()" element="gnu.trove.benchmark.Repeater::ours():long" />
+		</instance>
+	</pattern>
+	<pattern name="Command" />
+	<pattern name="Composite" />
+	<pattern name="Decorator" />
+	<pattern name="Observer" />
+	<pattern name="State">
+		<instance>
+			<role name="State" element="gnu.trove.TLinkable" />
+			<role name="Context" element="gnu.trove.TLinkedList$IteratorImpl" />
+			<role name="state" element="gnu.trove.TLinkedList$IteratorImpl::_next:gnu.trove.TLinkable" />
+			<role name="state" element="gnu.trove.TLinkedList$IteratorImpl::_lastReturned:gnu.trove.TLinkable" />
+			<role name="Request()" element="gnu.trove.TLinkedList$IteratorImpl::next():gnu.trove.TLinkable" />
+			<role name="Request()" element="gnu.trove.TLinkedList$IteratorImpl::previous():gnu.trove.TLinkable" />
+			<role name="Request()" element="gnu.trove.TLinkedList$IteratorImpl::remove():void" />
+		</instance>
+		<instance>
+			<role name="State" element="gnu.trove.TLinkable" />
+			<role name="Context" element="gnu.trove.TLinkedList" />
+			<role name="state" element="gnu.trove.TLinkedList::_head:gnu.trove.TLinkable" />
+			<role name="state" element="gnu.trove.TLinkedList::_tail:gnu.trove.TLinkable" />
+			<role name="Request()" element="gnu.trove.TLinkedList::clear():void" />
+			<role name="Request()" element="gnu.trove.TLinkedList::toArray():java.lang.Object[]" />
+			<role name="Request()" element="gnu.trove.TLinkedList::toUnlinkedArray():java.lang.Object[]" />
+			<role name="Request()" element="gnu.trove.TLinkedList::contains(java.lang.Object):boolean" />
+			<role name="Request()" element="gnu.trove.TLinkedList::get(int):gnu.trove.TLinkable" />
+			<role name="Request()" element="gnu.trove.TLinkedList::removeFirst():gnu.trove.TLinkable" />
+			<role name="Request()" element="gnu.trove.TLinkedList::removeLast():gnu.trove.TLinkable" />
+			<role name="Request()" element="gnu.trove.TLinkedList::insert(int, T):void" />
+			<role name="Request()" element="gnu.trove.TLinkedList::remove(java.lang.Object):boolean" />
+			<role name="Request()" element="gnu.trove.TLinkedList::addBefore(T, T):void" />
+			<role name="Request()" element="gnu.trove.TLinkedList::addAfter(T, T):void" />
+			<role name="Request()" element="gnu.trove.TLinkedList::forEachValue(gnu.trove.TObjectProcedure):boolean" />
+		</instance>
+		<instance>
+			<role name="Context" element="gnu.trove.benchmark.Repeater" />
+			<role name="State" element="gnu.trove.benchmark.Operation" />
+			<role name="state" element="gnu.trove.benchmark.Repeater::_operation:gnu.trove.benchmark.Operation" />
+			<role name="Request()" element="gnu.trove.benchmark.Repeater::theirs():long" />
+			<role name="Request()" element="gnu.trove.benchmark.Repeater::ours():long" />
+		</instance>
+	</pattern>
+	<pattern name="Strategy" />
+	<pattern name="Bridge" />
+	<pattern name="Template Method">
+		<instance>
+			<role name="AbstractClass" element="gnu.trove.THash" />
+			<role name="TemplateMethod()" element="gnu.trove.THash::ensureCapacity(int):void" />
+			<role name="TemplateMethod()" element="gnu.trove.THash::compact():void" />
+			<role name="TemplateMethod()" element="gnu.trove.THash::clear():void" />
+			<role name="TemplateMethod()" element="gnu.trove.THash::postInsertHook(boolean):void" />
+			<role name="TemplateMethod()" element="gnu.trove.THash::calculateGrownCapacity():int" />
+		</instance>
+		<instance>
+			<role name="AbstractClass" element="gnu.trove.THashIterator" />
+			<role name="TemplateMethod()" element="gnu.trove.THashIterator::next():java.lang.Object" />
+		</instance>
+		<instance>
+			<role name="AbstractClass" element="gnu.trove.THashMap$MapBackedView" />
+			<role name="TemplateMethod()" element="gnu.trove.THashMap$MapBackedView::contains(java.lang.Object):boolean" />
+			<role name="TemplateMethod()" element="gnu.trove.THashMap$MapBackedView::remove(java.lang.Object):boolean" />
+			<role name="TemplateMethod()" element="gnu.trove.THashMap$MapBackedView::toArray():java.lang.Object[]" />
+			<role name="TemplateMethod()" element="gnu.trove.THashMap$MapBackedView::retainAll(java.util.Collection):boolean" />
+		</instance>
+		<instance>
+			<role name="AbstractClass" element="gnu.trove.TIterator" />
+			<role name="TemplateMethod()" element="gnu.trove.TIterator::hasNext():boolean" />
+			<role name="TemplateMethod()" element="gnu.trove.TIterator::moveToNextIndex():void" />
+		</instance>
+	</pattern>
+	<pattern name="Visitor" />
+	<pattern name="Proxy" />
+	<pattern name="Proxy2" />
+	<pattern name="Chain of Responsibility" />
+</system>
+

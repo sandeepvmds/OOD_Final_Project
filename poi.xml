@@ -1,0 +1,2171 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<system>
+	<pattern name="Factory Method">
+		<instance>
+			<role name="Creator" element="org.apache.poi.ddf.EscherRecordFactory" />
+			<role name="FactoryMethod()" element="org.apache.poi.ddf.EscherRecordFactory::createRecord(byte[], int):org.apache.poi.ddf.EscherRecord" />
+		</instance>
+		<instance>
+			<role name="Creator" element="org.apache.poi.hslf.model.Shape" />
+			<role name="FactoryMethod()" element="org.apache.poi.hslf.model.Shape::createSpContainer(boolean):org.apache.poi.ddf.EscherContainerRecord" />
+		</instance>
+		<instance>
+			<role name="Creator" element="org.apache.poi.hssf.record.formula.functions.FreeRefFunction" />
+			<role name="FactoryMethod()" element="org.apache.poi.hssf.record.formula.functions.FreeRefFunction::evaluate(org.apache.poi.hssf.record.formula.eval.ValueEval[], org.apache.poi.ss.formula.OperationEvaluationContext):org.apache.poi.hssf.record.formula.eval.ValueEval" />
+		</instance>
+		<instance>
+			<role name="Creator" element="org.apache.poi.openxml4j.opc.internal.PartUnmarshaller" />
+			<role name="FactoryMethod()" element="org.apache.poi.openxml4j.opc.internal.PartUnmarshaller::unmarshall(org.apache.poi.openxml4j.opc.internal.unmarshallers.UnmarshallContext, java.io.InputStream):org.apache.poi.openxml4j.opc.PackagePart" />
+		</instance>
+		<instance>
+			<role name="Creator" element="org.apache.poi.poifs.filesystem.DirectoryEntry" />
+			<role name="FactoryMethod()" element="org.apache.poi.poifs.filesystem.DirectoryEntry::createDirectory(java.lang.String):org.apache.poi.poifs.filesystem.DirectoryEntry" />
+		</instance>
+		<instance>
+			<role name="Creator" element="org.apache.poi.POITextExtractor" />
+			<role name="FactoryMethod()" element="org.apache.poi.POITextExtractor::getMetadataTextExtractor():org.apache.poi.POITextExtractor" />
+		</instance>
+		<instance>
+			<role name="Creator" element="org.apache.poi.POIXMLFactory" />
+			<role name="FactoryMethod()" element="org.apache.poi.POIXMLFactory::createDocumentPart(org.apache.poi.openxml4j.opc.PackageRelationship, org.apache.poi.openxml4j.opc.PackagePart):org.apache.poi.POIXMLDocumentPart" />
+		</instance>
+		<instance>
+			<role name="Creator" element="org.apache.poi.ss.formula.EvaluationName" />
+			<role name="FactoryMethod()" element="org.apache.poi.ss.formula.EvaluationName::createPtg():org.apache.poi.hssf.record.formula.NamePtg" />
+		</instance>
+		<instance>
+			<role name="Creator" element="org.apache.poi.ss.formula.EvaluationSheet" />
+			<role name="FactoryMethod()" element="org.apache.poi.ss.formula.EvaluationSheet::getCell(int, int):org.apache.poi.ss.formula.EvaluationCell" />
+		</instance>
+		<instance>
+			<role name="Creator" element="org.apache.poi.ss.formula.EvaluationWorkbook" />
+			<role name="FactoryMethod()" element="org.apache.poi.ss.formula.EvaluationWorkbook::getSheet(int):org.apache.poi.ss.formula.EvaluationSheet" />
+			<role name="FactoryMethod()" element="org.apache.poi.ss.formula.EvaluationWorkbook::getName(org.apache.poi.hssf.record.formula.NamePtg):org.apache.poi.ss.formula.EvaluationName" />
+		</instance>
+		<instance>
+			<role name="Creator" element="org.apache.poi.ss.formula.FormulaParsingWorkbook" />
+			<role name="FactoryMethod()" element="org.apache.poi.ss.formula.FormulaParsingWorkbook::getName(java.lang.String, int):org.apache.poi.ss.formula.EvaluationName" />
+		</instance>
+		<instance>
+			<role name="Creator" element="org.apache.poi.ss.usermodel.Workbook" />
+			<role name="FactoryMethod()" element="org.apache.poi.ss.usermodel.Workbook::getCreationHelper():org.apache.poi.ss.usermodel.CreationHelper" />
+		</instance>
+		<instance>
+			<role name="Creator" element="org.apache.poi.util.DelayableLittleEndianOutput" />
+			<role name="FactoryMethod()" element="org.apache.poi.util.DelayableLittleEndianOutput::createDelayedOutput(int):org.apache.poi.util.LittleEndianOutput" />
+		</instance>
+	</pattern>
+	<pattern name="Prototype" />
+	<pattern name="Singleton">
+		<instance>
+			<role name="Singleton" element="org.apache.poi.hpsf.wellknown.SectionIDMap" />
+			<role name="uniqueInstance" element="org.apache.poi.hpsf.wellknown.SectionIDMap::defaultMap:org.apache.poi.hpsf.wellknown.SectionIDMap" />
+		</instance>
+		<instance>
+			<role name="Singleton" element="org.apache.poi.hssf.HSSFITestDataProvider" />
+			<role name="uniqueInstance" element="org.apache.poi.hssf.HSSFITestDataProvider::inst:org.apache.poi.hssf.HSSFITestDataProvider" />
+		</instance>
+		<instance>
+			<role name="Singleton" element="org.apache.poi.hssf.record.aggregates.SharedValueManager" />
+			<role name="uniqueInstance" element="org.apache.poi.hssf.record.aggregates.SharedValueManager::EMPTY:org.apache.poi.hssf.record.aggregates.SharedValueManager" />
+		</instance>
+		<instance>
+			<role name="Singleton" element="org.apache.poi.hssf.record.EOFRecord" />
+			<role name="uniqueInstance" element="org.apache.poi.hssf.record.EOFRecord::instance:org.apache.poi.hssf.record.EOFRecord" />
+		</instance>
+		<instance>
+			<role name="Singleton" element="org.apache.poi.hssf.record.formula.AttrPtg" />
+			<role name="uniqueInstance" element="org.apache.poi.hssf.record.formula.AttrPtg::SUM:org.apache.poi.hssf.record.formula.AttrPtg" />
+		</instance>
+		<instance>
+			<role name="Singleton" element="org.apache.poi.hssf.record.formula.eval.MissingArgEval" />
+			<role name="uniqueInstance" element="org.apache.poi.hssf.record.formula.eval.MissingArgEval::instance:org.apache.poi.hssf.record.formula.eval.MissingArgEval" />
+		</instance>
+		<instance>
+			<role name="Singleton" element="org.apache.poi.hssf.record.formula.eval.NumberEval" />
+			<role name="uniqueInstance" element="org.apache.poi.hssf.record.formula.eval.NumberEval::ZERO:org.apache.poi.hssf.record.formula.eval.NumberEval" />
+		</instance>
+		<instance>
+			<role name="Singleton" element="org.apache.poi.hssf.record.formula.eval.StringEval" />
+			<role name="uniqueInstance" element="org.apache.poi.hssf.record.formula.eval.StringEval::EMPTY_INSTANCE:org.apache.poi.hssf.record.formula.eval.StringEval" />
+		</instance>
+		<instance>
+			<role name="Singleton" element="org.apache.poi.hssf.record.formula.function.FunctionMetadataRegistry" />
+			<role name="uniqueInstance" element="org.apache.poi.hssf.record.formula.function.FunctionMetadataRegistry::_instance:org.apache.poi.hssf.record.formula.function.FunctionMetadataRegistry" />
+		</instance>
+		<instance>
+			<role name="Singleton" element="org.apache.poi.hssf.record.formula.functions.AggregateFunction$ValueCollector" />
+			<role name="uniqueInstance" element="org.apache.poi.hssf.record.formula.functions.AggregateFunction$ValueCollector::instance:org.apache.poi.hssf.record.formula.functions.AggregateFunction$ValueCollector" />
+		</instance>
+		<instance>
+			<role name="Singleton" element="org.apache.poi.hssf.record.formula.udf.UDFFinder" />
+			<role name="uniqueInstance" element="org.apache.poi.hssf.record.formula.udf.UDFFinder::DEFAULT:org.apache.poi.hssf.record.formula.udf.UDFFinder" />
+		</instance>
+		<instance>
+			<role name="Singleton" element="org.apache.poi.openxml4j.opc.EncryptionOption" />
+			<role name="uniqueInstance" element="org.apache.poi.openxml4j.opc.EncryptionOption::NONE:org.apache.poi.openxml4j.opc.EncryptionOption" />
+		</instance>
+		<instance>
+			<role name="Singleton" element="org.apache.poi.ss.formula.CollaboratingWorkbooksEnvironment" />
+			<role name="uniqueInstance" element="org.apache.poi.ss.formula.CollaboratingWorkbooksEnvironment::EMPTY:org.apache.poi.ss.formula.CollaboratingWorkbooksEnvironment" />
+		</instance>
+		<instance>
+			<role name="Singleton" element="org.apache.poi.ss.formula.Formula" />
+			<role name="uniqueInstance" element="org.apache.poi.ss.formula.Formula::EMPTY:org.apache.poi.ss.formula.Formula" />
+		</instance>
+		<instance>
+			<role name="Singleton" element="org.apache.poi.ss.formula.IStabilityClassifier" />
+			<role name="uniqueInstance" element="org.apache.poi.ss.formula.IStabilityClassifier::TOTALLY_IMMUTABLE:org.apache.poi.ss.formula.IStabilityClassifier" />
+		</instance>
+		<instance>
+			<role name="Singleton" element="org.apache.poi.xssf.usermodel.XSSFFactory" />
+			<role name="uniqueInstance" element="org.apache.poi.xssf.usermodel.XSSFFactory::inst:org.apache.poi.xssf.usermodel.XSSFFactory" />
+		</instance>
+		<instance>
+			<role name="Singleton" element="org.apache.poi.xssf.XSSFITestDataProvider" />
+			<role name="uniqueInstance" element="org.apache.poi.xssf.XSSFITestDataProvider::inst:org.apache.poi.xssf.XSSFITestDataProvider" />
+		</instance>
+		<instance>
+			<role name="Singleton" element="org.apache.poi.xwpf.usermodel.XWPFFactory" />
+			<role name="uniqueInstance" element="org.apache.poi.xwpf.usermodel.XWPFFactory::inst:org.apache.poi.xwpf.usermodel.XWPFFactory" />
+		</instance>
+	</pattern>
+	<pattern name="(Object)Adapter">
+		<instance>
+			<role name="Adapter" element="org.apache.poi.hssf.record.CFRuleRecord" />
+			<role name="Adaptee" element="org.apache.poi.ss.formula.Formula" />
+			<role name="adaptee" element="org.apache.poi.hssf.record.CFRuleRecord::field_17_formula1:org.apache.poi.ss.formula.Formula" />
+			<role name="adaptee" element="org.apache.poi.hssf.record.CFRuleRecord::field_18_formula2:org.apache.poi.ss.formula.Formula" />
+			<role name="Request()" element="org.apache.poi.hssf.record.CFRuleRecord::serialize(org.apache.poi.util.LittleEndianOutput):void" />
+		</instance>
+		<instance>
+			<role name="Adapter" element="org.apache.poi.hssf.record.FormulaRecord" />
+			<role name="Adaptee" element="org.apache.poi.ss.formula.Formula" />
+			<role name="adaptee" element="org.apache.poi.hssf.record.FormulaRecord::field_8_parsed_expr:org.apache.poi.ss.formula.Formula" />
+			<role name="Request()" element="org.apache.poi.hssf.record.FormulaRecord::getValueDataSize():int" />
+			<role name="Request()" element="org.apache.poi.hssf.record.FormulaRecord::serializeValue(org.apache.poi.util.LittleEndianOutput):void" />
+			<role name="Request()" element="org.apache.poi.hssf.record.FormulaRecord::appendValueText(java.lang.StringBuilder):void" />
+		</instance>
+		<instance>
+			<role name="Adapter" element="org.apache.poi.hssf.record.DVRecord" />
+			<role name="Adaptee" element="org.apache.poi.ss.formula.Formula" />
+			<role name="adaptee" element="org.apache.poi.hssf.record.DVRecord::_formula1:org.apache.poi.ss.formula.Formula" />
+			<role name="adaptee" element="org.apache.poi.hssf.record.DVRecord::_formula2:org.apache.poi.ss.formula.Formula" />
+			<role name="Request()" element="org.apache.poi.hssf.record.DVRecord::serialize(org.apache.poi.util.LittleEndianOutput):void" />
+			<role name="Request()" element="org.apache.poi.hssf.record.DVRecord::getDataSize():int" />
+		</instance>
+		<instance>
+			<role name="Adapter" element="org.apache.poi.hssf.record.chart.LinkedDataRecord" />
+			<role name="Adaptee" element="org.apache.poi.ss.formula.Formula" />
+			<role name="adaptee" element="org.apache.poi.hssf.record.chart.LinkedDataRecord::field_5_formulaOfLink:org.apache.poi.ss.formula.Formula" />
+			<role name="Request()" element="org.apache.poi.hssf.record.chart.LinkedDataRecord::serialize(org.apache.poi.util.LittleEndianOutput):void" />
+			<role name="Request()" element="org.apache.poi.hssf.record.chart.LinkedDataRecord::getDataSize():int" />
+		</instance>
+		<instance>
+			<role name="Adapter" element="org.apache.poi.hssf.record.DrawingSelectionRecord" />
+			<role name="Adaptee" element="org.apache.poi.hssf.record.DrawingSelectionRecord$OfficeArtRecordHeader" />
+			<role name="adaptee" element="org.apache.poi.hssf.record.DrawingSelectionRecord::_header:org.apache.poi.hssf.record.DrawingSelectionRecord$OfficeArtRecordHeader" />
+			<role name="Request()" element="org.apache.poi.hssf.record.DrawingSelectionRecord::serialize(org.apache.poi.util.LittleEndianOutput):void" />
+		</instance>
+		<instance>
+			<role name="Adapter" element="org.apache.poi.hssf.record.HyperlinkRecord" />
+			<role name="Adaptee" element="org.apache.poi.hssf.record.HyperlinkRecord$GUID" />
+			<role name="adaptee" element="org.apache.poi.hssf.record.HyperlinkRecord::_guid:org.apache.poi.hssf.record.HyperlinkRecord$GUID" />
+			<role name="adaptee" element="org.apache.poi.hssf.record.HyperlinkRecord::_moniker:org.apache.poi.hssf.record.HyperlinkRecord$GUID" />
+			<role name="adaptee" element="org.apache.poi.hssf.record.HyperlinkRecord::URL_MONIKER:org.apache.poi.hssf.record.HyperlinkRecord$GUID" />
+			<role name="adaptee" element="org.apache.poi.hssf.record.HyperlinkRecord::FILE_MONIKER:org.apache.poi.hssf.record.HyperlinkRecord$GUID" />
+			<role name="Request()" element="org.apache.poi.hssf.record.HyperlinkRecord::serialize(org.apache.poi.util.LittleEndianOutput):void" />
+			<role name="Request()" element="org.apache.poi.hssf.record.HyperlinkRecord::getDataSize():int" />
+		</instance>
+		<instance>
+			<role name="Adapter" element="org.apache.poi.hwpf.HWPFDocument" />
+			<role name="Adaptee" element="org.apache.poi.hwpf.model.CHPBinTable" />
+			<role name="adaptee" element="org.apache.poi.hwpf.HWPFDocument::_cbt:org.apache.poi.hwpf.model.CHPBinTable" />
+			<role name="Request()" element="org.apache.poi.hwpf.HWPFDocument::write(java.io.OutputStream):void" />
+		</instance>
+		<instance>
+			<role name="Adapter" element="org.apache.poi.hwpf.HWPFDocument" />
+			<role name="Adaptee" element="org.apache.poi.hwpf.model.ComplexFileTable" />
+			<role name="adaptee" element="org.apache.poi.hwpf.HWPFDocument::_cft:org.apache.poi.hwpf.model.ComplexFileTable" />
+			<role name="Request()" element="org.apache.poi.hwpf.HWPFDocument::write(java.io.OutputStream):void" />
+		</instance>
+		<instance>
+			<role name="Adapter" element="org.apache.poi.hwpf.HWPFDocument" />
+			<role name="Adaptee" element="org.apache.poi.hwpf.model.FontTable" />
+			<role name="adaptee" element="org.apache.poi.hwpf.HWPFDocument::_ft:org.apache.poi.hwpf.model.FontTable" />
+			<role name="Request()" element="org.apache.poi.hwpf.HWPFDocument::write(java.io.OutputStream):void" />
+		</instance>
+		<instance>
+			<role name="Adapter" element="org.apache.poi.hwpf.HWPFDocument" />
+			<role name="Adaptee" element="org.apache.poi.hwpf.model.ListTables" />
+			<role name="adaptee" element="org.apache.poi.hwpf.HWPFDocument::_lt:org.apache.poi.hwpf.model.ListTables" />
+			<role name="Request()" element="org.apache.poi.hwpf.HWPFDocument::write(java.io.OutputStream):void" />
+		</instance>
+		<instance>
+			<role name="Adapter" element="org.apache.poi.hwpf.HWPFDocument" />
+			<role name="Adaptee" element="org.apache.poi.hwpf.model.PAPBinTable" />
+			<role name="adaptee" element="org.apache.poi.hwpf.HWPFDocument::_pbt:org.apache.poi.hwpf.model.PAPBinTable" />
+			<role name="Request()" element="org.apache.poi.hwpf.HWPFDocument::write(java.io.OutputStream):void" />
+		</instance>
+		<instance>
+			<role name="Adapter" element="org.apache.poi.hwpf.HWPFDocument" />
+			<role name="Adaptee" element="org.apache.poi.hwpf.model.SavedByTable" />
+			<role name="adaptee" element="org.apache.poi.hwpf.HWPFDocument::_sbt:org.apache.poi.hwpf.model.SavedByTable" />
+			<role name="Request()" element="org.apache.poi.hwpf.HWPFDocument::write(java.io.OutputStream):void" />
+		</instance>
+		<instance>
+			<role name="Adapter" element="org.apache.poi.hwpf.HWPFDocument" />
+			<role name="Adaptee" element="org.apache.poi.hwpf.model.SectionTable" />
+			<role name="adaptee" element="org.apache.poi.hwpf.HWPFDocument::_st:org.apache.poi.hwpf.model.SectionTable" />
+			<role name="Request()" element="org.apache.poi.hwpf.HWPFDocument::write(java.io.OutputStream):void" />
+		</instance>
+		<instance>
+			<role name="Adaptee" element="org.apache.poi.xssf.usermodel.helpers.ColumnHelper" />
+			<role name="Adapter" element="org.apache.poi.xssf.usermodel.XSSFSheet" />
+			<role name="adaptee" element="org.apache.poi.xssf.usermodel.XSSFSheet::columnHelper:org.apache.poi.xssf.usermodel.helpers.ColumnHelper" />
+			<role name="Request()" element="org.apache.poi.xssf.usermodel.XSSFSheet::autoSizeColumn(int, boolean):void" />
+			<role name="Request()" element="org.apache.poi.xssf.usermodel.XSSFSheet::getColumnWidth(int):int" />
+			<role name="Request()" element="org.apache.poi.xssf.usermodel.XSSFSheet::getColumnStyle(int):org.apache.poi.ss.usermodel.CellStyle" />
+			<role name="Request()" element="org.apache.poi.xssf.usermodel.XSSFSheet::isColumnHidden(int):boolean" />
+			<role name="Request()" element="org.apache.poi.xssf.usermodel.XSSFSheet::setColumnHidden(int, boolean):void" />
+			<role name="Request()" element="org.apache.poi.xssf.usermodel.XSSFSheet::setColumnWidth(int, int):void" />
+			<role name="Request()" element="org.apache.poi.xssf.usermodel.XSSFSheet::setDefaultColumnStyle(int, org.apache.poi.ss.usermodel.CellStyle):void" />
+			<role name="Request()" element="org.apache.poi.xssf.usermodel.XSSFSheet::ungroupColumn(int, int):void" />
+		</instance>
+		<instance>
+			<role name="Adapter" element="org.apache.poi.openxml4j.opc.PackagePart" />
+			<role name="Adaptee" element="org.apache.poi.openxml4j.opc.PackageRelationshipCollection" />
+			<role name="adaptee" element="org.apache.poi.openxml4j.opc.PackagePart::_relationships:org.apache.poi.openxml4j.opc.PackageRelationshipCollection" />
+			<role name="Request()" element="org.apache.poi.openxml4j.opc.PackagePart::addExternalRelationship(java.lang.String, java.lang.String, java.lang.String):org.apache.poi.openxml4j.opc.PackageRelationship" />
+			<role name="Request()" element="org.apache.poi.openxml4j.opc.PackagePart::addRelationship(org.apache.poi.openxml4j.opc.PackagePartName, org.apache.poi.openxml4j.opc.TargetMode, java.lang.String, java.lang.String):org.apache.poi.openxml4j.opc.PackageRelationship" />
+			<role name="Request()" element="org.apache.poi.openxml4j.opc.PackagePart::clearRelationships():void" />
+			<role name="Request()" element="org.apache.poi.openxml4j.opc.PackagePart::removeRelationship(java.lang.String):void" />
+			<role name="Request()" element="org.apache.poi.openxml4j.opc.PackagePart::getRelationship(java.lang.String):org.apache.poi.openxml4j.opc.PackageRelationship" />
+			<role name="Request()" element="org.apache.poi.openxml4j.opc.PackagePart::hasRelationships():boolean" />
+		</instance>
+		<instance>
+			<role name="Adapter" element="org.apache.poi.openxml4j.opc.internal.PackagePropertiesPart" />
+			<role name="Adaptee" element="org.apache.poi.openxml4j.util.Nullable" />
+			<role name="adaptee" element="org.apache.poi.openxml4j.opc.internal.PackagePropertiesPart::created:org.apache.poi.openxml4j.util.Nullable" />
+			<role name="adaptee" element="org.apache.poi.openxml4j.opc.internal.PackagePropertiesPart::lastPrinted:org.apache.poi.openxml4j.util.Nullable" />
+			<role name="adaptee" element="org.apache.poi.openxml4j.opc.internal.PackagePropertiesPart::modified:org.apache.poi.openxml4j.util.Nullable" />
+			<role name="Request()" element="org.apache.poi.openxml4j.opc.internal.PackagePropertiesPart::setCreatedProperty(org.apache.poi.openxml4j.util.Nullable):void" />
+			<role name="Request()" element="org.apache.poi.openxml4j.opc.internal.PackagePropertiesPart::setLastPrintedProperty(org.apache.poi.openxml4j.util.Nullable):void" />
+			<role name="Request()" element="org.apache.poi.openxml4j.opc.internal.PackagePropertiesPart::setModifiedProperty(org.apache.poi.openxml4j.util.Nullable):void" />
+		</instance>
+		<instance>
+			<role name="Adapter" element="org.apache.poi.openxml4j.opc.OPCPackage" />
+			<role name="Adaptee" element="org.apache.poi.openxml4j.opc.PackageRelationshipCollection" />
+			<role name="adaptee" element="org.apache.poi.openxml4j.opc.OPCPackage::relationships:org.apache.poi.openxml4j.opc.PackageRelationshipCollection" />
+			<role name="Request()" element="org.apache.poi.openxml4j.opc.OPCPackage::addRelationship(org.apache.poi.openxml4j.opc.PackagePartName, org.apache.poi.openxml4j.opc.TargetMode, java.lang.String, java.lang.String):org.apache.poi.openxml4j.opc.PackageRelationship" />
+			<role name="Request()" element="org.apache.poi.openxml4j.opc.OPCPackage::addExternalRelationship(java.lang.String, java.lang.String, java.lang.String):org.apache.poi.openxml4j.opc.PackageRelationship" />
+			<role name="Request()" element="org.apache.poi.openxml4j.opc.OPCPackage::removeRelationship(java.lang.String):void" />
+			<role name="Request()" element="org.apache.poi.openxml4j.opc.OPCPackage::clearRelationships():void" />
+			<role name="Request()" element="org.apache.poi.openxml4j.opc.OPCPackage::getRelationship(java.lang.String):org.apache.poi.openxml4j.opc.PackageRelationship" />
+			<role name="Request()" element="org.apache.poi.openxml4j.opc.OPCPackage::hasRelationships():boolean" />
+		</instance>
+		<instance>
+			<role name="Adaptee" element="org.apache.poi.util.BitField" />
+			<role name="Adapter" element="org.apache.poi.hssf.record.formula.AreaPtgBase" />
+			<role name="adaptee" element="org.apache.poi.hssf.record.formula.AreaPtgBase::columnMask:org.apache.poi.util.BitField" />
+			<role name="Request()" element="org.apache.poi.hssf.record.formula.AreaPtgBase::getFirstColumn():int" />
+			<role name="Request()" element="org.apache.poi.hssf.record.formula.AreaPtgBase::getLastColumn():int" />
+		</instance>
+		<instance>
+			<role name="Adaptee" element="org.apache.poi.poifs.filesystem.POIFSDocument$BigBlockStore" />
+			<role name="Adapter" element="org.apache.poi.poifs.filesystem.POIFSDocument" />
+			<role name="adaptee" element="org.apache.poi.poifs.filesystem.POIFSDocument::_big_store:org.apache.poi.poifs.filesystem.POIFSDocument$BigBlockStore" />
+			<role name="Request()" element="org.apache.poi.poifs.filesystem.POIFSDocument::countBlocks():int" />
+			<role name="Request()" element="org.apache.poi.poifs.filesystem.POIFSDocument::writeBlocks(java.io.OutputStream):void" />
+			<role name="Request()" element="org.apache.poi.poifs.filesystem.POIFSDocument::getViewableArray():java.lang.Object[]" />
+		</instance>
+		<instance>
+			<role name="Adaptee" element="org.apache.poi.poifs.filesystem.POIFSDocument$SmallBlockStore" />
+			<role name="Adapter" element="org.apache.poi.poifs.filesystem.POIFSDocument" />
+			<role name="adaptee" element="org.apache.poi.poifs.filesystem.POIFSDocument::_small_store:org.apache.poi.poifs.filesystem.POIFSDocument$SmallBlockStore" />
+			<role name="Request()" element="org.apache.poi.poifs.filesystem.POIFSDocument::getViewableArray():java.lang.Object[]" />
+		</instance>
+		<instance>
+			<role name="Adaptee" element="org.apache.poi.poifs.storage.DataInputBlock" />
+			<role name="Adapter" element="org.apache.poi.poifs.filesystem.DocumentInputStream" />
+			<role name="adaptee" element="org.apache.poi.poifs.filesystem.DocumentInputStream::_currentBlock:org.apache.poi.poifs.storage.DataInputBlock" />
+			<role name="Request()" element="org.apache.poi.poifs.filesystem.DocumentInputStream::readFully(byte[], int, int):void" />
+			<role name="Request()" element="org.apache.poi.poifs.filesystem.DocumentInputStream::readLong():long" />
+			<role name="Request()" element="org.apache.poi.poifs.filesystem.DocumentInputStream::readInt():int" />
+			<role name="Request()" element="org.apache.poi.poifs.filesystem.DocumentInputStream::readUShort():int" />
+			<role name="Request()" element="org.apache.poi.poifs.filesystem.DocumentInputStream::readUByte():int" />
+		</instance>
+		<instance>
+			<role name="Adaptee" element="org.apache.poi.hssf.record.crypto.Biff8RC4" />
+			<role name="Adapter" element="org.apache.poi.hssf.record.crypto.Biff8DecryptingStream" />
+			<role name="adaptee" element="org.apache.poi.hssf.record.crypto.Biff8DecryptingStream::_rc4:org.apache.poi.hssf.record.crypto.Biff8RC4" />
+			<role name="Request()" element="org.apache.poi.hssf.record.crypto.Biff8DecryptingStream::readRecordSID():int" />
+			<role name="Request()" element="org.apache.poi.hssf.record.crypto.Biff8DecryptingStream::readDataSize():int" />
+			<role name="Request()" element="org.apache.poi.hssf.record.crypto.Biff8DecryptingStream::readFully(byte[], int, int):void" />
+			<role name="Request()" element="org.apache.poi.hssf.record.crypto.Biff8DecryptingStream::readUByte():int" />
+			<role name="Request()" element="org.apache.poi.hssf.record.crypto.Biff8DecryptingStream::readByte():byte" />
+			<role name="Request()" element="org.apache.poi.hssf.record.crypto.Biff8DecryptingStream::readUShort():int" />
+			<role name="Request()" element="org.apache.poi.hssf.record.crypto.Biff8DecryptingStream::readShort():short" />
+			<role name="Request()" element="org.apache.poi.hssf.record.crypto.Biff8DecryptingStream::readInt():int" />
+			<role name="Request()" element="org.apache.poi.hssf.record.crypto.Biff8DecryptingStream::readLong():long" />
+		</instance>
+		<instance>
+			<role name="Adapter" element="org.apache.poi.hssf.record.FormulaRecord" />
+			<role name="Adaptee" element="org.apache.poi.hssf.record.FormulaRecord$SpecialCachedValue" />
+			<role name="adaptee" element="org.apache.poi.hssf.record.FormulaRecord::specialCachedValue:org.apache.poi.hssf.record.FormulaRecord$SpecialCachedValue" />
+			<role name="Request()" element="org.apache.poi.hssf.record.FormulaRecord::serializeValue(org.apache.poi.util.LittleEndianOutput):void" />
+			<role name="Request()" element="org.apache.poi.hssf.record.FormulaRecord::appendValueText(java.lang.StringBuilder):void" />
+		</instance>
+		<instance>
+			<role name="Adapter" element="org.apache.poi.hssf.record.aggregates.FormulaRecordAggregate" />
+			<role name="Adaptee" element="org.apache.poi.hssf.record.aggregates.SharedValueManager" />
+			<role name="adaptee" element="org.apache.poi.hssf.record.aggregates.FormulaRecordAggregate::_sharedValueManager:org.apache.poi.hssf.record.aggregates.SharedValueManager" />
+			<role name="Request()" element="org.apache.poi.hssf.record.aggregates.FormulaRecordAggregate::visitContainedRecords(org.apache.poi.hssf.record.aggregates.RecordAggregate$RecordVisitor):void" />
+		</instance>
+		<instance>
+			<role name="Adaptee" element="org.apache.poi.hssf.record.SSTRecord" />
+			<role name="Adapter" element="org.apache.poi.hssf.eventusermodel.examples.XLS2CSVmra" />
+			<role name="adaptee" element="org.apache.poi.hssf.eventusermodel.examples.XLS2CSVmra::sstRecord:org.apache.poi.hssf.record.SSTRecord" />
+			<role name="Request()" element="org.apache.poi.hssf.eventusermodel.examples.XLS2CSVmra::processRecord(org.apache.poi.hssf.record.Record):void" />
+		</instance>
+		<instance>
+			<role name="Adaptee" element="org.apache.poi.hssf.record.SSTRecord" />
+			<role name="Adapter" element="org.apache.poi.hssf.extractor.EventBasedExcelExtractor$TextListener" />
+			<role name="adaptee" element="org.apache.poi.hssf.extractor.EventBasedExcelExtractor$TextListener::sstRecord:org.apache.poi.hssf.record.SSTRecord" />
+			<role name="Request()" element="org.apache.poi.hssf.extractor.EventBasedExcelExtractor$TextListener::processRecord(org.apache.poi.hssf.record.Record):void" />
+		</instance>
+		<instance>
+			<role name="Adaptee" element="org.apache.poi.hssf.record.SSTRecord" />
+			<role name="Adapter" element="org.apache.poi.hssf.usermodel.examples.EventExample" />
+			<role name="adaptee" element="org.apache.poi.hssf.usermodel.examples.EventExample::sstrec:org.apache.poi.hssf.record.SSTRecord" />
+			<role name="Request()" element="org.apache.poi.hssf.usermodel.examples.EventExample::processRecord(org.apache.poi.hssf.record.Record):void" />
+		</instance>
+		<instance>
+			<role name="Adaptee" element="org.apache.poi.hssf.record.UnicodeString" />
+			<role name="Adapter" element="org.apache.poi.hssf.usermodel.HSSFRichTextString" />
+			<role name="adaptee" element="org.apache.poi.hssf.usermodel.HSSFRichTextString::_string:org.apache.poi.hssf.record.UnicodeString" />
+			<role name="Request()" element="org.apache.poi.hssf.usermodel.HSSFRichTextString::applyFont(int, int, short):void" />
+			<role name="Request()" element="org.apache.poi.hssf.usermodel.HSSFRichTextString::applyFont(org.apache.poi.ss.usermodel.Font):void" />
+			<role name="Request()" element="org.apache.poi.hssf.usermodel.HSSFRichTextString::clearFormatting():void" />
+			<role name="Request()" element="org.apache.poi.hssf.usermodel.HSSFRichTextString::getString():java.lang.String" />
+			<role name="Request()" element="org.apache.poi.hssf.usermodel.HSSFRichTextString::length():int" />
+			<role name="Request()" element="org.apache.poi.hssf.usermodel.HSSFRichTextString::numFormattingRuns():int" />
+			<role name="Request()" element="org.apache.poi.hssf.usermodel.HSSFRichTextString::getIndexOfFormattingRun(int):int" />
+			<role name="Request()" element="org.apache.poi.hssf.usermodel.HSSFRichTextString::applyFont(short):void" />
+		</instance>
+		<instance>
+			<role name="Adaptee" element="org.apache.poi.hssf.model.Sheet" />
+			<role name="Adapter" element="org.apache.poi.hssf.usermodel.HSSFSheet" />
+			<role name="adaptee" element="org.apache.poi.hssf.usermodel.HSSFSheet::_sheet:org.apache.poi.hssf.model.Sheet" />
+			<role name="Request()" element="org.apache.poi.hssf.usermodel.HSSFSheet::removeRow(org.apache.poi.ss.usermodel.Row):void" />
+			<role name="Request()" element="org.apache.poi.hssf.usermodel.HSSFSheet::setColumnHidden(int, boolean):void" />
+			<role name="Request()" element="org.apache.poi.hssf.usermodel.HSSFSheet::isColumnHidden(int):boolean" />
+			<role name="Request()" element="org.apache.poi.hssf.usermodel.HSSFSheet::setColumnWidth(int, int):void" />
+			<role name="Request()" element="org.apache.poi.hssf.usermodel.HSSFSheet::getColumnWidth(int):int" />
+			<role name="Request()" element="org.apache.poi.hssf.usermodel.HSSFSheet::getDefaultColumnWidth():int" />
+			<role name="Request()" element="org.apache.poi.hssf.usermodel.HSSFSheet::setDefaultColumnWidth(int):void" />
+			<role name="Request()" element="org.apache.poi.hssf.usermodel.HSSFSheet::getDefaultRowHeight():short" />
+			<role name="Request()" element="org.apache.poi.hssf.usermodel.HSSFSheet::getDefaultRowHeightInPoints():float" />
+			<role name="Request()" element="org.apache.poi.hssf.usermodel.HSSFSheet::setDefaultRowHeight(short):void" />
+			<role name="Request()" element="org.apache.poi.hssf.usermodel.HSSFSheet::setDefaultRowHeightInPoints(float):void" />
+			<role name="Request()" element="org.apache.poi.hssf.usermodel.HSSFSheet::addMergedRegion(org.apache.poi.ss.util.CellRangeAddress):int" />
+			<role name="Request()" element="org.apache.poi.hssf.usermodel.HSSFSheet::setVerticallyCenter(boolean):void" />
+			<role name="Request()" element="org.apache.poi.hssf.usermodel.HSSFSheet::getVerticallyCenter():boolean" />
+			<role name="Request()" element="org.apache.poi.hssf.usermodel.HSSFSheet::setHorizontallyCenter(boolean):void" />
+			<role name="Request()" element="org.apache.poi.hssf.usermodel.HSSFSheet::getHorizontallyCenter():boolean" />
+			<role name="Request()" element="org.apache.poi.hssf.usermodel.HSSFSheet::removeMergedRegion(int):void" />
+			<role name="Request()" element="org.apache.poi.hssf.usermodel.HSSFSheet::getNumMergedRegions():int" />
+			<role name="Request()" element="org.apache.poi.hssf.usermodel.HSSFSheet::getMergedRegion(int):org.apache.poi.ss.util.CellRangeAddress" />
+			<role name="Request()" element="org.apache.poi.hssf.usermodel.HSSFSheet::setAutobreaks(boolean):void" />
+			<role name="Request()" element="org.apache.poi.hssf.usermodel.HSSFSheet::setDisplayGuts(boolean):void" />
+			<role name="Request()" element="org.apache.poi.hssf.usermodel.HSSFSheet::setFitToPage(boolean):void" />
+			<role name="Request()" element="org.apache.poi.hssf.usermodel.HSSFSheet::setRowSumsBelow(boolean):void" />
+			<role name="Request()" element="org.apache.poi.hssf.usermodel.HSSFSheet::setRowSumsRight(boolean):void" />
+			<role name="Request()" element="org.apache.poi.hssf.usermodel.HSSFSheet::getAutobreaks():boolean" />
+			<role name="Request()" element="org.apache.poi.hssf.usermodel.HSSFSheet::getDisplayGuts():boolean" />
+			<role name="Request()" element="org.apache.poi.hssf.usermodel.HSSFSheet::isDisplayZeros():boolean" />
+			<role name="Request()" element="org.apache.poi.hssf.usermodel.HSSFSheet::setDisplayZeros(boolean):void" />
+			<role name="Request()" element="org.apache.poi.hssf.usermodel.HSSFSheet::getFitToPage():boolean" />
+			<role name="Request()" element="org.apache.poi.hssf.usermodel.HSSFSheet::getRowSumsBelow():boolean" />
+			<role name="Request()" element="org.apache.poi.hssf.usermodel.HSSFSheet::getRowSumsRight():boolean" />
+			<role name="Request()" element="org.apache.poi.hssf.usermodel.HSSFSheet::getMargin(short):double" />
+			<role name="Request()" element="org.apache.poi.hssf.usermodel.HSSFSheet::setMargin(short, double):void" />
+			<role name="Request()" element="org.apache.poi.hssf.usermodel.HSSFSheet::getTopRow():short" />
+			<role name="Request()" element="org.apache.poi.hssf.usermodel.HSSFSheet::getLeftCol():short" />
+			<role name="Request()" element="org.apache.poi.hssf.usermodel.HSSFSheet::showInPane(short, short):void" />
+			<role name="Request()" element="org.apache.poi.hssf.usermodel.HSSFSheet::setDisplayGridlines(boolean):void" />
+			<role name="Request()" element="org.apache.poi.hssf.usermodel.HSSFSheet::isDisplayGridlines():boolean" />
+			<role name="Request()" element="org.apache.poi.hssf.usermodel.HSSFSheet::setDisplayFormulas(boolean):void" />
+			<role name="Request()" element="org.apache.poi.hssf.usermodel.HSSFSheet::isDisplayFormulas():boolean" />
+			<role name="Request()" element="org.apache.poi.hssf.usermodel.HSSFSheet::setDisplayRowColHeadings(boolean):void" />
+			<role name="Request()" element="org.apache.poi.hssf.usermodel.HSSFSheet::isDisplayRowColHeadings():boolean" />
+			<role name="Request()" element="org.apache.poi.hssf.usermodel.HSSFSheet::setRowBreak(int):void" />
+			<role name="Request()" element="org.apache.poi.hssf.usermodel.HSSFSheet::isRowBroken(int):boolean" />
+			<role name="Request()" element="org.apache.poi.hssf.usermodel.HSSFSheet::removeRowBreak(int):void" />
+			<role name="Request()" element="org.apache.poi.hssf.usermodel.HSSFSheet::getRowBreaks():int[]" />
+			<role name="Request()" element="org.apache.poi.hssf.usermodel.HSSFSheet::getColumnBreaks():int[]" />
+			<role name="Request()" element="org.apache.poi.hssf.usermodel.HSSFSheet::setColumnBreak(int):void" />
+			<role name="Request()" element="org.apache.poi.hssf.usermodel.HSSFSheet::isColumnBroken(int):boolean" />
+			<role name="Request()" element="org.apache.poi.hssf.usermodel.HSSFSheet::removeColumnBreak(int):void" />
+			<role name="Request()" element="org.apache.poi.hssf.usermodel.HSSFSheet::setColumnGroupCollapsed(int, boolean):void" />
+			<role name="Request()" element="org.apache.poi.hssf.usermodel.HSSFSheet::groupColumn(int, int):void" />
+			<role name="Request()" element="org.apache.poi.hssf.usermodel.HSSFSheet::ungroupColumn(int, int):void" />
+			<role name="Request()" element="org.apache.poi.hssf.usermodel.HSSFSheet::groupRow(int, int):void" />
+			<role name="Request()" element="org.apache.poi.hssf.usermodel.HSSFSheet::ungroupRow(int, int):void" />
+			<role name="Request()" element="org.apache.poi.hssf.usermodel.HSSFSheet::setRowGroupCollapsed(int, boolean):void" />
+			<role name="Request()" element="org.apache.poi.hssf.usermodel.HSSFSheet::setDefaultColumnStyle(int, org.apache.poi.ss.usermodel.CellStyle):void" />
+			<role name="Request()" element="org.apache.poi.hssf.usermodel.HSSFSheet::autoSizeColumn(int, boolean):void" />
+		</instance>
+		<instance>
+			<role name="Adaptee" element="org.apache.poi.poifs.property.RootProperty" />
+			<role name="Adapter" element="org.apache.poi.poifs.storage.SmallBlockTableWriter" />
+			<role name="adaptee" element="org.apache.poi.poifs.storage.SmallBlockTableWriter::_root:org.apache.poi.poifs.property.RootProperty" />
+			<role name="Request()" element="org.apache.poi.poifs.storage.SmallBlockTableWriter::setStartBlock(int):void" />
+		</instance>
+		<instance>
+			<role name="Adaptee" element="org.apache.poi.hwpf.model.DocumentProperties" />
+			<role name="Adapter" element="org.apache.poi.hwpf.HWPFDocument" />
+			<role name="adaptee" element="org.apache.poi.hwpf.HWPFDocument::_dop:org.apache.poi.hwpf.model.DocumentProperties" />
+			<role name="Request()" element="org.apache.poi.hwpf.HWPFDocument::write(java.io.OutputStream):void" />
+		</instance>
+		<instance>
+			<role name="Adaptee" element="org.apache.poi.hwpf.model.FileInformationBlock" />
+			<role name="Adapter" element="org.apache.poi.hwpf.HWPFDocument" />
+			<role name="adaptee" element="org.apache.poi.hwpf.HWPFDocument::_fib:org.apache.poi.hwpf.model.FileInformationBlock" />
+			<role name="Request()" element="org.apache.poi.hwpf.HWPFDocument::write(java.io.OutputStream):void" />
+		</instance>
+		<instance>
+			<role name="Adaptee" element="org.apache.poi.hssf.record.ExtendedFormatRecord" />
+			<role name="Adapter" element="org.apache.poi.hssf.usermodel.HSSFCellStyle" />
+			<role name="adaptee" element="org.apache.poi.hssf.usermodel.HSSFCellStyle::_format:org.apache.poi.hssf.record.ExtendedFormatRecord" />
+			<role name="Request()" element="org.apache.poi.hssf.usermodel.HSSFCellStyle::setDataFormat(short):void" />
+			<role name="Request()" element="org.apache.poi.hssf.usermodel.HSSFCellStyle::getDataFormat():short" />
+			<role name="Request()" element="org.apache.poi.hssf.usermodel.HSSFCellStyle::getFontIndex():short" />
+			<role name="Request()" element="org.apache.poi.hssf.usermodel.HSSFCellStyle::setHidden(boolean):void" />
+			<role name="Request()" element="org.apache.poi.hssf.usermodel.HSSFCellStyle::getHidden():boolean" />
+			<role name="Request()" element="org.apache.poi.hssf.usermodel.HSSFCellStyle::setLocked(boolean):void" />
+			<role name="Request()" element="org.apache.poi.hssf.usermodel.HSSFCellStyle::getLocked():boolean" />
+			<role name="Request()" element="org.apache.poi.hssf.usermodel.HSSFCellStyle::setAlignment(short):void" />
+			<role name="Request()" element="org.apache.poi.hssf.usermodel.HSSFCellStyle::getAlignment():short" />
+			<role name="Request()" element="org.apache.poi.hssf.usermodel.HSSFCellStyle::setWrapText(boolean):void" />
+			<role name="Request()" element="org.apache.poi.hssf.usermodel.HSSFCellStyle::getWrapText():boolean" />
+			<role name="Request()" element="org.apache.poi.hssf.usermodel.HSSFCellStyle::setVerticalAlignment(short):void" />
+			<role name="Request()" element="org.apache.poi.hssf.usermodel.HSSFCellStyle::getVerticalAlignment():short" />
+			<role name="Request()" element="org.apache.poi.hssf.usermodel.HSSFCellStyle::setRotation(short):void" />
+			<role name="Request()" element="org.apache.poi.hssf.usermodel.HSSFCellStyle::getRotation():short" />
+			<role name="Request()" element="org.apache.poi.hssf.usermodel.HSSFCellStyle::setIndention(short):void" />
+			<role name="Request()" element="org.apache.poi.hssf.usermodel.HSSFCellStyle::getIndention():short" />
+			<role name="Request()" element="org.apache.poi.hssf.usermodel.HSSFCellStyle::setBorderLeft(short):void" />
+			<role name="Request()" element="org.apache.poi.hssf.usermodel.HSSFCellStyle::getBorderLeft():short" />
+			<role name="Request()" element="org.apache.poi.hssf.usermodel.HSSFCellStyle::setBorderRight(short):void" />
+			<role name="Request()" element="org.apache.poi.hssf.usermodel.HSSFCellStyle::getBorderRight():short" />
+			<role name="Request()" element="org.apache.poi.hssf.usermodel.HSSFCellStyle::setBorderTop(short):void" />
+			<role name="Request()" element="org.apache.poi.hssf.usermodel.HSSFCellStyle::getBorderTop():short" />
+			<role name="Request()" element="org.apache.poi.hssf.usermodel.HSSFCellStyle::setBorderBottom(short):void" />
+			<role name="Request()" element="org.apache.poi.hssf.usermodel.HSSFCellStyle::getBorderBottom():short" />
+			<role name="Request()" element="org.apache.poi.hssf.usermodel.HSSFCellStyle::setLeftBorderColor(short):void" />
+			<role name="Request()" element="org.apache.poi.hssf.usermodel.HSSFCellStyle::getLeftBorderColor():short" />
+			<role name="Request()" element="org.apache.poi.hssf.usermodel.HSSFCellStyle::setRightBorderColor(short):void" />
+			<role name="Request()" element="org.apache.poi.hssf.usermodel.HSSFCellStyle::getRightBorderColor():short" />
+			<role name="Request()" element="org.apache.poi.hssf.usermodel.HSSFCellStyle::setTopBorderColor(short):void" />
+			<role name="Request()" element="org.apache.poi.hssf.usermodel.HSSFCellStyle::getTopBorderColor():short" />
+			<role name="Request()" element="org.apache.poi.hssf.usermodel.HSSFCellStyle::setBottomBorderColor(short):void" />
+			<role name="Request()" element="org.apache.poi.hssf.usermodel.HSSFCellStyle::getBottomBorderColor():short" />
+			<role name="Request()" element="org.apache.poi.hssf.usermodel.HSSFCellStyle::setFillPattern(short):void" />
+			<role name="Request()" element="org.apache.poi.hssf.usermodel.HSSFCellStyle::getFillPattern():short" />
+			<role name="Request()" element="org.apache.poi.hssf.usermodel.HSSFCellStyle::setFillBackgroundColor(short):void" />
+			<role name="Request()" element="org.apache.poi.hssf.usermodel.HSSFCellStyle::getFillBackgroundColor():short" />
+			<role name="Request()" element="org.apache.poi.hssf.usermodel.HSSFCellStyle::setFillForegroundColor(short):void" />
+			<role name="Request()" element="org.apache.poi.hssf.usermodel.HSSFCellStyle::getFillForegroundColor():short" />
+		</instance>
+		<instance>
+			<role name="Adaptee" element="org.apache.poi.hssf.model.Workbook" />
+			<role name="Adapter" element="org.apache.poi.hssf.usermodel.HSSFWorkbook" />
+			<role name="adaptee" element="org.apache.poi.hssf.usermodel.HSSFWorkbook::workbook:org.apache.poi.hssf.model.Workbook" />
+			<role name="Request()" element="org.apache.poi.hssf.usermodel.HSSFWorkbook::setSheetOrder(java.lang.String, int):void" />
+			<role name="Request()" element="org.apache.poi.hssf.usermodel.HSSFWorkbook::setSelectedTab(int):void" />
+			<role name="Request()" element="org.apache.poi.hssf.usermodel.HSSFWorkbook::setActiveSheet(int):void" />
+			<role name="Request()" element="org.apache.poi.hssf.usermodel.HSSFWorkbook::getActiveSheetIndex():int" />
+			<role name="Request()" element="org.apache.poi.hssf.usermodel.HSSFWorkbook::setFirstVisibleTab(int):void" />
+			<role name="Request()" element="org.apache.poi.hssf.usermodel.HSSFWorkbook::getFirstVisibleTab():int" />
+			<role name="Request()" element="org.apache.poi.hssf.usermodel.HSSFWorkbook::setSheetName(int, java.lang.String):void" />
+			<role name="Request()" element="org.apache.poi.hssf.usermodel.HSSFWorkbook::getSheetName(int):java.lang.String" />
+			<role name="Request()" element="org.apache.poi.hssf.usermodel.HSSFWorkbook::isHidden():boolean" />
+			<role name="Request()" element="org.apache.poi.hssf.usermodel.HSSFWorkbook::setHidden(boolean):void" />
+			<role name="Request()" element="org.apache.poi.hssf.usermodel.HSSFWorkbook::isSheetHidden(int):boolean" />
+			<role name="Request()" element="org.apache.poi.hssf.usermodel.HSSFWorkbook::isSheetVeryHidden(int):boolean" />
+			<role name="Request()" element="org.apache.poi.hssf.usermodel.HSSFWorkbook::setSheetHidden(int, boolean):void" />
+			<role name="Request()" element="org.apache.poi.hssf.usermodel.HSSFWorkbook::setSheetHidden(int, int):void" />
+			<role name="Request()" element="org.apache.poi.hssf.usermodel.HSSFWorkbook::getSheetIndex(java.lang.String):int" />
+			<role name="Request()" element="org.apache.poi.hssf.usermodel.HSSFWorkbook::removeSheetAt(int):void" />
+			<role name="Request()" element="org.apache.poi.hssf.usermodel.HSSFWorkbook::setRepeatingRowsAndColumns(int, int, int, int, int):void" />
+			<role name="Request()" element="org.apache.poi.hssf.usermodel.HSSFWorkbook::getNumberOfFonts():short" />
+			<role name="Request()" element="org.apache.poi.hssf.usermodel.HSSFWorkbook::getNumCellStyles():short" />
+			<role name="Request()" element="org.apache.poi.hssf.usermodel.HSSFWorkbook::setPrintArea(int, java.lang.String):void" />
+			<role name="Request()" element="org.apache.poi.hssf.usermodel.HSSFWorkbook::getPrintArea(int):java.lang.String" />
+			<role name="Request()" element="org.apache.poi.hssf.usermodel.HSSFWorkbook::removeName(int):void" />
+			<role name="Request()" element="org.apache.poi.hssf.usermodel.HSSFWorkbook::addPicture(byte[], int):int" />
+		</instance>
+		<instance>
+			<role name="Adaptee" element="org.apache.poi.hssf.record.CellValueRecordInterface" />
+			<role name="Adapter" element="org.apache.poi.hssf.usermodel.HSSFCell" />
+			<role name="adaptee" element="org.apache.poi.hssf.usermodel.HSSFCell::_record:org.apache.poi.hssf.record.CellValueRecordInterface" />
+			<role name="Request()" element="org.apache.poi.hssf.usermodel.HSSFCell::getRowIndex():int" />
+			<role name="Request()" element="org.apache.poi.hssf.usermodel.HSSFCell::getColumnIndex():int" />
+			<role name="Request()" element="org.apache.poi.hssf.usermodel.HSSFCell::setCellType(int):void" />
+			<role name="Request()" element="org.apache.poi.hssf.usermodel.HSSFCell::setCellValue(double):void" />
+			<role name="Request()" element="org.apache.poi.hssf.usermodel.HSSFCell::setCellValue(org.apache.poi.ss.usermodel.RichTextString):void" />
+			<role name="Request()" element="org.apache.poi.hssf.usermodel.HSSFCell::setCellFormula(java.lang.String):void" />
+			<role name="Request()" element="org.apache.poi.hssf.usermodel.HSSFCell::setCellValue(boolean):void" />
+			<role name="Request()" element="org.apache.poi.hssf.usermodel.HSSFCell::setCellErrorValue(byte):void" />
+			<role name="Request()" element="org.apache.poi.hssf.usermodel.HSSFCell::setAsActiveCell():void" />
+			<role name="Request()" element="org.apache.poi.hssf.usermodel.HSSFCell::setCellComment(org.apache.poi.ss.usermodel.Comment):void" />
+			<role name="Request()" element="org.apache.poi.hssf.usermodel.HSSFCell::removeCellComment():void" />
+			<role name="Request()" element="org.apache.poi.hssf.usermodel.HSSFCell::setHyperlink(org.apache.poi.ss.usermodel.Hyperlink):void" />
+		</instance>
+		<instance>
+			<role name="Adaptee" element="org.apache.poi.ss.util.CellRangeAddress" />
+			<role name="Adapter" element="org.apache.poi.hssf.record.CFHeaderRecord" />
+			<role name="adaptee" element="org.apache.poi.hssf.record.CFHeaderRecord::field_3_enclosing_cell_range:org.apache.poi.ss.util.CellRangeAddress" />
+			<role name="Request()" element="org.apache.poi.hssf.record.CFHeaderRecord::serialize(org.apache.poi.util.LittleEndianOutput):void" />
+		</instance>
+		<instance>
+			<role name="Adaptee" element="org.apache.poi.ss.util.CellRangeAddress" />
+			<role name="Adapter" element="org.apache.poi.hssf.record.HyperlinkRecord" />
+			<role name="adaptee" element="org.apache.poi.hssf.record.HyperlinkRecord::_range:org.apache.poi.ss.util.CellRangeAddress" />
+			<role name="Request()" element="org.apache.poi.hssf.record.HyperlinkRecord::serialize(org.apache.poi.util.LittleEndianOutput):void" />
+		</instance>
+		<instance>
+			<role name="Adaptee" element="org.apache.poi.hssf.util.CellRangeAddress8Bit" />
+			<role name="Adapter" element="org.apache.poi.hssf.record.SharedValueRecordBase" />
+			<role name="adaptee" element="org.apache.poi.hssf.record.SharedValueRecordBase::_range:org.apache.poi.hssf.util.CellRangeAddress8Bit" />
+			<role name="Request()" element="org.apache.poi.hssf.record.SharedValueRecordBase::serialize(org.apache.poi.util.LittleEndianOutput):void" />
+		</instance>
+		<instance>
+			<role name="Adapter" element="org.apache.poi.poifs.filesystem.EntryNode" />
+			<role name="Adaptee" element="org.apache.poi.poifs.property.Property" />
+			<role name="adaptee" element="org.apache.poi.poifs.filesystem.EntryNode::_property:org.apache.poi.poifs.property.Property" />
+			<role name="Request()" element="org.apache.poi.poifs.filesystem.EntryNode::getName():java.lang.String" />
+		</instance>
+		<instance>
+			<role name="Adaptee" element="org.apache.poi.hssf.record.PrintSetupRecord" />
+			<role name="Adapter" element="org.apache.poi.hssf.usermodel.HSSFPrintSetup" />
+			<role name="adaptee" element="org.apache.poi.hssf.usermodel.HSSFPrintSetup::printSetupRecord:org.apache.poi.hssf.record.PrintSetupRecord" />
+			<role name="Request()" element="org.apache.poi.hssf.usermodel.HSSFPrintSetup::setPaperSize(short):void" />
+			<role name="Request()" element="org.apache.poi.hssf.usermodel.HSSFPrintSetup::setScale(short):void" />
+			<role name="Request()" element="org.apache.poi.hssf.usermodel.HSSFPrintSetup::setPageStart(short):void" />
+			<role name="Request()" element="org.apache.poi.hssf.usermodel.HSSFPrintSetup::setFitWidth(short):void" />
+			<role name="Request()" element="org.apache.poi.hssf.usermodel.HSSFPrintSetup::setFitHeight(short):void" />
+			<role name="Request()" element="org.apache.poi.hssf.usermodel.HSSFPrintSetup::setLeftToRight(boolean):void" />
+			<role name="Request()" element="org.apache.poi.hssf.usermodel.HSSFPrintSetup::setLandscape(boolean):void" />
+			<role name="Request()" element="org.apache.poi.hssf.usermodel.HSSFPrintSetup::setValidSettings(boolean):void" />
+			<role name="Request()" element="org.apache.poi.hssf.usermodel.HSSFPrintSetup::setNoColor(boolean):void" />
+			<role name="Request()" element="org.apache.poi.hssf.usermodel.HSSFPrintSetup::setDraft(boolean):void" />
+			<role name="Request()" element="org.apache.poi.hssf.usermodel.HSSFPrintSetup::setNotes(boolean):void" />
+			<role name="Request()" element="org.apache.poi.hssf.usermodel.HSSFPrintSetup::setNoOrientation(boolean):void" />
+			<role name="Request()" element="org.apache.poi.hssf.usermodel.HSSFPrintSetup::setUsePage(boolean):void" />
+			<role name="Request()" element="org.apache.poi.hssf.usermodel.HSSFPrintSetup::setHResolution(short):void" />
+			<role name="Request()" element="org.apache.poi.hssf.usermodel.HSSFPrintSetup::setVResolution(short):void" />
+			<role name="Request()" element="org.apache.poi.hssf.usermodel.HSSFPrintSetup::setHeaderMargin(double):void" />
+			<role name="Request()" element="org.apache.poi.hssf.usermodel.HSSFPrintSetup::setFooterMargin(double):void" />
+			<role name="Request()" element="org.apache.poi.hssf.usermodel.HSSFPrintSetup::setCopies(short):void" />
+			<role name="Request()" element="org.apache.poi.hssf.usermodel.HSSFPrintSetup::getPaperSize():short" />
+			<role name="Request()" element="org.apache.poi.hssf.usermodel.HSSFPrintSetup::getScale():short" />
+			<role name="Request()" element="org.apache.poi.hssf.usermodel.HSSFPrintSetup::getPageStart():short" />
+			<role name="Request()" element="org.apache.poi.hssf.usermodel.HSSFPrintSetup::getFitWidth():short" />
+			<role name="Request()" element="org.apache.poi.hssf.usermodel.HSSFPrintSetup::getFitHeight():short" />
+			<role name="Request()" element="org.apache.poi.hssf.usermodel.HSSFPrintSetup::getLeftToRight():boolean" />
+			<role name="Request()" element="org.apache.poi.hssf.usermodel.HSSFPrintSetup::getLandscape():boolean" />
+			<role name="Request()" element="org.apache.poi.hssf.usermodel.HSSFPrintSetup::getValidSettings():boolean" />
+			<role name="Request()" element="org.apache.poi.hssf.usermodel.HSSFPrintSetup::getNoColor():boolean" />
+			<role name="Request()" element="org.apache.poi.hssf.usermodel.HSSFPrintSetup::getDraft():boolean" />
+			<role name="Request()" element="org.apache.poi.hssf.usermodel.HSSFPrintSetup::getNotes():boolean" />
+			<role name="Request()" element="org.apache.poi.hssf.usermodel.HSSFPrintSetup::getNoOrientation():boolean" />
+			<role name="Request()" element="org.apache.poi.hssf.usermodel.HSSFPrintSetup::getUsePage():boolean" />
+			<role name="Request()" element="org.apache.poi.hssf.usermodel.HSSFPrintSetup::getHResolution():short" />
+			<role name="Request()" element="org.apache.poi.hssf.usermodel.HSSFPrintSetup::getVResolution():short" />
+			<role name="Request()" element="org.apache.poi.hssf.usermodel.HSSFPrintSetup::getHeaderMargin():double" />
+			<role name="Request()" element="org.apache.poi.hssf.usermodel.HSSFPrintSetup::getFooterMargin():double" />
+			<role name="Request()" element="org.apache.poi.hssf.usermodel.HSSFPrintSetup::getCopies():short" />
+		</instance>
+		<instance>
+			<role name="Adaptee" element="org.apache.poi.ss.formula.WorkbookEvaluator" />
+			<role name="Adapter" element="org.apache.poi.hssf.usermodel.HSSFFormulaEvaluator" />
+			<role name="adaptee" element="org.apache.poi.hssf.usermodel.HSSFFormulaEvaluator::_bookEvaluator:org.apache.poi.ss.formula.WorkbookEvaluator" />
+			<role name="Request()" element="org.apache.poi.hssf.usermodel.HSSFFormulaEvaluator::clearAllCachedResultValues():void" />
+			<role name="Request()" element="org.apache.poi.hssf.usermodel.HSSFFormulaEvaluator::notifyDeleteCell(org.apache.poi.ss.usermodel.Cell):void" />
+			<role name="Request()" element="org.apache.poi.hssf.usermodel.HSSFFormulaEvaluator::notifySetFormula(org.apache.poi.ss.usermodel.Cell):void" />
+		</instance>
+		<instance>
+			<role name="Adaptee" element="org.apache.poi.ss.formula.WorkbookEvaluator" />
+			<role name="Adapter" element="org.apache.poi.xssf.usermodel.XSSFFormulaEvaluator" />
+			<role name="adaptee" element="org.apache.poi.xssf.usermodel.XSSFFormulaEvaluator::_bookEvaluator:org.apache.poi.ss.formula.WorkbookEvaluator" />
+			<role name="Request()" element="org.apache.poi.xssf.usermodel.XSSFFormulaEvaluator::clearAllCachedResultValues():void" />
+			<role name="Request()" element="org.apache.poi.xssf.usermodel.XSSFFormulaEvaluator::notifySetFormula(org.apache.poi.ss.usermodel.Cell):void" />
+			<role name="Request()" element="org.apache.poi.xssf.usermodel.XSSFFormulaEvaluator::notifyDeleteCell(org.apache.poi.ss.usermodel.Cell):void" />
+		</instance>
+		<instance>
+			<role name="Adaptee" element="org.apache.poi.hdf.model.util.BTreeSet" />
+			<role name="Adapter" element="org.apache.poi.hdf.event.EventBridge" />
+			<role name="adaptee" element="org.apache.poi.hdf.event.EventBridge::_hdrSections:org.apache.poi.hdf.model.util.BTreeSet" />
+			<role name="adaptee" element="org.apache.poi.hdf.event.EventBridge::_hdrParagraphs:org.apache.poi.hdf.model.util.BTreeSet" />
+			<role name="adaptee" element="org.apache.poi.hdf.event.EventBridge::_hdrCharacterRuns:org.apache.poi.hdf.model.util.BTreeSet" />
+			<role name="adaptee" element="org.apache.poi.hdf.event.EventBridge::_text:org.apache.poi.hdf.model.util.BTreeSet" />
+			<role name="Request()" element="org.apache.poi.hdf.event.EventBridge::hdrSection(org.apache.poi.hdf.model.hdftypes.SepxNode):void" />
+			<role name="Request()" element="org.apache.poi.hdf.event.EventBridge::paragraph(org.apache.poi.hdf.model.hdftypes.PapxNode):void" />
+			<role name="Request()" element="org.apache.poi.hdf.event.EventBridge::characterRun(org.apache.poi.hdf.model.hdftypes.ChpxNode):void" />
+			<role name="Request()" element="org.apache.poi.hdf.event.EventBridge::text(org.apache.poi.hdf.model.hdftypes.TextPiece):void" />
+		</instance>
+		<instance>
+			<role name="Adaptee" element="org.apache.poi.hssf.record.LbsDataSubRecord$LbsDropData" />
+			<role name="Adapter" element="org.apache.poi.hssf.record.LbsDataSubRecord" />
+			<role name="adaptee" element="org.apache.poi.hssf.record.LbsDataSubRecord::_dropData:org.apache.poi.hssf.record.LbsDataSubRecord$LbsDropData" />
+			<role name="Request()" element="org.apache.poi.hssf.record.LbsDataSubRecord::getDataSize():int" />
+			<role name="Request()" element="org.apache.poi.hssf.record.LbsDataSubRecord::serialize(org.apache.poi.util.LittleEndianOutput):void" />
+		</instance>
+		<instance>
+			<role name="Adaptee" element="org.apache.poi.ss.formula.SheetRefEvaluator" />
+			<role name="Adapter" element="org.apache.poi.ss.formula.LazyAreaEval" />
+			<role name="adaptee" element="org.apache.poi.ss.formula.LazyAreaEval::_evaluator:org.apache.poi.ss.formula.SheetRefEvaluator" />
+			<role name="Request()" element="org.apache.poi.ss.formula.LazyAreaEval::getRelativeValue(int, int):org.apache.poi.hssf.record.formula.eval.ValueEval" />
+		</instance>
+		<instance>
+			<role name="Adaptee" element="org.apache.poi.hssf.usermodel.HSSFSheet" />
+			<role name="Adapter" element="org.apache.poi.hssf.usermodel.HSSFRow" />
+			<role name="adaptee" element="org.apache.poi.hssf.usermodel.HSSFRow::sheet:org.apache.poi.hssf.usermodel.HSSFSheet" />
+			<role name="Request()" element="org.apache.poi.hssf.usermodel.HSSFRow::getHeight():short" />
+		</instance>
+		<instance>
+			<role name="Adaptee" element="org.apache.poi.xssf.usermodel.XSSFSheet" />
+			<role name="Adapter" element="org.apache.poi.xssf.usermodel.XSSFRow" />
+			<role name="adaptee" element="org.apache.poi.xssf.usermodel.XSSFRow::_sheet:org.apache.poi.xssf.usermodel.XSSFSheet" />
+			<role name="Request()" element="org.apache.poi.xssf.usermodel.XSSFRow::getHeightInPoints():float" />
+		</instance>
+		<instance>
+			<role name="Adaptee" element="org.apache.poi.hssf.usermodel.HSSFWorkbook" />
+			<role name="Adapter" element="org.apache.poi.hssf.extractor.ExcelExtractor" />
+			<role name="adaptee" element="org.apache.poi.hssf.extractor.ExcelExtractor::_wb:org.apache.poi.hssf.usermodel.HSSFWorkbook" />
+			<role name="Request()" element="org.apache.poi.hssf.extractor.ExcelExtractor::getText():java.lang.String" />
+		</instance>
+		<instance>
+			<role name="Adaptee" element="org.apache.poi.xssf.usermodel.XSSFWorkbook" />
+			<role name="Adapter" element="org.apache.poi.xssf.extractor.XSSFExcelExtractor" />
+			<role name="adaptee" element="org.apache.poi.xssf.extractor.XSSFExcelExtractor::workbook:org.apache.poi.xssf.usermodel.XSSFWorkbook" />
+			<role name="Request()" element="org.apache.poi.xssf.extractor.XSSFExcelExtractor::getText():java.lang.String" />
+		</instance>
+		<instance>
+			<role name="Adaptee" element="org.apache.poi.xssf.model.SharedStringsTable" />
+			<role name="Adapter" element="org.apache.poi.xssf.usermodel.XSSFCell" />
+			<role name="adaptee" element="org.apache.poi.xssf.usermodel.XSSFCell::_sharedStringSource:org.apache.poi.xssf.model.SharedStringsTable" />
+			<role name="Request()" element="org.apache.poi.xssf.usermodel.XSSFCell::setCellValue(org.apache.poi.ss.usermodel.RichTextString):void" />
+			<role name="Request()" element="org.apache.poi.xssf.usermodel.XSSFCell::setCellType(int):void" />
+		</instance>
+		<instance>
+			<role name="Adaptee" element="org.apache.poi.xssf.model.StylesTable" />
+			<role name="Adapter" element="org.apache.poi.xssf.usermodel.XSSFCell" />
+			<role name="adaptee" element="org.apache.poi.xssf.usermodel.XSSFCell::_stylesSource:org.apache.poi.xssf.model.StylesTable" />
+			<role name="Request()" element="org.apache.poi.xssf.usermodel.XSSFCell::setCellStyle(org.apache.poi.ss.usermodel.CellStyle):void" />
+		</instance>
+		<instance>
+			<role name="Adaptee" element="org.apache.poi.hssf.usermodel.HSSFCell" />
+			<role name="Adapter" element="org.apache.poi.hssf.usermodel.HSSFEvaluationCell" />
+			<role name="adaptee" element="org.apache.poi.hssf.usermodel.HSSFEvaluationCell::_cell:org.apache.poi.hssf.usermodel.HSSFCell" />
+			<role name="Request()" element="org.apache.poi.hssf.usermodel.HSSFEvaluationCell::getBooleanCellValue():boolean" />
+			<role name="Request()" element="org.apache.poi.hssf.usermodel.HSSFEvaluationCell::getCellType():int" />
+			<role name="Request()" element="org.apache.poi.hssf.usermodel.HSSFEvaluationCell::getColumnIndex():int" />
+			<role name="Request()" element="org.apache.poi.hssf.usermodel.HSSFEvaluationCell::getErrorCellValue():int" />
+			<role name="Request()" element="org.apache.poi.hssf.usermodel.HSSFEvaluationCell::getNumericCellValue():double" />
+			<role name="Request()" element="org.apache.poi.hssf.usermodel.HSSFEvaluationCell::getRowIndex():int" />
+			<role name="Request()" element="org.apache.poi.hssf.usermodel.HSSFEvaluationCell::getStringCellValue():java.lang.String" />
+		</instance>
+		<instance>
+			<role name="Adaptee" element="org.apache.poi.xssf.usermodel.XSSFCell" />
+			<role name="Adapter" element="org.apache.poi.xssf.usermodel.XSSFEvaluationCell" />
+			<role name="adaptee" element="org.apache.poi.xssf.usermodel.XSSFEvaluationCell::_cell:org.apache.poi.xssf.usermodel.XSSFCell" />
+			<role name="Request()" element="org.apache.poi.xssf.usermodel.XSSFEvaluationCell::getBooleanCellValue():boolean" />
+			<role name="Request()" element="org.apache.poi.xssf.usermodel.XSSFEvaluationCell::getCellType():int" />
+			<role name="Request()" element="org.apache.poi.xssf.usermodel.XSSFEvaluationCell::getColumnIndex():int" />
+			<role name="Request()" element="org.apache.poi.xssf.usermodel.XSSFEvaluationCell::getErrorCellValue():int" />
+			<role name="Request()" element="org.apache.poi.xssf.usermodel.XSSFEvaluationCell::getNumericCellValue():double" />
+			<role name="Request()" element="org.apache.poi.xssf.usermodel.XSSFEvaluationCell::getRowIndex():int" />
+			<role name="Request()" element="org.apache.poi.xssf.usermodel.XSSFEvaluationCell::getStringCellValue():java.lang.String" />
+		</instance>
+		<instance>
+			<role name="Adaptee" element="org.apache.poi.xssf.usermodel.helpers.HeaderFooterHelper" />
+			<role name="Adapter" element="org.apache.poi.xssf.usermodel.extensions.XSSFHeaderFooter" />
+			<role name="adaptee" element="org.apache.poi.xssf.usermodel.extensions.XSSFHeaderFooter::helper:org.apache.poi.xssf.usermodel.helpers.HeaderFooterHelper" />
+			<role name="Request()" element="org.apache.poi.xssf.usermodel.extensions.XSSFHeaderFooter::getCenter():java.lang.String" />
+			<role name="Request()" element="org.apache.poi.xssf.usermodel.extensions.XSSFHeaderFooter::getLeft():java.lang.String" />
+			<role name="Request()" element="org.apache.poi.xssf.usermodel.extensions.XSSFHeaderFooter::getRight():java.lang.String" />
+			<role name="Request()" element="org.apache.poi.xssf.usermodel.extensions.XSSFHeaderFooter::setCenter(java.lang.String):void" />
+			<role name="Request()" element="org.apache.poi.xssf.usermodel.extensions.XSSFHeaderFooter::setLeft(java.lang.String):void" />
+			<role name="Request()" element="org.apache.poi.xssf.usermodel.extensions.XSSFHeaderFooter::setRight(java.lang.String):void" />
+		</instance>
+		<instance>
+			<role name="Adaptee" element="org.apache.poi.hssf.usermodel.HSSFSheet" />
+			<role name="Adapter" element="org.apache.poi.hssf.usermodel.HSSFCell" />
+			<role name="adaptee" element="org.apache.poi.hssf.usermodel.HSSFCell::_sheet:org.apache.poi.hssf.usermodel.HSSFSheet" />
+			<role name="Request()" element="org.apache.poi.hssf.usermodel.HSSFCell::setAsActiveCell():void" />
+			<role name="Request()" element="org.apache.poi.hssf.usermodel.HSSFCell::removeCellComment():void" />
+			<role name="Request()" element="org.apache.poi.hssf.usermodel.HSSFCell::setHyperlink(org.apache.poi.ss.usermodel.Hyperlink):void" />
+		</instance>
+		<instance>
+			<role name="Adaptee" element="org.apache.poi.hssf.record.HyperlinkRecord" />
+			<role name="Adapter" element="org.apache.poi.hssf.usermodel.HSSFHyperlink" />
+			<role name="adaptee" element="org.apache.poi.hssf.usermodel.HSSFHyperlink::record:org.apache.poi.hssf.record.HyperlinkRecord" />
+			<role name="Request()" element="org.apache.poi.hssf.usermodel.HSSFHyperlink::getFirstRow():int" />
+			<role name="Request()" element="org.apache.poi.hssf.usermodel.HSSFHyperlink::setFirstRow(int):void" />
+			<role name="Request()" element="org.apache.poi.hssf.usermodel.HSSFHyperlink::getLastRow():int" />
+			<role name="Request()" element="org.apache.poi.hssf.usermodel.HSSFHyperlink::setLastRow(int):void" />
+			<role name="Request()" element="org.apache.poi.hssf.usermodel.HSSFHyperlink::getFirstColumn():int" />
+			<role name="Request()" element="org.apache.poi.hssf.usermodel.HSSFHyperlink::setFirstColumn(int):void" />
+			<role name="Request()" element="org.apache.poi.hssf.usermodel.HSSFHyperlink::getLastColumn():int" />
+			<role name="Request()" element="org.apache.poi.hssf.usermodel.HSSFHyperlink::setLastColumn(int):void" />
+		</instance>
+		<instance>
+			<role name="Adaptee" element="org.apache.poi.hssf.record.FontRecord" />
+			<role name="Adapter" element="org.apache.poi.hssf.usermodel.HSSFFont" />
+			<role name="adaptee" element="org.apache.poi.hssf.usermodel.HSSFFont::font:org.apache.poi.hssf.record.FontRecord" />
+			<role name="Request()" element="org.apache.poi.hssf.usermodel.HSSFFont::setFontName(java.lang.String):void" />
+			<role name="Request()" element="org.apache.poi.hssf.usermodel.HSSFFont::getFontName():java.lang.String" />
+			<role name="Request()" element="org.apache.poi.hssf.usermodel.HSSFFont::setFontHeight(short):void" />
+			<role name="Request()" element="org.apache.poi.hssf.usermodel.HSSFFont::setFontHeightInPoints(short):void" />
+			<role name="Request()" element="org.apache.poi.hssf.usermodel.HSSFFont::getFontHeight():short" />
+			<role name="Request()" element="org.apache.poi.hssf.usermodel.HSSFFont::getFontHeightInPoints():short" />
+			<role name="Request()" element="org.apache.poi.hssf.usermodel.HSSFFont::setItalic(boolean):void" />
+			<role name="Request()" element="org.apache.poi.hssf.usermodel.HSSFFont::getItalic():boolean" />
+			<role name="Request()" element="org.apache.poi.hssf.usermodel.HSSFFont::setStrikeout(boolean):void" />
+			<role name="Request()" element="org.apache.poi.hssf.usermodel.HSSFFont::getStrikeout():boolean" />
+			<role name="Request()" element="org.apache.poi.hssf.usermodel.HSSFFont::setColor(short):void" />
+			<role name="Request()" element="org.apache.poi.hssf.usermodel.HSSFFont::getColor():short" />
+			<role name="Request()" element="org.apache.poi.hssf.usermodel.HSSFFont::setBoldweight(short):void" />
+			<role name="Request()" element="org.apache.poi.hssf.usermodel.HSSFFont::getBoldweight():short" />
+			<role name="Request()" element="org.apache.poi.hssf.usermodel.HSSFFont::setTypeOffset(short):void" />
+			<role name="Request()" element="org.apache.poi.hssf.usermodel.HSSFFont::getTypeOffset():short" />
+			<role name="Request()" element="org.apache.poi.hssf.usermodel.HSSFFont::setUnderline(byte):void" />
+			<role name="Request()" element="org.apache.poi.hssf.usermodel.HSSFFont::getUnderline():byte" />
+			<role name="Request()" element="org.apache.poi.hssf.usermodel.HSSFFont::getCharSet():byte" />
+			<role name="Request()" element="org.apache.poi.hssf.usermodel.HSSFFont::setCharSet(byte):void" />
+		</instance>
+		<instance>
+			<role name="Adaptee" element="org.apache.poi.hssf.record.RowRecord" />
+			<role name="Adapter" element="org.apache.poi.hssf.usermodel.HSSFRow" />
+			<role name="adaptee" element="org.apache.poi.hssf.usermodel.HSSFRow::row:org.apache.poi.hssf.record.RowRecord" />
+			<role name="Request()" element="org.apache.poi.hssf.usermodel.HSSFRow::setRowNum(int):void" />
+			<role name="Request()" element="org.apache.poi.hssf.usermodel.HSSFRow::getFirstCellNum():short" />
+			<role name="Request()" element="org.apache.poi.hssf.usermodel.HSSFRow::getLastCellNum():short" />
+			<role name="Request()" element="org.apache.poi.hssf.usermodel.HSSFRow::setHeight(short):void" />
+			<role name="Request()" element="org.apache.poi.hssf.usermodel.HSSFRow::setZeroHeight(boolean):void" />
+			<role name="Request()" element="org.apache.poi.hssf.usermodel.HSSFRow::getZeroHeight():boolean" />
+			<role name="Request()" element="org.apache.poi.hssf.usermodel.HSSFRow::setHeightInPoints(float):void" />
+			<role name="Request()" element="org.apache.poi.hssf.usermodel.HSSFRow::getHeight():short" />
+		</instance>
+		<instance>
+			<role name="Adaptee" element="org.apache.poi.ss.util.CellRangeAddressList" />
+			<role name="Adapter" element="org.apache.poi.hssf.record.CFHeaderRecord" />
+			<role name="adaptee" element="org.apache.poi.hssf.record.CFHeaderRecord::field_4_cell_ranges:org.apache.poi.ss.util.CellRangeAddressList" />
+			<role name="Request()" element="org.apache.poi.hssf.record.CFHeaderRecord::getDataSize():int" />
+			<role name="Request()" element="org.apache.poi.hssf.record.CFHeaderRecord::serialize(org.apache.poi.util.LittleEndianOutput):void" />
+		</instance>
+		<instance>
+			<role name="Adaptee" element="org.apache.poi.ss.util.CellRangeAddressList" />
+			<role name="Adapter" element="org.apache.poi.hssf.record.DVRecord" />
+			<role name="adaptee" element="org.apache.poi.hssf.record.DVRecord::_regions:org.apache.poi.ss.util.CellRangeAddressList" />
+			<role name="Request()" element="org.apache.poi.hssf.record.DVRecord::serialize(org.apache.poi.util.LittleEndianOutput):void" />
+			<role name="Request()" element="org.apache.poi.hssf.record.DVRecord::getDataSize():int" />
+		</instance>
+		<instance>
+			<role name="Adaptee" element="org.apache.poi.util.ByteField" />
+			<role name="Adapter" element="org.apache.poi.poifs.property.Property" />
+			<role name="adaptee" element="org.apache.poi.poifs.property.Property::_property_type:org.apache.poi.util.ByteField" />
+			<role name="adaptee" element="org.apache.poi.poifs.property.Property::_node_color:org.apache.poi.util.ByteField" />
+			<role name="Request()" element="org.apache.poi.poifs.property.Property::getViewableArray():java.lang.Object[]" />
+		</instance>
+		<instance>
+			<role name="Adaptee" element="org.apache.poi.util.IntegerField" />
+			<role name="Adapter" element="org.apache.poi.poifs.property.Property" />
+			<role name="adaptee" element="org.apache.poi.poifs.property.Property::_next_property:org.apache.poi.util.IntegerField" />
+			<role name="adaptee" element="org.apache.poi.poifs.property.Property::_previous_property:org.apache.poi.util.IntegerField" />
+			<role name="adaptee" element="org.apache.poi.poifs.property.Property::_days_1:org.apache.poi.util.IntegerField" />
+			<role name="adaptee" element="org.apache.poi.poifs.property.Property::_seconds_1:org.apache.poi.util.IntegerField" />
+			<role name="adaptee" element="org.apache.poi.poifs.property.Property::_days_2:org.apache.poi.util.IntegerField" />
+			<role name="adaptee" element="org.apache.poi.poifs.property.Property::_seconds_2:org.apache.poi.util.IntegerField" />
+			<role name="Request()" element="org.apache.poi.poifs.property.Property::setNextChild(org.apache.poi.poifs.property.Child):void" />
+			<role name="Request()" element="org.apache.poi.poifs.property.Property::setPreviousChild(org.apache.poi.poifs.property.Child):void" />
+			<role name="Request()" element="org.apache.poi.poifs.property.Property::getViewableArray():java.lang.Object[]" />
+		</instance>
+		<instance>
+			<role name="Adaptee" element="org.apache.poi.hssf.usermodel.HSSFRichTextString" />
+			<role name="Adapter" element="org.apache.poi.hssf.usermodel.HSSFCell" />
+			<role name="adaptee" element="org.apache.poi.hssf.usermodel.HSSFCell::_stringValue:org.apache.poi.hssf.usermodel.HSSFRichTextString" />
+			<role name="Request()" element="org.apache.poi.hssf.usermodel.HSSFCell::setCellValue(org.apache.poi.ss.usermodel.RichTextString):void" />
+		</instance>
+		<instance>
+			<role name="Adaptee" element="org.apache.poi.xssf.usermodel.XSSFRow" />
+			<role name="Adapter" element="org.apache.poi.xssf.usermodel.XSSFCell" />
+			<role name="adaptee" element="org.apache.poi.xssf.usermodel.XSSFCell::_row:org.apache.poi.xssf.usermodel.XSSFRow" />
+			<role name="Request()" element="org.apache.poi.xssf.usermodel.XSSFCell::setCellFormula(java.lang.String):void" />
+			<role name="Request()" element="org.apache.poi.xssf.usermodel.XSSFCell::getRowIndex():int" />
+			<role name="Request()" element="org.apache.poi.xssf.usermodel.XSSFCell::setHyperlink(org.apache.poi.ss.usermodel.Hyperlink):void" />
+		</instance>
+		<instance>
+			<role name="Adaptee" element="org.apache.poi.hssf.usermodel.HSSFWorkbook" />
+			<role name="Adapter" element="org.apache.poi.hssf.usermodel.HSSFName" />
+			<role name="adaptee" element="org.apache.poi.hssf.usermodel.HSSFName::_book:org.apache.poi.hssf.usermodel.HSSFWorkbook" />
+			<role name="Request()" element="org.apache.poi.hssf.usermodel.HSSFName::getSheetName():java.lang.String" />
+			<role name="Request()" element="org.apache.poi.hssf.usermodel.HSSFName::setNameName(java.lang.String):void" />
+			<role name="Request()" element="org.apache.poi.hssf.usermodel.HSSFName::setSheetIndex(int):void" />
+		</instance>
+		<instance>
+			<role name="Adaptee" element="org.apache.poi.xssf.usermodel.XSSFWorkbook" />
+			<role name="Adapter" element="org.apache.poi.xssf.usermodel.XSSFName" />
+			<role name="adaptee" element="org.apache.poi.xssf.usermodel.XSSFName::_workbook:org.apache.poi.xssf.usermodel.XSSFWorkbook" />
+			<role name="Request()" element="org.apache.poi.xssf.usermodel.XSSFName::setNameName(java.lang.String):void" />
+			<role name="Request()" element="org.apache.poi.xssf.usermodel.XSSFName::setSheetIndex(int):void" />
+			<role name="Request()" element="org.apache.poi.xssf.usermodel.XSSFName::getSheetName():java.lang.String" />
+		</instance>
+		<instance>
+			<role name="Adaptee" element="org.apache.poi.util.LittleEndianInput" />
+			<role name="Adapter" element="org.apache.poi.hssf.record.RecordInputStream$SimpleHeaderInput" />
+			<role name="adaptee" element="org.apache.poi.hssf.record.RecordInputStream$SimpleHeaderInput::_lei:org.apache.poi.util.LittleEndianInput" />
+			<role name="Request()" element="org.apache.poi.hssf.record.RecordInputStream$SimpleHeaderInput::available():int" />
+			<role name="Request()" element="org.apache.poi.hssf.record.RecordInputStream$SimpleHeaderInput::readDataSize():int" />
+			<role name="Request()" element="org.apache.poi.hssf.record.RecordInputStream$SimpleHeaderInput::readRecordSID():int" />
+		</instance>
+		<instance>
+			<role name="Adaptee" element="org.apache.poi.hssf.record.NoteRecord" />
+			<role name="Adapter" element="org.apache.poi.hssf.usermodel.HSSFComment" />
+			<role name="adaptee" element="org.apache.poi.hssf.usermodel.HSSFComment::_note:org.apache.poi.hssf.record.NoteRecord" />
+			<role name="Request()" element="org.apache.poi.hssf.usermodel.HSSFComment::setVisible(boolean):void" />
+			<role name="Request()" element="org.apache.poi.hssf.usermodel.HSSFComment::setRow(int):void" />
+			<role name="Request()" element="org.apache.poi.hssf.usermodel.HSSFComment::setColumn(int):void" />
+			<role name="Request()" element="org.apache.poi.hssf.usermodel.HSSFComment::setAuthor(java.lang.String):void" />
+		</instance>
+		<instance>
+			<role name="Adaptee" element="org.apache.poi.hssf.record.TextObjectRecord" />
+			<role name="Adapter" element="org.apache.poi.hssf.usermodel.HSSFComment" />
+			<role name="adaptee" element="org.apache.poi.hssf.usermodel.HSSFComment::_txo:org.apache.poi.hssf.record.TextObjectRecord" />
+			<role name="Request()" element="org.apache.poi.hssf.usermodel.HSSFComment::setString(org.apache.poi.ss.usermodel.RichTextString):void" />
+		</instance>
+		<instance>
+			<role name="Adaptee" element="org.apache.poi.hssf.record.formula.eval.AreaEval" />
+			<role name="Adapter" element="org.apache.poi.hssf.record.formula.functions.LookupUtils$ColumnVector" />
+			<role name="adaptee" element="org.apache.poi.hssf.record.formula.functions.LookupUtils$ColumnVector::_tableArray:org.apache.poi.hssf.record.formula.eval.AreaEval" />
+			<role name="Request()" element="org.apache.poi.hssf.record.formula.functions.LookupUtils$ColumnVector::getItem(int):org.apache.poi.hssf.record.formula.eval.ValueEval" />
+		</instance>
+		<instance>
+			<role name="Adaptee" element="org.apache.poi.hssf.record.formula.eval.AreaEval" />
+			<role name="Adapter" element="org.apache.poi.hssf.record.formula.functions.LookupUtils$RowVector" />
+			<role name="adaptee" element="org.apache.poi.hssf.record.formula.functions.LookupUtils$RowVector::_tableArray:org.apache.poi.hssf.record.formula.eval.AreaEval" />
+			<role name="Request()" element="org.apache.poi.hssf.record.formula.functions.LookupUtils$RowVector::getItem(int):org.apache.poi.hssf.record.formula.eval.ValueEval" />
+		</instance>
+		<instance>
+			<role name="Adaptee" element="org.apache.poi.hssf.record.formula.eval.AreaEval" />
+			<role name="Adapter" element="org.apache.poi.hssf.record.formula.functions.XYNumericFunction$AreaValueArray" />
+			<role name="adaptee" element="org.apache.poi.hssf.record.formula.functions.XYNumericFunction$AreaValueArray::_ae:org.apache.poi.hssf.record.formula.eval.AreaEval" />
+			<role name="Request()" element="org.apache.poi.hssf.record.formula.functions.XYNumericFunction$AreaValueArray::getItemInternal(int):org.apache.poi.hssf.record.formula.eval.ValueEval" />
+		</instance>
+		<instance>
+			<role name="Adaptee" element="org.apache.poi.hssf.record.formula.Ptg" />
+			<role name="Adapter" element="org.apache.poi.hssf.record.EmbeddedObjectRefSubRecord" />
+			<role name="adaptee" element="org.apache.poi.hssf.record.EmbeddedObjectRefSubRecord::field_2_refPtg:org.apache.poi.hssf.record.formula.Ptg" />
+			<role name="Request()" element="org.apache.poi.hssf.record.EmbeddedObjectRefSubRecord::getDataSize():int" />
+			<role name="Request()" element="org.apache.poi.hssf.record.EmbeddedObjectRefSubRecord::serialize(org.apache.poi.util.LittleEndianOutput):void" />
+		</instance>
+		<instance>
+			<role name="Adaptee" element="org.apache.poi.hssf.record.formula.Ptg" />
+			<role name="Adapter" element="org.apache.poi.hssf.record.LbsDataSubRecord" />
+			<role name="adaptee" element="org.apache.poi.hssf.record.LbsDataSubRecord::_linkPtg:org.apache.poi.hssf.record.formula.Ptg" />
+			<role name="Request()" element="org.apache.poi.hssf.record.LbsDataSubRecord::getDataSize():int" />
+			<role name="Request()" element="org.apache.poi.hssf.record.LbsDataSubRecord::serialize(org.apache.poi.util.LittleEndianOutput):void" />
+		</instance>
+		<instance>
+			<role name="Adaptee" element="org.apache.poi.hssf.usermodel.HSSFComment" />
+			<role name="Adapter" element="org.apache.poi.hssf.usermodel.HSSFCell" />
+			<role name="adaptee" element="org.apache.poi.hssf.usermodel.HSSFCell::_comment:org.apache.poi.hssf.usermodel.HSSFComment" />
+			<role name="Request()" element="org.apache.poi.hssf.usermodel.HSSFCell::removeCellComment():void" />
+		</instance>
+		<instance>
+			<role name="Adaptee" element="org.apache.poi.hssf.usermodel.HSSFWorkbook" />
+			<role name="Adapter" element="org.apache.poi.hssf.usermodel.HSSFEvaluationWorkbook" />
+			<role name="adaptee" element="org.apache.poi.hssf.usermodel.HSSFEvaluationWorkbook::_uBook:org.apache.poi.hssf.usermodel.HSSFWorkbook" />
+			<role name="Request()" element="org.apache.poi.hssf.usermodel.HSSFEvaluationWorkbook::getSheetIndex(org.apache.poi.ss.formula.EvaluationSheet):int" />
+			<role name="Request()" element="org.apache.poi.hssf.usermodel.HSSFEvaluationWorkbook::getSheetIndex(java.lang.String):int" />
+			<role name="Request()" element="org.apache.poi.hssf.usermodel.HSSFEvaluationWorkbook::getSheetName(int):java.lang.String" />
+			<role name="Request()" element="org.apache.poi.hssf.usermodel.HSSFEvaluationWorkbook::getSheet(int):org.apache.poi.ss.formula.EvaluationSheet" />
+			<role name="Request()" element="org.apache.poi.hssf.usermodel.HSSFEvaluationWorkbook::getExternalSheetIndex(java.lang.String):int" />
+		</instance>
+		<instance>
+			<role name="Adaptee" element="org.apache.poi.xssf.usermodel.XSSFWorkbook" />
+			<role name="Adapter" element="org.apache.poi.xssf.usermodel.XSSFEvaluationWorkbook" />
+			<role name="adaptee" element="org.apache.poi.xssf.usermodel.XSSFEvaluationWorkbook::_uBook:org.apache.poi.xssf.usermodel.XSSFWorkbook" />
+			<role name="Request()" element="org.apache.poi.xssf.usermodel.XSSFEvaluationWorkbook::getSheetNameByExternSheet(int):java.lang.String" />
+			<role name="Request()" element="org.apache.poi.xssf.usermodel.XSSFEvaluationWorkbook::getNameText(org.apache.poi.hssf.record.formula.NamePtg):java.lang.String" />
+			<role name="Request()" element="org.apache.poi.xssf.usermodel.XSSFEvaluationWorkbook::getSheetIndex(org.apache.poi.ss.formula.EvaluationSheet):int" />
+			<role name="Request()" element="org.apache.poi.xssf.usermodel.XSSFEvaluationWorkbook::getSheetName(int):java.lang.String" />
+			<role name="Request()" element="org.apache.poi.xssf.usermodel.XSSFEvaluationWorkbook::getSheet(int):org.apache.poi.ss.formula.EvaluationSheet" />
+			<role name="Request()" element="org.apache.poi.xssf.usermodel.XSSFEvaluationWorkbook::getSheetIndex(java.lang.String):int" />
+			<role name="Request()" element="org.apache.poi.xssf.usermodel.XSSFEvaluationWorkbook::getName(org.apache.poi.hssf.record.formula.NamePtg):org.apache.poi.ss.formula.EvaluationName" />
+			<role name="Request()" element="org.apache.poi.xssf.usermodel.XSSFEvaluationWorkbook::getFormulaTokens(org.apache.poi.ss.formula.EvaluationCell):org.apache.poi.hssf.record.formula.Ptg[]" />
+			<role name="Request()" element="org.apache.poi.xssf.usermodel.XSSFEvaluationWorkbook::getExternalSheetIndex(java.lang.String):int" />
+			<role name="Request()" element="org.apache.poi.xssf.usermodel.XSSFEvaluationWorkbook::getName(java.lang.String, int):org.apache.poi.ss.formula.EvaluationName" />
+		</instance>
+		<instance>
+			<role name="Adaptee" element="org.apache.poi.xssf.model.StylesTable" />
+			<role name="Adapter" element="org.apache.poi.xssf.usermodel.XSSFCellStyle" />
+			<role name="adaptee" element="org.apache.poi.xssf.usermodel.XSSFCellStyle::_stylesSource:org.apache.poi.xssf.model.StylesTable" />
+			<role name="Request()" element="org.apache.poi.xssf.usermodel.XSSFCellStyle::getBorderBottom():short" />
+			<role name="Request()" element="org.apache.poi.xssf.usermodel.XSSFCellStyle::getBorderLeft():short" />
+			<role name="Request()" element="org.apache.poi.xssf.usermodel.XSSFCellStyle::getBorderRight():short" />
+			<role name="Request()" element="org.apache.poi.xssf.usermodel.XSSFCellStyle::getBorderTop():short" />
+			<role name="Request()" element="org.apache.poi.xssf.usermodel.XSSFCellStyle::getFillPattern():short" />
+			<role name="Request()" element="org.apache.poi.xssf.usermodel.XSSFCellStyle::setBorderBottom(short):void" />
+			<role name="Request()" element="org.apache.poi.xssf.usermodel.XSSFCellStyle::setBorderLeft(short):void" />
+			<role name="Request()" element="org.apache.poi.xssf.usermodel.XSSFCellStyle::setBorderRight(short):void" />
+			<role name="Request()" element="org.apache.poi.xssf.usermodel.XSSFCellStyle::setBorderTop(short):void" />
+			<role name="Request()" element="org.apache.poi.xssf.usermodel.XSSFCellStyle::setFillPattern(short):void" />
+		</instance>
+		<instance>
+			<role name="Adaptee" element="org.apache.poi.hdf.model.hdftypes.StyleSheet" />
+			<role name="Adapter" element="org.apache.poi.hdf.event.EventBridge" />
+			<role name="adaptee" element="org.apache.poi.hdf.event.EventBridge::_stsh:org.apache.poi.hdf.model.hdftypes.StyleSheet" />
+			<role name="Request()" element="org.apache.poi.hdf.event.EventBridge::bodySection(org.apache.poi.hdf.model.hdftypes.SepxNode):void" />
+			<role name="Request()" element="org.apache.poi.hdf.event.EventBridge::paragraph(org.apache.poi.hdf.model.hdftypes.PapxNode):void" />
+			<role name="Request()" element="org.apache.poi.hdf.event.EventBridge::characterRun(org.apache.poi.hdf.model.hdftypes.ChpxNode):void" />
+		</instance>
+		<instance>
+			<role name="Adaptee" element="org.apache.poi.hdf.model.hdftypes.StyleDescription" />
+			<role name="Adapter" element="org.apache.poi.hdf.event.EventBridge" />
+			<role name="adaptee" element="org.apache.poi.hdf.event.EventBridge::_currentStd:org.apache.poi.hdf.model.hdftypes.StyleDescription" />
+			<role name="Request()" element="org.apache.poi.hdf.event.EventBridge::paragraph(org.apache.poi.hdf.model.hdftypes.PapxNode):void" />
+			<role name="Request()" element="org.apache.poi.hdf.event.EventBridge::characterRun(org.apache.poi.hdf.model.hdftypes.ChpxNode):void" />
+		</instance>
+		<instance>
+			<role name="Adaptee" element="org.apache.poi.hssf.record.NameRecord" />
+			<role name="Adapter" element="org.apache.poi.hssf.usermodel.HSSFName" />
+			<role name="adaptee" element="org.apache.poi.hssf.usermodel.HSSFName::_definedNameRec:org.apache.poi.hssf.record.NameRecord" />
+			<role name="Request()" element="org.apache.poi.hssf.usermodel.HSSFName::getSheetName():java.lang.String" />
+			<role name="Request()" element="org.apache.poi.hssf.usermodel.HSSFName::getNameName():java.lang.String" />
+			<role name="Request()" element="org.apache.poi.hssf.usermodel.HSSFName::setNameName(java.lang.String):void" />
+			<role name="Request()" element="org.apache.poi.hssf.usermodel.HSSFName::setRefersToFormula(java.lang.String):void" />
+			<role name="Request()" element="org.apache.poi.hssf.usermodel.HSSFName::getRefersToFormula():java.lang.String" />
+			<role name="Request()" element="org.apache.poi.hssf.usermodel.HSSFName::isDeleted():boolean" />
+			<role name="Request()" element="org.apache.poi.hssf.usermodel.HSSFName::isFunctionName():boolean" />
+			<role name="Request()" element="org.apache.poi.hssf.usermodel.HSSFName::setSheetIndex(int):void" />
+			<role name="Request()" element="org.apache.poi.hssf.usermodel.HSSFName::getSheetIndex():int" />
+			<role name="Request()" element="org.apache.poi.hssf.usermodel.HSSFName::getComment():java.lang.String" />
+			<role name="Request()" element="org.apache.poi.hssf.usermodel.HSSFName::setComment(java.lang.String):void" />
+			<role name="Request()" element="org.apache.poi.hssf.usermodel.HSSFName::setFunction(boolean):void" />
+		</instance>
+		<instance>
+			<role name="Adaptee" element="org.apache.poi.hssf.record.aggregates.PageSettingsBlock" />
+			<role name="Adapter" element="org.apache.poi.hssf.usermodel.HSSFFooter" />
+			<role name="adaptee" element="org.apache.poi.hssf.usermodel.HSSFFooter::_psb:org.apache.poi.hssf.record.aggregates.PageSettingsBlock" />
+			<role name="Request()" element="org.apache.poi.hssf.usermodel.HSSFFooter::getRawText():java.lang.String" />
+			<role name="Request()" element="org.apache.poi.hssf.usermodel.HSSFFooter::setHeaderFooterText(java.lang.String):void" />
+		</instance>
+		<instance>
+			<role name="Adaptee" element="org.apache.poi.hssf.record.aggregates.PageSettingsBlock" />
+			<role name="Adapter" element="org.apache.poi.hssf.usermodel.HSSFHeader" />
+			<role name="adaptee" element="org.apache.poi.hssf.usermodel.HSSFHeader::_psb:org.apache.poi.hssf.record.aggregates.PageSettingsBlock" />
+			<role name="Request()" element="org.apache.poi.hssf.usermodel.HSSFHeader::getRawText():java.lang.String" />
+			<role name="Request()" element="org.apache.poi.hssf.usermodel.HSSFHeader::setHeaderFooterText(java.lang.String):void" />
+		</instance>
+		<instance>
+			<role name="Adaptee" element="org.apache.poi.xssf.model.CommentsTable" />
+			<role name="Adapter" element="org.apache.poi.xssf.usermodel.XSSFComment" />
+			<role name="adaptee" element="org.apache.poi.xssf.usermodel.XSSFComment::_comments:org.apache.poi.xssf.model.CommentsTable" />
+			<role name="Request()" element="org.apache.poi.xssf.usermodel.XSSFComment::getAuthor():java.lang.String" />
+			<role name="Request()" element="org.apache.poi.xssf.usermodel.XSSFComment::setAuthor(java.lang.String):void" />
+		</instance>
+		<instance>
+			<role name="Adaptee" element="org.apache.poi.hssf.model.Workbook" />
+			<role name="Adapter" element="org.apache.poi.hssf.usermodel.HSSFEvaluationWorkbook" />
+			<role name="adaptee" element="org.apache.poi.hssf.usermodel.HSSFEvaluationWorkbook::_iBook:org.apache.poi.hssf.model.Workbook" />
+			<role name="Request()" element="org.apache.poi.hssf.usermodel.HSSFEvaluationWorkbook::getExternalSheet(int):org.apache.poi.ss.formula.EvaluationWorkbook$ExternalSheet" />
+			<role name="Request()" element="org.apache.poi.hssf.usermodel.HSSFEvaluationWorkbook::resolveNameXText(org.apache.poi.hssf.record.formula.NameXPtg):java.lang.String" />
+			<role name="Request()" element="org.apache.poi.hssf.usermodel.HSSFEvaluationWorkbook::getSheetNameByExternSheet(int):java.lang.String" />
+			<role name="Request()" element="org.apache.poi.hssf.usermodel.HSSFEvaluationWorkbook::getNameText(org.apache.poi.hssf.record.formula.NamePtg):java.lang.String" />
+			<role name="Request()" element="org.apache.poi.hssf.usermodel.HSSFEvaluationWorkbook::convertFromExternSheetIndex(int):int" />
+			<role name="Request()" element="org.apache.poi.hssf.usermodel.HSSFEvaluationWorkbook::getName(org.apache.poi.hssf.record.formula.NamePtg):org.apache.poi.ss.formula.EvaluationName" />
+			<role name="Request()" element="org.apache.poi.hssf.usermodel.HSSFEvaluationWorkbook::getExternalSheetIndex(java.lang.String):int" />
+			<role name="Request()" element="org.apache.poi.hssf.usermodel.HSSFEvaluationWorkbook::getExternalSheetIndex(java.lang.String, java.lang.String):int" />
+			<role name="Request()" element="org.apache.poi.hssf.usermodel.HSSFEvaluationWorkbook::getNameXPtg(java.lang.String):org.apache.poi.hssf.record.formula.NameXPtg" />
+			<role name="Request()" element="org.apache.poi.hssf.usermodel.HSSFEvaluationWorkbook::getName(java.lang.String, int):org.apache.poi.ss.formula.EvaluationName" />
+		</instance>
+		<instance>
+			<role name="Adaptee" element="org.apache.poi.hssf.usermodel.HSSFRichTextString" />
+			<role name="Adapter" element="org.apache.poi.hssf.record.TextObjectRecord" />
+			<role name="adaptee" element="org.apache.poi.hssf.record.TextObjectRecord::_text:org.apache.poi.hssf.usermodel.HSSFRichTextString" />
+			<role name="Request()" element="org.apache.poi.hssf.record.TextObjectRecord::serialize(org.apache.poi.hssf.record.cont.ContinuableRecordOutput):void" />
+		</instance>
+		<instance>
+			<role name="Adaptee" element="org.apache.poi.hssf.usermodel.HSSFWorkbook" />
+			<role name="Adapter" element="org.apache.poi.hssf.usermodel.HSSFCell" />
+			<role name="adaptee" element="org.apache.poi.hssf.usermodel.HSSFCell::_book:org.apache.poi.hssf.usermodel.HSSFWorkbook" />
+			<role name="Request()" element="org.apache.poi.hssf.usermodel.HSSFCell::setCellValue(java.util.Date):void" />
+			<role name="Request()" element="org.apache.poi.hssf.usermodel.HSSFCell::setCellValue(java.util.Calendar):void" />
+			<role name="Request()" element="org.apache.poi.hssf.usermodel.HSSFCell::setCellValue(org.apache.poi.ss.usermodel.RichTextString):void" />
+			<role name="Request()" element="org.apache.poi.hssf.usermodel.HSSFCell::setCellFormula(java.lang.String):void" />
+			<role name="Request()" element="org.apache.poi.hssf.usermodel.HSSFCell::getDateCellValue():java.util.Date" />
+		</instance>
+		<instance>
+			<role name="Adaptee" element="org.apache.poi.poifs.storage.BlockAllocationTableReader" />
+			<role name="Adapter" element="org.apache.poi.poifs.storage.BlockListImpl" />
+			<role name="adaptee" element="org.apache.poi.poifs.storage.BlockListImpl::_bat:org.apache.poi.poifs.storage.BlockAllocationTableReader" />
+			<role name="Request()" element="org.apache.poi.poifs.storage.BlockListImpl::fetchBlocks(int, int):org.apache.poi.poifs.storage.ListManagedBlock[]" />
+		</instance>
+		<instance>
+			<role name="Adaptee" element="org.apache.poi.poifs.filesystem.DirectoryEntry" />
+			<role name="Adapter" element="org.apache.poi.poifs.filesystem.ReaderWriter" />
+			<role name="adaptee" element="org.apache.poi.poifs.filesystem.ReaderWriter::root:org.apache.poi.poifs.filesystem.DirectoryEntry" />
+			<role name="Request()" element="org.apache.poi.poifs.filesystem.ReaderWriter::processPOIFSReaderEvent(org.apache.poi.poifs.eventfilesystem.POIFSReaderEvent):void" />
+		</instance>
+		<instance>
+			<role name="Adaptee" element="org.apache.poi.xssf.usermodel.XSSFName" />
+			<role name="Adapter" element="org.apache.poi.xssf.usermodel.XSSFEvaluationWorkbook$Name" />
+			<role name="adaptee" element="org.apache.poi.xssf.usermodel.XSSFEvaluationWorkbook$Name::_nameRecord:org.apache.poi.xssf.usermodel.XSSFName" />
+			<role name="Request()" element="org.apache.poi.xssf.usermodel.XSSFEvaluationWorkbook$Name::getNameDefinition():org.apache.poi.hssf.record.formula.Ptg[]" />
+			<role name="Request()" element="org.apache.poi.xssf.usermodel.XSSFEvaluationWorkbook$Name::getNameText():java.lang.String" />
+			<role name="Request()" element="org.apache.poi.xssf.usermodel.XSSFEvaluationWorkbook$Name::hasFormula():boolean" />
+			<role name="Request()" element="org.apache.poi.xssf.usermodel.XSSFEvaluationWorkbook$Name::isFunctionName():boolean" />
+		</instance>
+		<instance>
+			<role name="Adaptee" element="org.apache.poi.xssf.usermodel.XSSFRichTextString" />
+			<role name="Adapter" element="org.apache.poi.xssf.usermodel.XSSFComment" />
+			<role name="adaptee" element="org.apache.poi.xssf.usermodel.XSSFComment::_str:org.apache.poi.xssf.usermodel.XSSFRichTextString" />
+			<role name="Request()" element="org.apache.poi.xssf.usermodel.XSSFComment::setString(org.apache.poi.ss.usermodel.RichTextString):void" />
+		</instance>
+		<instance>
+			<role name="Adaptee" element="org.apache.poi.hssf.record.NameRecord" />
+			<role name="Adapter" element="org.apache.poi.hssf.usermodel.HSSFEvaluationWorkbook$Name" />
+			<role name="adaptee" element="org.apache.poi.hssf.usermodel.HSSFEvaluationWorkbook$Name::_nameRecord:org.apache.poi.hssf.record.NameRecord" />
+			<role name="Request()" element="org.apache.poi.hssf.usermodel.HSSFEvaluationWorkbook$Name::getNameDefinition():org.apache.poi.hssf.record.formula.Ptg[]" />
+			<role name="Request()" element="org.apache.poi.hssf.usermodel.HSSFEvaluationWorkbook$Name::getNameText():java.lang.String" />
+			<role name="Request()" element="org.apache.poi.hssf.usermodel.HSSFEvaluationWorkbook$Name::hasFormula():boolean" />
+			<role name="Request()" element="org.apache.poi.hssf.usermodel.HSSFEvaluationWorkbook$Name::isFunctionName():boolean" />
+			<role name="Request()" element="org.apache.poi.hssf.usermodel.HSSFEvaluationWorkbook$Name::isRange():boolean" />
+		</instance>
+		<instance>
+			<role name="Adaptee" element="org.apache.poi.hssf.usermodel.HSSFSheet" />
+			<role name="Adapter" element="org.apache.poi.hssf.usermodel.HSSFEvaluationSheet" />
+			<role name="adaptee" element="org.apache.poi.hssf.usermodel.HSSFEvaluationSheet::_hs:org.apache.poi.hssf.usermodel.HSSFSheet" />
+			<role name="Request()" element="org.apache.poi.hssf.usermodel.HSSFEvaluationSheet::getCell(int, int):org.apache.poi.ss.formula.EvaluationCell" />
+		</instance>
+		<instance>
+			<role name="Adaptee" element="org.apache.poi.xssf.usermodel.XSSFSheet" />
+			<role name="Adapter" element="org.apache.poi.xssf.usermodel.XSSFEvaluationSheet" />
+			<role name="adaptee" element="org.apache.poi.xssf.usermodel.XSSFEvaluationSheet::_xs:org.apache.poi.xssf.usermodel.XSSFSheet" />
+			<role name="Request()" element="org.apache.poi.xssf.usermodel.XSSFEvaluationSheet::getCell(int, int):org.apache.poi.ss.formula.EvaluationCell" />
+		</instance>
+		<instance>
+			<role name="Adaptee" element="org.apache.poi.xssf.model.StylesTable" />
+			<role name="Adapter" element="org.apache.poi.xssf.usermodel.XSSFDataFormat" />
+			<role name="adaptee" element="org.apache.poi.xssf.usermodel.XSSFDataFormat::stylesSource:org.apache.poi.xssf.model.StylesTable" />
+			<role name="Request()" element="org.apache.poi.xssf.usermodel.XSSFDataFormat::getFormat(java.lang.String):short" />
+			<role name="Request()" element="org.apache.poi.xssf.usermodel.XSSFDataFormat::getFormat(short):java.lang.String" />
+		</instance>
+		<instance>
+			<role name="Adaptee" element="org.apache.poi.hwpf.model.StyleSheet" />
+			<role name="Adapter" element="org.apache.poi.hwpf.HWPFDocument" />
+			<role name="adaptee" element="org.apache.poi.hwpf.HWPFDocument::_ss:org.apache.poi.hwpf.model.StyleSheet" />
+			<role name="Request()" element="org.apache.poi.hwpf.HWPFDocument::write(java.io.OutputStream):void" />
+		</instance>
+		<instance>
+			<role name="Adaptee" element="org.apache.poi.util.POILogger" />
+			<role name="Adapter" element="org.apache.poi.xssf.usermodel.XSSFFactory" />
+			<role name="adaptee" element="org.apache.poi.xssf.usermodel.XSSFFactory::logger:org.apache.poi.util.POILogger" />
+			<role name="Request()" element="org.apache.poi.xssf.usermodel.XSSFFactory::createDocumentPart(org.apache.poi.openxml4j.opc.PackageRelationship, org.apache.poi.openxml4j.opc.PackagePart):org.apache.poi.POIXMLDocumentPart" />
+		</instance>
+		<instance>
+			<role name="Adaptee" element="org.apache.poi.util.POILogger" />
+			<role name="Adapter" element="org.apache.poi.xwpf.usermodel.XWPFFactory" />
+			<role name="adaptee" element="org.apache.poi.xwpf.usermodel.XWPFFactory::logger:org.apache.poi.util.POILogger" />
+			<role name="Request()" element="org.apache.poi.xwpf.usermodel.XWPFFactory::createDocumentPart(org.apache.poi.openxml4j.opc.PackageRelationship, org.apache.poi.openxml4j.opc.PackagePart):org.apache.poi.POIXMLDocumentPart" />
+		</instance>
+		<instance>
+			<role name="Adaptee" element="org.apache.poi.ddf.EscherBlipRecord" />
+			<role name="Adapter" element="org.apache.poi.hssf.usermodel.HSSFPictureData" />
+			<role name="adaptee" element="org.apache.poi.hssf.usermodel.HSSFPictureData::blip:org.apache.poi.ddf.EscherBlipRecord" />
+			<role name="Request()" element="org.apache.poi.hssf.usermodel.HSSFPictureData::getData():byte[]" />
+			<role name="Request()" element="org.apache.poi.hssf.usermodel.HSSFPictureData::suggestFileExtension():java.lang.String" />
+		</instance>
+		<instance>
+			<role name="Adaptee" element="org.apache.poi.hssf.model.Workbook" />
+			<role name="Adapter" element="org.apache.poi.hssf.usermodel.HSSFDataFormat" />
+			<role name="adaptee" element="org.apache.poi.hssf.usermodel.HSSFDataFormat::_workbook:org.apache.poi.hssf.model.Workbook" />
+			<role name="Request()" element="org.apache.poi.hssf.usermodel.HSSFDataFormat::getFormat(java.lang.String):short" />
+		</instance>
+		<instance>
+			<role name="Adaptee" element="org.apache.poi.util.POILogger" />
+			<role name="Adapter" element="org.apache.poi.openxml4j.opc.internal.marshallers.ZipPartMarshaller" />
+			<role name="adaptee" element="org.apache.poi.openxml4j.opc.internal.marshallers.ZipPartMarshaller::logger:org.apache.poi.util.POILogger" />
+			<role name="Request()" element="org.apache.poi.openxml4j.opc.internal.marshallers.ZipPartMarshaller::marshall(org.apache.poi.openxml4j.opc.PackagePart, java.io.OutputStream):boolean" />
+		</instance>
+		<instance>
+			<role name="Adaptee" element="org.apache.poi.xssf.model.StylesTable" />
+			<role name="Adapter" element="org.apache.poi.xssf.usermodel.XSSFRichTextString" />
+			<role name="adaptee" element="org.apache.poi.xssf.usermodel.XSSFRichTextString::styles:org.apache.poi.xssf.model.StylesTable" />
+			<role name="Request()" element="org.apache.poi.xssf.usermodel.XSSFRichTextString::applyFont(int, int, short):void" />
+			<role name="Request()" element="org.apache.poi.xssf.usermodel.XSSFRichTextString::applyFont(short):void" />
+		</instance>
+		<instance>
+			<role name="Adaptee" element="org.apache.poi.hssf.record.formula.eval.RefEval" />
+			<role name="Adapter" element="org.apache.poi.hssf.record.formula.functions.XYNumericFunction$RefValueArray" />
+			<role name="adaptee" element="org.apache.poi.hssf.record.formula.functions.XYNumericFunction$RefValueArray::_ref:org.apache.poi.hssf.record.formula.eval.RefEval" />
+			<role name="Request()" element="org.apache.poi.hssf.record.formula.functions.XYNumericFunction$RefValueArray::getItemInternal(int):org.apache.poi.hssf.record.formula.eval.ValueEval" />
+		</instance>
+		<instance>
+			<role name="Adaptee" element="org.apache.poi.util.POILogger" />
+			<role name="Adapter" element="org.apache.poi.openxml4j.opc.internal.ZipContentTypeManager" />
+			<role name="adaptee" element="org.apache.poi.openxml4j.opc.internal.ZipContentTypeManager::logger:org.apache.poi.util.POILogger" />
+			<role name="Request()" element="org.apache.poi.openxml4j.opc.internal.ZipContentTypeManager::saveImpl(org.dom4j.Document, java.io.OutputStream):boolean" />
+		</instance>
+		<instance>
+			<role name="Adaptee" element="org.apache.poi.util.POILogger" />
+			<role name="Adapter" element="org.apache.poi.hslf.blip.BitmapPainter" />
+			<role name="adaptee" element="org.apache.poi.hslf.blip.BitmapPainter::logger:org.apache.poi.util.POILogger" />
+			<role name="Request()" element="org.apache.poi.hslf.blip.BitmapPainter::paint(java.awt.Graphics2D, org.apache.poi.hslf.usermodel.PictureData, org.apache.poi.hslf.model.Picture):void" />
+		</instance>
+	</pattern>
+	<pattern name="Command" />
+	<pattern name="Composite">
+		<instance>
+			<role name="Component" element="org.apache.poi.ddf.EscherRecord" />
+			<role name="Composite" element="org.apache.poi.ddf.EscherContainerRecord" />
+			<role name="Operation()" element="org.apache.poi.ddf.EscherContainerRecord::fillFields(byte[], int, org.apache.poi.ddf.EscherRecordFactory):int" />
+			<role name="Operation()" element="org.apache.poi.ddf.EscherContainerRecord::serialize(int, byte[], org.apache.poi.ddf.EscherSerializationListener):int" />
+			<role name="Operation()" element="org.apache.poi.ddf.EscherContainerRecord::getRecordSize():int" />
+		</instance>
+	</pattern>
+	<pattern name="Decorator">
+		<instance>
+			<role name="Component" element="org.apache.poi.hssf.eventusermodel.HSSFListener" />
+			<role name="Decorator" element="org.apache.poi.hssf.eventusermodel.EventWorkbookBuilder$SheetRecordCollectingListener" />
+			<role name="component" element="org.apache.poi.hssf.eventusermodel.EventWorkbookBuilder$SheetRecordCollectingListener::childListener:org.apache.poi.hssf.eventusermodel.HSSFListener" />
+			<role name="Operation()" element="org.apache.poi.hssf.eventusermodel.EventWorkbookBuilder$SheetRecordCollectingListener::processRecord(org.apache.poi.hssf.record.Record):void" />
+		</instance>
+		<instance>
+			<role name="Component" element="org.apache.poi.hssf.eventusermodel.HSSFListener" />
+			<role name="Decorator" element="org.apache.poi.hssf.eventusermodel.FormatTrackingHSSFListener" />
+			<role name="component" element="org.apache.poi.hssf.eventusermodel.FormatTrackingHSSFListener::_childListener:org.apache.poi.hssf.eventusermodel.HSSFListener" />
+			<role name="Operation()" element="org.apache.poi.hssf.eventusermodel.FormatTrackingHSSFListener::processRecord(org.apache.poi.hssf.record.Record):void" />
+		</instance>
+		<instance>
+			<role name="Component" element="org.apache.poi.hssf.eventusermodel.HSSFListener" />
+			<role name="Decorator" element="org.apache.poi.hssf.eventusermodel.MissingRecordAwareHSSFListener" />
+			<role name="component" element="org.apache.poi.hssf.eventusermodel.MissingRecordAwareHSSFListener::childListener:org.apache.poi.hssf.eventusermodel.HSSFListener" />
+			<role name="Operation()" element="org.apache.poi.hssf.eventusermodel.MissingRecordAwareHSSFListener::processRecord(org.apache.poi.hssf.record.Record):void" />
+		</instance>
+		<instance>
+			<role name="Component" element="org.apache.poi.hssf.record.aggregates.RecordAggregate$RecordVisitor" />
+			<role name="Decorator" element="org.apache.poi.hssf.record.aggregates.RecordAggregate$PositionTrackingVisitor" />
+			<role name="component" element="org.apache.poi.hssf.record.aggregates.RecordAggregate$PositionTrackingVisitor::_rv:org.apache.poi.hssf.record.aggregates.RecordAggregate$RecordVisitor" />
+			<role name="Operation()" element="org.apache.poi.hssf.record.aggregates.RecordAggregate$PositionTrackingVisitor::visitRecord(org.apache.poi.hssf.record.Record):void" />
+		</instance>
+		<instance>
+			<role name="Component" element="org.apache.poi.util.LittleEndianOutput" />
+			<role name="Decorator" element="org.apache.poi.hssf.record.cont.UnknownLengthRecordOutput" />
+			<role name="component" element="org.apache.poi.hssf.record.cont.UnknownLengthRecordOutput::_out:org.apache.poi.util.LittleEndianOutput" />
+			<role name="component" element="org.apache.poi.hssf.record.cont.UnknownLengthRecordOutput::_originalOut:org.apache.poi.util.LittleEndianOutput" />
+			<role name="component" element="org.apache.poi.hssf.record.cont.UnknownLengthRecordOutput::_dataSizeOutput:org.apache.poi.util.LittleEndianOutput" />
+			<role name="Operation()" element="org.apache.poi.hssf.record.cont.UnknownLengthRecordOutput::write(byte[]):void" />
+			<role name="Operation()" element="org.apache.poi.hssf.record.cont.UnknownLengthRecordOutput::write(byte[], int, int):void" />
+			<role name="Operation()" element="org.apache.poi.hssf.record.cont.UnknownLengthRecordOutput::writeByte(int):void" />
+			<role name="Operation()" element="org.apache.poi.hssf.record.cont.UnknownLengthRecordOutput::writeDouble(double):void" />
+			<role name="Operation()" element="org.apache.poi.hssf.record.cont.UnknownLengthRecordOutput::writeInt(int):void" />
+			<role name="Operation()" element="org.apache.poi.hssf.record.cont.UnknownLengthRecordOutput::writeLong(long):void" />
+			<role name="Operation()" element="org.apache.poi.hssf.record.cont.UnknownLengthRecordOutput::writeShort(int):void" />
+		</instance>
+		<instance>
+			<role name="Component" element="org.apache.poi.util.LittleEndianInput" />
+			<role name="Decorator" element="org.apache.poi.hssf.record.RecordInputStream" />
+			<role name="component" element="org.apache.poi.hssf.record.RecordInputStream::_dataInput:org.apache.poi.util.LittleEndianInput" />
+			<role name="Operation()" element="org.apache.poi.hssf.record.RecordInputStream::readByte():byte" />
+			<role name="Operation()" element="org.apache.poi.hssf.record.RecordInputStream::readShort():short" />
+			<role name="Operation()" element="org.apache.poi.hssf.record.RecordInputStream::readInt():int" />
+			<role name="Operation()" element="org.apache.poi.hssf.record.RecordInputStream::readLong():long" />
+			<role name="Operation()" element="org.apache.poi.hssf.record.RecordInputStream::readUShort():int" />
+			<role name="Operation()" element="org.apache.poi.hssf.record.RecordInputStream::readFully(byte[], int, int):void" />
+		</instance>
+		<instance>
+			<role name="Component" element="org.apache.poi.util.LittleEndianInput" />
+			<role name="Decorator" element="org.apache.poi.hssf.record.crypto.Biff8DecryptingStream" />
+			<role name="component" element="org.apache.poi.hssf.record.crypto.Biff8DecryptingStream::_le:org.apache.poi.util.LittleEndianInput" />
+			<role name="Operation()" element="org.apache.poi.hssf.record.crypto.Biff8DecryptingStream::available():int" />
+			<role name="Operation()" element="org.apache.poi.hssf.record.crypto.Biff8DecryptingStream::readFully(byte[], int, int):void" />
+			<role name="Operation()" element="org.apache.poi.hssf.record.crypto.Biff8DecryptingStream::readUByte():int" />
+			<role name="Operation()" element="org.apache.poi.hssf.record.crypto.Biff8DecryptingStream::readUShort():int" />
+			<role name="Operation()" element="org.apache.poi.hssf.record.crypto.Biff8DecryptingStream::readInt():int" />
+			<role name="Operation()" element="org.apache.poi.hssf.record.crypto.Biff8DecryptingStream::readLong():long" />
+		</instance>
+		<instance>
+			<role name="Component" element="org.apache.poi.ss.formula.EvaluationCell" />
+			<role name="Decorator" element="org.apache.poi.ss.formula.eval.forked.ForkedEvaluationCell" />
+			<role name="component" element="org.apache.poi.ss.formula.eval.forked.ForkedEvaluationCell::_masterCell:org.apache.poi.ss.formula.EvaluationCell" />
+			<role name="Operation()" element="org.apache.poi.ss.formula.eval.forked.ForkedEvaluationCell::getIdentityKey():java.lang.Object" />
+			<role name="Operation()" element="org.apache.poi.ss.formula.eval.forked.ForkedEvaluationCell::getRowIndex():int" />
+			<role name="Operation()" element="org.apache.poi.ss.formula.eval.forked.ForkedEvaluationCell::getColumnIndex():int" />
+		</instance>
+		<instance>
+			<role name="Component" element="org.apache.poi.ss.formula.EvaluationSheet" />
+			<role name="Decorator" element="org.apache.poi.ss.formula.eval.forked.ForkedEvaluationSheet" />
+			<role name="component" element="org.apache.poi.ss.formula.eval.forked.ForkedEvaluationSheet::_masterSheet:org.apache.poi.ss.formula.EvaluationSheet" />
+			<role name="Operation()" element="org.apache.poi.ss.formula.eval.forked.ForkedEvaluationSheet::getCell(int, int):org.apache.poi.ss.formula.EvaluationCell" />
+		</instance>
+		<instance>
+			<role name="Component" element="org.apache.poi.ss.formula.EvaluationWorkbook" />
+			<role name="Decorator" element="org.apache.poi.ss.formula.eval.forked.ForkedEvaluationWorkbook" />
+			<role name="component" element="org.apache.poi.ss.formula.eval.forked.ForkedEvaluationWorkbook::_masterBook:org.apache.poi.ss.formula.EvaluationWorkbook" />
+			<role name="Operation()" element="org.apache.poi.ss.formula.eval.forked.ForkedEvaluationWorkbook::convertFromExternSheetIndex(int):int" />
+			<role name="Operation()" element="org.apache.poi.ss.formula.eval.forked.ForkedEvaluationWorkbook::getExternalSheet(int):org.apache.poi.ss.formula.EvaluationWorkbook$ExternalSheet" />
+			<role name="Operation()" element="org.apache.poi.ss.formula.eval.forked.ForkedEvaluationWorkbook::getFormulaTokens(org.apache.poi.ss.formula.EvaluationCell):org.apache.poi.hssf.record.formula.Ptg[]" />
+			<role name="Operation()" element="org.apache.poi.ss.formula.eval.forked.ForkedEvaluationWorkbook::getName(org.apache.poi.hssf.record.formula.NamePtg):org.apache.poi.ss.formula.EvaluationName" />
+			<role name="Operation()" element="org.apache.poi.ss.formula.eval.forked.ForkedEvaluationWorkbook::getSheetIndex(org.apache.poi.ss.formula.EvaluationSheet):int" />
+			<role name="Operation()" element="org.apache.poi.ss.formula.eval.forked.ForkedEvaluationWorkbook::getSheetIndex(java.lang.String):int" />
+			<role name="Operation()" element="org.apache.poi.ss.formula.eval.forked.ForkedEvaluationWorkbook::getSheetName(int):java.lang.String" />
+			<role name="Operation()" element="org.apache.poi.ss.formula.eval.forked.ForkedEvaluationWorkbook::resolveNameXText(org.apache.poi.hssf.record.formula.NameXPtg):java.lang.String" />
+		</instance>
+	</pattern>
+	<pattern name="Observer">
+		<instance>
+			<role name="Observer" element="org.apache.poi.hssf.record.formula.Ptg" />
+			<role name="Subject" element="org.apache.poi.ss.formula.ParseNode$TokenCollector" />
+			<role name="Notify()" element="org.apache.poi.ss.formula.ParseNode$TokenCollector::sumTokenSizes(int, int):int" />
+		</instance>
+		<instance>
+			<role name="Observer" element="org.apache.poi.poifs.property.Property" />
+			<role name="Subject" element="org.apache.poi.poifs.property.PropertyTable" />
+			<role name="Notify()" element="org.apache.poi.poifs.property.PropertyTable::preWrite():void" />
+			<role name="Notify()" element="org.apache.poi.poifs.property.PropertyTable::populatePropertyTree(org.apache.poi.poifs.property.DirectoryProperty):void" />
+		</instance>
+		<instance>
+			<role name="Observer" element="org.apache.poi.ddf.EscherRecord" />
+			<role name="Subject" element="org.apache.poi.hssf.record.AbstractEscherHolderRecord" />
+			<role name="Notify()" element="org.apache.poi.hssf.record.AbstractEscherHolderRecord::convertToEscherRecords(int, int, byte[]):void" />
+			<role name="Notify()" element="org.apache.poi.hssf.record.AbstractEscherHolderRecord::serialize(int, byte[]):int" />
+			<role name="Notify()" element="org.apache.poi.hssf.record.AbstractEscherHolderRecord::getRecordSize():int" />
+		</instance>
+		<instance>
+			<role name="Observer" element="org.apache.poi.hssf.record.SubRecord" />
+			<role name="Subject" element="org.apache.poi.hssf.record.ObjRecord" />
+			<role name="Notify()" element="org.apache.poi.hssf.record.ObjRecord::getRecordSize():int" />
+			<role name="Notify()" element="org.apache.poi.hssf.record.ObjRecord::serialize(int, byte[]):int" />
+			<role name="Notify()" element="org.apache.poi.hssf.record.ObjRecord::clone():java.lang.Object" />
+		</instance>
+		<instance>
+			<role name="Observer" element="org.apache.poi.hslf.record.Record" />
+			<role name="Subject" element="org.apache.poi.hslf.HSLFSlideShow" />
+			<role name="Notify()" element="org.apache.poi.hslf.HSLFSlideShow::write(java.io.OutputStream, boolean):void" />
+		</instance>
+	</pattern>
+	<pattern name="State">
+		<instance>
+			<role name="State" element="org.apache.poi.hssf.record.Record" />
+			<role name="Context" element="org.apache.poi.hssf.record.RecordFactoryInputStream" />
+			<role name="state" element="org.apache.poi.hssf.record.RecordFactoryInputStream::_unreadRecordBuffer:org.apache.poi.hssf.record.Record[]" />
+			<role name="state" element="org.apache.poi.hssf.record.RecordFactoryInputStream::_lastRecord:org.apache.poi.hssf.record.Record" />
+			<role name="Request()" element="org.apache.poi.hssf.record.RecordFactoryInputStream::readNextRecord():org.apache.poi.hssf.record.Record" />
+		</instance>
+		<instance>
+			<role name="State" element="org.apache.poi.hslf.record.Record" />
+			<role name="Context" element="org.apache.poi.hslf.usermodel.SlideShow" />
+			<role name="state" element="org.apache.poi.hslf.usermodel.SlideShow::_records:org.apache.poi.hslf.record.Record[]" />
+			<role name="state" element="org.apache.poi.hslf.usermodel.SlideShow::_mostRecentCoreRecords:org.apache.poi.hslf.record.Record[]" />
+			<role name="Request()" element="org.apache.poi.hslf.usermodel.SlideShow::findMostRecentCoreRecords():void" />
+			<role name="Request()" element="org.apache.poi.hslf.usermodel.SlideShow::createSlide():org.apache.poi.hslf.model.Slide" />
+		</instance>
+		<instance>
+			<role name="Context" element="org.apache.poi.ss.formula.ParseNode" />
+			<role name="State" element="org.apache.poi.hssf.record.formula.Ptg" />
+			<role name="state" element="org.apache.poi.ss.formula.ParseNode::_token:org.apache.poi.hssf.record.formula.Ptg" />
+			<role name="Request()" element="org.apache.poi.ss.formula.ParseNode::getEncodedSize():int" />
+		</instance>
+		<instance>
+			<role name="Context" element="org.apache.poi.ss.formula.ParseNode$TokenCollector" />
+			<role name="State" element="org.apache.poi.hssf.record.formula.Ptg" />
+			<role name="state" element="org.apache.poi.ss.formula.ParseNode$TokenCollector::_ptgs:org.apache.poi.hssf.record.formula.Ptg[]" />
+			<role name="Request()" element="org.apache.poi.ss.formula.ParseNode$TokenCollector::sumTokenSizes(int, int):int" />
+		</instance>
+		<instance>
+			<role name="Context" element="org.apache.poi.hssf.usermodel.HSSFCell" />
+			<role name="State" element="org.apache.poi.hssf.record.CellValueRecordInterface" />
+			<role name="state" element="org.apache.poi.hssf.usermodel.HSSFCell::_record:org.apache.poi.hssf.record.CellValueRecordInterface" />
+			<role name="Request()" element="org.apache.poi.hssf.usermodel.HSSFCell::getRowIndex():int" />
+			<role name="Request()" element="org.apache.poi.hssf.usermodel.HSSFCell::setCellNum(short):void" />
+			<role name="Request()" element="org.apache.poi.hssf.usermodel.HSSFCell::updateCellNum(short):void" />
+			<role name="Request()" element="org.apache.poi.hssf.usermodel.HSSFCell::getColumnIndex():int" />
+			<role name="Request()" element="org.apache.poi.hssf.usermodel.HSSFCell::setCellType(int):void" />
+			<role name="Request()" element="org.apache.poi.hssf.usermodel.HSSFCell::setCellValue(double):void" />
+			<role name="Request()" element="org.apache.poi.hssf.usermodel.HSSFCell::setCellValue(org.apache.poi.ss.usermodel.RichTextString):void" />
+			<role name="Request()" element="org.apache.poi.hssf.usermodel.HSSFCell::setCellFormula(java.lang.String):void" />
+			<role name="Request()" element="org.apache.poi.hssf.usermodel.HSSFCell::setCellValue(boolean):void" />
+			<role name="Request()" element="org.apache.poi.hssf.usermodel.HSSFCell::setCellErrorValue(byte):void" />
+			<role name="Request()" element="org.apache.poi.hssf.usermodel.HSSFCell::setCellStyle(org.apache.poi.hssf.usermodel.HSSFCellStyle):void" />
+			<role name="Request()" element="org.apache.poi.hssf.usermodel.HSSFCell::getCellStyle():org.apache.poi.hssf.usermodel.HSSFCellStyle" />
+			<role name="Request()" element="org.apache.poi.hssf.usermodel.HSSFCell::setAsActiveCell():void" />
+			<role name="Request()" element="org.apache.poi.hssf.usermodel.HSSFCell::setCellComment(org.apache.poi.ss.usermodel.Comment):void" />
+			<role name="Request()" element="org.apache.poi.hssf.usermodel.HSSFCell::getCellComment():org.apache.poi.hssf.usermodel.HSSFComment" />
+			<role name="Request()" element="org.apache.poi.hssf.usermodel.HSSFCell::removeCellComment():void" />
+			<role name="Request()" element="org.apache.poi.hssf.usermodel.HSSFCell::getHyperlink():org.apache.poi.hssf.usermodel.HSSFHyperlink" />
+			<role name="Request()" element="org.apache.poi.hssf.usermodel.HSSFCell::setHyperlink(org.apache.poi.ss.usermodel.Hyperlink):void" />
+		</instance>
+		<instance>
+			<role name="Context" element="org.apache.poi.hslf.record.PPDrawing" />
+			<role name="State" element="org.apache.poi.ddf.EscherRecord" />
+			<role name="state" element="org.apache.poi.hslf.record.PPDrawing::childRecords:org.apache.poi.ddf.EscherRecord[]" />
+			<role name="Request()" element="org.apache.poi.hslf.record.PPDrawing::writeOut(java.io.OutputStream):void" />
+		</instance>
+		<instance>
+			<role name="Context" element="org.apache.poi.hdf.model.HDFObjectFactory" />
+			<role name="State" element="org.apache.poi.hdf.event.HDFLowLevelParsingListener" />
+			<role name="state" element="org.apache.poi.hdf.model.HDFObjectFactory::_listener:org.apache.poi.hdf.event.HDFLowLevelParsingListener" />
+			<role name="Request()" element="org.apache.poi.hdf.model.HDFObjectFactory::initTextPieces():void" />
+			<role name="Request()" element="org.apache.poi.hdf.model.HDFObjectFactory::initCharacterProperties(int, org.apache.poi.hdf.model.hdftypes.PlexOfCps, int, int):void" />
+			<role name="Request()" element="org.apache.poi.hdf.model.HDFObjectFactory::initParagraphProperties(int, org.apache.poi.hdf.model.hdftypes.PlexOfCps, int, org.apache.poi.hdf.model.hdftypes.PlexOfCps, int, int):void" />
+			<role name="Request()" element="org.apache.poi.hdf.model.HDFObjectFactory::initParagraphProperties():void" />
+			<role name="Request()" element="org.apache.poi.hdf.model.HDFObjectFactory::initSectionProperties():void" />
+			<role name="Request()" element="org.apache.poi.hdf.model.HDFObjectFactory::initDocumentProperties():void" />
+			<role name="Request()" element="org.apache.poi.hdf.model.HDFObjectFactory::createStyleSheet():void" />
+			<role name="Request()" element="org.apache.poi.hdf.model.HDFObjectFactory::createListTables():void" />
+			<role name="Request()" element="org.apache.poi.hdf.model.HDFObjectFactory::createFontTable():void" />
+		</instance>
+		<instance>
+			<role name="Context" element="org.apache.poi.hdf.event.EventBridge" />
+			<role name="State" element="org.apache.poi.hdf.event.HDFParsingListener" />
+			<role name="state" element="org.apache.poi.hdf.event.EventBridge::_listener:org.apache.poi.hdf.event.HDFParsingListener" />
+			<role name="Request()" element="org.apache.poi.hdf.event.EventBridge::bodySection(org.apache.poi.hdf.model.hdftypes.SepxNode):void" />
+			<role name="Request()" element="org.apache.poi.hdf.event.EventBridge::endSections():void" />
+			<role name="Request()" element="org.apache.poi.hdf.event.EventBridge::paragraph(org.apache.poi.hdf.model.hdftypes.PapxNode):void" />
+			<role name="Request()" element="org.apache.poi.hdf.event.EventBridge::characterRun(org.apache.poi.hdf.model.hdftypes.ChpxNode):void" />
+			<role name="Request()" element="org.apache.poi.hdf.event.EventBridge::flushHeldParagraph():void" />
+		</instance>
+		<instance>
+			<role name="Context" element="org.apache.poi.hssf.record.formula.functions.Offset$BaseRef" />
+			<role name="State" element="org.apache.poi.hssf.record.formula.eval.AreaEval" />
+			<role name="state" element="org.apache.poi.hssf.record.formula.functions.Offset$BaseRef::_areaEval:org.apache.poi.hssf.record.formula.eval.AreaEval" />
+			<role name="Request()" element="org.apache.poi.hssf.record.formula.functions.Offset$BaseRef::offset(int, int, int, int):org.apache.poi.hssf.record.formula.eval.AreaEval" />
+		</instance>
+		<instance>
+			<role name="State" element="org.apache.poi.util.POILogger" />
+			<role name="Context" element="org.apache.poi.hslf.usermodel.RichTextRun" />
+			<role name="state" element="org.apache.poi.hslf.usermodel.RichTextRun::logger:org.apache.poi.util.POILogger" />
+			<role name="Request()" element="org.apache.poi.hslf.usermodel.RichTextRun::getFlag(boolean, int):boolean" />
+		</instance>
+		<instance>
+			<role name="State" element="org.apache.poi.util.POILogger" />
+			<role name="Context" element="org.apache.poi.hdgf.chunks.Chunk" />
+			<role name="state" element="org.apache.poi.hdgf.chunks.Chunk::logger:org.apache.poi.util.POILogger" />
+			<role name="Request()" element="org.apache.poi.hdgf.chunks.Chunk::processCommands():void" />
+		</instance>
+		<instance>
+			<role name="State" element="org.apache.poi.util.POILogger" />
+			<role name="Context" element="org.apache.poi.openxml4j.opc.PackageRelationshipCollection" />
+			<role name="state" element="org.apache.poi.openxml4j.opc.PackageRelationshipCollection::logger:org.apache.poi.util.POILogger" />
+			<role name="Request()" element="org.apache.poi.openxml4j.opc.PackageRelationshipCollection::parseRelationshipsPart(org.apache.poi.openxml4j.opc.PackagePart):void" />
+		</instance>
+		<instance>
+			<role name="State" element="org.apache.poi.util.POILogger" />
+			<role name="Context" element="org.apache.poi.xssf.extractor.XSSFImportFromXML" />
+			<role name="state" element="org.apache.poi.xssf.extractor.XSSFImportFromXML::logger:org.apache.poi.util.POILogger" />
+			<role name="Request()" element="org.apache.poi.xssf.extractor.XSSFImportFromXML::importFromXML(java.lang.String):void" />
+		</instance>
+		<instance>
+			<role name="State" element="org.apache.poi.util.POILogger" />
+			<role name="Context" element="org.apache.poi.hssf.usermodel.EscherGraphics2d" />
+			<role name="state" element="org.apache.poi.hssf.usermodel.EscherGraphics2d::logger:org.apache.poi.util.POILogger" />
+			<role name="Request()" element="org.apache.poi.hssf.usermodel.EscherGraphics2d::draw(java.awt.Shape):void" />
+			<role name="Request()" element="org.apache.poi.hssf.usermodel.EscherGraphics2d::drawImage(java.awt.Image, int, int, int, int, int, int, int, int, java.awt.Color, java.awt.image.ImageObserver):boolean" />
+			<role name="Request()" element="org.apache.poi.hssf.usermodel.EscherGraphics2d::drawImage(java.awt.Image, int, int, int, int, int, int, int, int, java.awt.image.ImageObserver):boolean" />
+			<role name="Request()" element="org.apache.poi.hssf.usermodel.EscherGraphics2d::drawImage(java.awt.Image, int, int, int, int, java.awt.Color, java.awt.image.ImageObserver):boolean" />
+			<role name="Request()" element="org.apache.poi.hssf.usermodel.EscherGraphics2d::fill(java.awt.Shape):void" />
+		</instance>
+		<instance>
+			<role name="State" element="org.apache.poi.util.POILogger" />
+			<role name="Context" element="org.apache.poi.hdgf.chunks.ChunkFactory" />
+			<role name="state" element="org.apache.poi.hdgf.chunks.ChunkFactory::logger:org.apache.poi.util.POILogger" />
+			<role name="Request()" element="org.apache.poi.hdgf.chunks.ChunkFactory::createChunk(byte[], int):org.apache.poi.hdgf.chunks.Chunk" />
+		</instance>
+		<instance>
+			<role name="State" element="org.apache.poi.util.POILogger" />
+			<role name="Context" element="org.apache.poi.hslf.model.Fill" />
+			<role name="state" element="org.apache.poi.hslf.model.Fill::logger:org.apache.poi.util.POILogger" />
+			<role name="Request()" element="org.apache.poi.hslf.model.Fill::getPictureData():org.apache.poi.hslf.usermodel.PictureData" />
+		</instance>
+		<instance>
+			<role name="State" element="org.apache.poi.util.POILogger" />
+			<role name="Context" element="org.apache.poi.hslf.model.PPGraphics2D" />
+			<role name="state" element="org.apache.poi.hslf.model.PPGraphics2D::log:org.apache.poi.util.POILogger" />
+			<role name="Request()" element="org.apache.poi.hslf.model.PPGraphics2D::clip(java.awt.Shape):void" />
+			<role name="Request()" element="org.apache.poi.hslf.model.PPGraphics2D::getClip():java.awt.Shape" />
+			<role name="Request()" element="org.apache.poi.hslf.model.PPGraphics2D::drawImage(java.awt.Image, int, int, java.awt.Color, java.awt.image.ImageObserver):boolean" />
+			<role name="Request()" element="org.apache.poi.hslf.model.PPGraphics2D::drawImage(java.awt.Image, int, int, int, int, java.awt.Color, java.awt.image.ImageObserver):boolean" />
+			<role name="Request()" element="org.apache.poi.hslf.model.PPGraphics2D::drawImage(java.awt.Image, int, int, int, int, int, int, int, int, java.awt.image.ImageObserver):boolean" />
+			<role name="Request()" element="org.apache.poi.hslf.model.PPGraphics2D::drawImage(java.awt.Image, int, int, int, int, int, int, int, int, java.awt.Color, java.awt.image.ImageObserver):boolean" />
+			<role name="Request()" element="org.apache.poi.hslf.model.PPGraphics2D::drawImage(java.awt.Image, int, int, java.awt.image.ImageObserver):boolean" />
+			<role name="Request()" element="org.apache.poi.hslf.model.PPGraphics2D::setClip(java.awt.Shape):void" />
+			<role name="Request()" element="org.apache.poi.hslf.model.PPGraphics2D::setComposite(java.awt.Composite):void" />
+			<role name="Request()" element="org.apache.poi.hslf.model.PPGraphics2D::getComposite():java.awt.Composite" />
+			<role name="Request()" element="org.apache.poi.hslf.model.PPGraphics2D::drawString(java.text.AttributedCharacterIterator, float, float):void" />
+			<role name="Request()" element="org.apache.poi.hslf.model.PPGraphics2D::drawImage(java.awt.Image, java.awt.geom.AffineTransform, java.awt.image.ImageObserver):boolean" />
+			<role name="Request()" element="org.apache.poi.hslf.model.PPGraphics2D::drawImage(java.awt.Image, int, int, int, int, java.awt.image.ImageObserver):boolean" />
+			<role name="Request()" element="org.apache.poi.hslf.model.PPGraphics2D::setXORMode(java.awt.Color):void" />
+			<role name="Request()" element="org.apache.poi.hslf.model.PPGraphics2D::setPaintMode():void" />
+			<role name="Request()" element="org.apache.poi.hslf.model.PPGraphics2D::drawRenderedImage(java.awt.image.RenderedImage, java.awt.geom.AffineTransform):void" />
+			<role name="Request()" element="org.apache.poi.hslf.model.PPGraphics2D::drawRenderableImage(java.awt.image.renderable.RenderableImage, java.awt.geom.AffineTransform):void" />
+		</instance>
+		<instance>
+			<role name="State" element="org.apache.poi.util.POILogger" />
+			<role name="Context" element="org.apache.poi.hslf.model.ShapeFactory" />
+			<role name="state" element="org.apache.poi.hslf.model.ShapeFactory::logger:org.apache.poi.util.POILogger" />
+			<role name="Request()" element="org.apache.poi.hslf.model.ShapeFactory::createShapeGroup(org.apache.poi.ddf.EscherContainerRecord, org.apache.poi.hslf.model.Shape):org.apache.poi.hslf.model.ShapeGroup" />
+			<role name="Request()" element="org.apache.poi.hslf.model.ShapeFactory::createSimpeShape(org.apache.poi.ddf.EscherContainerRecord, org.apache.poi.hslf.model.Shape):org.apache.poi.hslf.model.Shape" />
+		</instance>
+		<instance>
+			<role name="State" element="org.apache.poi.util.POILogger" />
+			<role name="Context" element="org.apache.poi.hslf.model.ShapePainter" />
+			<role name="state" element="org.apache.poi.hslf.model.ShapePainter::logger:org.apache.poi.util.POILogger" />
+			<role name="Request()" element="org.apache.poi.hslf.model.ShapePainter::paint(org.apache.poi.hslf.model.SimpleShape, java.awt.Graphics2D):void" />
+		</instance>
+		<instance>
+			<role name="State" element="org.apache.poi.util.POILogger" />
+			<role name="Context" element="org.apache.poi.hslf.model.TextPainter" />
+			<role name="state" element="org.apache.poi.hslf.model.TextPainter::logger:org.apache.poi.util.POILogger" />
+			<role name="Request()" element="org.apache.poi.hslf.model.TextPainter::getAttributedString(org.apache.poi.hslf.model.TextRun):java.text.AttributedString" />
+			<role name="Request()" element="org.apache.poi.hslf.model.TextPainter::getTextElements(float, java.awt.font.FontRenderContext):org.apache.poi.hslf.model.TextPainter$TextElement[]" />
+		</instance>
+		<instance>
+			<role name="State" element="org.apache.poi.util.POILogger" />
+			<role name="Context" element="org.apache.poi.hslf.usermodel.SlideShow" />
+			<role name="state" element="org.apache.poi.hslf.usermodel.SlideShow::logger:org.apache.poi.util.POILogger" />
+			<role name="Request()" element="org.apache.poi.hslf.usermodel.SlideShow::getCoreRecordForRefID(int):org.apache.poi.hslf.record.Record" />
+			<role name="Request()" element="org.apache.poi.hslf.usermodel.SlideShow::buildSlidesAndNotes():void" />
+			<role name="Request()" element="org.apache.poi.hslf.usermodel.SlideShow::createSlide():org.apache.poi.hslf.model.Slide" />
+		</instance>
+		<instance>
+			<role name="State" element="org.apache.poi.util.POILogger" />
+			<role name="Context" element="org.apache.poi.hssf.usermodel.EscherGraphics" />
+			<role name="state" element="org.apache.poi.hssf.usermodel.EscherGraphics::logger:org.apache.poi.util.POILogger" />
+			<role name="Request()" element="org.apache.poi.hssf.usermodel.EscherGraphics::clipRect(int, int, int, int):void" />
+			<role name="Request()" element="org.apache.poi.hssf.usermodel.EscherGraphics::copyArea(int, int, int, int, int, int):void" />
+			<role name="Request()" element="org.apache.poi.hssf.usermodel.EscherGraphics::drawArc(int, int, int, int, int, int):void" />
+			<role name="Request()" element="org.apache.poi.hssf.usermodel.EscherGraphics::drawImage(java.awt.Image, int, int, int, int, int, int, int, int, java.awt.Color, java.awt.image.ImageObserver):boolean" />
+			<role name="Request()" element="org.apache.poi.hssf.usermodel.EscherGraphics::drawImage(java.awt.Image, int, int, int, int, int, int, int, int, java.awt.image.ImageObserver):boolean" />
+			<role name="Request()" element="org.apache.poi.hssf.usermodel.EscherGraphics::drawPolyline(int[], int[], int):void" />
+			<role name="Request()" element="org.apache.poi.hssf.usermodel.EscherGraphics::drawRect(int, int, int, int):void" />
+			<role name="Request()" element="org.apache.poi.hssf.usermodel.EscherGraphics::drawRoundRect(int, int, int, int, int, int):void" />
+			<role name="Request()" element="org.apache.poi.hssf.usermodel.EscherGraphics::drawString(java.text.AttributedCharacterIterator, int, int):void" />
+			<role name="Request()" element="org.apache.poi.hssf.usermodel.EscherGraphics::fillArc(int, int, int, int, int, int):void" />
+			<role name="Request()" element="org.apache.poi.hssf.usermodel.EscherGraphics::fillRoundRect(int, int, int, int, int, int):void" />
+			<role name="Request()" element="org.apache.poi.hssf.usermodel.EscherGraphics::setPaintMode():void" />
+			<role name="Request()" element="org.apache.poi.hssf.usermodel.EscherGraphics::setXORMode(java.awt.Color):void" />
+			<role name="Request()" element="org.apache.poi.hssf.usermodel.EscherGraphics::translate(int, int):void" />
+		</instance>
+		<instance>
+			<role name="State" element="org.apache.poi.util.POILogger" />
+			<role name="Context" element="org.apache.poi.hwpf.model.ListTables" />
+			<role name="state" element="org.apache.poi.hwpf.model.ListTables::log:org.apache.poi.util.POILogger" />
+			<role name="Request()" element="org.apache.poi.hwpf.model.ListTables::getLevel(int, int):org.apache.poi.hwpf.model.ListLevel" />
+		</instance>
+		<instance>
+			<role name="State" element="org.apache.poi.util.POILogger" />
+			<role name="Context" element="org.apache.poi.hwpf.usermodel.Picture" />
+			<role name="state" element="org.apache.poi.hwpf.usermodel.Picture::log:org.apache.poi.util.POILogger" />
+			<role name="Request()" element="org.apache.poi.hwpf.usermodel.Picture::fillImageContent():void" />
+		</instance>
+		<instance>
+			<role name="State" element="org.apache.poi.util.POILogger" />
+			<role name="Context" element="org.apache.poi.ss.util.ImageUtils" />
+			<role name="state" element="org.apache.poi.ss.util.ImageUtils::logger:org.apache.poi.util.POILogger" />
+			<role name="Request()" element="org.apache.poi.ss.util.ImageUtils::getImageDimension(java.io.InputStream, int):java.awt.Dimension" />
+		</instance>
+		<instance>
+			<role name="State" element="org.apache.poi.util.POILogger" />
+			<role name="Context" element="org.apache.poi.util.POILogFactory" />
+			<role name="state" element="org.apache.poi.util.POILogFactory::_nullLogger:org.apache.poi.util.POILogger" />
+			<role name="Request()" element="org.apache.poi.util.POILogFactory::getLogger(java.lang.String):org.apache.poi.util.POILogger" />
+		</instance>
+		<instance>
+			<role name="State" element="org.apache.poi.ss.formula.EvaluationWorkbook" />
+			<role name="Context" element="org.apache.poi.ss.formula.OperationEvaluationContext" />
+			<role name="state" element="org.apache.poi.ss.formula.OperationEvaluationContext::_workbook:org.apache.poi.ss.formula.EvaluationWorkbook" />
+			<role name="Request()" element="org.apache.poi.ss.formula.OperationEvaluationContext::createExternSheetRefEvaluator(int):org.apache.poi.ss.formula.SheetRefEvaluator" />
+		</instance>
+		<instance>
+			<role name="State" element="org.apache.poi.ss.formula.EvaluationWorkbook" />
+			<role name="Context" element="org.apache.poi.ss.formula.WorkbookEvaluator" />
+			<role name="state" element="org.apache.poi.ss.formula.WorkbookEvaluator::_workbook:org.apache.poi.ss.formula.EvaluationWorkbook" />
+			<role name="Request()" element="org.apache.poi.ss.formula.WorkbookEvaluator::getSheetName(int):java.lang.String" />
+			<role name="Request()" element="org.apache.poi.ss.formula.WorkbookEvaluator::getSheet(int):org.apache.poi.ss.formula.EvaluationSheet" />
+			<role name="Request()" element="org.apache.poi.ss.formula.WorkbookEvaluator::getSheetIndex(org.apache.poi.ss.formula.EvaluationSheet):int" />
+			<role name="Request()" element="org.apache.poi.ss.formula.WorkbookEvaluator::getSheetIndex(java.lang.String):int" />
+			<role name="Request()" element="org.apache.poi.ss.formula.WorkbookEvaluator::evaluateAny(org.apache.poi.ss.formula.EvaluationCell, int, int, int, org.apache.poi.ss.formula.EvaluationTracker):org.apache.poi.hssf.record.formula.eval.ValueEval" />
+			<role name="Request()" element="org.apache.poi.ss.formula.WorkbookEvaluator::addExceptionInfo(org.apache.poi.ss.formula.eval.NotImplementedException, int, int, int):org.apache.poi.ss.formula.eval.NotImplementedException" />
+			<role name="Request()" element="org.apache.poi.ss.formula.WorkbookEvaluator::getEvalForPtg(org.apache.poi.hssf.record.formula.Ptg, org.apache.poi.ss.formula.OperationEvaluationContext):org.apache.poi.hssf.record.formula.eval.ValueEval" />
+		</instance>
+		<instance>
+			<role name="State" element="org.apache.poi.poifs.filesystem.POIFSWriterListener" />
+			<role name="Context" element="org.apache.poi.poifs.filesystem.POIFSDocument$BigBlockStore" />
+			<role name="state" element="org.apache.poi.poifs.filesystem.POIFSDocument$BigBlockStore::_writer:org.apache.poi.poifs.filesystem.POIFSWriterListener" />
+			<role name="Request()" element="org.apache.poi.poifs.filesystem.POIFSDocument$BigBlockStore::getBlocks():org.apache.poi.poifs.storage.DocumentBlock[]" />
+			<role name="Request()" element="org.apache.poi.poifs.filesystem.POIFSDocument$BigBlockStore::writeBlocks(java.io.OutputStream):void" />
+		</instance>
+		<instance>
+			<role name="State" element="org.apache.poi.poifs.filesystem.POIFSWriterListener" />
+			<role name="Context" element="org.apache.poi.poifs.filesystem.POIFSDocument$SmallBlockStore" />
+			<role name="state" element="org.apache.poi.poifs.filesystem.POIFSDocument$SmallBlockStore::_writer:org.apache.poi.poifs.filesystem.POIFSWriterListener" />
+			<role name="Request()" element="org.apache.poi.poifs.filesystem.POIFSDocument$SmallBlockStore::getBlocks():org.apache.poi.poifs.storage.SmallDocumentBlock[]" />
+		</instance>
+		<instance>
+			<role name="Context" element="org.apache.poi.hssf.record.RecordInputStream" />
+			<role name="State" element="org.apache.poi.hssf.record.BiffHeaderInput" />
+			<role name="state" element="org.apache.poi.hssf.record.RecordInputStream::_bhi:org.apache.poi.hssf.record.BiffHeaderInput" />
+			<role name="Request()" element="org.apache.poi.hssf.record.RecordInputStream::readNextSid():int" />
+			<role name="Request()" element="org.apache.poi.hssf.record.RecordInputStream::nextRecord():void" />
+		</instance>
+		<instance>
+			<role name="Context" element="org.apache.poi.hssf.record.RecordInputStream$SimpleHeaderInput" />
+			<role name="State" element="org.apache.poi.util.LittleEndianInput" />
+			<role name="state" element="org.apache.poi.hssf.record.RecordInputStream$SimpleHeaderInput::_lei:org.apache.poi.util.LittleEndianInput" />
+			<role name="Request()" element="org.apache.poi.hssf.record.RecordInputStream$SimpleHeaderInput::available():int" />
+			<role name="Request()" element="org.apache.poi.hssf.record.RecordInputStream$SimpleHeaderInput::readDataSize():int" />
+			<role name="Request()" element="org.apache.poi.hssf.record.RecordInputStream$SimpleHeaderInput::readRecordSID():int" />
+		</instance>
+		<instance>
+			<role name="State" element="org.apache.poi.ss.formula.IEvaluationListener" />
+			<role name="Context" element="org.apache.poi.ss.formula.WorkbookEvaluator" />
+			<role name="state" element="org.apache.poi.ss.formula.WorkbookEvaluator::_evaluationListener:org.apache.poi.ss.formula.IEvaluationListener" />
+			<role name="Request()" element="org.apache.poi.ss.formula.WorkbookEvaluator::evaluateAny(org.apache.poi.ss.formula.EvaluationCell, int, int, int, org.apache.poi.ss.formula.EvaluationTracker):org.apache.poi.hssf.record.formula.eval.ValueEval" />
+		</instance>
+		<instance>
+			<role name="State" element="org.apache.poi.ss.formula.IEvaluationListener" />
+			<role name="Context" element="org.apache.poi.ss.formula.EvaluationCache" />
+			<role name="state" element="org.apache.poi.ss.formula.EvaluationCache::_evaluationListener:org.apache.poi.ss.formula.IEvaluationListener" />
+			<role name="Request()" element="org.apache.poi.ss.formula.EvaluationCache::notifyUpdateCell(int, int, org.apache.poi.ss.formula.EvaluationCell):void" />
+			<role name="Request()" element="org.apache.poi.ss.formula.EvaluationCache::getPlainValueEntry(int, int, int, int, org.apache.poi.hssf.record.formula.eval.ValueEval):org.apache.poi.ss.formula.PlainValueCellCacheEntry" />
+			<role name="Request()" element="org.apache.poi.ss.formula.EvaluationCache::clear():void" />
+		</instance>
+		<instance>
+			<role name="Context" element="org.apache.poi.hssf.record.formula.functions.LookupUtils$ColumnVector" />
+			<role name="State" element="org.apache.poi.hssf.record.formula.eval.AreaEval" />
+			<role name="state" element="org.apache.poi.hssf.record.formula.functions.LookupUtils$ColumnVector::_tableArray:org.apache.poi.hssf.record.formula.eval.AreaEval" />
+			<role name="Request()" element="org.apache.poi.hssf.record.formula.functions.LookupUtils$ColumnVector::getItem(int):org.apache.poi.hssf.record.formula.eval.ValueEval" />
+		</instance>
+		<instance>
+			<role name="Context" element="org.apache.poi.hssf.record.formula.functions.LookupUtils$RowVector" />
+			<role name="State" element="org.apache.poi.hssf.record.formula.eval.AreaEval" />
+			<role name="state" element="org.apache.poi.hssf.record.formula.functions.LookupUtils$RowVector::_tableArray:org.apache.poi.hssf.record.formula.eval.AreaEval" />
+			<role name="Request()" element="org.apache.poi.hssf.record.formula.functions.LookupUtils$RowVector::getItem(int):org.apache.poi.hssf.record.formula.eval.ValueEval" />
+		</instance>
+		<instance>
+			<role name="Context" element="org.apache.poi.hssf.record.formula.functions.XYNumericFunction$AreaValueArray" />
+			<role name="State" element="org.apache.poi.hssf.record.formula.eval.AreaEval" />
+			<role name="state" element="org.apache.poi.hssf.record.formula.functions.XYNumericFunction$AreaValueArray::_ae:org.apache.poi.hssf.record.formula.eval.AreaEval" />
+			<role name="Request()" element="org.apache.poi.hssf.record.formula.functions.XYNumericFunction$AreaValueArray::getItemInternal(int):org.apache.poi.hssf.record.formula.eval.ValueEval" />
+		</instance>
+		<instance>
+			<role name="Context" element="org.apache.poi.ss.formula.FormulaParser" />
+			<role name="State" element="org.apache.poi.ss.formula.FormulaParsingWorkbook" />
+			<role name="state" element="org.apache.poi.ss.formula.FormulaParser::_book:org.apache.poi.ss.formula.FormulaParsingWorkbook" />
+			<role name="Request()" element="org.apache.poi.ss.formula.FormulaParser::parseNonRange(int):org.apache.poi.ss.formula.ParseNode" />
+			<role name="Request()" element="org.apache.poi.ss.formula.FormulaParser::createAreaRefParseNode(org.apache.poi.ss.formula.FormulaParser$SheetIdentifier, org.apache.poi.ss.formula.FormulaParser$SimpleRangePart, org.apache.poi.ss.formula.FormulaParser$SimpleRangePart):org.apache.poi.ss.formula.ParseNode" />
+			<role name="Request()" element="org.apache.poi.ss.formula.FormulaParser::function(java.lang.String):org.apache.poi.ss.formula.ParseNode" />
+			<role name="Request()" element="org.apache.poi.ss.formula.FormulaParser::validateNumArgs(int, org.apache.poi.hssf.record.formula.function.FunctionMetadata):void" />
+		</instance>
+		<instance>
+			<role name="Context" element="org.apache.poi.hssf.record.EmbeddedObjectRefSubRecord" />
+			<role name="State" element="org.apache.poi.hssf.record.formula.Ptg" />
+			<role name="state" element="org.apache.poi.hssf.record.EmbeddedObjectRefSubRecord::field_2_refPtg:org.apache.poi.hssf.record.formula.Ptg" />
+			<role name="Request()" element="org.apache.poi.hssf.record.EmbeddedObjectRefSubRecord::getDataSize():int" />
+			<role name="Request()" element="org.apache.poi.hssf.record.EmbeddedObjectRefSubRecord::serialize(org.apache.poi.util.LittleEndianOutput):void" />
+		</instance>
+		<instance>
+			<role name="Context" element="org.apache.poi.hssf.record.LbsDataSubRecord" />
+			<role name="State" element="org.apache.poi.hssf.record.formula.Ptg" />
+			<role name="state" element="org.apache.poi.hssf.record.LbsDataSubRecord::_linkPtg:org.apache.poi.hssf.record.formula.Ptg" />
+			<role name="Request()" element="org.apache.poi.hssf.record.LbsDataSubRecord::getDataSize():int" />
+			<role name="Request()" element="org.apache.poi.hssf.record.LbsDataSubRecord::serialize(org.apache.poi.util.LittleEndianOutput):void" />
+		</instance>
+		<instance>
+			<role name="Context" element="org.apache.poi.hssf.record.formula.functions.Offset$BaseRef" />
+			<role name="State" element="org.apache.poi.hssf.record.formula.eval.RefEval" />
+			<role name="state" element="org.apache.poi.hssf.record.formula.functions.Offset$BaseRef::_refEval:org.apache.poi.hssf.record.formula.eval.RefEval" />
+			<role name="Request()" element="org.apache.poi.hssf.record.formula.functions.Offset$BaseRef::offset(int, int, int, int):org.apache.poi.hssf.record.formula.eval.AreaEval" />
+		</instance>
+		<instance>
+			<role name="Context" element="org.apache.poi.hdgf.chunks.Chunk" />
+			<role name="State" element="org.apache.poi.hdgf.chunks.ChunkHeader" />
+			<role name="state" element="org.apache.poi.hdgf.chunks.Chunk::header:org.apache.poi.hdgf.chunks.ChunkHeader" />
+			<role name="Request()" element="org.apache.poi.hdgf.chunks.Chunk::getOnDiskSize():int" />
+		</instance>
+		<instance>
+			<role name="Context" element="org.apache.poi.poifs.filesystem.ReaderWriter" />
+			<role name="State" element="org.apache.poi.poifs.filesystem.DirectoryEntry" />
+			<role name="state" element="org.apache.poi.poifs.filesystem.ReaderWriter::root:org.apache.poi.poifs.filesystem.DirectoryEntry" />
+			<role name="Request()" element="org.apache.poi.poifs.filesystem.ReaderWriter::processPOIFSReaderEvent(org.apache.poi.poifs.eventfilesystem.POIFSReaderEvent):void" />
+		</instance>
+		<instance>
+			<role name="Context" element="org.apache.poi.hssf.model.Sheet" />
+			<role name="State" element="org.apache.poi.util.POILogger" />
+			<role name="state" element="org.apache.poi.hssf.model.Sheet::log:org.apache.poi.util.POILogger" />
+			<role name="Request()" element="org.apache.poi.hssf.model.Sheet::setDimensions(int, short, int, short):void" />
+			<role name="Request()" element="org.apache.poi.hssf.model.Sheet::addValueRecord(int, org.apache.poi.hssf.record.CellValueRecordInterface):void" />
+			<role name="Request()" element="org.apache.poi.hssf.model.Sheet::replaceValueRecord(org.apache.poi.hssf.record.CellValueRecordInterface):void" />
+			<role name="Request()" element="org.apache.poi.hssf.model.Sheet::addRow(org.apache.poi.hssf.record.RowRecord):void" />
+		</instance>
+		<instance>
+			<role name="Context" element="org.apache.poi.hssf.model.Workbook" />
+			<role name="State" element="org.apache.poi.util.POILogger" />
+			<role name="state" element="org.apache.poi.hssf.model.Workbook::log:org.apache.poi.util.POILogger" />
+			<role name="Request()" element="org.apache.poi.hssf.model.Workbook::createWorkbook(java.util.List):org.apache.poi.hssf.model.Workbook" />
+			<role name="Request()" element="org.apache.poi.hssf.model.Workbook::createWorkbook():org.apache.poi.hssf.model.Workbook" />
+			<role name="Request()" element="org.apache.poi.hssf.model.Workbook::setSheetBof(int, int):void" />
+			<role name="Request()" element="org.apache.poi.hssf.model.Workbook::getNumSheets():int" />
+			<role name="Request()" element="org.apache.poi.hssf.model.Workbook::getNumExFormats():int" />
+			<role name="Request()" element="org.apache.poi.hssf.model.Workbook::addSSTString(org.apache.poi.hssf.record.UnicodeString):int" />
+			<role name="Request()" element="org.apache.poi.hssf.model.Workbook::getSSTString(int):org.apache.poi.hssf.record.UnicodeString" />
+			<role name="Request()" element="org.apache.poi.hssf.model.Workbook::insertSST():void" />
+			<role name="Request()" element="org.apache.poi.hssf.model.Workbook::serialize(int, byte[]):int" />
+		</instance>
+		<instance>
+			<role name="Context" element="org.apache.poi.hdgf.HDGFDiagram" />
+			<role name="State" element="org.apache.poi.hdgf.pointers.Pointer" />
+			<role name="state" element="org.apache.poi.hdgf.HDGFDiagram::trailerPointer:org.apache.poi.hdgf.pointers.Pointer" />
+			<role name="Request()" element="org.apache.poi.hdgf.HDGFDiagram::debug():void" />
+		</instance>
+		<instance>
+			<role name="Context" element="org.apache.poi.hssf.dev.BiffViewer$BiffDumpingStream" />
+			<role name="State" element="org.apache.poi.hssf.dev.BiffViewer$IBiffRecordListener" />
+			<role name="state" element="org.apache.poi.hssf.dev.BiffViewer$BiffDumpingStream::_listener:org.apache.poi.hssf.dev.BiffViewer$IBiffRecordListener" />
+			<role name="Request()" element="org.apache.poi.hssf.dev.BiffViewer$BiffDumpingStream::formatBufferIfAtEndOfRec():void" />
+		</instance>
+		<instance>
+			<role name="State" element="org.apache.poi.openxml4j.util.ZipEntrySource" />
+			<role name="Context" element="org.apache.poi.openxml4j.opc.ZipPackage" />
+			<role name="state" element="org.apache.poi.openxml4j.opc.ZipPackage::zipArchive:org.apache.poi.openxml4j.util.ZipEntrySource" />
+			<role name="Request()" element="org.apache.poi.openxml4j.opc.ZipPackage::getPartsImpl():org.apache.poi.openxml4j.opc.PackagePart[]" />
+			<role name="Request()" element="org.apache.poi.openxml4j.opc.ZipPackage::closeImpl():void" />
+			<role name="Request()" element="org.apache.poi.openxml4j.opc.ZipPackage::revertImpl():void" />
+		</instance>
+		<instance>
+			<role name="Context" element="org.apache.poi.hslf.HSLFSlideShow" />
+			<role name="State" element="org.apache.poi.hslf.record.Record" />
+			<role name="state" element="org.apache.poi.hslf.HSLFSlideShow::_records:org.apache.poi.hslf.record.Record[]" />
+			<role name="Request()" element="org.apache.poi.hslf.HSLFSlideShow::write(java.io.OutputStream, boolean):void" />
+		</instance>
+		<instance>
+			<role name="Context" element="org.apache.poi.hslf.HSLFSlideShow" />
+			<role name="State" element="org.apache.poi.util.POILogger" />
+			<role name="state" element="org.apache.poi.hslf.HSLFSlideShow::logger:org.apache.poi.util.POILogger" />
+			<role name="Request()" element="org.apache.poi.hslf.HSLFSlideShow::readCurrentUserStream():void" />
+			<role name="Request()" element="org.apache.poi.hslf.HSLFSlideShow::readPictures():void" />
+		</instance>
+		<instance>
+			<role name="Context" element="org.apache.poi.hssf.usermodel.HSSFWorkbook" />
+			<role name="State" element="org.apache.poi.util.POILogger" />
+			<role name="state" element="org.apache.poi.hssf.usermodel.HSSFWorkbook::log:org.apache.poi.util.POILogger" />
+			<role name="Request()" element="org.apache.poi.hssf.usermodel.HSSFWorkbook::convertLabelRecords(java.util.List, int):void" />
+			<role name="Request()" element="org.apache.poi.hssf.usermodel.HSSFWorkbook::getBytes():byte[]" />
+		</instance>
+		<instance>
+			<role name="Context" element="org.apache.poi.hssf.usermodel.HSSFSheet" />
+			<role name="State" element="org.apache.poi.util.POILogger" />
+			<role name="state" element="org.apache.poi.hssf.usermodel.HSSFSheet::log:org.apache.poi.util.POILogger" />
+			<role name="Request()" element="org.apache.poi.hssf.usermodel.HSSFSheet::setPropertiesFromSheet(org.apache.poi.hssf.model.Sheet):void" />
+		</instance>
+		<instance>
+			<role name="Context" element="org.apache.poi.xssf.usermodel.XSSFSheet" />
+			<role name="State" element="org.apache.poi.util.POILogger" />
+			<role name="state" element="org.apache.poi.xssf.usermodel.XSSFSheet::logger:org.apache.poi.util.POILogger" />
+			<role name="Request()" element="org.apache.poi.xssf.usermodel.XSSFSheet::createDrawingPatriarch():org.apache.poi.xssf.usermodel.XSSFDrawing" />
+			<role name="Request()" element="org.apache.poi.xssf.usermodel.XSSFSheet::getVMLDrawing(boolean):org.apache.poi.xssf.usermodel.XSSFVMLDrawing" />
+		</instance>
+		<instance>
+			<role name="State" element="org.apache.poi.util.POILogger" />
+			<role name="Context" element="org.apache.poi.xssf.usermodel.XSSFWorkbook" />
+			<role name="state" element="org.apache.poi.xssf.usermodel.XSSFWorkbook::logger:org.apache.poi.util.POILogger" />
+			<role name="Request()" element="org.apache.poi.xssf.usermodel.XSSFWorkbook::onDocumentRead():void" />
+			<role name="Request()" element="org.apache.poi.xssf.usermodel.XSSFWorkbook::cloneSheet(int):org.apache.poi.xssf.usermodel.XSSFSheet" />
+		</instance>
+		<instance>
+			<role name="State" element="org.apache.poi.util.POILogger" />
+			<role name="Context" element="org.apache.poi.POIXMLDocumentPart" />
+			<role name="state" element="org.apache.poi.POIXMLDocumentPart::logger:org.apache.poi.util.POILogger" />
+			<role name="Request()" element="org.apache.poi.POIXMLDocumentPart::read(org.apache.poi.POIXMLFactory, java.util.Map):void" />
+		</instance>
+		<instance>
+			<role name="Context" element="org.apache.poi.ddf.EscherMetafileBlip" />
+			<role name="State" element="org.apache.poi.util.POILogger" />
+			<role name="state" element="org.apache.poi.ddf.EscherMetafileBlip::log:org.apache.poi.util.POILogger" />
+			<role name="Request()" element="org.apache.poi.ddf.EscherMetafileBlip::inflatePictureData(byte[]):byte[]" />
+			<role name="Request()" element="org.apache.poi.ddf.EscherMetafileBlip::getSignature():short" />
+		</instance>
+		<instance>
+			<role name="Context" element="org.apache.poi.ddf.EscherPictBlip" />
+			<role name="State" element="org.apache.poi.util.POILogger" />
+			<role name="state" element="org.apache.poi.ddf.EscherPictBlip::log:org.apache.poi.util.POILogger" />
+			<role name="Request()" element="org.apache.poi.ddf.EscherPictBlip::inflatePictureData(byte[]):byte[]" />
+		</instance>
+		<instance>
+			<role name="Context" element="org.apache.poi.hssf.eventmodel.EventRecordFactory" />
+			<role name="State" element="org.apache.poi.hssf.eventmodel.ERFListener" />
+			<role name="state" element="org.apache.poi.hssf.eventmodel.EventRecordFactory::_listener:org.apache.poi.hssf.eventmodel.ERFListener" />
+			<role name="Request()" element="org.apache.poi.hssf.eventmodel.EventRecordFactory::processRecord(org.apache.poi.hssf.record.Record):boolean" />
+		</instance>
+		<instance>
+			<role name="State" element="org.apache.poi.util.POILogger" />
+			<role name="Context" element="org.apache.poi.openxml4j.opc.ZipPackage" />
+			<role name="state" element="org.apache.poi.openxml4j.opc.ZipPackage::logger:org.apache.poi.util.POILogger" />
+			<role name="Request()" element="org.apache.poi.openxml4j.opc.ZipPackage::buildPartName(java.util.zip.ZipEntry):org.apache.poi.openxml4j.opc.PackagePartName" />
+			<role name="Request()" element="org.apache.poi.openxml4j.opc.ZipPackage::closeImpl():void" />
+			<role name="Request()" element="org.apache.poi.openxml4j.opc.ZipPackage::saveImpl(java.io.OutputStream):void" />
+		</instance>
+		<instance>
+			<role name="Context" element="org.apache.poi.xssf.usermodel.XSSFFactory" />
+			<role name="State" element="org.apache.poi.util.POILogger" />
+			<role name="state" element="org.apache.poi.xssf.usermodel.XSSFFactory::logger:org.apache.poi.util.POILogger" />
+			<role name="Request()" element="org.apache.poi.xssf.usermodel.XSSFFactory::createDocumentPart(org.apache.poi.openxml4j.opc.PackageRelationship, org.apache.poi.openxml4j.opc.PackagePart):org.apache.poi.POIXMLDocumentPart" />
+		</instance>
+		<instance>
+			<role name="Context" element="org.apache.poi.xwpf.usermodel.XWPFFactory" />
+			<role name="State" element="org.apache.poi.util.POILogger" />
+			<role name="state" element="org.apache.poi.xwpf.usermodel.XWPFFactory::logger:org.apache.poi.util.POILogger" />
+			<role name="Request()" element="org.apache.poi.xwpf.usermodel.XWPFFactory::createDocumentPart(org.apache.poi.openxml4j.opc.PackageRelationship, org.apache.poi.openxml4j.opc.PackagePart):org.apache.poi.POIXMLDocumentPart" />
+		</instance>
+		<instance>
+			<role name="Context" element="org.apache.poi.openxml4j.opc.internal.marshallers.ZipPartMarshaller" />
+			<role name="State" element="org.apache.poi.util.POILogger" />
+			<role name="state" element="org.apache.poi.openxml4j.opc.internal.marshallers.ZipPartMarshaller::logger:org.apache.poi.util.POILogger" />
+			<role name="Request()" element="org.apache.poi.openxml4j.opc.internal.marshallers.ZipPartMarshaller::marshall(org.apache.poi.openxml4j.opc.PackagePart, java.io.OutputStream):boolean" />
+			<role name="Request()" element="org.apache.poi.openxml4j.opc.internal.marshallers.ZipPartMarshaller::marshallRelationshipPart(org.apache.poi.openxml4j.opc.PackageRelationshipCollection, org.apache.poi.openxml4j.opc.PackagePartName, java.util.zip.ZipOutputStream):boolean" />
+		</instance>
+		<instance>
+			<role name="Context" element="org.apache.poi.xssf.usermodel.XSSFPicture" />
+			<role name="State" element="org.apache.poi.util.POILogger" />
+			<role name="state" element="org.apache.poi.xssf.usermodel.XSSFPicture::logger:org.apache.poi.util.POILogger" />
+			<role name="Request()" element="org.apache.poi.xssf.usermodel.XSSFPicture::getPictureData():org.apache.poi.xssf.usermodel.XSSFPictureData" />
+		</instance>
+		<instance>
+			<role name="Context" element="org.apache.poi.hssf.record.EscherAggregate" />
+			<role name="State" element="org.apache.poi.util.POILogger" />
+			<role name="state" element="org.apache.poi.hssf.record.EscherAggregate::log:org.apache.poi.util.POILogger" />
+			<role name="Request()" element="org.apache.poi.hssf.record.EscherAggregate::convertRecordsToUserModel():void" />
+		</instance>
+		<instance>
+			<role name="Context" element="org.apache.poi.hssf.record.formula.functions.XYNumericFunction$RefValueArray" />
+			<role name="State" element="org.apache.poi.hssf.record.formula.eval.RefEval" />
+			<role name="state" element="org.apache.poi.hssf.record.formula.functions.XYNumericFunction$RefValueArray::_ref:org.apache.poi.hssf.record.formula.eval.RefEval" />
+			<role name="Request()" element="org.apache.poi.hssf.record.formula.functions.XYNumericFunction$RefValueArray::getItemInternal(int):org.apache.poi.hssf.record.formula.eval.ValueEval" />
+		</instance>
+		<instance>
+			<role name="State" element="org.apache.poi.hssf.record.formula.udf.UDFFinder" />
+			<role name="Context" element="org.apache.poi.ss.formula.WorkbookEvaluator" />
+			<role name="state" element="org.apache.poi.ss.formula.WorkbookEvaluator::_udfFinder:org.apache.poi.hssf.record.formula.udf.UDFFinder" />
+			<role name="Request()" element="org.apache.poi.ss.formula.WorkbookEvaluator::findUserDefinedFunction(java.lang.String):org.apache.poi.hssf.record.formula.functions.FreeRefFunction" />
+		</instance>
+		<instance>
+			<role name="Context" element="org.apache.poi.openxml4j.opc.internal.ZipContentTypeManager" />
+			<role name="State" element="org.apache.poi.util.POILogger" />
+			<role name="state" element="org.apache.poi.openxml4j.opc.internal.ZipContentTypeManager::logger:org.apache.poi.util.POILogger" />
+			<role name="Request()" element="org.apache.poi.openxml4j.opc.internal.ZipContentTypeManager::saveImpl(org.dom4j.Document, java.io.OutputStream):boolean" />
+		</instance>
+		<instance>
+			<role name="Context" element="org.apache.poi.ss.formula.WorkbookEvaluator" />
+			<role name="State" element="org.apache.poi.ss.formula.IStabilityClassifier" />
+			<role name="state" element="org.apache.poi.ss.formula.WorkbookEvaluator::_stabilityClassifier:org.apache.poi.ss.formula.IStabilityClassifier" />
+			<role name="Request()" element="org.apache.poi.ss.formula.WorkbookEvaluator::evaluateAny(org.apache.poi.ss.formula.EvaluationCell, int, int, int, org.apache.poi.ss.formula.EvaluationTracker):org.apache.poi.hssf.record.formula.eval.ValueEval" />
+		</instance>
+		<instance>
+			<role name="Context" element="org.apache.poi.xssf.usermodel.XSSFRelation" />
+			<role name="State" element="org.apache.poi.util.POILogger" />
+			<role name="state" element="org.apache.poi.xssf.usermodel.XSSFRelation::log:org.apache.poi.util.POILogger" />
+			<role name="Request()" element="org.apache.poi.xssf.usermodel.XSSFRelation::getContents(org.apache.poi.openxml4j.opc.PackagePart):java.io.InputStream" />
+		</instance>
+		<instance>
+			<role name="Context" element="org.apache.poi.hslf.blip.BitmapPainter" />
+			<role name="State" element="org.apache.poi.util.POILogger" />
+			<role name="state" element="org.apache.poi.hslf.blip.BitmapPainter::logger:org.apache.poi.util.POILogger" />
+			<role name="Request()" element="org.apache.poi.hslf.blip.BitmapPainter::paint(java.awt.Graphics2D, org.apache.poi.hslf.usermodel.PictureData, org.apache.poi.hslf.model.Picture):void" />
+		</instance>
+		<instance>
+			<role name="State" element="org.apache.poi.util.POILogger" />
+			<role name="Context" element="org.apache.poi.poifs.filesystem.POIFSFileSystem" />
+			<role name="state" element="org.apache.poi.poifs.filesystem.POIFSFileSystem::_logger:org.apache.poi.util.POILogger" />
+			<role name="Request()" element="org.apache.poi.poifs.filesystem.POIFSFileSystem::closeInputStream(java.io.InputStream, boolean):void" />
+		</instance>
+		<instance>
+			<role name="Context" element="org.apache.poi.hssf.usermodel.HSSFCell" />
+			<role name="State" element="org.apache.poi.util.POILogger" />
+			<role name="state" element="org.apache.poi.hssf.usermodel.HSSFCell::log:org.apache.poi.util.POILogger" />
+			<role name="Request()" element="org.apache.poi.hssf.usermodel.HSSFCell::findCellComment(org.apache.poi.hssf.model.Sheet, int, int):org.apache.poi.hssf.usermodel.HSSFComment" />
+		</instance>
+	</pattern>
+	<pattern name="Strategy" />
+	<pattern name="Bridge">
+		<instance>
+			<role name="Abstraction" element="org.apache.poi.hslf.model.SimpleShape" />
+			<role name="Implementor" element="org.apache.poi.hslf.record.Record" />
+			<role name="implementor" element="org.apache.poi.hslf.model.SimpleShape::_clientRecords:org.apache.poi.hslf.record.Record[]" />
+			<role name="Operation()" element="org.apache.poi.hslf.model.SimpleShape::updateClientData():void" />
+		</instance>
+		<instance>
+			<role name="Abstraction" element="org.apache.poi.hslf.model.Sheet" />
+			<role name="Implementor" element="org.apache.poi.hslf.record.SheetContainer" />
+			<role name="implementor" element="org.apache.poi.hslf.model.Sheet::_container:org.apache.poi.hslf.record.SheetContainer" />
+			<role name="Operation()" element="org.apache.poi.hslf.model.Sheet::getPPDrawing():org.apache.poi.hslf.record.PPDrawing" />
+			<role name="Operation()" element="org.apache.poi.hslf.model.Sheet::allocateShapeId():int" />
+			<role name="Operation()" element="org.apache.poi.hslf.model.Sheet::getColorScheme():org.apache.poi.hslf.record.ColorSchemeAtom" />
+		</instance>
+		<instance>
+			<role name="Abstraction" element="org.apache.poi.hslf.model.Shape" />
+			<role name="Implementor" element="org.apache.poi.util.POILogger" />
+			<role name="implementor" element="org.apache.poi.hslf.model.Shape::logger:org.apache.poi.util.POILogger" />
+			<role name="Operation()" element="org.apache.poi.hslf.model.Shape::getAnchor2D():java.awt.geom.Rectangle2D" />
+			<role name="Operation()" element="org.apache.poi.hslf.model.Shape::draw(java.awt.Graphics2D):void" />
+		</instance>
+		<instance>
+			<role name="Abstraction" element="org.apache.poi.POIDocument" />
+			<role name="Implementor" element="org.apache.poi.util.POILogger" />
+			<role name="implementor" element="org.apache.poi.POIDocument::logger:org.apache.poi.util.POILogger" />
+			<role name="Operation()" element="org.apache.poi.POIDocument::getPropertySet(java.lang.String):org.apache.poi.hpsf.PropertySet" />
+			<role name="Operation()" element="org.apache.poi.POIDocument::writePropertySet(java.lang.String, org.apache.poi.hpsf.PropertySet, org.apache.poi.poifs.filesystem.POIFSFileSystem):void" />
+		</instance>
+		<instance>
+			<role name="Abstraction" element="org.apache.poi.hslf.usermodel.PictureData" />
+			<role name="Implementor" element="org.apache.poi.hslf.blip.ImagePainter" />
+			<role name="implementor" element="org.apache.poi.hslf.usermodel.PictureData::painters:org.apache.poi.hslf.blip.ImagePainter[]" />
+			<role name="Operation()" element="org.apache.poi.hslf.usermodel.PictureData::draw(java.awt.Graphics2D, org.apache.poi.hslf.model.Picture):void" />
+		</instance>
+		<instance>
+			<role name="Abstraction" element="org.apache.poi.hpbf.model.EscherPart" />
+			<role name="Implementor" element="org.apache.poi.ddf.EscherRecord" />
+			<role name="implementor" element="org.apache.poi.hpbf.model.EscherPart::records:org.apache.poi.ddf.EscherRecord[]" />
+			<role name="Operation()" element="org.apache.poi.hpbf.model.EscherPart::generateData():void" />
+		</instance>
+		<instance>
+			<role name="Abstraction" element="org.apache.poi.openxml4j.opc.OPCPackage" />
+			<role name="Implementor" element="org.apache.poi.util.POILogger" />
+			<role name="implementor" element="org.apache.poi.openxml4j.opc.OPCPackage::logger:org.apache.poi.util.POILogger" />
+			<role name="Operation()" element="org.apache.poi.openxml4j.opc.OPCPackage::close():void" />
+			<role name="Operation()" element="org.apache.poi.openxml4j.opc.OPCPackage::getParts():java.util.ArrayList" />
+			<role name="Operation()" element="org.apache.poi.openxml4j.opc.OPCPackage::removePart(org.apache.poi.openxml4j.opc.PackagePartName):void" />
+			<role name="Operation()" element="org.apache.poi.openxml4j.opc.OPCPackage::deletePartRecursive(org.apache.poi.openxml4j.opc.PackagePartName):void" />
+			<role name="Operation()" element="org.apache.poi.openxml4j.opc.OPCPackage::addMarshaller(java.lang.String, org.apache.poi.openxml4j.opc.internal.PartMarshaller):void" />
+			<role name="Operation()" element="org.apache.poi.openxml4j.opc.OPCPackage::addUnmarshaller(java.lang.String, org.apache.poi.openxml4j.opc.internal.PartUnmarshaller):void" />
+		</instance>
+		<instance>
+			<role name="Abstraction" element="org.apache.poi.hslf.usermodel.PictureData" />
+			<role name="Implementor" element="org.apache.poi.util.POILogger" />
+			<role name="implementor" element="org.apache.poi.hslf.usermodel.PictureData::logger:org.apache.poi.util.POILogger" />
+			<role name="Operation()" element="org.apache.poi.hslf.usermodel.PictureData::draw(java.awt.Graphics2D, org.apache.poi.hslf.model.Picture):void" />
+		</instance>
+	</pattern>
+	<pattern name="Template Method">
+		<instance>
+			<role name="AbstractClass" element="org.apache.poi.ddf.EscherRecord" />
+			<role name="TemplateMethod()" element="org.apache.poi.ddf.EscherRecord::fillFields(byte[], org.apache.poi.ddf.EscherRecordFactory):int" />
+			<role name="TemplateMethod()" element="org.apache.poi.ddf.EscherRecord::serialize():byte[]" />
+			<role name="TemplateMethod()" element="org.apache.poi.ddf.EscherRecord::serialize(int, byte[]):int" />
+			<role name="TemplateMethod()" element="org.apache.poi.ddf.EscherRecord::display(java.io.PrintWriter, int):void" />
+		</instance>
+		<instance>
+			<role name="AbstractClass" element="org.apache.poi.hpbf.model.HPBFPart" />
+			<role name="TemplateMethod()" element="org.apache.poi.hpbf.model.HPBFPart::writeOut(org.apache.poi.poifs.filesystem.DirectoryNode):void" />
+		</instance>
+		<instance>
+			<role name="AbstractClass" element="org.apache.poi.hslf.model.Sheet" />
+			<role name="TemplateMethod()" element="org.apache.poi.hslf.model.Sheet::setSlideShow(org.apache.poi.hslf.usermodel.SlideShow):void" />
+		</instance>
+		<instance>
+			<role name="AbstractClass" element="org.apache.poi.hslf.usermodel.PictureData" />
+			<role name="TemplateMethod()" element="org.apache.poi.hslf.usermodel.PictureData::write(java.io.OutputStream):void" />
+			<role name="TemplateMethod()" element="org.apache.poi.hslf.usermodel.PictureData::getHeader():byte[]" />
+			<role name="TemplateMethod()" element="org.apache.poi.hslf.usermodel.PictureData::getSize():int" />
+			<role name="TemplateMethod()" element="org.apache.poi.hslf.usermodel.PictureData::draw(java.awt.Graphics2D, org.apache.poi.hslf.model.Picture):void" />
+		</instance>
+		<instance>
+			<role name="AbstractClass" element="org.apache.poi.hssf.model.AbstractShape" />
+			<role name="TemplateMethod()" element="org.apache.poi.hssf.model.AbstractShape::createShape(org.apache.poi.hssf.usermodel.HSSFShape, int):org.apache.poi.hssf.model.AbstractShape" />
+		</instance>
+		<instance>
+			<role name="AbstractClass" element="org.apache.poi.hssf.record.AbstractEscherHolderRecord" />
+			<role name="TemplateMethod()" element="org.apache.poi.hssf.record.AbstractEscherHolderRecord::toString():java.lang.String" />
+			<role name="TemplateMethod()" element="org.apache.poi.hssf.record.AbstractEscherHolderRecord::serialize(int, byte[]):int" />
+		</instance>
+		<instance>
+			<role name="AbstractClass" element="org.apache.poi.hssf.record.aggregates.RecordAggregate" />
+			<role name="TemplateMethod()" element="org.apache.poi.hssf.record.aggregates.RecordAggregate::serialize(int, byte[]):int" />
+			<role name="TemplateMethod()" element="org.apache.poi.hssf.record.aggregates.RecordAggregate::getRecordSize():int" />
+		</instance>
+		<instance>
+			<role name="AbstractClass" element="org.apache.poi.hssf.record.CellRecord" />
+			<role name="TemplateMethod()" element="org.apache.poi.hssf.record.CellRecord::toString():java.lang.String" />
+			<role name="TemplateMethod()" element="org.apache.poi.hssf.record.CellRecord::serialize(org.apache.poi.util.LittleEndianOutput):void" />
+			<role name="TemplateMethod()" element="org.apache.poi.hssf.record.CellRecord::getDataSize():int" />
+		</instance>
+		<instance>
+			<role name="AbstractClass" element="org.apache.poi.hssf.record.cont.ContinuableRecord" />
+			<role name="TemplateMethod()" element="org.apache.poi.hssf.record.cont.ContinuableRecord::getRecordSize():int" />
+			<role name="TemplateMethod()" element="org.apache.poi.hssf.record.cont.ContinuableRecord::serialize(int, byte[]):int" />
+		</instance>
+		<instance>
+			<role name="AbstractClass" element="org.apache.poi.hssf.record.formula.Area2DPtgBase" />
+			<role name="TemplateMethod()" element="org.apache.poi.hssf.record.formula.Area2DPtgBase::write(org.apache.poi.util.LittleEndianOutput):void" />
+		</instance>
+		<instance>
+			<role name="AbstractClass" element="org.apache.poi.hssf.record.formula.eval.AreaEvalBase" />
+			<role name="TemplateMethod()" element="org.apache.poi.hssf.record.formula.eval.AreaEvalBase::getValueAt(int, int):org.apache.poi.hssf.record.formula.eval.ValueEval" />
+		</instance>
+		<instance>
+			<role name="AbstractClass" element="org.apache.poi.hssf.record.formula.eval.RelationalOperationEval" />
+			<role name="TemplateMethod()" element="org.apache.poi.hssf.record.formula.eval.RelationalOperationEval::evaluate(int, int, org.apache.poi.hssf.record.formula.eval.ValueEval, org.apache.poi.hssf.record.formula.eval.ValueEval):org.apache.poi.hssf.record.formula.eval.ValueEval" />
+		</instance>
+		<instance>
+			<role name="AbstractClass" element="org.apache.poi.hssf.record.formula.eval.TwoOperandNumericOperation" />
+			<role name="TemplateMethod()" element="org.apache.poi.hssf.record.formula.eval.TwoOperandNumericOperation::evaluate(int, int, org.apache.poi.hssf.record.formula.eval.ValueEval, org.apache.poi.hssf.record.formula.eval.ValueEval):org.apache.poi.hssf.record.formula.eval.ValueEval" />
+		</instance>
+		<instance>
+			<role name="AbstractClass" element="org.apache.poi.hssf.record.formula.functions.BooleanFunction" />
+			<role name="TemplateMethod()" element="org.apache.poi.hssf.record.formula.functions.BooleanFunction::calculate(org.apache.poi.hssf.record.formula.eval.ValueEval[]):boolean" />
+		</instance>
+		<instance>
+			<role name="AbstractClass" element="org.apache.poi.hssf.record.formula.functions.Countif$MatcherBase" />
+			<role name="TemplateMethod()" element="org.apache.poi.hssf.record.formula.functions.Countif$MatcherBase::toString():java.lang.String" />
+		</instance>
+		<instance>
+			<role name="AbstractClass" element="org.apache.poi.hssf.record.formula.functions.FinanceFunction" />
+			<role name="TemplateMethod()" element="org.apache.poi.hssf.record.formula.functions.FinanceFunction::evaluate(int, int, org.apache.poi.hssf.record.formula.eval.ValueEval, org.apache.poi.hssf.record.formula.eval.ValueEval, org.apache.poi.hssf.record.formula.eval.ValueEval, org.apache.poi.hssf.record.formula.eval.ValueEval, org.apache.poi.hssf.record.formula.eval.ValueEval):org.apache.poi.hssf.record.formula.eval.ValueEval" />
+			<role name="TemplateMethod()" element="org.apache.poi.hssf.record.formula.functions.FinanceFunction::evaluate(double[]):double" />
+		</instance>
+		<instance>
+			<role name="AbstractClass" element="org.apache.poi.hssf.record.formula.functions.LogicalFunction" />
+			<role name="TemplateMethod()" element="org.apache.poi.hssf.record.formula.functions.LogicalFunction::evaluate(int, int, org.apache.poi.hssf.record.formula.eval.ValueEval):org.apache.poi.hssf.record.formula.eval.ValueEval" />
+		</instance>
+		<instance>
+			<role name="AbstractClass" element="org.apache.poi.hssf.record.formula.functions.LookupUtils$LookupValueComparerBase" />
+			<role name="TemplateMethod()" element="org.apache.poi.hssf.record.formula.functions.LookupUtils$LookupValueComparerBase::compareTo(org.apache.poi.hssf.record.formula.eval.ValueEval):org.apache.poi.hssf.record.formula.functions.LookupUtils$CompareResult" />
+			<role name="TemplateMethod()" element="org.apache.poi.hssf.record.formula.functions.LookupUtils$LookupValueComparerBase::toString():java.lang.String" />
+		</instance>
+		<instance>
+			<role name="AbstractClass" element="org.apache.poi.hssf.record.formula.functions.MultiOperandNumericFunction" />
+			<role name="TemplateMethod()" element="org.apache.poi.hssf.record.formula.functions.MultiOperandNumericFunction::evaluate(org.apache.poi.hssf.record.formula.eval.ValueEval[], int, int):org.apache.poi.hssf.record.formula.eval.ValueEval" />
+		</instance>
+		<instance>
+			<role name="AbstractClass" element="org.apache.poi.hssf.record.formula.functions.NumericFunction$OneArg" />
+			<role name="TemplateMethod()" element="org.apache.poi.hssf.record.formula.functions.NumericFunction$OneArg::evaluate(int, int, org.apache.poi.hssf.record.formula.eval.ValueEval):org.apache.poi.hssf.record.formula.eval.ValueEval" />
+			<role name="TemplateMethod()" element="org.apache.poi.hssf.record.formula.functions.NumericFunction$OneArg::eval(org.apache.poi.hssf.record.formula.eval.ValueEval[], int, int):double" />
+		</instance>
+		<instance>
+			<role name="AbstractClass" element="org.apache.poi.hssf.record.formula.functions.NumericFunction$TwoArg" />
+			<role name="TemplateMethod()" element="org.apache.poi.hssf.record.formula.functions.NumericFunction$TwoArg::evaluate(int, int, org.apache.poi.hssf.record.formula.eval.ValueEval, org.apache.poi.hssf.record.formula.eval.ValueEval):org.apache.poi.hssf.record.formula.eval.ValueEval" />
+		</instance>
+		<instance>
+			<role name="AbstractClass" element="org.apache.poi.hssf.record.formula.functions.NumericFunction" />
+			<role name="TemplateMethod()" element="org.apache.poi.hssf.record.formula.functions.NumericFunction::evaluate(org.apache.poi.hssf.record.formula.eval.ValueEval[], int, int):org.apache.poi.hssf.record.formula.eval.ValueEval" />
+		</instance>
+		<instance>
+			<role name="AbstractClass" element="org.apache.poi.hssf.record.formula.functions.TextFunction$SingleArgTextFunc" />
+			<role name="TemplateMethod()" element="org.apache.poi.hssf.record.formula.functions.TextFunction$SingleArgTextFunc::evaluate(int, int, org.apache.poi.hssf.record.formula.eval.ValueEval):org.apache.poi.hssf.record.formula.eval.ValueEval" />
+		</instance>
+		<instance>
+			<role name="AbstractClass" element="org.apache.poi.hssf.record.formula.functions.TextFunction" />
+			<role name="TemplateMethod()" element="org.apache.poi.hssf.record.formula.functions.TextFunction::evaluate(org.apache.poi.hssf.record.formula.eval.ValueEval[], int, int):org.apache.poi.hssf.record.formula.eval.ValueEval" />
+		</instance>
+		<instance>
+			<role name="AbstractClass" element="org.apache.poi.hssf.record.formula.functions.XYNumericFunction$ValueArray" />
+			<role name="TemplateMethod()" element="org.apache.poi.hssf.record.formula.functions.XYNumericFunction$ValueArray::getItem(int):org.apache.poi.hssf.record.formula.eval.ValueEval" />
+		</instance>
+		<instance>
+			<role name="AbstractClass" element="org.apache.poi.hssf.record.formula.functions.XYNumericFunction" />
+			<role name="TemplateMethod()" element="org.apache.poi.hssf.record.formula.functions.XYNumericFunction::evaluateInternal(org.apache.poi.hssf.record.formula.functions.LookupUtils$ValueVector, org.apache.poi.hssf.record.formula.functions.LookupUtils$ValueVector, int):double" />
+		</instance>
+		<instance>
+			<role name="AbstractClass" element="org.apache.poi.hssf.record.formula.Ptg" />
+			<role name="TemplateMethod()" element="org.apache.poi.hssf.record.formula.Ptg::readTokens(int, org.apache.poi.util.LittleEndianInput):org.apache.poi.hssf.record.formula.Ptg[]" />
+			<role name="TemplateMethod()" element="org.apache.poi.hssf.record.formula.Ptg::getEncodedSize(org.apache.poi.hssf.record.formula.Ptg[]):int" />
+			<role name="TemplateMethod()" element="org.apache.poi.hssf.record.formula.Ptg::getEncodedSizeWithoutArrayData(org.apache.poi.hssf.record.formula.Ptg[]):int" />
+			<role name="TemplateMethod()" element="org.apache.poi.hssf.record.formula.Ptg::serializePtgs(org.apache.poi.hssf.record.formula.Ptg[], byte[], int):int" />
+			<role name="TemplateMethod()" element="org.apache.poi.hssf.record.formula.Ptg::setClass(byte):void" />
+			<role name="TemplateMethod()" element="org.apache.poi.hssf.record.formula.Ptg::getRVAType():char" />
+		</instance>
+		<instance>
+			<role name="AbstractClass" element="org.apache.poi.hssf.record.formula.Ref2DPtgBase" />
+			<role name="TemplateMethod()" element="org.apache.poi.hssf.record.formula.Ref2DPtgBase::write(org.apache.poi.util.LittleEndianOutput):void" />
+		</instance>
+		<instance>
+			<role name="AbstractClass" element="org.apache.poi.hssf.record.formula.ValueOperatorPtg" />
+			<role name="TemplateMethod()" element="org.apache.poi.hssf.record.formula.ValueOperatorPtg::write(org.apache.poi.util.LittleEndianOutput):void" />
+		</instance>
+		<instance>
+			<role name="AbstractClass" element="org.apache.poi.hssf.record.SharedValueRecordBase" />
+			<role name="TemplateMethod()" element="org.apache.poi.hssf.record.SharedValueRecordBase::getDataSize():int" />
+			<role name="TemplateMethod()" element="org.apache.poi.hssf.record.SharedValueRecordBase::serialize(org.apache.poi.util.LittleEndianOutput):void" />
+		</instance>
+		<instance>
+			<role name="AbstractClass" element="org.apache.poi.hssf.record.StandardRecord" />
+			<role name="TemplateMethod()" element="org.apache.poi.hssf.record.StandardRecord::getRecordSize():int" />
+			<role name="TemplateMethod()" element="org.apache.poi.hssf.record.StandardRecord::serialize(int, byte[]):int" />
+		</instance>
+		<instance>
+			<role name="AbstractClass" element="org.apache.poi.hssf.record.SubRecord" />
+			<role name="TemplateMethod()" element="org.apache.poi.hssf.record.SubRecord::serialize():byte[]" />
+		</instance>
+		<instance>
+			<role name="AbstractClass" element="org.apache.poi.hssf.usermodel.HeaderFooter" />
+			<role name="TemplateMethod()" element="org.apache.poi.hssf.usermodel.HeaderFooter::splitParts():java.lang.String[]" />
+			<role name="TemplateMethod()" element="org.apache.poi.hssf.usermodel.HeaderFooter::updateHeaderFooterText(java.lang.String[]):void" />
+		</instance>
+		<instance>
+			<role name="AbstractClass" element="org.apache.poi.openxml4j.opc.internal.ContentTypeManager" />
+			<role name="TemplateMethod()" element="org.apache.poi.openxml4j.opc.internal.ContentTypeManager::save(java.io.OutputStream):boolean" />
+		</instance>
+		<instance>
+			<role name="AbstractClass" element="org.apache.poi.openxml4j.opc.OPCPackage" />
+			<role name="TemplateMethod()" element="org.apache.poi.openxml4j.opc.OPCPackage::flush():void" />
+			<role name="TemplateMethod()" element="org.apache.poi.openxml4j.opc.OPCPackage::close():void" />
+			<role name="TemplateMethod()" element="org.apache.poi.openxml4j.opc.OPCPackage::revert():void" />
+			<role name="TemplateMethod()" element="org.apache.poi.openxml4j.opc.OPCPackage::getPart(org.apache.poi.openxml4j.opc.PackagePartName):org.apache.poi.openxml4j.opc.PackagePart" />
+			<role name="TemplateMethod()" element="org.apache.poi.openxml4j.opc.OPCPackage::getParts():java.util.ArrayList" />
+			<role name="TemplateMethod()" element="org.apache.poi.openxml4j.opc.OPCPackage::createPart(org.apache.poi.openxml4j.opc.PackagePartName, java.lang.String, boolean):org.apache.poi.openxml4j.opc.PackagePart" />
+			<role name="TemplateMethod()" element="org.apache.poi.openxml4j.opc.OPCPackage::removePart(org.apache.poi.openxml4j.opc.PackagePartName):void" />
+			<role name="TemplateMethod()" element="org.apache.poi.openxml4j.opc.OPCPackage::save(java.io.OutputStream):void" />
+		</instance>
+		<instance>
+			<role name="AbstractClass" element="org.apache.poi.openxml4j.opc.PackagePart" />
+			<role name="TemplateMethod()" element="org.apache.poi.openxml4j.opc.PackagePart::getInputStream():java.io.InputStream" />
+			<role name="TemplateMethod()" element="org.apache.poi.openxml4j.opc.PackagePart::getOutputStream():java.io.OutputStream" />
+		</instance>
+		<instance>
+			<role name="AbstractClass" element="org.apache.poi.poifs.filesystem.EntryNode" />
+			<role name="TemplateMethod()" element="org.apache.poi.poifs.filesystem.EntryNode::delete():boolean" />
+		</instance>
+		<instance>
+			<role name="AbstractClass" element="org.apache.poi.poifs.storage.BigBlock" />
+			<role name="TemplateMethod()" element="org.apache.poi.poifs.storage.BigBlock::writeBlocks(java.io.OutputStream):void" />
+		</instance>
+		<instance>
+			<role name="AbstractClass" element="org.apache.poi.util.BinaryTree$BinaryTreeIterator" />
+			<role name="TemplateMethod()" element="org.apache.poi.util.BinaryTree$BinaryTreeIterator::next():java.lang.Object" />
+		</instance>
+		<instance>
+			<role name="AbstractClass" element="org.apache.poi.util.POILogger" />
+			<role name="TemplateMethod()" element="org.apache.poi.util.POILogger::log(int, java.lang.Object, java.lang.Object):void" />
+			<role name="TemplateMethod()" element="org.apache.poi.util.POILogger::log(int, java.lang.Object, java.lang.Object, java.lang.Object):void" />
+			<role name="TemplateMethod()" element="org.apache.poi.util.POILogger::log(int, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object):void" />
+			<role name="TemplateMethod()" element="org.apache.poi.util.POILogger::log(int, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object):void" />
+			<role name="TemplateMethod()" element="org.apache.poi.util.POILogger::log(int, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object):void" />
+			<role name="TemplateMethod()" element="org.apache.poi.util.POILogger::log(int, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object):void" />
+			<role name="TemplateMethod()" element="org.apache.poi.util.POILogger::log(int, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object):void" />
+			<role name="TemplateMethod()" element="org.apache.poi.util.POILogger::log(int, java.lang.Throwable):void" />
+			<role name="TemplateMethod()" element="org.apache.poi.util.POILogger::log(int, java.lang.Object, java.lang.Object, java.lang.Throwable):void" />
+			<role name="TemplateMethod()" element="org.apache.poi.util.POILogger::log(int, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Throwable):void" />
+			<role name="TemplateMethod()" element="org.apache.poi.util.POILogger::log(int, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Throwable):void" />
+			<role name="TemplateMethod()" element="org.apache.poi.util.POILogger::log(int, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Throwable):void" />
+			<role name="TemplateMethod()" element="org.apache.poi.util.POILogger::log(int, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Throwable):void" />
+			<role name="TemplateMethod()" element="org.apache.poi.util.POILogger::log(int, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Throwable):void" />
+			<role name="TemplateMethod()" element="org.apache.poi.util.POILogger::log(int, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Throwable):void" />
+			<role name="TemplateMethod()" element="org.apache.poi.util.POILogger::commonLogFormatted(int, java.lang.String, java.lang.Object[]):void" />
+		</instance>
+		<instance>
+			<role name="AbstractClass" element="org.apache.poi.xssf.usermodel.extensions.XSSFHeaderFooter" />
+			<role name="TemplateMethod()" element="org.apache.poi.xssf.usermodel.extensions.XSSFHeaderFooter::getValue():java.lang.String" />
+			<role name="TemplateMethod()" element="org.apache.poi.xssf.usermodel.extensions.XSSFHeaderFooter::getCenter():java.lang.String" />
+			<role name="TemplateMethod()" element="org.apache.poi.xssf.usermodel.extensions.XSSFHeaderFooter::getLeft():java.lang.String" />
+			<role name="TemplateMethod()" element="org.apache.poi.xssf.usermodel.extensions.XSSFHeaderFooter::getRight():java.lang.String" />
+			<role name="TemplateMethod()" element="org.apache.poi.xssf.usermodel.extensions.XSSFHeaderFooter::setCenter(java.lang.String):void" />
+			<role name="TemplateMethod()" element="org.apache.poi.xssf.usermodel.extensions.XSSFHeaderFooter::setLeft(java.lang.String):void" />
+			<role name="TemplateMethod()" element="org.apache.poi.xssf.usermodel.extensions.XSSFHeaderFooter::setRight(java.lang.String):void" />
+		</instance>
+		<instance>
+			<role name="AbstractClass" element="org.apache.poi.xssf.usermodel.XSSFShape" />
+			<role name="TemplateMethod()" element="org.apache.poi.xssf.usermodel.XSSFShape::isNoFill():boolean" />
+			<role name="TemplateMethod()" element="org.apache.poi.xssf.usermodel.XSSFShape::setNoFill(boolean):void" />
+			<role name="TemplateMethod()" element="org.apache.poi.xssf.usermodel.XSSFShape::setFillColor(int, int, int):void" />
+			<role name="TemplateMethod()" element="org.apache.poi.xssf.usermodel.XSSFShape::setLineStyleColor(int, int, int):void" />
+			<role name="TemplateMethod()" element="org.apache.poi.xssf.usermodel.XSSFShape::setLineWidth(double):void" />
+			<role name="TemplateMethod()" element="org.apache.poi.xssf.usermodel.XSSFShape::setLineStyle(int):void" />
+		</instance>
+	</pattern>
+	<pattern name="Visitor" />
+	<pattern name="Proxy">
+		<instance>
+			<role name="Proxy" element="org.apache.poi.ddf.EscherBSERecord" />
+			<role name="RealSubject" element="org.apache.poi.ddf.EscherBlipRecord" />
+			<role name="Request()" element="org.apache.poi.ddf.EscherBSERecord::fillFields(byte[], int, org.apache.poi.ddf.EscherRecordFactory):int" />
+			<role name="Request()" element="org.apache.poi.ddf.EscherBSERecord::serialize(int, byte[], org.apache.poi.ddf.EscherSerializationListener):int" />
+			<role name="Request()" element="org.apache.poi.ddf.EscherBSERecord::getRecordSize():int" />
+		</instance>
+		<instance>
+			<role name="Proxy" element="org.apache.poi.hslf.record.PPDrawing" />
+			<role name="RealSubject" element="org.apache.poi.hslf.record.EscherTextboxWrapper" />
+			<role name="Request()" element="org.apache.poi.hslf.record.PPDrawing::writeOut(java.io.OutputStream):void" />
+		</instance>
+		<instance>
+			<role name="Proxy" element="org.apache.poi.poifs.storage.BlockAllocationTableWriter" />
+			<role name="RealSubject" element="org.apache.poi.poifs.storage.BATBlock" />
+			<role name="Request()" element="org.apache.poi.poifs.storage.BlockAllocationTableWriter::writeBlocks(java.io.OutputStream):void" />
+		</instance>
+		<instance>
+			<role name="Proxy" element="org.apache.poi.hssf.record.cont.ContinuableRecordOutput" />
+			<role name="RealSubject" element="org.apache.poi.hssf.record.cont.UnknownLengthRecordOutput" />
+			<role name="Request()" element="org.apache.poi.hssf.record.cont.ContinuableRecordOutput::write(byte[]):void" />
+			<role name="Request()" element="org.apache.poi.hssf.record.cont.ContinuableRecordOutput::write(byte[], int, int):void" />
+			<role name="Request()" element="org.apache.poi.hssf.record.cont.ContinuableRecordOutput::writeByte(int):void" />
+			<role name="Request()" element="org.apache.poi.hssf.record.cont.ContinuableRecordOutput::writeDouble(double):void" />
+			<role name="Request()" element="org.apache.poi.hssf.record.cont.ContinuableRecordOutput::writeInt(int):void" />
+			<role name="Request()" element="org.apache.poi.hssf.record.cont.ContinuableRecordOutput::writeLong(long):void" />
+			<role name="Request()" element="org.apache.poi.hssf.record.cont.ContinuableRecordOutput::writeShort(int):void" />
+		</instance>
+	</pattern>
+	<pattern name="Proxy2">
+		<instance>
+			<role name="Subject" element="org.apache.poi.util.LittleEndianOutput" />
+			<role name="Proxy" element="org.apache.poi.hssf.record.cont.UnknownLengthRecordOutput" />
+			<role name="RealSubject" element="org.apache.poi.hssf.record.cont.UnknownLengthRecordOutput" />
+			<role name="subject" element="org.apache.poi.hssf.record.cont.UnknownLengthRecordOutput::_out:org.apache.poi.util.LittleEndianOutput" />
+			<role name="subject" element="org.apache.poi.hssf.record.cont.UnknownLengthRecordOutput::_originalOut:org.apache.poi.util.LittleEndianOutput" />
+			<role name="subject" element="org.apache.poi.hssf.record.cont.UnknownLengthRecordOutput::_dataSizeOutput:org.apache.poi.util.LittleEndianOutput" />
+			<role name="Request()" element="org.apache.poi.hssf.record.cont.UnknownLengthRecordOutput::write(byte[]):void" />
+			<role name="Request()" element="org.apache.poi.hssf.record.cont.UnknownLengthRecordOutput::write(byte[], int, int):void" />
+			<role name="Request()" element="org.apache.poi.hssf.record.cont.UnknownLengthRecordOutput::writeByte(int):void" />
+			<role name="Request()" element="org.apache.poi.hssf.record.cont.UnknownLengthRecordOutput::writeDouble(double):void" />
+			<role name="Request()" element="org.apache.poi.hssf.record.cont.UnknownLengthRecordOutput::writeInt(int):void" />
+			<role name="Request()" element="org.apache.poi.hssf.record.cont.UnknownLengthRecordOutput::writeLong(long):void" />
+			<role name="Request()" element="org.apache.poi.hssf.record.cont.UnknownLengthRecordOutput::writeShort(int):void" />
+		</instance>
+		<instance>
+			<role name="Subject" element="org.apache.poi.util.LittleEndianInput" />
+			<role name="Proxy" element="org.apache.poi.hssf.record.RecordInputStream" />
+			<role name="RealSubject" element="org.apache.poi.hssf.record.crypto.Biff8DecryptingStream" />
+			<role name="subject" element="org.apache.poi.hssf.record.RecordInputStream::_dataInput:org.apache.poi.util.LittleEndianInput" />
+			<role name="Request()" element="org.apache.poi.hssf.record.RecordInputStream::readByte():byte" />
+			<role name="Request()" element="org.apache.poi.hssf.record.RecordInputStream::readShort():short" />
+			<role name="Request()" element="org.apache.poi.hssf.record.RecordInputStream::readInt():int" />
+			<role name="Request()" element="org.apache.poi.hssf.record.RecordInputStream::readLong():long" />
+			<role name="Request()" element="org.apache.poi.hssf.record.RecordInputStream::readUShort():int" />
+			<role name="Request()" element="org.apache.poi.hssf.record.RecordInputStream::readFully(byte[], int, int):void" />
+			<role name="subject" element="org.apache.poi.hssf.record.crypto.Biff8DecryptingStream::_le:org.apache.poi.util.LittleEndianInput" />
+			<role name="Request()" element="org.apache.poi.hssf.record.crypto.Biff8DecryptingStream::available():int" />
+			<role name="Request()" element="org.apache.poi.hssf.record.crypto.Biff8DecryptingStream::readFully(byte[], int, int):void" />
+			<role name="Request()" element="org.apache.poi.hssf.record.crypto.Biff8DecryptingStream::readUByte():int" />
+			<role name="Request()" element="org.apache.poi.hssf.record.crypto.Biff8DecryptingStream::readUShort():int" />
+			<role name="Request()" element="org.apache.poi.hssf.record.crypto.Biff8DecryptingStream::readInt():int" />
+			<role name="Request()" element="org.apache.poi.hssf.record.crypto.Biff8DecryptingStream::readLong():long" />
+		</instance>
+	</pattern>
+	<pattern name="Chain of Responsibility">
+		<instance>
+			<role name="Handler" element="org.apache.poi.hslf.model.Shape" />
+			<role name="successor" element="org.apache.poi.hslf.model.Shape::_parent:org.apache.poi.hslf.model.Shape" />
+		</instance>
+		<instance>
+			<role name="Handler" element="org.apache.poi.hssf.usermodel.HSSFShape" />
+			<role name="successor" element="org.apache.poi.hssf.usermodel.HSSFShape::parent:org.apache.poi.hssf.usermodel.HSSFShape" />
+		</instance>
+		<instance>
+			<role name="Handler" element="org.apache.poi.xwpf.model.XWPFParagraphDecorator" />
+			<role name="successor" element="org.apache.poi.xwpf.model.XWPFParagraphDecorator::nextDecorator:org.apache.poi.xwpf.model.XWPFParagraphDecorator" />
+		</instance>
+	</pattern>
+</system>
+

@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<system>
+	<pattern name="Factory Method">
+		<instance>
+			<role name="Creator" element="org.rssowl.core.persist.service.IPersistenceService" />
+			<role name="FactoryMethod()" element="org.rssowl.core.persist.service.IPersistenceService::getModelSearch():org.rssowl.core.persist.service.IModelSearch" />
+		</instance>
+	</pattern>
+	<pattern name="Prototype" />
+	<pattern name="Singleton">
+		<instance>
+			<role name="Singleton" element="org.rssowl.core.internal.Activator" />
+			<role name="uniqueInstance" element="org.rssowl.core.internal.Activator::fgPlugin:org.rssowl.core.internal.Activator" />
+		</instance>
+		<instance>
+			<role name="Singleton" element="org.rssowl.core.internal.InternalOwl" />
+			<role name="uniqueInstance" element="org.rssowl.core.internal.InternalOwl::INSTANCE:org.rssowl.core.internal.InternalOwl" />
+		</instance>
+		<instance>
+			<role name="Singleton" element="org.rssowl.core.internal.persist.service.DBManager" />
+			<role name="uniqueInstance" element="org.rssowl.core.internal.persist.service.DBManager::fInstance:org.rssowl.core.internal.persist.service.DBManager" />
+		</instance>
+		<instance>
+			<role name="Singleton" element="org.rssowl.core.internal.persist.service.EventManager" />
+			<role name="uniqueInstance" element="org.rssowl.core.internal.persist.service.EventManager::INSTANCE:org.rssowl.core.internal.persist.service.EventManager" />
+		</instance>
+		<instance>
+			<role name="Singleton" element="org.rssowl.core.internal.persist.service.EventsMap" />
+			<role name="uniqueInstance" element="org.rssowl.core.internal.persist.service.EventsMap::INSTANCE:org.rssowl.core.internal.persist.service.EventsMap" />
+		</instance>
+	</pattern>
+	<pattern name="(Object)Adapter" />
+	<pattern name="Command" />
+	<pattern name="Composite" />
+	<pattern name="Decorator" />
+	<pattern name="Observer" />
+	<pattern name="State">
+		<instance>
+			<role name="Context" element="org.rssowl.core.internal.InternalOwl" />
+			<role name="State" element="org.rssowl.core.persist.service.IPersistenceService" />
+			<role name="state" element="org.rssowl.core.internal.InternalOwl::fPersistenceService:org.rssowl.core.persist.service.IPersistenceService" />
+			<role name="Request()" element="org.rssowl.core.internal.InternalOwl::startup(org.rssowl.core.util.LongOperationMonitor):void" />
+			<role name="Request()" element="org.rssowl.core.internal.InternalOwl::shutdown(boolean):void" />
+		</instance>
+		<instance>
+			<role name="Context" element="org.rssowl.core.internal.InternalOwl" />
+			<role name="State" element="org.rssowl.core.connection.IConnectionService" />
+			<role name="state" element="org.rssowl.core.internal.InternalOwl::fConnectionService:org.rssowl.core.connection.IConnectionService" />
+			<role name="Request()" element="org.rssowl.core.internal.InternalOwl::shutdown(boolean):void" />
+		</instance>
+	</pattern>
+	<pattern name="Strategy" />
+	<pattern name="Bridge" />
+	<pattern name="Template Method" />
+	<pattern name="Visitor" />
+	<pattern name="Proxy">
+		<instance>
+			<role name="Proxy" element="org.rssowl.core.internal.persist.dao.CachingDAO" />
+			<role name="RealSubject" element="org.rssowl.core.internal.persist.dao.AbstractEntityDAO" />
+			<role name="Request()" element="org.rssowl.core.internal.persist.dao.CachingDAO::fireEvents(java.util.Set, org.rssowl.core.persist.event.runnable.EventType):void" />
+		</instance>
+	</pattern>
+	<pattern name="Proxy2" />
+	<pattern name="Chain of Responsibility" />
+</system>
+

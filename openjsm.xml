@@ -1,0 +1,1458 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<system>
+	<pattern name="Factory Method">
+		<instance>
+			<role name="Creator" element="org.exolab.jms.messagemgr.ConsumerManager" />
+			<role name="FactoryMethod()" element="org.exolab.jms.messagemgr.ConsumerManager::createConsumer(org.exolab.jms.client.JmsDestination, long, java.lang.String, boolean):org.exolab.jms.messagemgr.ConsumerEndpoint" />
+			<role name="FactoryMethod()" element="org.exolab.jms.messagemgr.ConsumerManager::createQueueBrowser(org.exolab.jms.client.JmsQueue, java.lang.String):org.exolab.jms.messagemgr.ConsumerEndpoint" />
+		</instance>
+		<instance>
+			<role name="Creator" element="org.exolab.jms.net.connector.AbstractConnectionFactory" />
+			<role name="FactoryMethod()" element="org.exolab.jms.net.connector.AbstractConnectionFactory::getConnectionRequestInfo(org.exolab.jms.net.uri.URI, java.util.Map):org.exolab.jms.net.connector.ConnectionRequestInfo" />
+		</instance>
+		<instance>
+			<role name="Creator" element="org.exolab.jms.net.connector.ManagedConnection" />
+			<role name="FactoryMethod()" element="org.exolab.jms.net.connector.ManagedConnection::getConnection():org.exolab.jms.net.connector.Connection" />
+		</instance>
+		<instance>
+			<role name="Creator" element="org.exolab.jms.net.connector.ManagedConnectionFactory" />
+			<role name="FactoryMethod()" element="org.exolab.jms.net.connector.ManagedConnectionFactory::createConnectionFactory(org.exolab.jms.net.connector.ConnectionManager):org.exolab.jms.net.connector.ConnectionFactory" />
+			<role name="FactoryMethod()" element="org.exolab.jms.net.connector.ManagedConnectionFactory::createManagedConnection(java.security.Principal, org.exolab.jms.net.connector.ConnectionRequestInfo):org.exolab.jms.net.connector.ManagedConnection" />
+			<role name="FactoryMethod()" element="org.exolab.jms.net.connector.ManagedConnectionFactory::createManagedConnectionAcceptor(org.exolab.jms.net.connector.Authenticator, org.exolab.jms.net.connector.ConnectionRequestInfo):org.exolab.jms.net.connector.ManagedConnectionAcceptor" />
+		</instance>
+		<instance>
+			<role name="Creator" element="org.exolab.jms.net.multiplexer.MultiplexedManagedConnection" />
+			<role name="FactoryMethod()" element="org.exolab.jms.net.multiplexer.MultiplexedManagedConnection::createEndpoint():org.exolab.jms.net.multiplexer.Endpoint" />
+		</instance>
+		<instance>
+			<role name="Creator" element="org.exolab.jms.net.rmi.RMIInvokerFactory" />
+			<role name="FactoryMethod()" element="org.exolab.jms.net.rmi.RMIInvokerFactory::createInvoker(java.security.Principal, org.exolab.jms.net.rmi.RMIInvoker, java.lang.String):org.exolab.jms.net.rmi.RMIInvoker" />
+		</instance>
+		<instance>
+			<role name="Creator" element="org.exolab.jms.net.socket.SocketManagedConnectionAcceptor" />
+			<role name="FactoryMethod()" element="org.exolab.jms.net.socket.SocketManagedConnectionAcceptor::createManagedConnection(org.exolab.jms.net.uri.URI, java.net.Socket, org.exolab.jms.net.connector.Authenticator):org.exolab.jms.net.connector.ManagedConnection" />
+		</instance>
+		<instance>
+			<role name="Creator" element="org.exolab.jms.selector.Expression" />
+			<role name="FactoryMethod()" element="org.exolab.jms.selector.Expression::evaluate(javax.jms.Message):org.exolab.jms.selector.SObject" />
+		</instance>
+		<instance>
+			<role name="Creator" element="org.exolab.jms.selector.ExpressionFactory" />
+			<role name="FactoryMethod()" element="org.exolab.jms.selector.ExpressionFactory::binaryOperator(int, org.exolab.jms.selector.Expression, org.exolab.jms.selector.Expression):org.exolab.jms.selector.Expression" />
+			<role name="FactoryMethod()" element="org.exolab.jms.selector.ExpressionFactory::unaryOperator(int, org.exolab.jms.selector.Expression):org.exolab.jms.selector.Expression" />
+			<role name="FactoryMethod()" element="org.exolab.jms.selector.ExpressionFactory::identifier(java.lang.String):org.exolab.jms.selector.Expression" />
+			<role name="FactoryMethod()" element="org.exolab.jms.selector.ExpressionFactory::isNull(org.exolab.jms.selector.Expression):org.exolab.jms.selector.Expression" />
+			<role name="FactoryMethod()" element="org.exolab.jms.selector.ExpressionFactory::like(org.exolab.jms.selector.Expression, java.lang.String, java.lang.String):org.exolab.jms.selector.Expression" />
+			<role name="FactoryMethod()" element="org.exolab.jms.selector.ExpressionFactory::between(org.exolab.jms.selector.Expression, org.exolab.jms.selector.Expression, org.exolab.jms.selector.Expression):org.exolab.jms.selector.Expression" />
+			<role name="FactoryMethod()" element="org.exolab.jms.selector.ExpressionFactory::in(org.exolab.jms.selector.Expression, java.util.HashSet):org.exolab.jms.selector.Expression" />
+		</instance>
+		<instance>
+			<role name="Creator" element="org.exolab.jms.selector.SNumber" />
+			<role name="FactoryMethod()" element="org.exolab.jms.selector.SNumber::add(org.exolab.jms.selector.SNumber):org.exolab.jms.selector.SNumber" />
+			<role name="FactoryMethod()" element="org.exolab.jms.selector.SNumber::subtract(org.exolab.jms.selector.SNumber):org.exolab.jms.selector.SNumber" />
+			<role name="FactoryMethod()" element="org.exolab.jms.selector.SNumber::multiply(org.exolab.jms.selector.SNumber):org.exolab.jms.selector.SNumber" />
+			<role name="FactoryMethod()" element="org.exolab.jms.selector.SNumber::divide(org.exolab.jms.selector.SNumber):org.exolab.jms.selector.SNumber" />
+		</instance>
+		<instance>
+			<role name="Creator" element="org.exolab.jms.server.net.RemoteJmsAdminServerIfc" />
+			<role name="FactoryMethod()" element="org.exolab.jms.server.net.RemoteJmsAdminServerIfc::createConnection(java.lang.String, java.lang.String):org.exolab.jms.server.net.RemoteJmsAdminConnectionIfc" />
+		</instance>
+		<instance>
+			<role name="Creator" element="org.exolab.jms.server.ServerConnection" />
+			<role name="FactoryMethod()" element="org.exolab.jms.server.ServerConnection::createSession(int, boolean):org.exolab.jms.server.ServerSession" />
+		</instance>
+		<instance>
+			<role name="Creator" element="org.exolab.jms.server.ServerConnectionFactory" />
+			<role name="FactoryMethod()" element="org.exolab.jms.server.ServerConnectionFactory::createConnection(java.lang.String, java.lang.String, java.lang.String):org.exolab.jms.server.ServerConnection" />
+		</instance>
+		<instance>
+			<role name="Creator" element="org.exolab.jms.tools.migration.Store" />
+			<role name="FactoryMethod()" element="org.exolab.jms.tools.migration.Store::exportCollection():org.exolab.jms.tools.migration.StoreIterator" />
+		</instance>
+	</pattern>
+	<pattern name="Prototype" />
+	<pattern name="Singleton">
+		<instance>
+			<role name="Singleton" element="org.exolab.jms.tools.admin.AbstractAdminConnection" />
+			<role name="uniqueInstance" element="org.exolab.jms.tools.admin.AbstractAdminConnection::_instance:org.exolab.jms.tools.admin.AbstractAdminConnection" />
+		</instance>
+		<instance>
+			<role name="Singleton" element="org.exolab.jms.tools.admin.ChangePasswordDialog" />
+			<role name="uniqueInstance" element="org.exolab.jms.tools.admin.ChangePasswordDialog::instance_:org.exolab.jms.tools.admin.ChangePasswordDialog" />
+		</instance>
+		<instance>
+			<role name="Singleton" element="org.exolab.jms.tools.admin.CreateConsumerDialog" />
+			<role name="uniqueInstance" element="org.exolab.jms.tools.admin.CreateConsumerDialog::instance_:org.exolab.jms.tools.admin.CreateConsumerDialog" />
+		</instance>
+		<instance>
+			<role name="Singleton" element="org.exolab.jms.tools.admin.CreateLogonDialog" />
+			<role name="uniqueInstance" element="org.exolab.jms.tools.admin.CreateLogonDialog::instance_:org.exolab.jms.tools.admin.CreateLogonDialog" />
+		</instance>
+		<instance>
+			<role name="Singleton" element="org.exolab.jms.tools.admin.CreateQueueDialog" />
+			<role name="uniqueInstance" element="org.exolab.jms.tools.admin.CreateQueueDialog::instance_:org.exolab.jms.tools.admin.CreateQueueDialog" />
+		</instance>
+		<instance>
+			<role name="Singleton" element="org.exolab.jms.tools.admin.CreateTopicDialog" />
+			<role name="uniqueInstance" element="org.exolab.jms.tools.admin.CreateTopicDialog::instance_:org.exolab.jms.tools.admin.CreateTopicDialog" />
+		</instance>
+		<instance>
+			<role name="Singleton" element="org.exolab.jms.tools.admin.CreateUserDialog" />
+			<role name="uniqueInstance" element="org.exolab.jms.tools.admin.CreateUserDialog::instance_:org.exolab.jms.tools.admin.CreateUserDialog" />
+		</instance>
+		<instance>
+			<role name="Singleton" element="org.exolab.jms.tools.admin.QueryDialog" />
+			<role name="uniqueInstance" element="org.exolab.jms.tools.admin.QueryDialog::instance_:org.exolab.jms.tools.admin.QueryDialog" />
+		</instance>
+	</pattern>
+	<pattern name="(Object)Adapter">
+		<instance>
+			<role name="Adaptee" element="org.exolab.jms.common.util.OrderedQueue" />
+			<role name="Adapter" element="org.exolab.jms.events.BasicEventManager" />
+			<role name="adaptee" element="org.exolab.jms.events.BasicEventManager::_queue:org.exolab.jms.common.util.OrderedQueue" />
+			<role name="Request()" element="org.exolab.jms.events.BasicEventManager::registerEvent(org.exolab.jms.events.Event, long):java.lang.String" />
+			<role name="Request()" element="org.exolab.jms.events.BasicEventManager::unregisterEvent(java.lang.String):void" />
+		</instance>
+		<instance>
+			<role name="Adaptee" element="org.exolab.jms.server.NameService" />
+			<role name="Adapter" element="org.exolab.jms.messagemgr.DestinationBinder" />
+			<role name="adaptee" element="org.exolab.jms.messagemgr.DestinationBinder::_names:org.exolab.jms.server.NameService" />
+			<role name="Request()" element="org.exolab.jms.messagemgr.DestinationBinder::destinationAdded(org.exolab.jms.client.JmsDestination):void" />
+			<role name="Request()" element="org.exolab.jms.messagemgr.DestinationBinder::destinationRemoved(org.exolab.jms.client.JmsDestination):void" />
+		</instance>
+		<instance>
+			<role name="Adaptee" element="org.exolab.jms.messagemgr.DestinationCacheFactory" />
+			<role name="Adapter" element="org.exolab.jms.messagemgr.DestinationManagerImpl" />
+			<role name="adaptee" element="org.exolab.jms.messagemgr.DestinationManagerImpl::_factory:org.exolab.jms.messagemgr.DestinationCacheFactory" />
+			<role name="Request()" element="org.exolab.jms.messagemgr.DestinationManagerImpl::getDestinationCache(org.exolab.jms.client.JmsDestination):org.exolab.jms.messagemgr.DestinationCache" />
+		</instance>
+		<instance>
+			<role name="Adapter" element="org.exolab.jms.persistence.RDBMSAdapter" />
+			<role name="Adaptee" element="org.exolab.jms.persistence.Consumers" />
+			<role name="adaptee" element="org.exolab.jms.persistence.RDBMSAdapter::_consumers:org.exolab.jms.persistence.Consumers" />
+			<role name="Request()" element="org.exolab.jms.persistence.RDBMSAdapter::close():void" />
+			<role name="Request()" element="org.exolab.jms.persistence.RDBMSAdapter::addDurableConsumer(java.sql.Connection, java.lang.String, java.lang.String):void" />
+			<role name="Request()" element="org.exolab.jms.persistence.RDBMSAdapter::removeDurableConsumer(java.sql.Connection, java.lang.String):void" />
+			<role name="Request()" element="org.exolab.jms.persistence.RDBMSAdapter::getDurableConsumers(java.sql.Connection, java.lang.String):java.util.Enumeration" />
+			<role name="Request()" element="org.exolab.jms.persistence.RDBMSAdapter::getAllDurableConsumers(java.sql.Connection):java.util.HashMap" />
+			<role name="Request()" element="org.exolab.jms.persistence.RDBMSAdapter::durableConsumerExists(java.sql.Connection, java.lang.String):boolean" />
+			<role name="Request()" element="org.exolab.jms.persistence.RDBMSAdapter::addDestination(java.sql.Connection, java.lang.String, boolean):void" />
+		</instance>
+		<instance>
+			<role name="Adapter" element="org.exolab.jms.persistence.RDBMSAdapter" />
+			<role name="Adaptee" element="org.exolab.jms.persistence.Destinations" />
+			<role name="adaptee" element="org.exolab.jms.persistence.RDBMSAdapter::_destinations:org.exolab.jms.persistence.Destinations" />
+			<role name="Request()" element="org.exolab.jms.persistence.RDBMSAdapter::close():void" />
+			<role name="Request()" element="org.exolab.jms.persistence.RDBMSAdapter::addDestination(java.sql.Connection, java.lang.String, boolean):void" />
+			<role name="Request()" element="org.exolab.jms.persistence.RDBMSAdapter::removeDestination(java.sql.Connection, java.lang.String):void" />
+			<role name="Request()" element="org.exolab.jms.persistence.RDBMSAdapter::getAllDestinations(java.sql.Connection):java.util.Enumeration" />
+			<role name="Request()" element="org.exolab.jms.persistence.RDBMSAdapter::checkDestination(java.sql.Connection, java.lang.String):boolean" />
+		</instance>
+		<instance>
+			<role name="Adapter" element="org.exolab.jms.persistence.RDBMSAdapter" />
+			<role name="Adaptee" element="org.exolab.jms.persistence.MessageHandles" />
+			<role name="adaptee" element="org.exolab.jms.persistence.RDBMSAdapter::_handles:org.exolab.jms.persistence.MessageHandles" />
+			<role name="Request()" element="org.exolab.jms.persistence.RDBMSAdapter::addMessageHandle(java.sql.Connection, org.exolab.jms.messagemgr.MessageHandle):void" />
+			<role name="Request()" element="org.exolab.jms.persistence.RDBMSAdapter::updateMessageHandle(java.sql.Connection, org.exolab.jms.messagemgr.MessageHandle):void" />
+			<role name="Request()" element="org.exolab.jms.persistence.RDBMSAdapter::removeMessageHandle(java.sql.Connection, org.exolab.jms.messagemgr.MessageHandle):void" />
+			<role name="Request()" element="org.exolab.jms.persistence.RDBMSAdapter::getMessageHandles(java.sql.Connection, org.exolab.jms.client.JmsDestination, java.lang.String):java.util.Vector" />
+			<role name="Request()" element="org.exolab.jms.persistence.RDBMSAdapter::getQueueMessageCount(java.sql.Connection, java.lang.String):int" />
+			<role name="Request()" element="org.exolab.jms.persistence.RDBMSAdapter::getDurableConsumerMessageCount(java.sql.Connection, java.lang.String, java.lang.String):int" />
+			<role name="Request()" element="org.exolab.jms.persistence.RDBMSAdapter::removeExpiredMessageHandles(java.sql.Connection, java.lang.String):void" />
+		</instance>
+		<instance>
+			<role name="Adapter" element="org.exolab.jms.persistence.RDBMSAdapter" />
+			<role name="Adaptee" element="org.exolab.jms.persistence.Messages" />
+			<role name="adaptee" element="org.exolab.jms.persistence.RDBMSAdapter::_messages:org.exolab.jms.persistence.Messages" />
+			<role name="Request()" element="org.exolab.jms.persistence.RDBMSAdapter::addMessage(java.sql.Connection, org.exolab.jms.message.MessageImpl):void" />
+			<role name="Request()" element="org.exolab.jms.persistence.RDBMSAdapter::updateMessage(java.sql.Connection, org.exolab.jms.message.MessageImpl):void" />
+			<role name="Request()" element="org.exolab.jms.persistence.RDBMSAdapter::getUnprocessedMessages(java.sql.Connection):java.util.Vector" />
+			<role name="Request()" element="org.exolab.jms.persistence.RDBMSAdapter::removeMessage(java.sql.Connection, java.lang.String):void" />
+			<role name="Request()" element="org.exolab.jms.persistence.RDBMSAdapter::getMessage(java.sql.Connection, java.lang.String):org.exolab.jms.message.MessageImpl" />
+			<role name="Request()" element="org.exolab.jms.persistence.RDBMSAdapter::getMessages(java.sql.Connection, org.exolab.jms.messagemgr.MessageHandle):java.util.Vector" />
+			<role name="Request()" element="org.exolab.jms.persistence.RDBMSAdapter::removeExpiredMessages(java.sql.Connection):void" />
+			<role name="Request()" element="org.exolab.jms.persistence.RDBMSAdapter::getNonExpiredMessages(java.sql.Connection, org.exolab.jms.client.JmsDestination):java.util.Vector" />
+		</instance>
+		<instance>
+			<role name="Adapter" element="org.exolab.jms.persistence.RDBMSAdapter" />
+			<role name="Adaptee" element="org.exolab.jms.persistence.Users" />
+			<role name="adaptee" element="org.exolab.jms.persistence.RDBMSAdapter::_users:org.exolab.jms.persistence.Users" />
+			<role name="Request()" element="org.exolab.jms.persistence.RDBMSAdapter::addUser(java.sql.Connection, org.exolab.jms.authentication.User):void" />
+			<role name="Request()" element="org.exolab.jms.persistence.RDBMSAdapter::getAllUsers(java.sql.Connection):java.util.Enumeration" />
+			<role name="Request()" element="org.exolab.jms.persistence.RDBMSAdapter::getUser(java.sql.Connection, org.exolab.jms.authentication.User):org.exolab.jms.authentication.User" />
+			<role name="Request()" element="org.exolab.jms.persistence.RDBMSAdapter::removeUser(java.sql.Connection, org.exolab.jms.authentication.User):void" />
+			<role name="Request()" element="org.exolab.jms.persistence.RDBMSAdapter::updateUser(java.sql.Connection, org.exolab.jms.authentication.User):void" />
+		</instance>
+		<instance>
+			<role name="Adaptee" element="org.exolab.jms.net.uri.URI" />
+			<role name="Adapter" element="org.exolab.jms.net.connector.URIRequestInfo" />
+			<role name="adaptee" element="org.exolab.jms.net.connector.URIRequestInfo::_uri:org.exolab.jms.net.uri.URI" />
+			<role name="Request()" element="org.exolab.jms.net.connector.URIRequestInfo::equals(java.lang.Object):boolean" />
+			<role name="Request()" element="org.exolab.jms.net.connector.URIRequestInfo::hashCode():int" />
+		</instance>
+		<instance>
+			<role name="Adaptee" element="org.exolab.jms.net.uri.URI" />
+			<role name="Adapter" element="org.exolab.jms.net.socket.SocketManagedConnection" />
+			<role name="adaptee" element="org.exolab.jms.net.socket.SocketManagedConnection::_remoteURI:org.exolab.jms.net.uri.URI" />
+			<role name="Request()" element="org.exolab.jms.net.socket.SocketManagedConnection::createEndpoint():org.exolab.jms.net.multiplexer.Endpoint" />
+		</instance>
+		<instance>
+			<role name="Adaptee" element="org.exolab.jms.messagemgr.QueueDestinationCache" />
+			<role name="Adapter" element="org.exolab.jms.messagemgr.QueueBrowserEndpoint" />
+			<role name="adaptee" element="org.exolab.jms.messagemgr.QueueBrowserEndpoint::_cache:org.exolab.jms.messagemgr.QueueDestinationCache" />
+			<role name="Request()" element="org.exolab.jms.messagemgr.QueueBrowserEndpoint::doClose():void" />
+		</instance>
+		<instance>
+			<role name="Adaptee" element="org.exolab.jms.messagemgr.QueueDestinationCache" />
+			<role name="Adapter" element="org.exolab.jms.messagemgr.QueueConsumerEndpoint" />
+			<role name="adaptee" element="org.exolab.jms.messagemgr.QueueConsumerEndpoint::_cache:org.exolab.jms.messagemgr.QueueDestinationCache" />
+			<role name="Request()" element="org.exolab.jms.messagemgr.QueueConsumerEndpoint::doReceive(org.exolab.jms.messagemgr.Condition):org.exolab.jms.messagemgr.MessageHandle" />
+			<role name="Request()" element="org.exolab.jms.messagemgr.QueueConsumerEndpoint::doClose():void" />
+		</instance>
+		<instance>
+			<role name="Adaptee" element="org.exolab.jms.server.AdminConnection" />
+			<role name="Adapter" element="org.exolab.jms.server.net.JmsAdminConnectionImpl" />
+			<role name="adaptee" element="org.exolab.jms.server.net.JmsAdminConnectionImpl::_connection:org.exolab.jms.server.AdminConnection" />
+			<role name="Request()" element="org.exolab.jms.server.net.JmsAdminConnectionImpl::addDurableConsumer(java.lang.String, java.lang.String):boolean" />
+			<role name="Request()" element="org.exolab.jms.server.net.JmsAdminConnectionImpl::removeDurableConsumer(java.lang.String):boolean" />
+			<role name="Request()" element="org.exolab.jms.server.net.JmsAdminConnectionImpl::durableConsumerExists(java.lang.String):boolean" />
+			<role name="Request()" element="org.exolab.jms.server.net.JmsAdminConnectionImpl::unregisterConsumer(java.lang.String):boolean" />
+			<role name="Request()" element="org.exolab.jms.server.net.JmsAdminConnectionImpl::isConnected(java.lang.String):boolean" />
+			<role name="Request()" element="org.exolab.jms.server.net.JmsAdminConnectionImpl::getAllDestinations():java.util.Vector" />
+			<role name="Request()" element="org.exolab.jms.server.net.JmsAdminConnectionImpl::addDestination(java.lang.String, java.lang.Boolean):boolean" />
+			<role name="Request()" element="org.exolab.jms.server.net.JmsAdminConnectionImpl::getDurableConsumerMessageCount(java.lang.String, java.lang.String):int" />
+			<role name="Request()" element="org.exolab.jms.server.net.JmsAdminConnectionImpl::getQueueMessageCount(java.lang.String):int" />
+			<role name="Request()" element="org.exolab.jms.server.net.JmsAdminConnectionImpl::getDurableConsumers(java.lang.String):java.util.Vector" />
+			<role name="Request()" element="org.exolab.jms.server.net.JmsAdminConnectionImpl::removeDestination(java.lang.String):boolean" />
+			<role name="Request()" element="org.exolab.jms.server.net.JmsAdminConnectionImpl::destinationExists(java.lang.String):boolean" />
+			<role name="Request()" element="org.exolab.jms.server.net.JmsAdminConnectionImpl::purgeMessages():int" />
+			<role name="Request()" element="org.exolab.jms.server.net.JmsAdminConnectionImpl::stopServer():void" />
+			<role name="Request()" element="org.exolab.jms.server.net.JmsAdminConnectionImpl::addUser(java.lang.String, java.lang.String):boolean" />
+			<role name="Request()" element="org.exolab.jms.server.net.JmsAdminConnectionImpl::changePassword(java.lang.String, java.lang.String):boolean" />
+			<role name="Request()" element="org.exolab.jms.server.net.JmsAdminConnectionImpl::removeUser(java.lang.String):boolean" />
+			<role name="Request()" element="org.exolab.jms.server.net.JmsAdminConnectionImpl::getAllUsers():java.util.Vector" />
+		</instance>
+		<instance>
+			<role name="Adaptee" element="org.exolab.jms.server.AdminConnectionManager" />
+			<role name="Adapter" element="org.exolab.jms.server.net.JmsAdminServerImpl" />
+			<role name="adaptee" element="org.exolab.jms.server.net.JmsAdminServerImpl::_manager:org.exolab.jms.server.AdminConnectionManager" />
+			<role name="Request()" element="org.exolab.jms.server.net.JmsAdminServerImpl::createConnection(java.lang.String, java.lang.String):org.exolab.jms.server.net.RemoteJmsAdminConnectionIfc" />
+		</instance>
+		<instance>
+			<role name="Adaptee" element="org.exolab.jms.persistence.DatabaseService" />
+			<role name="Adapter" element="org.exolab.jms.messagemgr.AbstractDestinationCache" />
+			<role name="adaptee" element="org.exolab.jms.messagemgr.AbstractDestinationCache::_database:org.exolab.jms.persistence.DatabaseService" />
+			<role name="Request()" element="org.exolab.jms.messagemgr.AbstractDestinationCache::onLeaseExpired(java.lang.Object):void" />
+		</instance>
+		<instance>
+			<role name="Adaptee" element="org.exolab.jms.lease.LeaseManager" />
+			<role name="Adapter" element="org.exolab.jms.messagemgr.AbstractDestinationCache" />
+			<role name="adaptee" element="org.exolab.jms.messagemgr.AbstractDestinationCache::_leaseMgr:org.exolab.jms.lease.LeaseManager" />
+			<role name="Request()" element="org.exolab.jms.messagemgr.AbstractDestinationCache::destroy():void" />
+		</instance>
+		<instance>
+			<role name="Adaptee" element="org.exolab.jms.messagemgr.MessageQueue" />
+			<role name="Adapter" element="org.exolab.jms.messagemgr.AbstractTopicConsumerEndpoint" />
+			<role name="adaptee" element="org.exolab.jms.messagemgr.AbstractTopicConsumerEndpoint::_handles:org.exolab.jms.messagemgr.MessageQueue" />
+			<role name="Request()" element="org.exolab.jms.messagemgr.AbstractTopicConsumerEndpoint::doReceive(org.exolab.jms.messagemgr.Condition):org.exolab.jms.messagemgr.MessageHandle" />
+			<role name="Request()" element="org.exolab.jms.messagemgr.AbstractTopicConsumerEndpoint::doClose():void" />
+		</instance>
+		<instance>
+			<role name="Adaptee" element="org.exolab.jms.messagemgr.MessageQueue" />
+			<role name="Adapter" element="org.exolab.jms.messagemgr.QueueBrowserEndpoint" />
+			<role name="adaptee" element="org.exolab.jms.messagemgr.QueueBrowserEndpoint::_handles:org.exolab.jms.messagemgr.MessageQueue" />
+			<role name="Request()" element="org.exolab.jms.messagemgr.QueueBrowserEndpoint::doReceive(org.exolab.jms.messagemgr.Condition):org.exolab.jms.messagemgr.MessageHandle" />
+		</instance>
+		<instance>
+			<role name="Adaptee" element="org.exolab.jms.selector.Selector" />
+			<role name="Adapter" element="org.exolab.jms.messagemgr.AbstractConsumerEndpoint" />
+			<role name="adaptee" element="org.exolab.jms.messagemgr.AbstractConsumerEndpoint::_selector:org.exolab.jms.selector.Selector" />
+			<role name="Request()" element="org.exolab.jms.messagemgr.AbstractConsumerEndpoint::selects(org.exolab.jms.message.MessageImpl):boolean" />
+		</instance>
+		<instance>
+			<role name="Adaptee" element="org.exolab.jms.net.uri.URI" />
+			<role name="Adapter" element="org.exolab.jms.net.rmi.RMIManagedConnectionAcceptor" />
+			<role name="adaptee" element="org.exolab.jms.net.rmi.RMIManagedConnectionAcceptor::_uri:org.exolab.jms.net.uri.URI" />
+			<role name="Request()" element="org.exolab.jms.net.rmi.RMIManagedConnectionAcceptor::accept(org.exolab.jms.net.connector.ManagedConnectionAcceptorListener):void" />
+		</instance>
+		<instance>
+			<role name="Adaptee" element="org.exolab.jms.net.socket.SocketManagedConnectionAcceptor$Dispatcher" />
+			<role name="Adapter" element="org.exolab.jms.net.socket.SocketManagedConnectionAcceptor" />
+			<role name="adaptee" element="org.exolab.jms.net.socket.SocketManagedConnectionAcceptor::_dispatcher:org.exolab.jms.net.socket.SocketManagedConnectionAcceptor$Dispatcher" />
+			<role name="Request()" element="org.exolab.jms.net.socket.SocketManagedConnectionAcceptor::accept(org.exolab.jms.net.connector.ManagedConnectionAcceptorListener):void" />
+			<role name="Request()" element="org.exolab.jms.net.socket.SocketManagedConnectionAcceptor::close():void" />
+		</instance>
+		<instance>
+			<role name="Adaptee" element="org.exolab.jms.net.multiplexer.MultiplexedManagedConnection" />
+			<role name="Adapter" element="org.exolab.jms.net.multiplexer.MultiplexedConnection" />
+			<role name="adaptee" element="org.exolab.jms.net.multiplexer.MultiplexedConnection::_connection:org.exolab.jms.net.multiplexer.MultiplexedManagedConnection" />
+			<role name="Request()" element="org.exolab.jms.net.multiplexer.MultiplexedConnection::invoke(org.exolab.jms.net.connector.Request):org.exolab.jms.net.connector.Response" />
+			<role name="Request()" element="org.exolab.jms.net.multiplexer.MultiplexedConnection::getRemoteURI():org.exolab.jms.net.uri.URI" />
+			<role name="Request()" element="org.exolab.jms.net.multiplexer.MultiplexedConnection::getLocalURI():org.exolab.jms.net.uri.URI" />
+		</instance>
+		<instance>
+			<role name="Adaptee" element="org.exolab.jms.net.rmi.RMIManagedConnection" />
+			<role name="Adapter" element="org.exolab.jms.net.rmi.RMIConnection" />
+			<role name="adaptee" element="org.exolab.jms.net.rmi.RMIConnection::_connection:org.exolab.jms.net.rmi.RMIManagedConnection" />
+			<role name="Request()" element="org.exolab.jms.net.rmi.RMIConnection::invoke(org.exolab.jms.net.connector.Request):org.exolab.jms.net.connector.Response" />
+			<role name="Request()" element="org.exolab.jms.net.rmi.RMIConnection::getRemoteURI():org.exolab.jms.net.uri.URI" />
+			<role name="Request()" element="org.exolab.jms.net.rmi.RMIConnection::getLocalURI():org.exolab.jms.net.uri.URI" />
+		</instance>
+		<instance>
+			<role name="Adaptee" element="org.exolab.jms.net.vm.VMManagedConnection" />
+			<role name="Adapter" element="org.exolab.jms.net.vm.VMConnection" />
+			<role name="adaptee" element="org.exolab.jms.net.vm.VMConnection::_connection:org.exolab.jms.net.vm.VMManagedConnection" />
+			<role name="Request()" element="org.exolab.jms.net.vm.VMConnection::invoke(org.exolab.jms.net.connector.Request):org.exolab.jms.net.connector.Response" />
+			<role name="Request()" element="org.exolab.jms.net.vm.VMConnection::getRemoteURI():org.exolab.jms.net.uri.URI" />
+			<role name="Request()" element="org.exolab.jms.net.vm.VMConnection::getLocalURI():org.exolab.jms.net.uri.URI" />
+		</instance>
+		<instance>
+			<role name="Adaptee" element="org.exolab.jms.server.net.RemoteJmsAdminConnectionIfc" />
+			<role name="Adapter" element="org.exolab.jms.administration.net.JmsAdminConnectionImpl" />
+			<role name="adaptee" element="org.exolab.jms.administration.net.JmsAdminConnectionImpl::_connection:org.exolab.jms.server.net.RemoteJmsAdminConnectionIfc" />
+			<role name="Request()" element="org.exolab.jms.administration.net.JmsAdminConnectionImpl::addDurableConsumer(java.lang.String, java.lang.String):boolean" />
+			<role name="Request()" element="org.exolab.jms.administration.net.JmsAdminConnectionImpl::removeDurableConsumer(java.lang.String):boolean" />
+			<role name="Request()" element="org.exolab.jms.administration.net.JmsAdminConnectionImpl::durableConsumerExists(java.lang.String):boolean" />
+			<role name="Request()" element="org.exolab.jms.administration.net.JmsAdminConnectionImpl::getDurableConsumers(java.lang.String):java.util.Vector" />
+			<role name="Request()" element="org.exolab.jms.administration.net.JmsAdminConnectionImpl::unregisterConsumer(java.lang.String):boolean" />
+			<role name="Request()" element="org.exolab.jms.administration.net.JmsAdminConnectionImpl::isConnected(java.lang.String):boolean" />
+			<role name="Request()" element="org.exolab.jms.administration.net.JmsAdminConnectionImpl::addDestination(java.lang.String, java.lang.Boolean):boolean" />
+			<role name="Request()" element="org.exolab.jms.administration.net.JmsAdminConnectionImpl::removeDestination(java.lang.String):boolean" />
+			<role name="Request()" element="org.exolab.jms.administration.net.JmsAdminConnectionImpl::destinationExists(java.lang.String):boolean" />
+			<role name="Request()" element="org.exolab.jms.administration.net.JmsAdminConnectionImpl::getAllDestinations():java.util.Vector" />
+			<role name="Request()" element="org.exolab.jms.administration.net.JmsAdminConnectionImpl::getDurableConsumerMessageCount(java.lang.String, java.lang.String):int" />
+			<role name="Request()" element="org.exolab.jms.administration.net.JmsAdminConnectionImpl::getQueueMessageCount(java.lang.String):int" />
+			<role name="Request()" element="org.exolab.jms.administration.net.JmsAdminConnectionImpl::purgeMessages():int" />
+			<role name="Request()" element="org.exolab.jms.administration.net.JmsAdminConnectionImpl::stopServer():void" />
+			<role name="Request()" element="org.exolab.jms.administration.net.JmsAdminConnectionImpl::addUser(java.lang.String, java.lang.String):boolean" />
+			<role name="Request()" element="org.exolab.jms.administration.net.JmsAdminConnectionImpl::getAllUsers():java.util.Vector" />
+			<role name="Request()" element="org.exolab.jms.administration.net.JmsAdminConnectionImpl::removeUser(java.lang.String):boolean" />
+			<role name="Request()" element="org.exolab.jms.administration.net.JmsAdminConnectionImpl::changePassword(java.lang.String, java.lang.String):boolean" />
+		</instance>
+		<instance>
+			<role name="Adapter" element="org.exolab.jms.messagemgr.ConsumerManagerImpl" />
+			<role name="Adaptee" element="org.exolab.jms.messagemgr.DestinationManager" />
+			<role name="adaptee" element="org.exolab.jms.messagemgr.ConsumerManagerImpl::_destinations:org.exolab.jms.messagemgr.DestinationManager" />
+			<role name="Request()" element="org.exolab.jms.messagemgr.ConsumerManagerImpl::createConsumer(org.exolab.jms.client.JmsDestination, long, java.lang.String, boolean):org.exolab.jms.messagemgr.ConsumerEndpoint" />
+			<role name="Request()" element="org.exolab.jms.messagemgr.ConsumerManagerImpl::createQueueBrowser(org.exolab.jms.client.JmsQueue, java.lang.String):org.exolab.jms.messagemgr.ConsumerEndpoint" />
+		</instance>
+		<instance>
+			<role name="Adapter" element="org.exolab.jms.messagemgr.MessageMgr" />
+			<role name="Adaptee" element="org.exolab.jms.messagemgr.DestinationManager" />
+			<role name="adaptee" element="org.exolab.jms.messagemgr.MessageMgr::_destinations:org.exolab.jms.messagemgr.DestinationManager" />
+			<role name="Request()" element="org.exolab.jms.messagemgr.MessageMgr::add(org.exolab.jms.message.MessageImpl):void" />
+		</instance>
+		<instance>
+			<role name="Adaptee" element="org.exolab.jms.administration.JmsAdminServerIfc" />
+			<role name="Adapter" element="org.exolab.jms.tools.admin.OnlineConnection" />
+			<role name="adaptee" element="org.exolab.jms.tools.admin.OnlineConnection::_admin:org.exolab.jms.administration.JmsAdminServerIfc" />
+			<role name="Request()" element="org.exolab.jms.tools.admin.OnlineConnection::close():void" />
+			<role name="Request()" element="org.exolab.jms.tools.admin.OnlineConnection::addDurableConsumer(java.lang.String, java.lang.String):boolean" />
+			<role name="Request()" element="org.exolab.jms.tools.admin.OnlineConnection::removeDurableConsumer(java.lang.String):boolean" />
+			<role name="Request()" element="org.exolab.jms.tools.admin.OnlineConnection::unregisterConsumer(java.lang.String):boolean" />
+			<role name="Request()" element="org.exolab.jms.tools.admin.OnlineConnection::isConnected(java.lang.String):boolean" />
+			<role name="Request()" element="org.exolab.jms.tools.admin.OnlineConnection::getAllDestinations():java.util.Enumeration" />
+			<role name="Request()" element="org.exolab.jms.tools.admin.OnlineConnection::addDestination(java.lang.String, boolean):boolean" />
+			<role name="Request()" element="org.exolab.jms.tools.admin.OnlineConnection::getDurableConsumerMessageCount(java.lang.String, java.lang.String):int" />
+			<role name="Request()" element="org.exolab.jms.tools.admin.OnlineConnection::getQueueMessageCount(java.lang.String):int" />
+			<role name="Request()" element="org.exolab.jms.tools.admin.OnlineConnection::durableConsumerExists(java.lang.String):boolean" />
+			<role name="Request()" element="org.exolab.jms.tools.admin.OnlineConnection::getDurableConsumers(java.lang.String):java.util.Enumeration" />
+			<role name="Request()" element="org.exolab.jms.tools.admin.OnlineConnection::removeDestination(java.lang.String):boolean" />
+			<role name="Request()" element="org.exolab.jms.tools.admin.OnlineConnection::purgeMessages():int" />
+			<role name="Request()" element="org.exolab.jms.tools.admin.OnlineConnection::stopServer():void" />
+			<role name="Request()" element="org.exolab.jms.tools.admin.OnlineConnection::addUser(java.lang.String, java.lang.String):boolean" />
+			<role name="Request()" element="org.exolab.jms.tools.admin.OnlineConnection::changePassword(java.lang.String, java.lang.String):boolean" />
+			<role name="Request()" element="org.exolab.jms.tools.admin.OnlineConnection::removeUser(java.lang.String):boolean" />
+			<role name="Request()" element="org.exolab.jms.tools.admin.OnlineConnection::getAllUsers():java.util.Enumeration" />
+		</instance>
+		<instance>
+			<role name="Adaptee" element="org.exolab.jms.messagemgr.DestinationCache" />
+			<role name="Adapter" element="org.exolab.jms.messagemgr.AbstractMessageHandle" />
+			<role name="adaptee" element="org.exolab.jms.messagemgr.AbstractMessageHandle::_cache:org.exolab.jms.messagemgr.DestinationCache" />
+			<role name="Request()" element="org.exolab.jms.messagemgr.AbstractMessageHandle::release():void" />
+		</instance>
+		<instance>
+			<role name="Adaptee" element="org.exolab.jms.server.SessionConsumer" />
+			<role name="Adapter" element="org.exolab.jms.server.ServerSessionImpl" />
+			<role name="adaptee" element="org.exolab.jms.server.ServerSessionImpl::_consumer:org.exolab.jms.server.SessionConsumer" />
+			<role name="Request()" element="org.exolab.jms.server.ServerSessionImpl::acknowledgeMessage(long, java.lang.String):void" />
+			<role name="Request()" element="org.exolab.jms.server.ServerSessionImpl::receiveNoWait(long):org.exolab.jms.message.MessageImpl" />
+			<role name="Request()" element="org.exolab.jms.server.ServerSessionImpl::receive(long, long):org.exolab.jms.message.MessageImpl" />
+			<role name="Request()" element="org.exolab.jms.server.ServerSessionImpl::browse(long, int):java.util.List" />
+			<role name="Request()" element="org.exolab.jms.server.ServerSessionImpl::createConsumer(org.exolab.jms.client.JmsDestination, java.lang.String, boolean):long" />
+			<role name="Request()" element="org.exolab.jms.server.ServerSessionImpl::createDurableConsumer(org.exolab.jms.client.JmsTopic, java.lang.String, java.lang.String, boolean):long" />
+			<role name="Request()" element="org.exolab.jms.server.ServerSessionImpl::createBrowser(org.exolab.jms.client.JmsQueue, java.lang.String):long" />
+			<role name="Request()" element="org.exolab.jms.server.ServerSessionImpl::closeConsumer(long):void" />
+			<role name="Request()" element="org.exolab.jms.server.ServerSessionImpl::start():void" />
+			<role name="Request()" element="org.exolab.jms.server.ServerSessionImpl::stop():void" />
+			<role name="Request()" element="org.exolab.jms.server.ServerSessionImpl::setMessageListener(org.exolab.jms.client.JmsMessageListener):void" />
+			<role name="Request()" element="org.exolab.jms.server.ServerSessionImpl::setAsynchronous(long, boolean):void" />
+			<role name="Request()" element="org.exolab.jms.server.ServerSessionImpl::close():void" />
+			<role name="Request()" element="org.exolab.jms.server.ServerSessionImpl::recover():void" />
+			<role name="Request()" element="org.exolab.jms.server.ServerSessionImpl::commit():void" />
+			<role name="Request()" element="org.exolab.jms.server.ServerSessionImpl::rollback():void" />
+		</instance>
+		<instance>
+			<role name="Adaptee" element="org.exolab.jms.persistence.DBConnectionManager" />
+			<role name="Adapter" element="org.exolab.jms.persistence.RDBMSAdapter" />
+			<role name="adaptee" element="org.exolab.jms.persistence.RDBMSAdapter::_connectionManager:org.exolab.jms.persistence.DBConnectionManager" />
+			<role name="Request()" element="org.exolab.jms.persistence.RDBMSAdapter::getConnection():java.sql.Connection" />
+		</instance>
+		<instance>
+			<role name="Adaptee" element="org.exolab.jms.messagemgr.DestinationManager" />
+			<role name="Adapter" element="org.exolab.jms.messagemgr.AbstractTopicConsumerEndpoint" />
+			<role name="adaptee" element="org.exolab.jms.messagemgr.AbstractTopicConsumerEndpoint::_destinations:org.exolab.jms.messagemgr.DestinationManager" />
+			<role name="Request()" element="org.exolab.jms.messagemgr.AbstractTopicConsumerEndpoint::doClose():void" />
+		</instance>
+		<instance>
+			<role name="Adaptee" element="org.exolab.jms.net.orb.ORB" />
+			<role name="Adapter" element="org.exolab.jms.net.invoke.DisconnectionTestCase$CallbackServer" />
+			<role name="adaptee" element="org.exolab.jms.net.invoke.DisconnectionTestCase$CallbackServer::_orb:org.exolab.jms.net.orb.ORB" />
+			<role name="Request()" element="org.exolab.jms.net.invoke.DisconnectionTestCase$CallbackServer::disconnected(org.exolab.jms.net.connector.Caller):void" />
+		</instance>
+		<instance>
+			<role name="Adaptee" element="org.exolab.jms.persistence.DatabaseService" />
+			<role name="Adapter" element="org.exolab.jms.tools.migration.master.MasterDestinationStore" />
+			<role name="adaptee" element="org.exolab.jms.tools.migration.master.MasterDestinationStore::_database:org.exolab.jms.persistence.DatabaseService" />
+			<role name="Request()" element="org.exolab.jms.tools.migration.master.MasterDestinationStore::importCollection(org.exolab.jms.tools.migration.StoreIterator):void" />
+		</instance>
+		<instance>
+			<role name="Adaptee" element="org.exolab.jms.persistence.DatabaseService" />
+			<role name="Adapter" element="org.exolab.jms.tools.migration.master.MasterMessageStore" />
+			<role name="adaptee" element="org.exolab.jms.tools.migration.master.MasterMessageStore::_database:org.exolab.jms.persistence.DatabaseService" />
+			<role name="Request()" element="org.exolab.jms.tools.migration.master.MasterMessageStore::importCollection(org.exolab.jms.tools.migration.StoreIterator):void" />
+		</instance>
+		<instance>
+			<role name="Adaptee" element="org.exolab.jms.persistence.DatabaseService" />
+			<role name="Adapter" element="org.exolab.jms.tools.migration.master.MasterUserStore" />
+			<role name="adaptee" element="org.exolab.jms.tools.migration.master.MasterUserStore::_database:org.exolab.jms.persistence.DatabaseService" />
+			<role name="Request()" element="org.exolab.jms.tools.migration.master.MasterUserStore::importCollection(org.exolab.jms.tools.migration.StoreIterator):void" />
+		</instance>
+		<instance>
+			<role name="Adaptee" element="org.exolab.jms.messagemgr.DefaultMessageCache" />
+			<role name="Adapter" element="org.exolab.jms.messagemgr.AbstractDestinationCache" />
+			<role name="adaptee" element="org.exolab.jms.messagemgr.AbstractDestinationCache::_cache:org.exolab.jms.messagemgr.DefaultMessageCache" />
+			<role name="Request()" element="org.exolab.jms.messagemgr.AbstractDestinationCache::getMessageCount():int" />
+			<role name="Request()" element="org.exolab.jms.messagemgr.AbstractDestinationCache::destroy():void" />
+		</instance>
+		<instance>
+			<role name="Adaptee" element="org.exolab.jms.scheduler.SerialTask" />
+			<role name="Adapter" element="org.exolab.jms.server.SessionConsumer" />
+			<role name="adaptee" element="org.exolab.jms.server.SessionConsumer::_runner:org.exolab.jms.scheduler.SerialTask" />
+			<role name="Request()" element="org.exolab.jms.server.SessionConsumer::messageAvailable(org.exolab.jms.messagemgr.ConsumerEndpoint):void" />
+		</instance>
+		<instance>
+			<role name="Adaptee" element="org.exolab.jms.server.ServerConnectionImpl" />
+			<role name="Adapter" element="org.exolab.jms.server.ServerSessionImpl" />
+			<role name="adaptee" element="org.exolab.jms.server.ServerSessionImpl::_connection:org.exolab.jms.server.ServerConnectionImpl" />
+			<role name="Request()" element="org.exolab.jms.server.ServerSessionImpl::send(org.exolab.jms.message.MessageImpl):void" />
+			<role name="Request()" element="org.exolab.jms.server.ServerSessionImpl::createConsumer(org.exolab.jms.client.JmsDestination, java.lang.String, boolean):long" />
+			<role name="Request()" element="org.exolab.jms.server.ServerSessionImpl::createDurableConsumer(org.exolab.jms.client.JmsTopic, java.lang.String, java.lang.String, boolean):long" />
+			<role name="Request()" element="org.exolab.jms.server.ServerSessionImpl::unsubscribe(java.lang.String):void" />
+			<role name="Request()" element="org.exolab.jms.server.ServerSessionImpl::close():void" />
+		</instance>
+		<instance>
+			<role name="Adapter" element="org.exolab.jms.messagemgr.DestinationManagerImpl" />
+			<role name="Adaptee" element="org.exolab.jms.messagemgr.MessageManager" />
+			<role name="adaptee" element="org.exolab.jms.messagemgr.DestinationManagerImpl::_messages:org.exolab.jms.messagemgr.MessageManager" />
+			<role name="Request()" element="org.exolab.jms.messagemgr.DestinationManagerImpl::getDestinationCache(org.exolab.jms.client.JmsDestination):org.exolab.jms.messagemgr.DestinationCache" />
+		</instance>
+		<instance>
+			<role name="Adaptee" element="org.exolab.jms.messagemgr.ResourceManager" />
+			<role name="Adapter" element="org.exolab.jms.server.ServerSessionImpl" />
+			<role name="adaptee" element="org.exolab.jms.server.ServerSessionImpl::_resources:org.exolab.jms.messagemgr.ResourceManager" />
+			<role name="Request()" element="org.exolab.jms.server.ServerSessionImpl::send(org.exolab.jms.message.MessageImpl):void" />
+			<role name="Request()" element="org.exolab.jms.server.ServerSessionImpl::start(javax.transaction.xa.Xid, int):void" />
+			<role name="Request()" element="org.exolab.jms.server.ServerSessionImpl::prepare(javax.transaction.xa.Xid):int" />
+			<role name="Request()" element="org.exolab.jms.server.ServerSessionImpl::commit(javax.transaction.xa.Xid, boolean):void" />
+			<role name="Request()" element="org.exolab.jms.server.ServerSessionImpl::end(javax.transaction.xa.Xid, int):void" />
+			<role name="Request()" element="org.exolab.jms.server.ServerSessionImpl::forget(javax.transaction.xa.Xid):void" />
+			<role name="Request()" element="org.exolab.jms.server.ServerSessionImpl::recover(int):javax.transaction.xa.Xid[]" />
+			<role name="Request()" element="org.exolab.jms.server.ServerSessionImpl::rollback(javax.transaction.xa.Xid):void" />
+			<role name="Request()" element="org.exolab.jms.server.ServerSessionImpl::getTransactionTimeout():int" />
+			<role name="Request()" element="org.exolab.jms.server.ServerSessionImpl::setTransactionTimeout(int):boolean" />
+			<role name="Request()" element="org.exolab.jms.server.ServerSessionImpl::getResourceManagerId():java.lang.String" />
+		</instance>
+		<instance>
+			<role name="Adaptee" element="org.exolab.jms.net.connector.ConnectionManager" />
+			<role name="Adapter" element="org.exolab.jms.net.connector.AbstractConnectionFactory" />
+			<role name="adaptee" element="org.exolab.jms.net.connector.AbstractConnectionFactory::_manager:org.exolab.jms.net.connector.ConnectionManager" />
+			<role name="Request()" element="org.exolab.jms.net.connector.AbstractConnectionFactory::getConnection(java.security.Principal, org.exolab.jms.net.uri.URI, java.util.Map):org.exolab.jms.net.connector.Connection" />
+			<role name="Request()" element="org.exolab.jms.net.connector.AbstractConnectionFactory::accept(org.exolab.jms.net.uri.URI, java.util.Map):void" />
+		</instance>
+		<instance>
+			<role name="Adapter" element="org.exolab.jms.messagemgr.DestinationManagerImpl" />
+			<role name="Adaptee" element="org.exolab.jms.messagemgr.ConsumerManager" />
+			<role name="adaptee" element="org.exolab.jms.messagemgr.DestinationManagerImpl::_consumers:org.exolab.jms.messagemgr.ConsumerManager" />
+			<role name="Request()" element="org.exolab.jms.messagemgr.DestinationManagerImpl::removeDestination(org.exolab.jms.client.JmsDestination):void" />
+		</instance>
+		<instance>
+			<role name="Adapter" element="org.exolab.jms.net.http.HTTPEndpoint" />
+			<role name="Adaptee" element="org.exolab.jms.net.http.HTTPInputStream" />
+			<role name="adaptee" element="org.exolab.jms.net.http.HTTPEndpoint::_in:org.exolab.jms.net.http.HTTPInputStream" />
+			<role name="Request()" element="org.exolab.jms.net.http.HTTPEndpoint::close():void" />
+		</instance>
+		<instance>
+			<role name="Adapter" element="org.exolab.jms.net.http.HTTPEndpoint" />
+			<role name="Adaptee" element="org.exolab.jms.net.http.HTTPOutputStream" />
+			<role name="adaptee" element="org.exolab.jms.net.http.HTTPEndpoint::_out:org.exolab.jms.net.http.HTTPOutputStream" />
+			<role name="Request()" element="org.exolab.jms.net.http.HTTPEndpoint::close():void" />
+		</instance>
+		<instance>
+			<role name="Adaptee" element="org.exolab.jms.messagemgr.Condition" />
+			<role name="Adapter" element="org.exolab.jms.messagemgr.AbstractConsumerEndpoint" />
+			<role name="adaptee" element="org.exolab.jms.messagemgr.AbstractConsumerEndpoint::_waitingForMessage:org.exolab.jms.messagemgr.Condition" />
+			<role name="Request()" element="org.exolab.jms.messagemgr.AbstractConsumerEndpoint::isWaitingForMessage():boolean" />
+		</instance>
+		<instance>
+			<role name="Adaptee" element="org.exolab.jms.messagemgr.Flag" />
+			<role name="Adapter" element="org.exolab.jms.messagemgr.AbstractConsumerEndpoint" />
+			<role name="adaptee" element="org.exolab.jms.messagemgr.AbstractConsumerEndpoint::_closed:org.exolab.jms.messagemgr.Flag" />
+			<role name="Request()" element="org.exolab.jms.messagemgr.AbstractConsumerEndpoint::receive(org.exolab.jms.messagemgr.Condition):org.exolab.jms.messagemgr.MessageHandle" />
+			<role name="Request()" element="org.exolab.jms.messagemgr.AbstractConsumerEndpoint::isClosed():boolean" />
+			<role name="Request()" element="org.exolab.jms.messagemgr.AbstractConsumerEndpoint::close():void" />
+		</instance>
+		<instance>
+			<role name="Adaptee" element="org.exolab.jms.server.ServerConnectionManagerImpl" />
+			<role name="Adapter" element="org.exolab.jms.server.ServerConnectionImpl" />
+			<role name="adaptee" element="org.exolab.jms.server.ServerConnectionImpl::_manager:org.exolab.jms.server.ServerConnectionManagerImpl" />
+			<role name="Request()" element="org.exolab.jms.server.ServerConnectionImpl::setClientID(java.lang.String):void" />
+			<role name="Request()" element="org.exolab.jms.server.ServerConnectionImpl::close():void" />
+		</instance>
+		<instance>
+			<role name="Adaptee" element="org.exolab.jms.persistence.DatabaseService" />
+			<role name="Adapter" element="org.exolab.jms.tools.admin.OfflineConnection" />
+			<role name="adaptee" element="org.exolab.jms.tools.admin.OfflineConnection::_database:org.exolab.jms.persistence.DatabaseService" />
+			<role name="Request()" element="org.exolab.jms.tools.admin.OfflineConnection::close():void" />
+			<role name="Request()" element="org.exolab.jms.tools.admin.OfflineConnection::addDurableConsumer(java.lang.String, java.lang.String):boolean" />
+			<role name="Request()" element="org.exolab.jms.tools.admin.OfflineConnection::removeDurableConsumer(java.lang.String):boolean" />
+			<role name="Request()" element="org.exolab.jms.tools.admin.OfflineConnection::getAllDestinations():java.util.Enumeration" />
+			<role name="Request()" element="org.exolab.jms.tools.admin.OfflineConnection::addDestination(java.lang.String, boolean):boolean" />
+			<role name="Request()" element="org.exolab.jms.tools.admin.OfflineConnection::getDurableConsumerMessageCount(java.lang.String, java.lang.String):int" />
+			<role name="Request()" element="org.exolab.jms.tools.admin.OfflineConnection::getQueueMessageCount(java.lang.String):int" />
+			<role name="Request()" element="org.exolab.jms.tools.admin.OfflineConnection::durableConsumerExists(java.lang.String):boolean" />
+			<role name="Request()" element="org.exolab.jms.tools.admin.OfflineConnection::getDurableConsumers(java.lang.String):java.util.Enumeration" />
+			<role name="Request()" element="org.exolab.jms.tools.admin.OfflineConnection::removeDestination(java.lang.String):boolean" />
+			<role name="Request()" element="org.exolab.jms.tools.admin.OfflineConnection::purgeMessages():int" />
+			<role name="Request()" element="org.exolab.jms.tools.admin.OfflineConnection::addUser(java.lang.String, java.lang.String):boolean" />
+			<role name="Request()" element="org.exolab.jms.tools.admin.OfflineConnection::changePassword(java.lang.String, java.lang.String):boolean" />
+			<role name="Request()" element="org.exolab.jms.tools.admin.OfflineConnection::removeUser(java.lang.String):boolean" />
+			<role name="Request()" element="org.exolab.jms.tools.admin.OfflineConnection::getAllUsers():java.util.Enumeration" />
+		</instance>
+		<instance>
+			<role name="Adaptee" element="org.exolab.jms.net.rmi.RMIManagedConnection" />
+			<role name="Adapter" element="org.exolab.jms.net.rmi.RMIInvokerImpl" />
+			<role name="adaptee" element="org.exolab.jms.net.rmi.RMIInvokerImpl::_connection:org.exolab.jms.net.rmi.RMIManagedConnection" />
+			<role name="Request()" element="org.exolab.jms.net.rmi.RMIInvokerImpl::invoke(java.rmi.MarshalledObject):java.rmi.MarshalledObject" />
+			<role name="Request()" element="org.exolab.jms.net.rmi.RMIInvokerImpl::disconnect():void" />
+		</instance>
+		<instance>
+			<role name="Adaptee" element="org.exolab.jms.server.net.ConnectorCfg" />
+			<role name="Adapter" element="org.exolab.jms.server.net.RemoteServerConnector" />
+			<role name="adaptee" element="org.exolab.jms.server.net.RemoteServerConnector::_connector:org.exolab.jms.server.net.ConnectorCfg" />
+			<role name="Request()" element="org.exolab.jms.server.net.RemoteServerConnector::init():void" />
+			<role name="Request()" element="org.exolab.jms.server.net.RemoteServerConnector::bindConnectionFactories(javax.naming.Context):void" />
+		</instance>
+		<instance>
+			<role name="Adaptee" element="org.exolab.jms.net.orb.RegistryImpl" />
+			<role name="Adapter" element="org.exolab.jms.net.orb.RegistryService" />
+			<role name="adaptee" element="org.exolab.jms.net.orb.RegistryService::_registry:org.exolab.jms.net.orb.RegistryImpl" />
+			<role name="Request()" element="org.exolab.jms.net.orb.RegistryService::setReadOnly(boolean):void" />
+			<role name="Request()" element="org.exolab.jms.net.orb.RegistryService::getReadOnly():boolean" />
+		</instance>
+		<instance>
+			<role name="Adaptee" element="org.exolab.jms.messagemgr.ConsumerManager" />
+			<role name="Adapter" element="org.exolab.jms.server.ServerSessionImpl" />
+			<role name="adaptee" element="org.exolab.jms.server.ServerSessionImpl::_consumerMgr:org.exolab.jms.messagemgr.ConsumerManager" />
+			<role name="Request()" element="org.exolab.jms.server.ServerSessionImpl::createConsumer(org.exolab.jms.client.JmsDestination, java.lang.String, boolean):long" />
+			<role name="Request()" element="org.exolab.jms.server.ServerSessionImpl::createDurableConsumer(org.exolab.jms.client.JmsTopic, java.lang.String, java.lang.String, boolean):long" />
+			<role name="Request()" element="org.exolab.jms.server.ServerSessionImpl::createBrowser(org.exolab.jms.client.JmsQueue, java.lang.String):long" />
+			<role name="Request()" element="org.exolab.jms.server.ServerSessionImpl::closeConsumer(long):void" />
+			<role name="Request()" element="org.exolab.jms.server.ServerSessionImpl::unsubscribe(java.lang.String):void" />
+			<role name="Request()" element="org.exolab.jms.server.ServerSessionImpl::close():void" />
+		</instance>
+		<instance>
+			<role name="Adaptee" element="org.exolab.jms.net.connector.AbstractConnectionManager" />
+			<role name="Adapter" element="org.exolab.jms.net.orb.DefaultORB" />
+			<role name="adaptee" element="org.exolab.jms.net.orb.DefaultORB::_manager:org.exolab.jms.net.connector.AbstractConnectionManager" />
+			<role name="Request()" element="org.exolab.jms.net.orb.DefaultORB::connect(org.exolab.jms.net.uri.URI, java.lang.String, java.lang.String):org.exolab.jms.net.uri.URI" />
+			<role name="Request()" element="org.exolab.jms.net.orb.DefaultORB::accept(org.exolab.jms.net.uri.URI):void" />
+		</instance>
+		<instance>
+			<role name="Adaptee" element="org.exolab.jms.messagemgr.MessageRef" />
+			<role name="Adapter" element="org.exolab.jms.messagemgr.AbstractMessageHandle" />
+			<role name="adaptee" element="org.exolab.jms.messagemgr.AbstractMessageHandle::_reference:org.exolab.jms.messagemgr.MessageRef" />
+			<role name="Request()" element="org.exolab.jms.messagemgr.AbstractMessageHandle::getMessage():org.exolab.jms.message.MessageImpl" />
+		</instance>
+		<instance>
+			<role name="Adaptee" element="org.exolab.jms.net.connector.ManagedConnectionFactory" />
+			<role name="Adapter" element="org.exolab.jms.net.connector.DefaultConnectionPool" />
+			<role name="adaptee" element="org.exolab.jms.net.connector.DefaultConnectionPool::_factory:org.exolab.jms.net.connector.ManagedConnectionFactory" />
+			<role name="Request()" element="org.exolab.jms.net.connector.DefaultConnectionPool::createManagedConnection(java.security.Principal, org.exolab.jms.net.connector.ConnectionRequestInfo):org.exolab.jms.net.connector.ManagedConnection" />
+			<role name="Request()" element="org.exolab.jms.net.connector.DefaultConnectionPool::createManagedConnectionAcceptor(org.exolab.jms.net.connector.Authenticator, org.exolab.jms.net.connector.ConnectionRequestInfo):org.exolab.jms.net.connector.ManagedConnectionAcceptor" />
+			<role name="Request()" element="org.exolab.jms.net.connector.DefaultConnectionPool::matchManagedConnections(java.security.Principal, org.exolab.jms.net.connector.ConnectionRequestInfo):org.exolab.jms.net.connector.ManagedConnection" />
+			<role name="Request()" element="org.exolab.jms.net.connector.DefaultConnectionPool::matchManagedConnectionAcceptors(org.exolab.jms.net.connector.ConnectionRequestInfo):org.exolab.jms.net.connector.ManagedConnectionAcceptor" />
+		</instance>
+		<instance>
+			<role name="Adaptee" element="org.exolab.jms.server.NameService" />
+			<role name="Adapter" element="org.exolab.jms.server.net.RemoteServerConnector" />
+			<role name="adaptee" element="org.exolab.jms.server.net.RemoteServerConnector::_names:org.exolab.jms.server.NameService" />
+			<role name="Request()" element="org.exolab.jms.server.net.RemoteServerConnector::init():void" />
+		</instance>
+		<instance>
+			<role name="Adaptee" element="org.exolab.jms.net.connector.InvocationHandler" />
+			<role name="Adapter" element="org.exolab.jms.net.multiplexer.MultiplexedManagedConnection" />
+			<role name="adaptee" element="org.exolab.jms.net.multiplexer.MultiplexedManagedConnection::_invoker:org.exolab.jms.net.connector.InvocationHandler" />
+			<role name="Request()" element="org.exolab.jms.net.multiplexer.MultiplexedManagedConnection::request(org.exolab.jms.net.multiplexer.Channel):void" />
+		</instance>
+		<instance>
+			<role name="Adaptee" element="org.exolab.jms.net.orb.ORB" />
+			<role name="Adapter" element="org.exolab.jms.server.net.RemoteServerConnector" />
+			<role name="adaptee" element="org.exolab.jms.server.net.RemoteServerConnector::_orb:org.exolab.jms.net.orb.ORB" />
+			<role name="Request()" element="org.exolab.jms.server.net.RemoteServerConnector::init():void" />
+			<role name="Request()" element="org.exolab.jms.server.net.RemoteServerConnector::close():void" />
+		</instance>
+		<instance>
+			<role name="Adaptee" element="org.exolab.jms.messagemgr.Flag" />
+			<role name="Adapter" element="org.exolab.jms.server.ServerSessionImpl" />
+			<role name="adaptee" element="org.exolab.jms.server.ServerSessionImpl::_closed:org.exolab.jms.messagemgr.Flag" />
+			<role name="Request()" element="org.exolab.jms.server.ServerSessionImpl::close():void" />
+		</instance>
+		<instance>
+			<role name="Adaptee" element="org.exolab.jms.net.orb.ORB" />
+			<role name="Adapter" element="org.exolab.jms.client.net.JmsSessionStubImpl" />
+			<role name="adaptee" element="org.exolab.jms.client.net.JmsSessionStubImpl::_orb:org.exolab.jms.net.orb.ORB" />
+			<role name="Request()" element="org.exolab.jms.client.net.JmsSessionStubImpl::close():void" />
+		</instance>
+		<instance>
+			<role name="Adaptee" element="org.exolab.jms.net.connector.Connection" />
+			<role name="Adapter" element="org.exolab.jms.net.orb.UnicastDelegate" />
+			<role name="adaptee" element="org.exolab.jms.net.orb.UnicastDelegate::_connection:org.exolab.jms.net.connector.Connection" />
+			<role name="Request()" element="org.exolab.jms.net.orb.UnicastDelegate::dispose():void" />
+		</instance>
+		<instance>
+			<role name="Adaptee" element="org.exolab.jms.net.rmi.RMIManagedConnectionAcceptor" />
+			<role name="Adapter" element="org.exolab.jms.net.rmi.RMIInvokerFactoryImpl" />
+			<role name="adaptee" element="org.exolab.jms.net.rmi.RMIInvokerFactoryImpl::_acceptor:org.exolab.jms.net.rmi.RMIManagedConnectionAcceptor" />
+			<role name="Request()" element="org.exolab.jms.net.rmi.RMIInvokerFactoryImpl::createInvoker(java.security.Principal, org.exolab.jms.net.rmi.RMIInvoker, java.lang.String):org.exolab.jms.net.rmi.RMIInvoker" />
+		</instance>
+		<instance>
+			<role name="Adaptee" element="org.exolab.jms.net.multiplexer.Channel" />
+			<role name="Adapter" element="org.exolab.jms.net.multiplexer.ChannelInvocation" />
+			<role name="adaptee" element="org.exolab.jms.net.multiplexer.ChannelInvocation::_channel:org.exolab.jms.net.multiplexer.Channel" />
+			<role name="Request()" element="org.exolab.jms.net.multiplexer.ChannelInvocation::getRequest():org.exolab.jms.net.connector.Request" />
+			<role name="Request()" element="org.exolab.jms.net.multiplexer.ChannelInvocation::setResponse(org.exolab.jms.net.connector.Response):void" />
+		</instance>
+		<instance>
+			<role name="Adaptee" element="org.exolab.jms.messagemgr.MessageManager" />
+			<role name="Adapter" element="org.exolab.jms.server.ServerSessionImpl" />
+			<role name="adaptee" element="org.exolab.jms.server.ServerSessionImpl::_messages:org.exolab.jms.messagemgr.MessageManager" />
+			<role name="Request()" element="org.exolab.jms.server.ServerSessionImpl::send(org.exolab.jms.message.MessageImpl):void" />
+		</instance>
+		<instance>
+			<role name="Adaptee" element="org.exolab.jms.net.connector.Authenticator" />
+			<role name="Adapter" element="org.exolab.jms.net.rmi.RMIInvokerFactoryImpl" />
+			<role name="adaptee" element="org.exolab.jms.net.rmi.RMIInvokerFactoryImpl::_authenticator:org.exolab.jms.net.connector.Authenticator" />
+			<role name="Request()" element="org.exolab.jms.net.rmi.RMIInvokerFactoryImpl::createInvoker(java.security.Principal, org.exolab.jms.net.rmi.RMIInvoker, java.lang.String):org.exolab.jms.net.rmi.RMIInvoker" />
+		</instance>
+		<instance>
+			<role name="Adaptee" element="org.exolab.jms.net.connector.ManagedConnectionAcceptorListener" />
+			<role name="Adapter" element="org.exolab.jms.net.rmi.RMIInvokerFactoryImpl" />
+			<role name="adaptee" element="org.exolab.jms.net.rmi.RMIInvokerFactoryImpl::_listener:org.exolab.jms.net.connector.ManagedConnectionAcceptorListener" />
+			<role name="Request()" element="org.exolab.jms.net.rmi.RMIInvokerFactoryImpl::createInvoker(java.security.Principal, org.exolab.jms.net.rmi.RMIInvoker, java.lang.String):org.exolab.jms.net.rmi.RMIInvoker" />
+		</instance>
+		<instance>
+			<role name="Adaptee" element="org.exolab.jms.net.orb.ORB" />
+			<role name="Adapter" element="org.exolab.jms.net.invoke.ExportServiceImpl" />
+			<role name="adaptee" element="org.exolab.jms.net.invoke.ExportServiceImpl::_orb:org.exolab.jms.net.orb.ORB" />
+			<role name="Request()" element="org.exolab.jms.net.invoke.ExportServiceImpl::exportObjectTo():org.exolab.jms.net.proxy.Proxy" />
+		</instance>
+	</pattern>
+	<pattern name="Command" />
+	<pattern name="Composite">
+		<instance>
+			<role name="Component" element="org.exolab.jms.common.threads.ThreadListener" />
+			<role name="Composite" element="org.exolab.jms.service.ServiceThreadListener" />
+			<role name="Operation()" element="org.exolab.jms.service.ServiceThreadListener::begin(java.lang.Runnable):void" />
+			<role name="Operation()" element="org.exolab.jms.service.ServiceThreadListener::end(java.lang.Runnable):void" />
+		</instance>
+	</pattern>
+	<pattern name="Decorator">
+		<instance>
+			<role name="Component" element="org.exolab.jms.client.JmsMessageListener" />
+			<role name="Decorator" element="org.exolab.jms.client.net.JmsSessionStubImpl" />
+			<role name="component" element="org.exolab.jms.client.net.JmsSessionStubImpl::_listener:org.exolab.jms.client.JmsMessageListener" />
+			<role name="Operation()" element="org.exolab.jms.client.net.JmsSessionStubImpl::onMessage(org.exolab.jms.message.MessageImpl):boolean" />
+			<role name="Operation()" element="org.exolab.jms.client.net.JmsSessionStubImpl::onMessageAvailable():void" />
+		</instance>
+		<instance>
+			<role name="Component" element="org.exolab.jms.messagemgr.MessageHandle" />
+			<role name="Decorator" element="org.exolab.jms.messagemgr.AbstractConsumerMessageHandle" />
+			<role name="component" element="org.exolab.jms.messagemgr.AbstractConsumerMessageHandle::_handle:org.exolab.jms.messagemgr.MessageHandle" />
+			<role name="Operation()" element="org.exolab.jms.messagemgr.AbstractConsumerMessageHandle::getMessageId():java.lang.String" />
+			<role name="Operation()" element="org.exolab.jms.messagemgr.AbstractConsumerMessageHandle::setDelivered(boolean):void" />
+			<role name="Operation()" element="org.exolab.jms.messagemgr.AbstractConsumerMessageHandle::getDelivered():boolean" />
+			<role name="Operation()" element="org.exolab.jms.messagemgr.AbstractConsumerMessageHandle::getPriority():int" />
+			<role name="Operation()" element="org.exolab.jms.messagemgr.AbstractConsumerMessageHandle::getAcceptedTime():long" />
+			<role name="Operation()" element="org.exolab.jms.messagemgr.AbstractConsumerMessageHandle::getExpiryTime():long" />
+			<role name="Operation()" element="org.exolab.jms.messagemgr.AbstractConsumerMessageHandle::hasExpired():boolean" />
+			<role name="Operation()" element="org.exolab.jms.messagemgr.AbstractConsumerMessageHandle::getSequenceNumber():long" />
+			<role name="Operation()" element="org.exolab.jms.messagemgr.AbstractConsumerMessageHandle::getDestination():org.exolab.jms.client.JmsDestination" />
+			<role name="Operation()" element="org.exolab.jms.messagemgr.AbstractConsumerMessageHandle::getConnectionId():long" />
+			<role name="Operation()" element="org.exolab.jms.messagemgr.AbstractConsumerMessageHandle::getMessage():org.exolab.jms.message.MessageImpl" />
+			<role name="Operation()" element="org.exolab.jms.messagemgr.AbstractConsumerMessageHandle::destroy():void" />
+			<role name="Operation()" element="org.exolab.jms.messagemgr.AbstractConsumerMessageHandle::release():void" />
+			<role name="Operation()" element="org.exolab.jms.messagemgr.AbstractConsumerMessageHandle::getMessageRef():org.exolab.jms.messagemgr.MessageRef" />
+		</instance>
+		<instance>
+			<role name="Component" element="org.exolab.jms.net.connector.ManagedConnection" />
+			<role name="Decorator" element="org.exolab.jms.net.connector.ManagedConnectionHandle" />
+			<role name="component" element="org.exolab.jms.net.connector.ManagedConnectionHandle::_connection:org.exolab.jms.net.connector.ManagedConnection" />
+			<role name="Operation()" element="org.exolab.jms.net.connector.ManagedConnectionHandle::setInvocationHandler(org.exolab.jms.net.connector.InvocationHandler):void" />
+			<role name="Operation()" element="org.exolab.jms.net.connector.ManagedConnectionHandle::setConnectionEventListener(org.exolab.jms.net.connector.ManagedConnectionListener):void" />
+			<role name="Operation()" element="org.exolab.jms.net.connector.ManagedConnectionHandle::getConnection():org.exolab.jms.net.connector.Connection" />
+			<role name="Operation()" element="org.exolab.jms.net.connector.ManagedConnectionHandle::ping():void" />
+			<role name="Operation()" element="org.exolab.jms.net.connector.ManagedConnectionHandle::getRemoteURI():org.exolab.jms.net.uri.URI" />
+			<role name="Operation()" element="org.exolab.jms.net.connector.ManagedConnectionHandle::getLocalURI():org.exolab.jms.net.uri.URI" />
+			<role name="Operation()" element="org.exolab.jms.net.connector.ManagedConnectionHandle::getPrincipal():java.security.Principal" />
+			<role name="Operation()" element="org.exolab.jms.net.connector.ManagedConnectionHandle::destroy():void" />
+		</instance>
+		<instance>
+			<role name="Component" element="org.exolab.jms.net.orb.ORB" />
+			<role name="Decorator" element="org.exolab.jms.client.net.SharedORB" />
+			<role name="component" element="org.exolab.jms.client.net.SharedORB::_orb:org.exolab.jms.net.orb.ORB" />
+			<role name="Operation()" element="org.exolab.jms.client.net.SharedORB::addRoute(java.lang.String, java.lang.String):void" />
+			<role name="Operation()" element="org.exolab.jms.client.net.SharedORB::getRegistry():org.exolab.jms.net.registry.LocalRegistry" />
+			<role name="Operation()" element="org.exolab.jms.client.net.SharedORB::getRegistry(java.util.Map):org.exolab.jms.net.registry.Registry" />
+			<role name="Operation()" element="org.exolab.jms.client.net.SharedORB::exportObject(java.lang.Object):org.exolab.jms.net.proxy.Proxy" />
+			<role name="Operation()" element="org.exolab.jms.client.net.SharedORB::exportObject(java.lang.Object, java.lang.String):org.exolab.jms.net.proxy.Proxy" />
+			<role name="Operation()" element="org.exolab.jms.client.net.SharedORB::exportObject(java.lang.Object, java.rmi.server.ObjID):org.exolab.jms.net.proxy.Proxy" />
+			<role name="Operation()" element="org.exolab.jms.client.net.SharedORB::exportObject(java.lang.Object, java.rmi.server.ObjID, java.lang.String):org.exolab.jms.net.proxy.Proxy" />
+			<role name="Operation()" element="org.exolab.jms.client.net.SharedORB::exportObjectTo(java.lang.Object):org.exolab.jms.net.proxy.Proxy" />
+			<role name="Operation()" element="org.exolab.jms.client.net.SharedORB::exportObjectTo(java.lang.Object, java.lang.String):org.exolab.jms.net.proxy.Proxy" />
+			<role name="Operation()" element="org.exolab.jms.client.net.SharedORB::exportObjectTo(java.lang.Object, java.lang.String, java.lang.String, java.lang.String):org.exolab.jms.net.proxy.Proxy" />
+			<role name="Operation()" element="org.exolab.jms.client.net.SharedORB::unexportObject(java.lang.Object):void" />
+			<role name="Operation()" element="org.exolab.jms.client.net.SharedORB::getCaller():org.exolab.jms.net.connector.Caller" />
+			<role name="Operation()" element="org.exolab.jms.client.net.SharedORB::addCallerListener(java.lang.String, org.exolab.jms.net.connector.CallerListener):void" />
+			<role name="Operation()" element="org.exolab.jms.client.net.SharedORB::removeCallerListener(java.lang.String, org.exolab.jms.net.connector.CallerListener):void" />
+			<role name="Operation()" element="org.exolab.jms.client.net.SharedORB::shutdown():void" />
+		</instance>
+		<instance>
+			<role name="Component" element="org.exolab.jms.selector.Expression" />
+			<role name="Decorator" element="org.exolab.jms.selector.BetweenExpression" />
+			<role name="component" element="org.exolab.jms.selector.BetweenExpression::_num1:org.exolab.jms.selector.Expression" />
+			<role name="component" element="org.exolab.jms.selector.BetweenExpression::_num2:org.exolab.jms.selector.Expression" />
+			<role name="component" element="org.exolab.jms.selector.BetweenExpression::_num3:org.exolab.jms.selector.Expression" />
+			<role name="Operation()" element="org.exolab.jms.selector.BetweenExpression::evaluate(javax.jms.Message):org.exolab.jms.selector.SObject" />
+			<role name="Operation()" element="org.exolab.jms.selector.BetweenExpression::toString():java.lang.String" />
+		</instance>
+		<instance>
+			<role name="Component" element="org.exolab.jms.selector.Expression" />
+			<role name="Decorator" element="org.exolab.jms.selector.BinaryOperator" />
+			<role name="component" element="org.exolab.jms.selector.BinaryOperator::_lhs:org.exolab.jms.selector.Expression" />
+			<role name="component" element="org.exolab.jms.selector.BinaryOperator::_rhs:org.exolab.jms.selector.Expression" />
+			<role name="Operation()" element="org.exolab.jms.selector.BinaryOperator::toString():java.lang.String" />
+		</instance>
+		<instance>
+			<role name="Component" element="org.exolab.jms.selector.Expression" />
+			<role name="Decorator" element="org.exolab.jms.selector.UnaryOperator" />
+			<role name="component" element="org.exolab.jms.selector.UnaryOperator::_operand:org.exolab.jms.selector.Expression" />
+			<role name="Operation()" element="org.exolab.jms.selector.UnaryOperator::toString():java.lang.String" />
+		</instance>
+		<instance>
+			<role name="Component" element="org.exolab.jms.server.ServerConnection" />
+			<role name="Decorator" element="org.exolab.jms.client.net.JmsConnectionStubImpl" />
+			<role name="component" element="org.exolab.jms.client.net.JmsConnectionStubImpl::_connection:org.exolab.jms.server.ServerConnection" />
+			<role name="Operation()" element="org.exolab.jms.client.net.JmsConnectionStubImpl::getConnectionId():long" />
+			<role name="Operation()" element="org.exolab.jms.client.net.JmsConnectionStubImpl::getClientID():java.lang.String" />
+			<role name="Operation()" element="org.exolab.jms.client.net.JmsConnectionStubImpl::setClientID(java.lang.String):void" />
+			<role name="Operation()" element="org.exolab.jms.client.net.JmsConnectionStubImpl::createSession(int, boolean):org.exolab.jms.server.ServerSession" />
+			<role name="Operation()" element="org.exolab.jms.client.net.JmsConnectionStubImpl::close():void" />
+		</instance>
+		<instance>
+			<role name="Component" element="org.exolab.jms.server.ServerConnection" />
+			<role name="Decorator" element="org.exolab.jms.server.net.RemoteServerConnection" />
+			<role name="component" element="org.exolab.jms.server.net.RemoteServerConnection::_connection:org.exolab.jms.server.ServerConnection" />
+			<role name="Operation()" element="org.exolab.jms.server.net.RemoteServerConnection::getConnectionId():long" />
+			<role name="Operation()" element="org.exolab.jms.server.net.RemoteServerConnection::getClientID():java.lang.String" />
+			<role name="Operation()" element="org.exolab.jms.server.net.RemoteServerConnection::setClientID(java.lang.String):void" />
+			<role name="Operation()" element="org.exolab.jms.server.net.RemoteServerConnection::createSession(int, boolean):org.exolab.jms.server.ServerSession" />
+			<role name="Operation()" element="org.exolab.jms.server.net.RemoteServerConnection::close():void" />
+		</instance>
+		<instance>
+			<role name="Component" element="org.exolab.jms.server.ServerConnectionFactory" />
+			<role name="Decorator" element="org.exolab.jms.server.net.RemoteServerConnectionFactory" />
+			<role name="component" element="org.exolab.jms.server.net.RemoteServerConnectionFactory::_factory:org.exolab.jms.server.ServerConnectionFactory" />
+			<role name="Operation()" element="org.exolab.jms.server.net.RemoteServerConnectionFactory::createConnection(java.lang.String, java.lang.String, java.lang.String):org.exolab.jms.server.ServerConnection" />
+		</instance>
+		<instance>
+			<role name="Component" element="org.exolab.jms.server.ServerSession" />
+			<role name="Decorator" element="org.exolab.jms.client.net.JmsSessionStubImpl" />
+			<role name="component" element="org.exolab.jms.client.net.JmsSessionStubImpl::_session:org.exolab.jms.server.ServerSession" />
+			<role name="Operation()" element="org.exolab.jms.client.net.JmsSessionStubImpl::close():void" />
+			<role name="Operation()" element="org.exolab.jms.client.net.JmsSessionStubImpl::acknowledgeMessage(long, java.lang.String):void" />
+			<role name="Operation()" element="org.exolab.jms.client.net.JmsSessionStubImpl::send(org.exolab.jms.message.MessageImpl):void" />
+			<role name="Operation()" element="org.exolab.jms.client.net.JmsSessionStubImpl::send(java.util.List):void" />
+			<role name="Operation()" element="org.exolab.jms.client.net.JmsSessionStubImpl::receiveNoWait(long):org.exolab.jms.message.MessageImpl" />
+			<role name="Operation()" element="org.exolab.jms.client.net.JmsSessionStubImpl::receive(long, long):org.exolab.jms.message.MessageImpl" />
+			<role name="Operation()" element="org.exolab.jms.client.net.JmsSessionStubImpl::browse(long, int):java.util.List" />
+			<role name="Operation()" element="org.exolab.jms.client.net.JmsSessionStubImpl::createConsumer(org.exolab.jms.client.JmsDestination, java.lang.String, boolean):long" />
+			<role name="Operation()" element="org.exolab.jms.client.net.JmsSessionStubImpl::createDurableConsumer(org.exolab.jms.client.JmsTopic, java.lang.String, java.lang.String, boolean):long" />
+			<role name="Operation()" element="org.exolab.jms.client.net.JmsSessionStubImpl::createBrowser(org.exolab.jms.client.JmsQueue, java.lang.String):long" />
+			<role name="Operation()" element="org.exolab.jms.client.net.JmsSessionStubImpl::closeConsumer(long):void" />
+			<role name="Operation()" element="org.exolab.jms.client.net.JmsSessionStubImpl::unsubscribe(java.lang.String):void" />
+			<role name="Operation()" element="org.exolab.jms.client.net.JmsSessionStubImpl::start():void" />
+			<role name="Operation()" element="org.exolab.jms.client.net.JmsSessionStubImpl::stop():void" />
+			<role name="Operation()" element="org.exolab.jms.client.net.JmsSessionStubImpl::setAsynchronous(long, boolean):void" />
+			<role name="Operation()" element="org.exolab.jms.client.net.JmsSessionStubImpl::recover():void" />
+			<role name="Operation()" element="org.exolab.jms.client.net.JmsSessionStubImpl::commit():void" />
+			<role name="Operation()" element="org.exolab.jms.client.net.JmsSessionStubImpl::rollback():void" />
+			<role name="Operation()" element="org.exolab.jms.client.net.JmsSessionStubImpl::start(javax.transaction.xa.Xid, int):void" />
+			<role name="Operation()" element="org.exolab.jms.client.net.JmsSessionStubImpl::prepare(javax.transaction.xa.Xid):int" />
+			<role name="Operation()" element="org.exolab.jms.client.net.JmsSessionStubImpl::commit(javax.transaction.xa.Xid, boolean):void" />
+			<role name="Operation()" element="org.exolab.jms.client.net.JmsSessionStubImpl::end(javax.transaction.xa.Xid, int):void" />
+			<role name="Operation()" element="org.exolab.jms.client.net.JmsSessionStubImpl::forget(javax.transaction.xa.Xid):void" />
+			<role name="Operation()" element="org.exolab.jms.client.net.JmsSessionStubImpl::rollback(javax.transaction.xa.Xid):void" />
+			<role name="Operation()" element="org.exolab.jms.client.net.JmsSessionStubImpl::recover(int):javax.transaction.xa.Xid[]" />
+			<role name="Operation()" element="org.exolab.jms.client.net.JmsSessionStubImpl::getTransactionTimeout():int" />
+			<role name="Operation()" element="org.exolab.jms.client.net.JmsSessionStubImpl::setTransactionTimeout(int):boolean" />
+			<role name="Operation()" element="org.exolab.jms.client.net.JmsSessionStubImpl::getResourceManagerId():java.lang.String" />
+		</instance>
+		<instance>
+			<role name="Component" element="org.exolab.jms.server.ServerSession" />
+			<role name="Decorator" element="org.exolab.jms.server.net.RemoteServerSession" />
+			<role name="component" element="org.exolab.jms.server.net.RemoteServerSession::_session:org.exolab.jms.server.ServerSession" />
+			<role name="Operation()" element="org.exolab.jms.server.net.RemoteServerSession::close():void" />
+			<role name="Operation()" element="org.exolab.jms.server.net.RemoteServerSession::acknowledgeMessage(long, java.lang.String):void" />
+			<role name="Operation()" element="org.exolab.jms.server.net.RemoteServerSession::send(org.exolab.jms.message.MessageImpl):void" />
+			<role name="Operation()" element="org.exolab.jms.server.net.RemoteServerSession::send(java.util.List):void" />
+			<role name="Operation()" element="org.exolab.jms.server.net.RemoteServerSession::receiveNoWait(long):org.exolab.jms.message.MessageImpl" />
+			<role name="Operation()" element="org.exolab.jms.server.net.RemoteServerSession::receive(long, long):org.exolab.jms.message.MessageImpl" />
+			<role name="Operation()" element="org.exolab.jms.server.net.RemoteServerSession::browse(long, int):java.util.List" />
+			<role name="Operation()" element="org.exolab.jms.server.net.RemoteServerSession::createConsumer(org.exolab.jms.client.JmsDestination, java.lang.String, boolean):long" />
+			<role name="Operation()" element="org.exolab.jms.server.net.RemoteServerSession::createDurableConsumer(org.exolab.jms.client.JmsTopic, java.lang.String, java.lang.String, boolean):long" />
+			<role name="Operation()" element="org.exolab.jms.server.net.RemoteServerSession::createBrowser(org.exolab.jms.client.JmsQueue, java.lang.String):long" />
+			<role name="Operation()" element="org.exolab.jms.server.net.RemoteServerSession::closeConsumer(long):void" />
+			<role name="Operation()" element="org.exolab.jms.server.net.RemoteServerSession::unsubscribe(java.lang.String):void" />
+			<role name="Operation()" element="org.exolab.jms.server.net.RemoteServerSession::start():void" />
+			<role name="Operation()" element="org.exolab.jms.server.net.RemoteServerSession::stop():void" />
+			<role name="Operation()" element="org.exolab.jms.server.net.RemoteServerSession::setMessageListener(org.exolab.jms.client.JmsMessageListener):void" />
+			<role name="Operation()" element="org.exolab.jms.server.net.RemoteServerSession::setAsynchronous(long, boolean):void" />
+			<role name="Operation()" element="org.exolab.jms.server.net.RemoteServerSession::recover():void" />
+			<role name="Operation()" element="org.exolab.jms.server.net.RemoteServerSession::commit():void" />
+			<role name="Operation()" element="org.exolab.jms.server.net.RemoteServerSession::rollback():void" />
+			<role name="Operation()" element="org.exolab.jms.server.net.RemoteServerSession::start(javax.transaction.xa.Xid, int):void" />
+			<role name="Operation()" element="org.exolab.jms.server.net.RemoteServerSession::prepare(javax.transaction.xa.Xid):int" />
+			<role name="Operation()" element="org.exolab.jms.server.net.RemoteServerSession::commit(javax.transaction.xa.Xid, boolean):void" />
+			<role name="Operation()" element="org.exolab.jms.server.net.RemoteServerSession::end(javax.transaction.xa.Xid, int):void" />
+			<role name="Operation()" element="org.exolab.jms.server.net.RemoteServerSession::forget(javax.transaction.xa.Xid):void" />
+			<role name="Operation()" element="org.exolab.jms.server.net.RemoteServerSession::recover(int):javax.transaction.xa.Xid[]" />
+			<role name="Operation()" element="org.exolab.jms.server.net.RemoteServerSession::rollback(javax.transaction.xa.Xid):void" />
+			<role name="Operation()" element="org.exolab.jms.server.net.RemoteServerSession::getTransactionTimeout():int" />
+			<role name="Operation()" element="org.exolab.jms.server.net.RemoteServerSession::setTransactionTimeout(int):boolean" />
+			<role name="Operation()" element="org.exolab.jms.server.net.RemoteServerSession::getResourceManagerId():java.lang.String" />
+		</instance>
+		<instance>
+			<role name="Component" element="org.exolab.jms.net.connector.Invocation" />
+			<role name="Decorator" element="org.exolab.jms.net.connector.ContextInvocationHandler$ContextInvocation" />
+			<role name="component" element="org.exolab.jms.net.connector.ContextInvocationHandler$ContextInvocation::_invocation:org.exolab.jms.net.connector.Invocation" />
+			<role name="Operation()" element="org.exolab.jms.net.connector.ContextInvocationHandler$ContextInvocation::getRequest():org.exolab.jms.net.connector.Request" />
+			<role name="Operation()" element="org.exolab.jms.net.connector.ContextInvocationHandler$ContextInvocation::getCaller():org.exolab.jms.net.connector.Caller" />
+			<role name="Operation()" element="org.exolab.jms.net.connector.ContextInvocationHandler$ContextInvocation::setResponse(org.exolab.jms.net.connector.Response):void" />
+		</instance>
+		<instance>
+			<role name="Component" element="org.exolab.jms.net.connector.InvocationHandler" />
+			<role name="Decorator" element="org.exolab.jms.net.connector.ContextInvocationHandler" />
+			<role name="component" element="org.exolab.jms.net.connector.ContextInvocationHandler::_handler:org.exolab.jms.net.connector.InvocationHandler" />
+			<role name="Operation()" element="org.exolab.jms.net.connector.ContextInvocationHandler::invoke(org.exolab.jms.net.connector.Invocation):void" />
+		</instance>
+		<instance>
+			<role name="Component" element="org.exolab.jms.net.connector.Connection" />
+			<role name="Decorator" element="org.exolab.jms.net.connector.ManagedConnectionHandle$ConnectionHandle" />
+			<role name="component" element="org.exolab.jms.net.connector.ManagedConnectionHandle$ConnectionHandle::_connection:org.exolab.jms.net.connector.Connection" />
+			<role name="Operation()" element="org.exolab.jms.net.connector.ManagedConnectionHandle$ConnectionHandle::invoke(org.exolab.jms.net.connector.Request):org.exolab.jms.net.connector.Response" />
+			<role name="Operation()" element="org.exolab.jms.net.connector.ManagedConnectionHandle$ConnectionHandle::getRemoteURI():org.exolab.jms.net.uri.URI" />
+			<role name="Operation()" element="org.exolab.jms.net.connector.ManagedConnectionHandle$ConnectionHandle::getLocalURI():org.exolab.jms.net.uri.URI" />
+			<role name="Operation()" element="org.exolab.jms.net.connector.ManagedConnectionHandle$ConnectionHandle::close():void" />
+		</instance>
+	</pattern>
+	<pattern name="Observer">
+		<instance>
+			<role name="Observer" element="org.exolab.jms.messagemgr.MessageHandle" />
+			<role name="Subject" element="org.exolab.jms.server.SentMessageCache" />
+			<role name="Notify()" element="org.exolab.jms.server.SentMessageCache::acknowledge(java.lang.String, long):void" />
+			<role name="Notify()" element="org.exolab.jms.server.SentMessageCache::acknowledgeAll():void" />
+			<role name="Notify()" element="org.exolab.jms.server.SentMessageCache::clear():void" />
+		</instance>
+		<instance>
+			<role name="Observer" element="org.exolab.jms.net.connector.ManagedConnection" />
+			<role name="Subject" element="org.exolab.jms.net.connector.DefaultConnectionPool" />
+			<role name="Notify()" element="org.exolab.jms.net.connector.DefaultConnectionPool::close():void" />
+			<role name="Notify()" element="org.exolab.jms.net.connector.DefaultConnectionPool::reapIdleConnections():void" />
+			<role name="Notify()" element="org.exolab.jms.net.connector.DefaultConnectionPool::reapDeadConnections():void" />
+		</instance>
+		<instance>
+			<role name="Observer" element="org.exolab.jms.net.Callback" />
+			<role name="Subject" element="org.exolab.jms.net.CallbackServiceImpl" />
+			<role name="Notify()" element="org.exolab.jms.net.CallbackServiceImpl::invoke(java.lang.Object):void" />
+		</instance>
+	</pattern>
+	<pattern name="State">
+		<instance>
+			<role name="Context" element="org.exolab.jms.tools.migration.DataLoader" />
+			<role name="State" element="org.exolab.jms.persistence.PersistenceAdapter" />
+			<role name="state" element="org.exolab.jms.tools.migration.DataLoader::_adapter:org.exolab.jms.persistence.PersistenceAdapter" />
+			<role name="Request()" element="org.exolab.jms.tools.migration.DataLoader::load():void" />
+			<role name="Request()" element="org.exolab.jms.tools.migration.DataLoader::addDestination(org.exolab.jms.client.JmsDestination):void" />
+			<role name="Request()" element="org.exolab.jms.tools.migration.DataLoader::addMessage(org.exolab.jms.message.MessageImpl, org.exolab.jms.client.JmsDestination):void" />
+			<role name="Request()" element="org.exolab.jms.tools.migration.DataLoader::addUser(java.lang.String, java.lang.String):void" />
+		</instance>
+		<instance>
+			<role name="State" element="org.exolab.jms.server.ServerSession" />
+			<role name="Context" element="org.exolab.jms.client.JmsSession" />
+			<role name="state" element="org.exolab.jms.client.JmsSession::_session:org.exolab.jms.server.ServerSession" />
+			<role name="Request()" element="org.exolab.jms.client.JmsSession::createDurableSubscriber(javax.jms.Topic, java.lang.String, java.lang.String, boolean):javax.jms.TopicSubscriber" />
+			<role name="Request()" element="org.exolab.jms.client.JmsSession::createBrowser(javax.jms.Queue, java.lang.String):javax.jms.QueueBrowser" />
+			<role name="Request()" element="org.exolab.jms.client.JmsSession::unsubscribe(java.lang.String):void" />
+			<role name="Request()" element="org.exolab.jms.client.JmsSession::close():void" />
+			<role name="Request()" element="org.exolab.jms.client.JmsSession::allocateConsumer(javax.jms.Destination, java.lang.String, boolean):long" />
+			<role name="Request()" element="org.exolab.jms.client.JmsSession::removeConsumer(org.exolab.jms.client.JmsMessageConsumer):void" />
+		</instance>
+		<instance>
+			<role name="Context" element="org.exolab.jms.administration.net.JmsAdminConnectionImpl" />
+			<role name="State" element="org.exolab.jms.server.net.RemoteJmsAdminConnectionIfc" />
+			<role name="state" element="org.exolab.jms.administration.net.JmsAdminConnectionImpl::_connection:org.exolab.jms.server.net.RemoteJmsAdminConnectionIfc" />
+			<role name="Request()" element="org.exolab.jms.administration.net.JmsAdminConnectionImpl::addDurableConsumer(java.lang.String, java.lang.String):boolean" />
+			<role name="Request()" element="org.exolab.jms.administration.net.JmsAdminConnectionImpl::removeDurableConsumer(java.lang.String):boolean" />
+			<role name="Request()" element="org.exolab.jms.administration.net.JmsAdminConnectionImpl::durableConsumerExists(java.lang.String):boolean" />
+			<role name="Request()" element="org.exolab.jms.administration.net.JmsAdminConnectionImpl::getDurableConsumers(java.lang.String):java.util.Vector" />
+			<role name="Request()" element="org.exolab.jms.administration.net.JmsAdminConnectionImpl::unregisterConsumer(java.lang.String):boolean" />
+			<role name="Request()" element="org.exolab.jms.administration.net.JmsAdminConnectionImpl::isConnected(java.lang.String):boolean" />
+			<role name="Request()" element="org.exolab.jms.administration.net.JmsAdminConnectionImpl::addDestination(java.lang.String, java.lang.Boolean):boolean" />
+			<role name="Request()" element="org.exolab.jms.administration.net.JmsAdminConnectionImpl::removeDestination(java.lang.String):boolean" />
+			<role name="Request()" element="org.exolab.jms.administration.net.JmsAdminConnectionImpl::destinationExists(java.lang.String):boolean" />
+			<role name="Request()" element="org.exolab.jms.administration.net.JmsAdminConnectionImpl::getAllDestinations():java.util.Vector" />
+			<role name="Request()" element="org.exolab.jms.administration.net.JmsAdminConnectionImpl::getDurableConsumerMessageCount(java.lang.String, java.lang.String):int" />
+			<role name="Request()" element="org.exolab.jms.administration.net.JmsAdminConnectionImpl::getQueueMessageCount(java.lang.String):int" />
+			<role name="Request()" element="org.exolab.jms.administration.net.JmsAdminConnectionImpl::purgeMessages():int" />
+			<role name="Request()" element="org.exolab.jms.administration.net.JmsAdminConnectionImpl::stopServer():void" />
+			<role name="Request()" element="org.exolab.jms.administration.net.JmsAdminConnectionImpl::addUser(java.lang.String, java.lang.String):boolean" />
+			<role name="Request()" element="org.exolab.jms.administration.net.JmsAdminConnectionImpl::getAllUsers():java.util.Vector" />
+			<role name="Request()" element="org.exolab.jms.administration.net.JmsAdminConnectionImpl::removeUser(java.lang.String):boolean" />
+			<role name="Request()" element="org.exolab.jms.administration.net.JmsAdminConnectionImpl::changePassword(java.lang.String, java.lang.String):boolean" />
+		</instance>
+		<instance>
+			<role name="Context" element="org.exolab.jms.messagemgr.ConsumerManagerImpl" />
+			<role name="State" element="org.exolab.jms.messagemgr.DestinationManager" />
+			<role name="state" element="org.exolab.jms.messagemgr.ConsumerManagerImpl::_destinations:org.exolab.jms.messagemgr.DestinationManager" />
+			<role name="Request()" element="org.exolab.jms.messagemgr.ConsumerManagerImpl::createConsumer(org.exolab.jms.client.JmsDestination, long, java.lang.String, boolean):org.exolab.jms.messagemgr.ConsumerEndpoint" />
+			<role name="Request()" element="org.exolab.jms.messagemgr.ConsumerManagerImpl::createQueueBrowser(org.exolab.jms.client.JmsQueue, java.lang.String):org.exolab.jms.messagemgr.ConsumerEndpoint" />
+			<role name="Request()" element="org.exolab.jms.messagemgr.ConsumerManagerImpl::doStart():void" />
+			<role name="Request()" element="org.exolab.jms.messagemgr.ConsumerManagerImpl::getDestination(org.exolab.jms.client.JmsDestination, boolean):org.exolab.jms.client.JmsDestination" />
+		</instance>
+		<instance>
+			<role name="Context" element="org.exolab.jms.messagemgr.MessageMgr" />
+			<role name="State" element="org.exolab.jms.messagemgr.DestinationManager" />
+			<role name="state" element="org.exolab.jms.messagemgr.MessageMgr::_destinations:org.exolab.jms.messagemgr.DestinationManager" />
+			<role name="Request()" element="org.exolab.jms.messagemgr.MessageMgr::add(org.exolab.jms.message.MessageImpl):void" />
+		</instance>
+		<instance>
+			<role name="Context" element="org.exolab.jms.messagemgr.DestinationBinder" />
+			<role name="State" element="org.exolab.jms.messagemgr.DestinationManager" />
+			<role name="state" element="org.exolab.jms.messagemgr.DestinationBinder::_destinations:org.exolab.jms.messagemgr.DestinationManager" />
+			<role name="Request()" element="org.exolab.jms.messagemgr.DestinationBinder::doStart():void" />
+			<role name="Request()" element="org.exolab.jms.messagemgr.DestinationBinder::doStop():void" />
+		</instance>
+		<instance>
+			<role name="Context" element="org.exolab.jms.messagemgr.DestinationConfigurator" />
+			<role name="State" element="org.exolab.jms.messagemgr.DestinationManager" />
+			<role name="state" element="org.exolab.jms.messagemgr.DestinationConfigurator::_destinations:org.exolab.jms.messagemgr.DestinationManager" />
+			<role name="Request()" element="org.exolab.jms.messagemgr.DestinationConfigurator::configureTopics(org.exolab.jms.config.AdministeredTopic[]):void" />
+			<role name="Request()" element="org.exolab.jms.messagemgr.DestinationConfigurator::configureQueues(org.exolab.jms.config.AdministeredQueue[]):void" />
+		</instance>
+		<instance>
+			<role name="Context" element="org.exolab.jms.messagemgr.ResourceManager" />
+			<role name="State" element="org.exolab.jms.messagemgr.DestinationManager" />
+			<role name="state" element="org.exolab.jms.messagemgr.ResourceManager::_destinations:org.exolab.jms.messagemgr.DestinationManager" />
+			<role name="Request()" element="org.exolab.jms.messagemgr.ResourceManager::rollback(javax.transaction.xa.Xid):void" />
+		</instance>
+		<instance>
+			<role name="Context" element="org.exolab.jms.tools.admin.OnlineConnection" />
+			<role name="State" element="org.exolab.jms.administration.JmsAdminServerIfc" />
+			<role name="state" element="org.exolab.jms.tools.admin.OnlineConnection::_admin:org.exolab.jms.administration.JmsAdminServerIfc" />
+			<role name="Request()" element="org.exolab.jms.tools.admin.OnlineConnection::close():void" />
+			<role name="Request()" element="org.exolab.jms.tools.admin.OnlineConnection::addDurableConsumer(java.lang.String, java.lang.String):boolean" />
+			<role name="Request()" element="org.exolab.jms.tools.admin.OnlineConnection::removeDurableConsumer(java.lang.String):boolean" />
+			<role name="Request()" element="org.exolab.jms.tools.admin.OnlineConnection::unregisterConsumer(java.lang.String):boolean" />
+			<role name="Request()" element="org.exolab.jms.tools.admin.OnlineConnection::isConnected(java.lang.String):boolean" />
+			<role name="Request()" element="org.exolab.jms.tools.admin.OnlineConnection::getAllDestinations():java.util.Enumeration" />
+			<role name="Request()" element="org.exolab.jms.tools.admin.OnlineConnection::addDestination(java.lang.String, boolean):boolean" />
+			<role name="Request()" element="org.exolab.jms.tools.admin.OnlineConnection::getDurableConsumerMessageCount(java.lang.String, java.lang.String):int" />
+			<role name="Request()" element="org.exolab.jms.tools.admin.OnlineConnection::getQueueMessageCount(java.lang.String):int" />
+			<role name="Request()" element="org.exolab.jms.tools.admin.OnlineConnection::durableConsumerExists(java.lang.String):boolean" />
+			<role name="Request()" element="org.exolab.jms.tools.admin.OnlineConnection::getDurableConsumers(java.lang.String):java.util.Enumeration" />
+			<role name="Request()" element="org.exolab.jms.tools.admin.OnlineConnection::removeDestination(java.lang.String):boolean" />
+			<role name="Request()" element="org.exolab.jms.tools.admin.OnlineConnection::purgeMessages():int" />
+			<role name="Request()" element="org.exolab.jms.tools.admin.OnlineConnection::stopServer():void" />
+			<role name="Request()" element="org.exolab.jms.tools.admin.OnlineConnection::addUser(java.lang.String, java.lang.String):boolean" />
+			<role name="Request()" element="org.exolab.jms.tools.admin.OnlineConnection::changePassword(java.lang.String, java.lang.String):boolean" />
+			<role name="Request()" element="org.exolab.jms.tools.admin.OnlineConnection::removeUser(java.lang.String):boolean" />
+			<role name="Request()" element="org.exolab.jms.tools.admin.OnlineConnection::getAllUsers():java.util.Enumeration" />
+		</instance>
+		<instance>
+			<role name="Context" element="org.exolab.jms.net.socket.SocketManagedConnectionAcceptor$Dispatcher" />
+			<role name="State" element="org.exolab.jms.net.connector.ManagedConnectionAcceptorListener" />
+			<role name="state" element="org.exolab.jms.net.socket.SocketManagedConnectionAcceptor$Dispatcher::_listener:org.exolab.jms.net.connector.ManagedConnectionAcceptorListener" />
+			<role name="Request()" element="org.exolab.jms.net.socket.SocketManagedConnectionAcceptor$Dispatcher::run():void" />
+		</instance>
+		<instance>
+			<role name="Context" element="org.exolab.jms.net.multiplexer.Multiplexer" />
+			<role name="State" element="org.exolab.jms.net.multiplexer.MultiplexerListener" />
+			<role name="state" element="org.exolab.jms.net.multiplexer.Multiplexer::_listener:org.exolab.jms.net.multiplexer.MultiplexerListener" />
+			<role name="Request()" element="org.exolab.jms.net.multiplexer.Multiplexer::multiplex():void" />
+			<role name="Request()" element="org.exolab.jms.net.multiplexer.Multiplexer::handleRequest():void" />
+			<role name="Request()" element="org.exolab.jms.net.multiplexer.Multiplexer::handlePingResponse():void" />
+			<role name="Request()" element="org.exolab.jms.net.multiplexer.Multiplexer::handleShutdown():void" />
+		</instance>
+		<instance>
+			<role name="Context" element="org.exolab.jms.message.MessageImpl" />
+			<role name="State" element="org.exolab.jms.message.MessageSessionIfc" />
+			<role name="state" element="org.exolab.jms.message.MessageImpl::_session:org.exolab.jms.message.MessageSessionIfc" />
+			<role name="Request()" element="org.exolab.jms.message.MessageImpl::acknowledge():void" />
+		</instance>
+		<instance>
+			<role name="Context" element="org.exolab.jms.persistence.DatabaseService" />
+			<role name="State" element="org.exolab.jms.persistence.PersistenceAdapter" />
+			<role name="state" element="org.exolab.jms.persistence.DatabaseService::_adapter:org.exolab.jms.persistence.PersistenceAdapter" />
+			<role name="Request()" element="org.exolab.jms.persistence.DatabaseService::getConnection():java.sql.Connection" />
+			<role name="Request()" element="org.exolab.jms.persistence.DatabaseService::doStart():void" />
+			<role name="Request()" element="org.exolab.jms.persistence.DatabaseService::doStop():void" />
+		</instance>
+		<instance>
+			<role name="Context" element="org.exolab.jms.selector.Selector" />
+			<role name="State" element="org.exolab.jms.selector.Expression" />
+			<role name="state" element="org.exolab.jms.selector.Selector::_evaluator:org.exolab.jms.selector.Expression" />
+			<role name="Request()" element="org.exolab.jms.selector.Selector::selects(javax.jms.Message):boolean" />
+		</instance>
+		<instance>
+			<role name="Context" element="org.exolab.jms.persistence.RDBMSAdapter" />
+			<role name="State" element="org.exolab.jms.persistence.DBConnectionManager" />
+			<role name="state" element="org.exolab.jms.persistence.RDBMSAdapter::_connectionManager:org.exolab.jms.persistence.DBConnectionManager" />
+			<role name="Request()" element="org.exolab.jms.persistence.RDBMSAdapter::getConnection():java.sql.Connection" />
+		</instance>
+		<instance>
+			<role name="Context" element="org.exolab.jms.client.net.JmsServerStubImpl" />
+			<role name="State" element="org.exolab.jms.net.orb.ORB" />
+			<role name="state" element="org.exolab.jms.client.net.JmsServerStubImpl::_orb:org.exolab.jms.net.orb.ORB" />
+			<role name="Request()" element="org.exolab.jms.client.net.JmsServerStubImpl::getServerConnectionFactory(java.lang.String, java.lang.String):org.exolab.jms.server.ServerConnectionFactory" />
+		</instance>
+		<instance>
+			<role name="Context" element="org.exolab.jms.net.invoke.DisconnectionTestCase$CallbackServer" />
+			<role name="State" element="org.exolab.jms.net.orb.ORB" />
+			<role name="state" element="org.exolab.jms.net.invoke.DisconnectionTestCase$CallbackServer::_orb:org.exolab.jms.net.orb.ORB" />
+			<role name="Request()" element="org.exolab.jms.net.invoke.DisconnectionTestCase$CallbackServer::addCallback(org.exolab.jms.net.Callback):void" />
+			<role name="Request()" element="org.exolab.jms.net.invoke.DisconnectionTestCase$CallbackServer::disconnected(org.exolab.jms.net.connector.Caller):void" />
+		</instance>
+		<instance>
+			<role name="Context" element="org.exolab.jms.client.JmsXAResource" />
+			<role name="State" element="org.exolab.jms.server.ServerSession" />
+			<role name="state" element="org.exolab.jms.client.JmsXAResource::_session:org.exolab.jms.server.ServerSession" />
+			<role name="Request()" element="org.exolab.jms.client.JmsXAResource::start(javax.transaction.xa.Xid, int):void" />
+			<role name="Request()" element="org.exolab.jms.client.JmsXAResource::prepare(javax.transaction.xa.Xid):int" />
+			<role name="Request()" element="org.exolab.jms.client.JmsXAResource::commit(javax.transaction.xa.Xid, boolean):void" />
+			<role name="Request()" element="org.exolab.jms.client.JmsXAResource::end(javax.transaction.xa.Xid, int):void" />
+			<role name="Request()" element="org.exolab.jms.client.JmsXAResource::forget(javax.transaction.xa.Xid):void" />
+			<role name="Request()" element="org.exolab.jms.client.JmsXAResource::getTransactionTimeout():int" />
+			<role name="Request()" element="org.exolab.jms.client.JmsXAResource::setTransactionTimeout(int):boolean" />
+			<role name="Request()" element="org.exolab.jms.client.JmsXAResource::recover(int):javax.transaction.xa.Xid[]" />
+			<role name="Request()" element="org.exolab.jms.client.JmsXAResource::rollback(javax.transaction.xa.Xid):void" />
+			<role name="Request()" element="org.exolab.jms.client.JmsXAResource::getResourceManagerId():java.lang.String" />
+		</instance>
+		<instance>
+			<role name="Context" element="org.exolab.jms.messagemgr.DestinationManagerImpl" />
+			<role name="State" element="org.exolab.jms.messagemgr.MessageManager" />
+			<role name="state" element="org.exolab.jms.messagemgr.DestinationManagerImpl::_messages:org.exolab.jms.messagemgr.MessageManager" />
+			<role name="Request()" element="org.exolab.jms.messagemgr.DestinationManagerImpl::getDestinationCache(org.exolab.jms.client.JmsDestination):org.exolab.jms.messagemgr.DestinationCache" />
+			<role name="Request()" element="org.exolab.jms.messagemgr.DestinationManagerImpl::destroyDestinationCache(org.exolab.jms.client.JmsDestination):void" />
+		</instance>
+		<instance>
+			<role name="Context" element="org.exolab.jms.messagemgr.ResourceManager" />
+			<role name="State" element="org.exolab.jms.messagemgr.MessageManager" />
+			<role name="state" element="org.exolab.jms.messagemgr.ResourceManager::_messages:org.exolab.jms.messagemgr.MessageManager" />
+			<role name="Request()" element="org.exolab.jms.messagemgr.ResourceManager::logPublishedMessage(javax.transaction.xa.Xid, org.exolab.jms.message.MessageImpl):void" />
+			<role name="Request()" element="org.exolab.jms.messagemgr.ResourceManager::commit(javax.transaction.xa.Xid, boolean):void" />
+		</instance>
+		<instance>
+			<role name="Context" element="org.exolab.jms.server.AdminConnection" />
+			<role name="State" element="org.exolab.jms.messagemgr.ConsumerManager" />
+			<role name="state" element="org.exolab.jms.server.AdminConnection::_consumers:org.exolab.jms.messagemgr.ConsumerManager" />
+			<role name="Request()" element="org.exolab.jms.server.AdminConnection::getDurableConsumerMessageCount(java.lang.String, java.lang.String):int" />
+			<role name="Request()" element="org.exolab.jms.server.AdminConnection::addDurableConsumer(java.lang.String, java.lang.String):boolean" />
+			<role name="Request()" element="org.exolab.jms.server.AdminConnection::removeDurableConsumer(java.lang.String):boolean" />
+			<role name="Request()" element="org.exolab.jms.server.AdminConnection::durableConsumerExists(java.lang.String):boolean" />
+			<role name="Request()" element="org.exolab.jms.server.AdminConnection::unregisterConsumer(java.lang.String):boolean" />
+			<role name="Request()" element="org.exolab.jms.server.AdminConnection::isConnected(java.lang.String):boolean" />
+		</instance>
+		<instance>
+			<role name="Context" element="org.exolab.jms.messagemgr.DestinationManagerImpl" />
+			<role name="State" element="org.exolab.jms.messagemgr.ConsumerManager" />
+			<role name="state" element="org.exolab.jms.messagemgr.DestinationManagerImpl::_consumers:org.exolab.jms.messagemgr.ConsumerManager" />
+			<role name="Request()" element="org.exolab.jms.messagemgr.DestinationManagerImpl::removeDestination(org.exolab.jms.client.JmsDestination):void" />
+			<role name="Request()" element="org.exolab.jms.messagemgr.DestinationManagerImpl::messageAdded(org.exolab.jms.client.JmsDestination, org.exolab.jms.message.MessageImpl):void" />
+		</instance>
+		<instance>
+			<role name="Context" element="org.exolab.jms.messagemgr.DestinationConfigurator" />
+			<role name="State" element="org.exolab.jms.messagemgr.ConsumerManager" />
+			<role name="state" element="org.exolab.jms.messagemgr.DestinationConfigurator::_consumers:org.exolab.jms.messagemgr.ConsumerManager" />
+			<role name="Request()" element="org.exolab.jms.messagemgr.DestinationConfigurator::configureTopics(org.exolab.jms.config.AdministeredTopic[]):void" />
+		</instance>
+		<instance>
+			<role name="Context" element="org.exolab.jms.server.AdminConnectionManager" />
+			<role name="State" element="org.exolab.jms.net.connector.Authenticator" />
+			<role name="state" element="org.exolab.jms.server.AdminConnectionManager::_authenticator:org.exolab.jms.net.connector.Authenticator" />
+			<role name="Request()" element="org.exolab.jms.server.AdminConnectionManager::createConnection(java.lang.String, java.lang.String):org.exolab.jms.server.AdminConnection" />
+		</instance>
+		<instance>
+			<role name="State" element="org.exolab.jms.net.rmi.RMIInvoker" />
+			<role name="Context" element="org.exolab.jms.net.rmi.RMIManagedConnection" />
+			<role name="state" element="org.exolab.jms.net.rmi.RMIManagedConnection::_remoteInvoker:org.exolab.jms.net.rmi.RMIInvoker" />
+			<role name="Request()" element="org.exolab.jms.net.rmi.RMIManagedConnection::ping():void" />
+			<role name="Request()" element="org.exolab.jms.net.rmi.RMIManagedConnection::destroy():void" />
+			<role name="Request()" element="org.exolab.jms.net.rmi.RMIManagedConnection::invoke(org.exolab.jms.net.connector.Connection, org.exolab.jms.net.connector.Request):org.exolab.jms.net.connector.Response" />
+		</instance>
+		<instance>
+			<role name="Context" element="org.exolab.jms.tools.db.DBTool" />
+			<role name="State" element="org.exolab.jms.persistence.DBConnectionManager" />
+			<role name="state" element="org.exolab.jms.tools.db.DBTool::_connections:org.exolab.jms.persistence.DBConnectionManager" />
+			<role name="Request()" element="org.exolab.jms.tools.db.DBTool::migrate():void" />
+			<role name="Request()" element="org.exolab.jms.tools.db.DBTool::init(org.exolab.jms.config.Configuration):void" />
+		</instance>
+		<instance>
+			<role name="Context" element="org.exolab.jms.server.net.RemoteServerConnector" />
+			<role name="State" element="org.exolab.jms.server.net.ConnectorCfg" />
+			<role name="state" element="org.exolab.jms.server.net.RemoteServerConnector::_connector:org.exolab.jms.server.net.ConnectorCfg" />
+			<role name="Request()" element="org.exolab.jms.server.net.RemoteServerConnector::init():void" />
+			<role name="Request()" element="org.exolab.jms.server.net.RemoteServerConnector::bindConnectionFactories(javax.naming.Context):void" />
+		</instance>
+		<instance>
+			<role name="Context" element="org.exolab.jms.server.ServerSessionImpl" />
+			<role name="State" element="org.exolab.jms.messagemgr.ConsumerManager" />
+			<role name="state" element="org.exolab.jms.server.ServerSessionImpl::_consumerMgr:org.exolab.jms.messagemgr.ConsumerManager" />
+			<role name="Request()" element="org.exolab.jms.server.ServerSessionImpl::createConsumer(org.exolab.jms.client.JmsDestination, java.lang.String, boolean):long" />
+			<role name="Request()" element="org.exolab.jms.server.ServerSessionImpl::createDurableConsumer(org.exolab.jms.client.JmsTopic, java.lang.String, java.lang.String, boolean):long" />
+			<role name="Request()" element="org.exolab.jms.server.ServerSessionImpl::createBrowser(org.exolab.jms.client.JmsQueue, java.lang.String):long" />
+			<role name="Request()" element="org.exolab.jms.server.ServerSessionImpl::closeConsumer(long):void" />
+			<role name="Request()" element="org.exolab.jms.server.ServerSessionImpl::unsubscribe(java.lang.String):void" />
+			<role name="Request()" element="org.exolab.jms.server.ServerSessionImpl::close():void" />
+		</instance>
+		<instance>
+			<role name="Context" element="org.exolab.jms.server.AdminConnection" />
+			<role name="State" element="org.exolab.jms.messagemgr.DestinationManager" />
+			<role name="state" element="org.exolab.jms.server.AdminConnection::_destinations:org.exolab.jms.messagemgr.DestinationManager" />
+			<role name="Request()" element="org.exolab.jms.server.AdminConnection::getDurableConsumerMessageCount(java.lang.String, java.lang.String):int" />
+			<role name="Request()" element="org.exolab.jms.server.AdminConnection::getQueueMessageCount(java.lang.String):int" />
+			<role name="Request()" element="org.exolab.jms.server.AdminConnection::addDestination(java.lang.String, java.lang.Boolean):boolean" />
+			<role name="Request()" element="org.exolab.jms.server.AdminConnection::removeDestination(java.lang.String):boolean" />
+			<role name="Request()" element="org.exolab.jms.server.AdminConnection::destinationExists(java.lang.String):boolean" />
+		</instance>
+		<instance>
+			<role name="Context" element="org.exolab.jms.common.threads.ThreadPool$NotifyingRunnable" />
+			<role name="State" element="org.exolab.jms.common.threads.ThreadListener" />
+			<role name="state" element="org.exolab.jms.common.threads.ThreadPool$NotifyingRunnable::_listener:org.exolab.jms.common.threads.ThreadListener" />
+			<role name="Request()" element="org.exolab.jms.common.threads.ThreadPool$NotifyingRunnable::run():void" />
+		</instance>
+		<instance>
+			<role name="Context" element="org.exolab.jms.messagemgr.CachedMessageRef" />
+			<role name="State" element="org.exolab.jms.messagemgr.MessageCache" />
+			<role name="state" element="org.exolab.jms.messagemgr.CachedMessageRef::_cache:org.exolab.jms.messagemgr.MessageCache" />
+			<role name="Request()" element="org.exolab.jms.messagemgr.CachedMessageRef::getMessage():org.exolab.jms.message.MessageImpl" />
+			<role name="Request()" element="org.exolab.jms.messagemgr.CachedMessageRef::destroy():void" />
+		</instance>
+		<instance>
+			<role name="Context" element="org.exolab.jms.net.connector.DefaultConnectionPool" />
+			<role name="State" element="org.exolab.jms.net.connector.ManagedConnectionFactory" />
+			<role name="state" element="org.exolab.jms.net.connector.DefaultConnectionPool::_factory:org.exolab.jms.net.connector.ManagedConnectionFactory" />
+			<role name="Request()" element="org.exolab.jms.net.connector.DefaultConnectionPool::createManagedConnection(java.security.Principal, org.exolab.jms.net.connector.ConnectionRequestInfo):org.exolab.jms.net.connector.ManagedConnection" />
+			<role name="Request()" element="org.exolab.jms.net.connector.DefaultConnectionPool::createManagedConnectionAcceptor(org.exolab.jms.net.connector.Authenticator, org.exolab.jms.net.connector.ConnectionRequestInfo):org.exolab.jms.net.connector.ManagedConnectionAcceptor" />
+			<role name="Request()" element="org.exolab.jms.net.connector.DefaultConnectionPool::matchManagedConnections(java.security.Principal, org.exolab.jms.net.connector.ConnectionRequestInfo):org.exolab.jms.net.connector.ManagedConnection" />
+			<role name="Request()" element="org.exolab.jms.net.connector.DefaultConnectionPool::matchManagedConnectionAcceptors(org.exolab.jms.net.connector.ConnectionRequestInfo):org.exolab.jms.net.connector.ManagedConnectionAcceptor" />
+		</instance>
+		<instance>
+			<role name="Context" element="org.exolab.jms.net.vm.VMManagedConnectionAcceptor" />
+			<role name="State" element="org.exolab.jms.net.connector.ManagedConnectionAcceptorListener" />
+			<role name="state" element="org.exolab.jms.net.vm.VMManagedConnectionAcceptor::_listener:org.exolab.jms.net.connector.ManagedConnectionAcceptorListener" />
+			<role name="Request()" element="org.exolab.jms.net.vm.VMManagedConnectionAcceptor::accept(java.security.Principal, org.exolab.jms.net.connector.URIRequestInfo, org.exolab.jms.net.vm.VMInvoker, org.exolab.jms.net.uri.URI):org.exolab.jms.net.vm.VMInvoker" />
+		</instance>
+		<instance>
+			<role name="Context" element="org.exolab.jms.net.multiplexer.Multiplexer" />
+			<role name="State" element="org.exolab.jms.net.multiplexer.Endpoint" />
+			<role name="state" element="org.exolab.jms.net.multiplexer.Multiplexer::_endpoint:org.exolab.jms.net.multiplexer.Endpoint" />
+			<role name="Request()" element="org.exolab.jms.net.multiplexer.Multiplexer::close():void" />
+			<role name="Request()" element="org.exolab.jms.net.multiplexer.Multiplexer::initialise(org.exolab.jms.net.multiplexer.MultiplexerListener, org.exolab.jms.net.multiplexer.Endpoint, boolean):void" />
+			<role name="Request()" element="org.exolab.jms.net.multiplexer.Multiplexer::authenticate(java.security.Principal):void" />
+			<role name="Request()" element="org.exolab.jms.net.multiplexer.Multiplexer::authenticate(org.exolab.jms.net.connector.Authenticator):void" />
+			<role name="Request()" element="org.exolab.jms.net.multiplexer.Multiplexer::shutdown():void" />
+		</instance>
+		<instance>
+			<role name="Context" element="org.exolab.jms.server.JmsServer" />
+			<role name="State" element="org.exolab.jms.service.Services" />
+			<role name="state" element="org.exolab.jms.server.JmsServer::_services:org.exolab.jms.service.Services" />
+			<role name="Request()" element="org.exolab.jms.server.JmsServer::registerServices():void" />
+		</instance>
+		<instance>
+			<role name="Context" element="org.exolab.jms.client.JmsConnection" />
+			<role name="State" element="org.exolab.jms.server.ServerConnection" />
+			<role name="state" element="org.exolab.jms.client.JmsConnection::_connection:org.exolab.jms.server.ServerConnection" />
+			<role name="Request()" element="org.exolab.jms.client.JmsConnection::setClientID(java.lang.String):void" />
+			<role name="Request()" element="org.exolab.jms.client.JmsConnection::close():void" />
+		</instance>
+		<instance>
+			<role name="State" element="org.exolab.jms.net.connector.InvocationHandler" />
+			<role name="Context" element="org.exolab.jms.net.rmi.RMIManagedConnection" />
+			<role name="state" element="org.exolab.jms.net.rmi.RMIManagedConnection::_invoker:org.exolab.jms.net.connector.InvocationHandler" />
+			<role name="Request()" element="org.exolab.jms.net.rmi.RMIManagedConnection::invokeLocal(java.rmi.MarshalledObject):java.rmi.MarshalledObject" />
+		</instance>
+		<instance>
+			<role name="State" element="org.exolab.jms.net.connector.InvocationHandler" />
+			<role name="Context" element="org.exolab.jms.net.vm.VMManagedConnection" />
+			<role name="state" element="org.exolab.jms.net.vm.VMManagedConnection::_invoker:org.exolab.jms.net.connector.InvocationHandler" />
+			<role name="Request()" element="org.exolab.jms.net.vm.VMManagedConnection::invokeLocal(java.rmi.MarshalledObject):java.rmi.MarshalledObject" />
+		</instance>
+		<instance>
+			<role name="Context" element="org.exolab.jms.server.net.RemoteServerConnector" />
+			<role name="State" element="org.exolab.jms.net.orb.ORB" />
+			<role name="state" element="org.exolab.jms.server.net.RemoteServerConnector::_orb:org.exolab.jms.net.orb.ORB" />
+			<role name="Request()" element="org.exolab.jms.server.net.RemoteServerConnector::init():void" />
+			<role name="Request()" element="org.exolab.jms.server.net.RemoteServerConnector::close():void" />
+		</instance>
+		<instance>
+			<role name="Context" element="org.exolab.jms.server.ConnectorService" />
+			<role name="State" element="org.exolab.jms.server.ServerConnector" />
+			<role name="state" element="org.exolab.jms.server.ConnectorService::_interfaces:org.exolab.jms.server.ServerConnector[]" />
+			<role name="Request()" element="org.exolab.jms.server.ConnectorService::doStop():void" />
+		</instance>
+		<instance>
+			<role name="Context" element="org.exolab.jms.server.SessionConsumer" />
+			<role name="State" element="org.exolab.jms.client.JmsMessageListener" />
+			<role name="state" element="org.exolab.jms.server.SessionConsumer::_listener:org.exolab.jms.client.JmsMessageListener" />
+			<role name="Request()" element="org.exolab.jms.server.SessionConsumer::notifyMessageAvailable():void" />
+			<role name="Request()" element="org.exolab.jms.server.SessionConsumer::send(org.exolab.jms.message.MessageImpl):boolean" />
+		</instance>
+		<instance>
+			<role name="Context" element="org.exolab.jms.client.net.JmsSessionStubImpl" />
+			<role name="State" element="org.exolab.jms.net.orb.ORB" />
+			<role name="state" element="org.exolab.jms.client.net.JmsSessionStubImpl::_orb:org.exolab.jms.net.orb.ORB" />
+			<role name="Request()" element="org.exolab.jms.client.net.JmsSessionStubImpl::close():void" />
+		</instance>
+		<instance>
+			<role name="Context" element="org.exolab.jms.lease.BaseLease" />
+			<role name="State" element="org.exolab.jms.lease.LeaseEventListenerIfc" />
+			<role name="state" element="org.exolab.jms.lease.BaseLease::_listener:org.exolab.jms.lease.LeaseEventListenerIfc" />
+			<role name="Request()" element="org.exolab.jms.lease.BaseLease::notifyLeaseExpired():void" />
+		</instance>
+		<instance>
+			<role name="Context" element="org.exolab.jms.net.invoke.RecursiveCallback" />
+			<role name="State" element="org.exolab.jms.net.CallbackService" />
+			<role name="state" element="org.exolab.jms.net.invoke.RecursiveCallback::_service:org.exolab.jms.net.CallbackService" />
+			<role name="Request()" element="org.exolab.jms.net.invoke.RecursiveCallback::invoke(java.lang.Object):void" />
+		</instance>
+		<instance>
+			<role name="Context" element="org.exolab.jms.net.invoke.InvokeTestCase$IntInvoker" />
+			<role name="State" element="org.exolab.jms.net.EchoService" />
+			<role name="state" element="org.exolab.jms.net.invoke.InvokeTestCase$IntInvoker::_echo:org.exolab.jms.net.EchoService" />
+			<role name="Request()" element="org.exolab.jms.net.invoke.InvokeTestCase$IntInvoker::run():void" />
+		</instance>
+		<instance>
+			<role name="Context" element="org.exolab.jms.net.orb.UnicastDelegate" />
+			<role name="State" element="org.exolab.jms.net.connector.Connection" />
+			<role name="state" element="org.exolab.jms.net.orb.UnicastDelegate::_connection:org.exolab.jms.net.connector.Connection" />
+			<role name="Request()" element="org.exolab.jms.net.orb.UnicastDelegate::dispose():void" />
+		</instance>
+		<instance>
+			<role name="Context" element="org.exolab.jms.net.orb.DefaultORB" />
+			<role name="State" element="org.exolab.jms.common.threads.ThreadPoolFactory" />
+			<role name="state" element="org.exolab.jms.net.orb.DefaultORB::_factory:org.exolab.jms.common.threads.ThreadPoolFactory" />
+			<role name="Request()" element="org.exolab.jms.net.orb.DefaultORB::getThreadPool():EDU.oswego.cs.dl.util.concurrent.PooledExecutor" />
+		</instance>
+		<instance>
+			<role name="Context" element="org.exolab.jms.gc.GarbageCollectionService" />
+			<role name="State" element="org.exolab.jms.events.EventManager" />
+			<role name="state" element="org.exolab.jms.gc.GarbageCollectionService::_eventMgr:org.exolab.jms.events.EventManager" />
+			<role name="Request()" element="org.exolab.jms.gc.GarbageCollectionService::registerEvent(int, long):void" />
+		</instance>
+		<instance>
+			<role name="Context" element="org.exolab.jms.client.JmsConnectionFactory" />
+			<role name="State" element="org.exolab.jms.client.JmsServerStubIfc" />
+			<role name="state" element="org.exolab.jms.client.JmsConnectionFactory::_proxy:org.exolab.jms.client.JmsServerStubIfc" />
+			<role name="Request()" element="org.exolab.jms.client.JmsConnectionFactory::getProxy():org.exolab.jms.client.JmsServerStubIfc" />
+		</instance>
+		<instance>
+			<role name="Context" element="org.exolab.jms.messagemgr.QueueDestinationCache" />
+			<role name="State" element="org.exolab.jms.server.ServerConnectionManager" />
+			<role name="state" element="org.exolab.jms.messagemgr.QueueDestinationCache::_connections:org.exolab.jms.server.ServerConnectionManager" />
+			<role name="Request()" element="org.exolab.jms.messagemgr.QueueDestinationCache::canDestroy():boolean" />
+		</instance>
+		<instance>
+			<role name="Context" element="org.exolab.jms.server.ServerSessionImpl" />
+			<role name="State" element="org.exolab.jms.messagemgr.MessageManager" />
+			<role name="state" element="org.exolab.jms.server.ServerSessionImpl::_messages:org.exolab.jms.messagemgr.MessageManager" />
+			<role name="Request()" element="org.exolab.jms.server.ServerSessionImpl::send(org.exolab.jms.message.MessageImpl):void" />
+		</instance>
+		<instance>
+			<role name="Context" element="org.exolab.jms.net.vm.VMManagedConnectionAcceptor" />
+			<role name="State" element="org.exolab.jms.net.connector.Authenticator" />
+			<role name="state" element="org.exolab.jms.net.vm.VMManagedConnectionAcceptor::_authenticator:org.exolab.jms.net.connector.Authenticator" />
+			<role name="Request()" element="org.exolab.jms.net.vm.VMManagedConnectionAcceptor::accept(java.security.Principal, org.exolab.jms.net.connector.URIRequestInfo, org.exolab.jms.net.vm.VMInvoker, org.exolab.jms.net.uri.URI):org.exolab.jms.net.vm.VMInvoker" />
+		</instance>
+		<instance>
+			<role name="Context" element="org.exolab.jms.net.rmi.RMIInvokerFactoryImpl" />
+			<role name="State" element="org.exolab.jms.net.connector.Authenticator" />
+			<role name="state" element="org.exolab.jms.net.rmi.RMIInvokerFactoryImpl::_authenticator:org.exolab.jms.net.connector.Authenticator" />
+			<role name="Request()" element="org.exolab.jms.net.rmi.RMIInvokerFactoryImpl::createInvoker(java.security.Principal, org.exolab.jms.net.rmi.RMIInvoker, java.lang.String):org.exolab.jms.net.rmi.RMIInvoker" />
+		</instance>
+		<instance>
+			<role name="Context" element="org.exolab.jms.server.ServerConnectionManagerImpl" />
+			<role name="State" element="org.exolab.jms.net.connector.Authenticator" />
+			<role name="state" element="org.exolab.jms.server.ServerConnectionManagerImpl::_authenticator:org.exolab.jms.net.connector.Authenticator" />
+			<role name="Request()" element="org.exolab.jms.server.ServerConnectionManagerImpl::createConnection(java.lang.String, java.lang.String, java.lang.String):org.exolab.jms.server.ServerConnection" />
+		</instance>
+		<instance>
+			<role name="Context" element="org.exolab.jms.net.orb.UnicastDelegate" />
+			<role name="State" element="org.exolab.jms.net.connector.ConnectionFactory" />
+			<role name="state" element="org.exolab.jms.net.orb.UnicastDelegate::_factory:org.exolab.jms.net.connector.ConnectionFactory" />
+			<role name="Request()" element="org.exolab.jms.net.orb.UnicastDelegate::getConnection():org.exolab.jms.net.connector.Connection" />
+		</instance>
+		<instance>
+			<role name="Context" element="org.exolab.jms.net.connector.DefaultConnectionPool" />
+			<role name="State" element="org.exolab.jms.net.connector.CallerListener" />
+			<role name="state" element="org.exolab.jms.net.connector.DefaultConnectionPool::_listener:org.exolab.jms.net.connector.CallerListener" />
+			<role name="Request()" element="org.exolab.jms.net.connector.DefaultConnectionPool::notifyDisconnection(org.exolab.jms.net.uri.URI, org.exolab.jms.net.uri.URI):void" />
+		</instance>
+		<instance>
+			<role name="Context" element="org.exolab.jms.net.rmi.RMIInvokerFactoryImpl" />
+			<role name="State" element="org.exolab.jms.net.connector.ManagedConnectionAcceptorListener" />
+			<role name="state" element="org.exolab.jms.net.rmi.RMIInvokerFactoryImpl::_listener:org.exolab.jms.net.connector.ManagedConnectionAcceptorListener" />
+			<role name="Request()" element="org.exolab.jms.net.rmi.RMIInvokerFactoryImpl::createInvoker(java.security.Principal, org.exolab.jms.net.rmi.RMIInvoker, java.lang.String):org.exolab.jms.net.rmi.RMIInvoker" />
+		</instance>
+		<instance>
+			<role name="Context" element="org.exolab.jms.net.invoke.ExportServiceImpl" />
+			<role name="State" element="org.exolab.jms.net.orb.ORB" />
+			<role name="state" element="org.exolab.jms.net.invoke.ExportServiceImpl::_orb:org.exolab.jms.net.orb.ORB" />
+			<role name="Request()" element="org.exolab.jms.net.invoke.ExportServiceImpl::exportObjectTo():org.exolab.jms.net.proxy.Proxy" />
+		</instance>
+	</pattern>
+	<pattern name="Strategy" />
+	<pattern name="Bridge">
+		<instance>
+			<role name="Abstraction" element="org.exolab.jms.messagemgr.AbstractMessageHandle" />
+			<role name="Implementor" element="org.exolab.jms.messagemgr.DestinationCache" />
+			<role name="implementor" element="org.exolab.jms.messagemgr.AbstractMessageHandle::_cache:org.exolab.jms.messagemgr.DestinationCache" />
+			<role name="Operation()" element="org.exolab.jms.messagemgr.AbstractMessageHandle::release():void" />
+			<role name="Operation()" element="org.exolab.jms.messagemgr.AbstractMessageHandle::release(org.exolab.jms.messagemgr.MessageHandle):void" />
+		</instance>
+		<instance>
+			<role name="Abstraction" element="org.exolab.jms.messagemgr.AbstractTopicConsumerEndpoint" />
+			<role name="Implementor" element="org.exolab.jms.messagemgr.DestinationManager" />
+			<role name="implementor" element="org.exolab.jms.messagemgr.AbstractTopicConsumerEndpoint::_destinations:org.exolab.jms.messagemgr.DestinationManager" />
+			<role name="Operation()" element="org.exolab.jms.messagemgr.AbstractTopicConsumerEndpoint::init():void" />
+			<role name="Operation()" element="org.exolab.jms.messagemgr.AbstractTopicConsumerEndpoint::doClose():void" />
+		</instance>
+		<instance>
+			<role name="Abstraction" element="org.exolab.jms.net.proxy.Proxy" />
+			<role name="Implementor" element="org.exolab.jms.net.proxy.Delegate" />
+			<role name="implementor" element="org.exolab.jms.net.proxy.Proxy::_delegate:org.exolab.jms.net.proxy.Delegate" />
+			<role name="Operation()" element="org.exolab.jms.net.proxy.Proxy::disposeProxy():void" />
+			<role name="Operation()" element="org.exolab.jms.net.proxy.Proxy::invoke(java.lang.reflect.Method, java.lang.Object[], long):java.lang.Object" />
+		</instance>
+		<instance>
+			<role name="Abstraction" element="org.exolab.jms.net.connector.AbstractConnectionFactory" />
+			<role name="Implementor" element="org.exolab.jms.net.connector.ConnectionManager" />
+			<role name="implementor" element="org.exolab.jms.net.connector.AbstractConnectionFactory::_manager:org.exolab.jms.net.connector.ConnectionManager" />
+			<role name="Operation()" element="org.exolab.jms.net.connector.AbstractConnectionFactory::getConnection(java.security.Principal, org.exolab.jms.net.uri.URI, java.util.Map):org.exolab.jms.net.connector.Connection" />
+			<role name="Operation()" element="org.exolab.jms.net.connector.AbstractConnectionFactory::accept(org.exolab.jms.net.uri.URI, java.util.Map):void" />
+		</instance>
+		<instance>
+			<role name="Abstraction" element="org.exolab.jms.messagemgr.AbstractConsumerEndpoint" />
+			<role name="Implementor" element="org.exolab.jms.messagemgr.ConsumerEndpointListener" />
+			<role name="implementor" element="org.exolab.jms.messagemgr.AbstractConsumerEndpoint::_listener:org.exolab.jms.messagemgr.ConsumerEndpointListener" />
+			<role name="Operation()" element="org.exolab.jms.messagemgr.AbstractConsumerEndpoint::notifyMessageAvailable():void" />
+		</instance>
+		<instance>
+			<role name="Implementor" element="org.exolab.jms.messagemgr.Condition" />
+			<role name="Abstraction" element="org.exolab.jms.messagemgr.AbstractConsumerEndpoint" />
+			<role name="implementor" element="org.exolab.jms.messagemgr.AbstractConsumerEndpoint::_waitingForMessage:org.exolab.jms.messagemgr.Condition" />
+			<role name="Operation()" element="org.exolab.jms.messagemgr.AbstractConsumerEndpoint::isWaitingForMessage():boolean" />
+		</instance>
+		<instance>
+			<role name="Abstraction" element="org.exolab.jms.net.orb.UnicastObject" />
+			<role name="Implementor" element="org.exolab.jms.net.orb.ORB" />
+			<role name="implementor" element="org.exolab.jms.net.orb.UnicastObject::_orb:org.exolab.jms.net.orb.ORB" />
+			<role name="Operation()" element="org.exolab.jms.net.orb.UnicastObject::unexportObject():void" />
+		</instance>
+		<instance>
+			<role name="Abstraction" element="org.exolab.jms.messagemgr.AbstractMessageHandle" />
+			<role name="Implementor" element="org.exolab.jms.messagemgr.MessageRef" />
+			<role name="implementor" element="org.exolab.jms.messagemgr.AbstractMessageHandle::_reference:org.exolab.jms.messagemgr.MessageRef" />
+			<role name="Operation()" element="org.exolab.jms.messagemgr.AbstractMessageHandle::getMessage():org.exolab.jms.message.MessageImpl" />
+		</instance>
+		<instance>
+			<role name="Abstraction" element="org.exolab.jms.net.multiplexer.MultiplexedManagedConnection" />
+			<role name="Implementor" element="org.exolab.jms.net.multiplexer.Endpoint" />
+			<role name="implementor" element="org.exolab.jms.net.multiplexer.MultiplexedManagedConnection::_endpoint:org.exolab.jms.net.multiplexer.Endpoint" />
+			<role name="Operation()" element="org.exolab.jms.net.multiplexer.MultiplexedManagedConnection::destroy():void" />
+		</instance>
+		<instance>
+			<role name="Implementor" element="org.exolab.jms.net.connector.InvocationHandler" />
+			<role name="Abstraction" element="org.exolab.jms.net.multiplexer.MultiplexedManagedConnection" />
+			<role name="implementor" element="org.exolab.jms.net.multiplexer.MultiplexedManagedConnection::_invoker:org.exolab.jms.net.connector.InvocationHandler" />
+			<role name="Operation()" element="org.exolab.jms.net.multiplexer.MultiplexedManagedConnection::request(org.exolab.jms.net.multiplexer.Channel):void" />
+		</instance>
+	</pattern>
+	<pattern name="Template Method">
+		<instance>
+			<role name="AbstractClass" element="org.exolab.jms.message.AbstractMessageConverter" />
+			<role name="TemplateMethod()" element="org.exolab.jms.message.AbstractMessageConverter::convert(javax.jms.Message):javax.jms.Message" />
+		</instance>
+		<instance>
+			<role name="AbstractClass" element="org.exolab.jms.messagemgr.AbstractConsumerEndpoint" />
+			<role name="TemplateMethod()" element="org.exolab.jms.messagemgr.AbstractConsumerEndpoint::receive(org.exolab.jms.messagemgr.Condition):org.exolab.jms.messagemgr.MessageHandle" />
+			<role name="TemplateMethod()" element="org.exolab.jms.messagemgr.AbstractConsumerEndpoint::close():void" />
+		</instance>
+		<instance>
+			<role name="AbstractClass" element="org.exolab.jms.net.connector.AbstractConnectionFactory" />
+			<role name="TemplateMethod()" element="org.exolab.jms.net.connector.AbstractConnectionFactory::getConnection(java.security.Principal, org.exolab.jms.net.uri.URI, java.util.Map):org.exolab.jms.net.connector.Connection" />
+			<role name="TemplateMethod()" element="org.exolab.jms.net.connector.AbstractConnectionFactory::getAcceptorRequestInfo(org.exolab.jms.net.uri.URI, java.util.Map):org.exolab.jms.net.connector.ConnectionRequestInfo" />
+		</instance>
+		<instance>
+			<role name="AbstractClass" element="org.exolab.jms.net.multiplexer.MultiplexedManagedConnection" />
+			<role name="TemplateMethod()" element="org.exolab.jms.net.multiplexer.MultiplexedManagedConnection::setInvocationHandler(org.exolab.jms.net.connector.InvocationHandler):void" />
+		</instance>
+		<instance>
+			<role name="AbstractClass" element="org.exolab.jms.net.orb.AbstractORB" />
+			<role name="TemplateMethod()" element="org.exolab.jms.net.orb.AbstractORB::exportObjectTo(java.lang.Object, java.lang.String, java.lang.String, java.lang.String):org.exolab.jms.net.proxy.Proxy" />
+			<role name="TemplateMethod()" element="org.exolab.jms.net.orb.AbstractORB::doExport(java.lang.Object, java.rmi.server.ObjID, org.exolab.jms.net.uri.URI, java.lang.Class):org.exolab.jms.net.proxy.Proxy" />
+			<role name="TemplateMethod()" element="org.exolab.jms.net.orb.AbstractORB::addProxy(org.exolab.jms.net.orb.ObjectRef, org.exolab.jms.net.uri.URI, java.lang.Object, java.lang.Class):org.exolab.jms.net.proxy.Proxy" />
+		</instance>
+		<instance>
+			<role name="AbstractClass" element="org.exolab.jms.selector.MathOperator" />
+			<role name="TemplateMethod()" element="org.exolab.jms.selector.MathOperator::evaluate(javax.jms.Message):org.exolab.jms.selector.SObject" />
+		</instance>
+		<instance>
+			<role name="AbstractClass" element="org.exolab.jms.selector.SObject" />
+			<role name="TemplateMethod()" element="org.exolab.jms.selector.SObject::equal(org.exolab.jms.selector.SObject):org.exolab.jms.selector.SBool" />
+			<role name="TemplateMethod()" element="org.exolab.jms.selector.SObject::toString():java.lang.String" />
+		</instance>
+		<instance>
+			<role name="AbstractClass" element="org.exolab.jms.tools.migration.proxy.AbstractMessageHandler" />
+			<role name="TemplateMethod()" element="org.exolab.jms.tools.migration.proxy.AbstractMessageHandler::add(javax.jms.Message):void" />
+			<role name="TemplateMethod()" element="org.exolab.jms.tools.migration.proxy.AbstractMessageHandler::get(java.lang.String):javax.jms.Message" />
+			<role name="TemplateMethod()" element="org.exolab.jms.tools.migration.proxy.AbstractMessageHandler::get(java.lang.String, javax.jms.Message):void" />
+			<role name="TemplateMethod()" element="org.exolab.jms.tools.migration.proxy.AbstractMessageHandler::add(javax.jms.Message, java.lang.String):void" />
+		</instance>
+	</pattern>
+	<pattern name="Visitor" />
+	<pattern name="Proxy" />
+	<pattern name="Proxy2" />
+	<pattern name="Chain of Responsibility" />
+</system>
+
